@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.JRPGTownProto.CSharp.Plugins", "UnityVS.JRPGTownProto.CSharp.Plugins.csproj", "{A251CE7A-0FF4-4FC2-11FE-24B6D3C18547}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.JRPGTownProto.CSharp", "UnityVS.JRPGTownProto.CSharp.csproj", "{6012363A-E922-5357-092B-E4791F549D7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.JRPGTownProto.CSharp.Editor", "UnityVS.JRPGTownProto.CSharp.Editor.csproj", "{8D777224-A3D2-9B07-F7C8-200E4502E48E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A251CE7A-0FF4-4FC2-11FE-24B6D3C18547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A251CE7A-0FF4-4FC2-11FE-24B6D3C18547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A251CE7A-0FF4-4FC2-11FE-24B6D3C18547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A251CE7A-0FF4-4FC2-11FE-24B6D3C18547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6012363A-E922-5357-092B-E4791F549D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6012363A-E922-5357-092B-E4791F549D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6012363A-E922-5357-092B-E4791F549D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6012363A-E922-5357-092B-E4791F549D7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D777224-A3D2-9B07-F7C8-200E4502E48E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D777224-A3D2-9B07-F7C8-200E4502E48E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D777224-A3D2-9B07-F7C8-200E4502E48E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D777224-A3D2-9B07-F7C8-200E4502E48E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,47 @@
+
+v1.0
+	Initial version
+
+
+V1.0.1
+	Resubmit assetstore version
+	- Moved the vBug toolbar to 'Tools/vBug' and added an 'About' section with hyperlinks.
+
+v1.1
+	- Thanks for testing the beta! This version contains most feedback
+	- Added 'Set editor vbug-rootfolder' option to the unity toolbar
+	- Added 'Update indexed shader properties'
+	- Added 'StandaloneStoreToApplicationFolder' bool, using the application-folder instead of the persistentDataPath as its storage location (set to true by default)
+
+	- Fixed some issues related to mac's 'Open folder dialog'
+	- Fixed the non-updating indexed shaders when targeting the webplayer-platform
+	- Increased overal editor-playback performance
+	- Tweaked the 'search' settings that fills gapes when slices are missing
+	- Tons of small overal playback tweaks and fixes
+
+v1.2.8
+	- Greatly improved editor playback memory management: No more crashes when loading massive data sets
+	- Improved editor playback performance and responsiveness.
+	- Reduced playback GC.collect hickups
+	- Reduced screencapture hickups when using jit-Render
+
+
+v1.5.x:
+  - Fixes:
+	- Deprecated and refactored Unity functionality: Unity 5 reduced the amount of public exposed ‘shortcuts’ at MonoBehaviour level, such as the removal of the .renderer property. The needed adjustments work well for both Unity 4 and 5.
+	- Camera occlusion culling @vBugPlaybackWindow: When the play window was open and occlusion was baked, it sometimes happens that the quads rendered to the playback-window are culled away, therefore showing only a black image.
+	- ‘Serialization depth limit exceeded’ error messages issue fixed
+	- Some null-ref exceptions taken care of during the serialization/deserialization process.
+	- Camera’s with non-fullscreen camera-rects where displayed incorrectly during playback of a JIT-captured session.
+	- Fixed the incorrect detection of RenderTexture support.
+	- Fixed a potential texture-memory leak under certain conditions.
+
+  - Improvements:
+	- Multithreading: I completely overhauled the threadpool at workload distribution management level, in order to support Unity 5 and improve performance at the same time. This also affects the Unity 4.6 performance in a positive way.
+	- All vBug components are now hidden from the ‘Add component’ menu-bar and component-inspector, reducing clutter.
+	- Enhanced the end-of-frame capture performance (ideal for Unity 4.6 users without a pro-licence), but for Unity-5 users, please use the new ‘redirectRender’ instead for best available performance.
+
+  - New features:
+	- vBug Initializer - ‘Editor/Standalone’ & ‘Mobile’ preset prefabs, with specific performance tweaks, based on ‘common sense platform specific relevance’ :-)
+	- ‘RedirectRender’ a new and fast capture method! Its allows UI-canvasses (the new UnityEngine.UI system) to be captured together with all other active camera’s in the game, such as the Main Camera. This is the fastest capture method currently available, therefore set to ‘default’ from 1.5.x onwards.
+	- Added ‘vBugJitCameraRecordable’ component, allowing you to hand-pick which camera will be jit-rendered. To make use of this, pick ‘jitRender’ as capture-method, disable ‘JIT-render all camera’s’ and add this component to the camera(s) you would like to capture.
