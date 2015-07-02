@@ -6,9 +6,19 @@ public class Player {
     public int dayCount;
     public int villagersCount;
 
-    public int levelInn = 1;
-    public int levelItem = 1;
-    public int levelWeapon = 1;
-    public int levelTavern = 1;
+    public int levelInn;
+    public int levelItem;
+    public int levelWeapon;
+    public int levelTavern;
+
+    public Player()
+    {
+        dayCount = 1;
+        villagersCount = 30;
+        levelInn = 1;
+        levelItem = 1;
+        levelWeapon = 1;
+        levelTavern = 1;
+    }
 
 }
