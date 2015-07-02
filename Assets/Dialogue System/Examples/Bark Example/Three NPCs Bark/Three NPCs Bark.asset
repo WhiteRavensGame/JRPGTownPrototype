@@ -1,0 +1,311 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1097633651, guid: b5a7519e94754fb4a8ea0c272031db78, type: 3}
+  m_Name: Three NPCs Bark
+  m_EditorClassIdentifier: 
+  version: 312e352e312e30
+  author: 506978656c204372757368657273
+  description: 546869732070726f6a6563742064656d6f6e737472617465732061206d6574686f64206f662072756e6e696e6720612074687265652d4e50432073657175656e6365206f66206261726b732e2049742075736573207468652053656e644d6573736167652073657175656e63657220636f6d6d616e6420746f2070726f6d707420746865206e65787420737065616b65722c20616e642061207661726961626c65206e616d6564204c696e6520746f206b65657020747261636b206f66207768696368206c696e652074686520737065616b65722073686f756c64206261726b2e
+  emphasisSettings:
+  - color:
+      r: 1
+      g: 0
+      b: 0
+      a: 1
+    bold: 1
+    italic: 0
+    underline: 0
+  - color:
+      r: .266666681
+      g: .713725507
+      b: .203921571
+      a: 1
+    bold: 1
+    italic: 0
+    underline: 0
+  - color:
+      r: .274509817
+      g: .533333361
+      b: .90196079
+      a: 1
+    bold: 1
+    italic: 0
+    underline: 0
+  - color:
+      r: .800000012
+      g: .800000012
+      b: .800000012
+      a: 1
+    bold: 1
+    italic: 0
+    underline: 0
+  actors:
+  - id: 1
+    fields:
+    - title: 4e616d65
+      value: 506c61796572
+      type: 0
+    - title: 5069637475726573
+      value: 5b5d
+      type: 3
+    - title: 4465736372697074696f6e
+      value: 54686520706c61796572206368617261637465722e
+      type: 0
+    - title: 4973506c61796572
+      value: 54727565
+      type: 2
+    portrait: {fileID: 0}
+  - id: 2
+    fields:
+    - title: 4e616d65
+      value: 4e5043
+      type: 0
+    - title: 5069637475726573
+      value: 5b5d
+      type: 3
+    - title: 4465736372697074696f6e
+      value: 54686973206163746f72207374616e647320696e20666f7220616c6c207468726565204e5043732e
+      type: 0
+    - title: 4973506c61796572
+      value: 46616c7365
+      type: 2
+    portrait: {fileID: 0}
+  items: []
+  locations: []
+  variables:
+  - id: 0
+    fields:
+    - title: 4e616d65
+      value: 416c657274
+      type: 0
+    - title: 496e697469616c2056616c7565
+      value: 
+      type: 0
+    - title: 4465736372697074696f6e
+      value: 53686f7720616c657274206d6573736167657320647572696e672067616d65706c61792062792073657474696e672074686973207661726961626c652e
+      type: 0
+  - id: 1
+    fields:
+    - title: 4e616d65
+      value: 4c696e65
+      type: 0
+    - title: 496e697469616c2056616c7565
+      value: 31
+      type: 1
+    - title: 4465736372697074696f6e
+      value: 5468652063757272656e74206c696e65206e756d6265722c207573656420746f206b65657020747261636b206f662077686572652077652061726520696e2074686520736572696573206f66206261726b732e
+      type: 0
+  conversations:
+  - id: 1
+    fields:
+    - title: 5469746c65
+      value: 4261726b73
+      type: 0
+    - title: 4465736372697074696f6e
+      value: 
+      type: 0
+    - title: 4163746f72
+      value: 31
+      type: 5
+    - title: 436f6e76657273616e74
+      value: 32
+      type: 5
+    nodeColor: 526564
+    dialogueEntries:
+    - id: 0
+      fields:
+      - title: 5469746c65
+        value: 5354415254
+        type: 0
+      - title: 4163746f72
+        value: 31
+        type: 5
+      - title: 436f6e76657273616e74
+        value: 32
+        type: 5
+      - title: 4d656e752054657874
+        value: 
+        type: 0
+      - title: 4469616c6f6775652054657874
+        value: 
+        type: 4
+      - title: 566964656f2046696c65
+        value: 
+        type: 0
+      - title: 53657175656e6365
+        value: 4e6f6e652829
+        type: 0
+      conversationID: 1
+      isRoot: 1
+      isGroup: 0
+      nodeColor: 5768697465
+      delaySimStatus: 0
+      falseConditionAction: 426c6f636b
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 0
+        destinationConversationID: 1
+        destinationDialogueID: 1
+        isConnector: 0
+        priority: 2
+      - originConversationID: 1
+        originDialogueID: 0
+        destinationConversationID: 1
+        destinationDialogueID: 2
+        isConnector: 0
+        priority: 2
+      - originConversationID: 1
+        originDialogueID: 0
+        destinationConversationID: 1
+        destinationDialogueID: 3
+        isConnector: 0
+        priority: 2
+      - originConversationID: 1
+        originDialogueID: 0
+        destinationConversationID: 1
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+    - id: 1
+      fields:
+      - title: 5469746c65
+        value: 4164616d20737065616b73
+        type: 0
+      - title: 4163746f72
+        value: 32
+        type: 5
+      - title: 436f6e76657273616e74
+        value: 31
+        type: 5
+      - title: 4d656e752054657874
+        value: 
+        type: 0
+      - title: 4469616c6f6775652054657874
+        value: 49276d204164616d2e
+        type: 4
+      - title: 566964656f2046696c65
+        value: 
+        type: 0
+      - title: 53657175656e6365
+        value: 53656e644d657373616765284f6e5573652c2c426f62294033
+        type: 0
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 5768697465
+      delaySimStatus: 0
+      falseConditionAction: 426c6f636b
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 5661726961626c655b224c696e65225d203d3d2031
+      userScript: 5661726961626c655b224c696e65225d203d2032
+    - id: 2
+      fields:
+      - title: 5469746c65
+        value: 426f6220737065616b73
+        type: 0
+      - title: 4163746f72
+        value: 32
+        type: 5
+      - title: 436f6e76657273616e74
+        value: 31
+        type: 5
+      - title: 4d656e752054657874
+        value: 
+        type: 0
+      - title: 4469616c6f6775652054657874
+        value: 49276d20426f622e
+        type: 4
+      - title: 566964656f2046696c65
+        value: 
+        type: 0
+      - title: 53657175656e6365
+        value: 53656e644d657373616765284f6e5573652c2c4361726c294033
+        type: 0
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 5768697465
+      delaySimStatus: 0
+      falseConditionAction: 426c6f636b
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 5661726961626c655b224c696e65225d203d3d2032
+      userScript: 5661726961626c655b224c696e65225d203d2033
+    - id: 3
+      fields:
+      - title: 5469746c65
+        value: 4361726c20737065616b73
+        type: 0
+      - title: 4163746f72
+        value: 32
+        type: 5
+      - title: 436f6e76657273616e74
+        value: 31
+        type: 5
+      - title: 4d656e752054657874
+        value: 
+        type: 0
+      - title: 4469616c6f6775652054657874
+        value: 416e642049276d204361726c2e
+        type: 4
+      - title: 566964656f2046696c65
+        value: 
+        type: 0
+      - title: 53657175656e6365
+        value: 53656e644d657373616765284f6e5573652c2c4164616d294033
+        type: 0
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 5768697465
+      delaySimStatus: 0
+      falseConditionAction: 426c6f636b
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 5661726961626c655b224c696e65225d203d3d2033
+      userScript: 5661726961626c655b224c696e65225d203d2034
+    - id: 4
+      fields:
+      - title: 5469746c65
+        value: 4164616d20737065616b7320616761696e
+        type: 0
+      - title: 4163746f72
+        value: 32
+        type: 5
+      - title: 436f6e76657273616e74
+        value: 31
+        type: 5
+      - title: 4d656e752054657874
+        value: 
+        type: 0
+      - title: 4469616c6f6775652054657874
+        value: 54686174277320616c6c2e2042796521
+        type: 4
+      - title: 566964656f2046696c65
+        value: 
+        type: 0
+      - title: 53657175656e6365
+        value: 
+        type: 0
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 5768697465
+      delaySimStatus: 0
+      falseConditionAction: 426c6f636b
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 5661726961626c655b224c696e65225d203d3d2034
+      userScript: 
