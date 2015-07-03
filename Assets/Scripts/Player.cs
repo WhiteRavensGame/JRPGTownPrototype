@@ -14,7 +14,7 @@ public class Player {
     public Player()
     {
         dayCount = 1;
-        villagersCount = 30;
+        villagersCount = 25;
         levelInn = 1;
         levelItem = 1;
         levelWeapon = 1;

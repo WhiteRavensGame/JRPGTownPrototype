@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using PixelCrushers.DialogueSystem;
 
 public class ResourceAllocateUIManager : Singleton<ResourceAllocateUIManager> {
 
@@ -14,6 +15,7 @@ public class ResourceAllocateUIManager : Singleton<ResourceAllocateUIManager> {
     public Text textVillagerTavernCount;
 
     public Text textTotalVillagerCount;
+    public Text textDayNumber;
 
     private int villagersInn = 0;
     private int villagersItemShop = 0;
@@ -37,7 +39,9 @@ public class ResourceAllocateUIManager : Singleton<ResourceAllocateUIManager> {
         resourceAllocationLayer.SetActive(show);
         if (show)
         {
-
+            villagersTotalCount = GameManager.Instance.playerStats.villagersCount;
+            textDayNumber.text = "Day " +  GameManager.Instance.playerStats.dayCount.ToString();
+            UpdateVillagersText();
         }
         else
         {
@@ -96,6 +100,12 @@ public class ResourceAllocateUIManager : Singleton<ResourceAllocateUIManager> {
     private int GetVillagersLeft()
     {
         return (villagersTotalCount - villagersInn - villagersItemShop - villagersWeaponShop - villagersTavern);
+    }
+
+    public void StartTestConversation()
+    {
+        //THIS IS A TEST. DELETE WHEN DONE.
+        DialogueManager.StartConversation("Recette");
     }
 
 

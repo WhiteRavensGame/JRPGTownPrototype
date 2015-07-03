@@ -1,29 +1,45 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using PixelCrushers.DialogueSystem;
 
 public class EventScreenUIManager : Singleton<EventScreenUIManager> {
 
     public GameObject eventScreenLayer;
 
-
+    /*
     [Header("Event Objects")]
     public Text textEvent;
     public GameObject choice1;
     public GameObject choice2;
     public GameObject choice3; 
+    */
 
     public void ShowEventScreen(bool show, int day)
     {
         eventScreenLayer.SetActive(show);
         if (show)
         {
-            int indexHappening = day - 1;
-            UpdateEventScreen(GameManager.Instance.happening[indexHappening]);
+            if (day == 1)
+            {
+                DialogueManager.StartConversation("TestDay1");
+            }
+            else if(day == 2)
+            {
+                DialogueManager.StartConversation("TestDay2");
+            }
+            else if(day == 3)
+            {
+                
+            }
+
+            //int indexHappening = day - 1;
+            //UpdateEventScreen(GameManager.Instance.happening[indexHappening]);
         }
 
     }
 
+    /*
     public void UpdateEventScreen(Happening whatHappened)
     {
         textEvent.text = whatHappened.description;
@@ -64,7 +80,7 @@ public class EventScreenUIManager : Singleton<EventScreenUIManager> {
         //Guess we hardcode it for now...
         Debug.Log("You chose " + index);
     }
-
+    */
 
 
 }
