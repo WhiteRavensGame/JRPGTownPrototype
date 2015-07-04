@@ -82,7 +82,9 @@ public class ResourceAllocateUIManager : Singleton<ResourceAllocateUIManager> {
         int itemCustomers = 8;
         int weaponCustomers = 5;
 
-        DayManager.Instance.CalculateDailyEarnings(villagersInn, villagersItemShop, villagersWeaponShop, innCustomers, itemCustomers, weaponCustomers);
+        //Player gets enough coins.
+        int dayEarnings = DayManager.Instance.CalculateDailyEarnings(villagersInn, villagersItemShop, villagersWeaponShop, innCustomers, itemCustomers, weaponCustomers);
+        GameManager.Instance.playerStats.gold += dayEarnings;
 
         ShowResourceAllocateScreen(false);
         ProfitsScreenManager.Instance.ShowProfitsScreen(true);

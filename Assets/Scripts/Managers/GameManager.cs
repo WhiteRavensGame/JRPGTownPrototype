@@ -7,6 +7,11 @@ public class GameManager : Singleton<GameManager> {
     public Player playerStats;
     public Happening[] happening;
 
+    //Balance things
+    public int[] levelInnCost = new int[5] {2000, 4000, 6000, 8000, 10000};
+    public int[] levelItemShopCost = new int[5] { 2000, 4000, 6000, 8000, 10000 };
+    public int[] levelWeaponShopCost = new int[5] {2000, 4000, 6000, 8000, 10000 };
+
     // Use this for initialization
     void Start() {
         playerStats = new Player();
@@ -46,6 +51,9 @@ public class GameManager : Singleton<GameManager> {
         DialogueLua.SetVariable("ItemLevel", GameManager.Instance.playerStats.levelItem);
         DialogueLua.SetVariable("WeaponLevel", GameManager.Instance.playerStats.levelWeapon);
         DialogueLua.SetVariable("VillagersCount", GameManager.Instance.playerStats.villagersCount);
+        DialogueLua.SetVariable("GoldCount", GameManager.Instance.playerStats.gold);
+
+        Debug.Log(GameManager.Instance.playerStats.levelItem + " , " + DialogueLua.GetVariable("ItemLevel").AsInt);
     }
 
     public void CopyLUAToPlayerStats()
@@ -57,9 +65,11 @@ public class GameManager : Singleton<GameManager> {
         GameManager.Instance.playerStats.levelItem = DialogueLua.GetVariable("ItemLevel").AsInt;
         GameManager.Instance.playerStats.levelWeapon = DialogueLua.GetVariable("WeaponLevel").AsInt;
         GameManager.Instance.playerStats.villagersCount = DialogueLua.GetVariable("VillagersCount").AsInt;
+        GameManager.Instance.playerStats.gold = DialogueLua.GetVariable("GoldCount").AsInt;
 
-        //TODO: Make sure this gets called first before anything else to properly sync the data.
-        LoadNextGameEvent();
+        //Loads the LevelBuilding UI (for now)
+        EventScreenUIManager.Instance.ShowEventScreen(false, -1);
+        LevelBuildingUIManager.Instance.ShowLevelBuildingUIManager(true);
     }
 
     public void LoadNextGameEvent()

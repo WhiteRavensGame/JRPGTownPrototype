@@ -16,12 +16,12 @@ public class EndConversationHandler : MonoBehaviour {
 
     public void OnConversationStart()
     {
-        Debug.Log("CONVERSATION START!");
+        //Debug.Log("CONVERSATION START!");
         GameManager.Instance.CopyPlayerStatsToLUA();
     }
     public void OnConversationEnd()
     {
-        Debug.Log("CONVERSATION OVER. Do closing in this function");
+       // Debug.Log("CONVERSATION OVER. Do closing in this function");
         GameManager.Instance.CopyLUAToPlayerStats();
     }
 

@@ -24,13 +24,47 @@ public class EventScreenUIManager : Singleton<EventScreenUIManager> {
             {
                 DialogueManager.StartConversation("TestDay1");
             }
-            else if(day == 2)
+            else if (day == 2)
             {
                 DialogueManager.StartConversation("TestDay2");
             }
-            else if(day == 3)
+            else if (day == 3)
             {
-                
+                DialogueManager.StartConversation("TestDay3");
+            }
+            else if (day == 4)
+            {
+                DialogueManager.StartConversation("TestDay4");
+            }
+            else if (day == 5)
+            {
+                DialogueManager.StartConversation("TestDay5");
+            }
+            else if (day == 6)
+            {
+                DialogueManager.StartConversation("TestDay6");
+            }
+            else if (day == 7)
+            {
+                DialogueManager.StartConversation("TestDay7");
+            }
+            else if (day == 8)
+            {
+                DialogueManager.StartConversation("TestDay8");
+            }
+            else if (day == 9)
+            {
+                DialogueManager.StartConversation("TestDay9");
+            }
+            else if (day == 10)
+            {
+                DialogueManager.StartConversation("TestDay10");
+            }
+            else
+            {
+                //Continue if no events (should NOT happen. Just for safety).
+                EventScreenUIManager.Instance.ShowEventScreen(false, -1);
+                LevelBuildingUIManager.Instance.ShowLevelBuildingUIManager(true);
             }
 
             //int indexHappening = day - 1;
