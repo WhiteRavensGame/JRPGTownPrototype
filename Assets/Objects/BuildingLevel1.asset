@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b7c89f38be1214c8a4e5dbb8105c0a, type: 3}
   m_Name: BuildingLevel1
   m_EditorClassIdentifier: 
-  monyToLevelUp: 0
   resources: 0
+  panelText: This is one
+  buttonText: LevelUp
+  monyToLevelUp: 0

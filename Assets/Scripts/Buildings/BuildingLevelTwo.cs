@@ -5,8 +5,6 @@ public class BuildingLevelTwo : BuildingLevel
 {
     [SerializeField]
     private uint amoutOfFoodNeeded;
-    [SerializeField]
-    private Resources resources;
 
     public override void Execute() 
     {

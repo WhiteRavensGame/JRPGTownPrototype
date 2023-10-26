@@ -1,6 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.WSA;
 
 public class Building : MonoBehaviour
 {
@@ -10,21 +11,21 @@ public class Building : MonoBehaviour
     private List<BuildingLevel> buildingLevelObjects;
 
     [Space, Header("Panel Settings"), SerializeField]
-    GameObject infoPanel;
+    private GameObject infoPanel;
+    [SerializeField]
+    private TextMeshProUGUI panelText;
+    [SerializeField]
+    private TextMeshProUGUI buttonText;
 
-    private void Awake()
+    public void ActivatePanel(bool activation)
     {
-        
+        panelText.text = buildingLevelObjects[buildingLevel - 1].getPanelText;
+        buttonText.text = buildingLevelObjects[buildingLevel - 1].getButtonText;
+        infoPanel.SetActive(activation);
     }
 
-    private void OnMouseDown()
+    public void Execute()
     {
-        infoPanel.SetActive(true);
-        //buildingLevelObjects[buildingLevel - 1].Execute();
-    }
-
-    public void OnClosePanel()
-    {
-        infoPanel.SetActive(false);
+        buildingLevelObjects[buildingLevel - 1].Execute();
     }
 }

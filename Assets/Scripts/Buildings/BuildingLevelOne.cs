@@ -7,8 +7,6 @@ public class BuildingLevelOne : BuildingLevel
 {
     [SerializeField]
     private uint monyToLevelUp;
-    [SerializeField]
-    private Resources resources;
 
     public override void Execute()
     {

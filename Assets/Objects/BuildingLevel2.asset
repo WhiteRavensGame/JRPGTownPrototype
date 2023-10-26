@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1f1f281e27ccd4d8c246b1a30cd212, type: 3}
   m_Name: BuildingLevel2
   m_EditorClassIdentifier: 
-  amoutOfFoodNeeded: 0
   resources: 0
+  panelText: This is two
+  buttonText: Feed And Grow
+  amoutOfFoodNeeded: 0
