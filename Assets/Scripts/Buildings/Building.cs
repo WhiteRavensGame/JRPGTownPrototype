@@ -19,9 +19,17 @@ public class Building : MonoBehaviour
 
     public void ActivatePanel(bool activation)
     {
-        panelText.text = buildingLevelObjects[buildingLevel - 1].getPanelText;
-        buttonText.text = buildingLevelObjects[buildingLevel - 1].getButtonText;
         infoPanel.SetActive(activation);
+    }
+
+    public void ChangeInfoString(int currentLevel)
+    {
+        if (currentLevel != buildingLevel)
+        {
+            panelText.text = buildingLevelObjects[buildingLevel - 1].getPanelText;
+            buttonText.text = buildingLevelObjects[buildingLevel - 1].getButtonText;
+            currentLevel = buildingLevel;
+        }
     }
 
     public void Execute()
