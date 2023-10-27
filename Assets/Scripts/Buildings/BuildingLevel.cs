@@ -14,8 +14,10 @@ public abstract class BuildingLevel: ScriptableObject
     [SerializeField]
     private string buttonText;
 
+    public Sprite getbuildingSprite { get { return buildingSprite; } }
     public string getPanelText { get { return panelText; } }
     public string getButtonText { get { return buttonText; } }
 
     public abstract void Execute();
+    public abstract void LevelUp(Building building);
 }

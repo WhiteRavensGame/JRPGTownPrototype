@@ -9,6 +9,8 @@ public class Building : MonoBehaviour
     [SerializeField]
     private List<BuildingLevel> buildingLevelObjects;
 
+    private SpriteRenderer buildingSR;
+
     [Space, Header("Panel Settings"), SerializeField]
     private GameObject infoPanel;
     [SerializeField]
@@ -16,23 +18,33 @@ public class Building : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI buttonText;
 
+    private void Awake()
+    {
+        buildingSR = GetComponent<SpriteRenderer>();
+        ChangeBuilding();
+    }
+
     public void ActivatePanel(bool activation)
     {
         infoPanel.SetActive(activation);
     }
 
-    public void ChangeInfoString(int currentLevel)
+    public void ChangeBuilding()
     {
-        if (currentLevel != buildingLevel)
-        {
-            panelText.text = buildingLevelObjects[buildingLevel - 1].getPanelText;
-            buttonText.text = buildingLevelObjects[buildingLevel - 1].getButtonText;
-            currentLevel = buildingLevel;
-        }
+        panelText.text = buildingLevelObjects[buildingLevel - 1].getPanelText;
+        buttonText.text = buildingLevelObjects[buildingLevel - 1].getButtonText;
+        buttonText.text = buildingLevelObjects[buildingLevel - 1].getButtonText;
+        buildingSR.sprite = buildingLevelObjects[buildingLevel - 1].getbuildingSprite;
     }
 
     public void Execute()
     {
         buildingLevelObjects[buildingLevel - 1].Execute();
+
+        if (buildingLevel + 1 <= buildingLevelObjects.Count)
+        {
+            ++buildingLevel;
+            ChangeBuilding();
+        }
     }
 }

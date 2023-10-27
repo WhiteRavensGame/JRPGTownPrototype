@@ -3,7 +3,6 @@ using UnityEngine;
 public class BuildingController : MonoBehaviour
 {
     private Building building;
-    private int levelNum = -1;
 
     private void Awake()
     {
@@ -12,7 +11,6 @@ public class BuildingController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        building.ChangeInfoString(levelNum);
         building.ActivatePanel(true);
     }
 

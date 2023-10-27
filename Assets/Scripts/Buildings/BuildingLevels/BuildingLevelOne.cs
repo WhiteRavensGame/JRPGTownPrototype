@@ -13,4 +13,9 @@ public class BuildingLevelOne : BuildingLevel
     {
         Debug.Log("Method colled 1");
     }
+
+    public override void LevelUp(Building building)
+    {
+        Debug.Log("LeveledUp 1");
+    }
 }
