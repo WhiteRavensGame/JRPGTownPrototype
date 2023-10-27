@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BuildingLevel2
   m_EditorClassIdentifier: 
   resources: 0
+  buildingSprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   panelText: This is two
   buttonText: Feed And Grow
   amoutOfFoodNeeded: 0

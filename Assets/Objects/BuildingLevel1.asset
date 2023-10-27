@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BuildingLevel1
   m_EditorClassIdentifier: 
   resources: 0
+  buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   panelText: This is one
   buttonText: LevelUp
   monyToLevelUp: 0

@@ -33,7 +33,7 @@ public class TimeManager : MonoBehaviour
         }
     }
 
-    private void ResetDay()
+    public void ResetDay()
     {
         ++daysPassed;
         timePlaying = dailyTime;
