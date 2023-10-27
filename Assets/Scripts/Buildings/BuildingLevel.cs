@@ -2,8 +2,13 @@ using UnityEngine;
 
 public abstract class BuildingLevel: ScriptableObject
 {
+    [Header("Building Settings")]
     [SerializeField]
     private Resources resources;
+    [SerializeField]
+    private Sprite buildingSprite;
+
+    [Space, Header("Panel Settings")] 
     [SerializeField, TextArea(3, 10)]
     private string panelText;
     [SerializeField]

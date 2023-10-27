@@ -5,6 +5,7 @@ enum Resources { Food, Clothes, RawMaterials }
 [CreateAssetMenu(fileName = "BuildingLevel1", menuName = "BuildingLevels/BuildingLevel1")]
 public class BuildingLevelOne : BuildingLevel
 {
+    [Space, Header("Level One Settings")]
     [SerializeField]
     private uint monyToLevelUp;
 
