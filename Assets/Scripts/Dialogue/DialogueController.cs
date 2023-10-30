@@ -14,6 +14,13 @@ public class DialogueController : MonoBehaviour
     [SerializeField]
     private TextAsset[] inkJson;
     private Story[] story;
+    private string currentStory;
+
+    [SerializeField]
+    private float wordSpeed;
+    private float textAnimTimer;
+    private bool loadingText = false;
+    private int currentWord = 0;
 
     private bool waitingForAnswer = true;
 
@@ -22,25 +29,33 @@ public class DialogueController : MonoBehaviour
         story = new Story[inkJson.Length];
         story[0] = new Story(inkJson[0].text);
         story[1] = new Story(inkJson[1].text);
+
+        textAnimTimer = wordSpeed;
+    }
+
+    private void Update()
+    {
+        LoadTextWithAnim();
     }
 
     private void OnMouseDown()
     {
+        if(loadingText && currentWord <= currentStory.Length)
+        {
+            dialogueText.text = currentStory;
+            Debug.Log("stop");
+            return;
+        }
+
         dialogObjects[0].SetActive(true);
 
         if(story[0].canContinue)
         {
-            dialogueText.text = story[0].Continue();
+            ContinueStory(0);
         }
         else if (story[1].canContinue)
         {
-            dialogueText.text = story[1].Continue();
-
-            for(int i = 0; i < story[1].currentChoices.Count; ++i) 
-            {
-                buttonsText[i].text = story[1].currentChoices[i].text;
-                dialogObjects[i + 1].SetActive(true);
-            }
+            ContinueStory(1);
         }
         else if (!waitingForAnswer)
         {
@@ -54,11 +69,46 @@ public class DialogueController : MonoBehaviour
     {
         waitingForAnswer = false;
         story[1].ChooseChoiceIndex(index);
-        dialogueText.text = story[1].Continue();
+        ContinueStory(1);
 
         for (int i = 1; i < dialogObjects.Length; ++i)
         {
             dialogObjects[i].SetActive(false);
         }
     }
+
+    private void LoadTextWithAnim()
+    {
+        if (loadingText)
+        {
+            textAnimTimer -= Time.deltaTime;
+
+            if(textAnimTimer <= 0 && currentWord < currentStory.Length)
+            {
+                dialogueText.text += currentStory[currentWord++];
+                textAnimTimer = wordSpeed;
+            }
+            else if(currentWord >= currentStory.Length)
+            {
+                loadingText = false;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < story[1].currentChoices.Count; ++i)
+            {
+                buttonsText[i].text = story[1].currentChoices[i].text;
+                dialogObjects[i + 1].SetActive(true);
+            }
+        }
+    }
+
+    private void ContinueStory(int index)
+    {
+        dialogueText.text = "";
+        currentStory = story[index].Continue();
+        loadingText = true;
+        currentWord = 0;
+    }
+
 }
