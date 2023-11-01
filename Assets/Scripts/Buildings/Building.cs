@@ -7,6 +7,8 @@ public class Building : MonoBehaviour
     [Header("Building Settings"), SerializeField]
     private int buildingLevel;
     [SerializeField]
+    private BuildingType buildingType;
+    [SerializeField]
     private List<BuildingLevel> buildingLevelObjects;
 
     private SpriteRenderer buildingSR;
@@ -46,5 +48,15 @@ public class Building : MonoBehaviour
             ++buildingLevel;
             ChangeBuilding();
         }
+    }
+
+    public int GetMaxVillagers()
+    {
+        return buildingLevelObjects[buildingLevel - 1].getMaxVillagers;
+    }
+
+    public BuildingType GetBuildingType()
+    {
+        return buildingType;
     }
 }
