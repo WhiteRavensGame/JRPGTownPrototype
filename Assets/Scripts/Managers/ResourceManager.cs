@@ -7,6 +7,12 @@ public class ResourceManager : MonoBehaviour, IGameModule
     //all the amounts of different resources will be here
     //functions for exchanging resources will also be here
 
+    private int _gold;
+    private int _food;
+    private int _materials;
+    private int _cloth;
+
+    #region IGameModule Implementation
     public bool IsInitialized { get { return _isInitialized; } }
     private bool _isInitialized = false;
 
@@ -20,6 +26,11 @@ public class ResourceManager : MonoBehaviour, IGameModule
         ServiceLocator.Register<ResourceManager>(this);
         yield return null;
     }
+    private void InitializeResources()
+    {
+        _isInitialized = true;
+    }
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +44,8 @@ public class ResourceManager : MonoBehaviour, IGameModule
         
     }
 
-    private void InitializeResources()
+    public void AddGold(int gold)
     {
-        _isInitialized = true;
+        _gold += gold;
     }
 }
