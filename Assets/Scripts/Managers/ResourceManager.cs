@@ -32,17 +32,6 @@ public class ResourceManager : MonoBehaviour, IGameModule
     }
     #endregion
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void AddGold(int gold)
     {

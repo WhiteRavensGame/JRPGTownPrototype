@@ -11,9 +11,9 @@ public class VillageManager : MonoBehaviour
 
     private int _vTotal;
     private int _vAllocated;
-    private int _vFood;
-    private int _vMaterial;
-    private int _vCloth;
+
+    private Dictionary<BuildingType, int> _villagerAllocation = new Dictionary<BuildingType, int>();
+    private Dictionary<BuildingType, Building> _buildings = new Dictionary<BuildingType, Building>();
 
     #region IGameModule Implementation
     public bool IsInitialized { get { return _isInitialized; } }
@@ -35,74 +35,46 @@ public class VillageManager : MonoBehaviour
     }
     #endregion
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    
 
+    public void InitializeBuildings(List<Building> buildings)
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            _villagerAllocation.Add((BuildingType)i, 0);
+            _buildings.Add(buildings[i].GetBuildingType(), buildings[i]);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
-
+    //increase villagers that are in the town
     public void AddVillagers(int amount)
     {
         _vTotal += amount;
     }
 
-    public void AddVillagerInn(int amount)
+    #region Allocate Villagers to Buildings
+    public void AddVillager(BuildingType buildingType, int amount)
     {
-        if (_vAllocated + amount >= _vTotal)
+        if (_villagerAllocation[buildingType] + amount > _buildings[buildingType].GetMaxVillagers())
+            return;
+        if (_vAllocated + amount > _vTotal)
             return;
 
-        _vFood += amount;
+        _villagerAllocation[buildingType] += amount;
         _vAllocated += amount;
     }
 
-    public void AddVillagerSmith(int amount)
+    public void RemoveVillager(BuildingType buildingType, int amount)
     {
-        if (_vAllocated + amount >= _vTotal)
+        if (_villagerAllocation[buildingType] - amount < 0)
             return;
-
-        _vMaterial += amount;
-        _vAllocated += amount;
-    }
-
-    public void AddVillagerSilk(int amount)
-    {
-        if (_vAllocated + amount >= _vTotal)
-            return;
-
-        _vCloth += amount;
-        _vAllocated += amount;
-    }
-
-    public void RemoveVillagerInn(int amount)
-    {
         if (_vAllocated - amount < 0)
             return;
 
-        _vFood -= amount;
+        _villagerAllocation[buildingType] -= amount;
         _vAllocated -= amount;
     }
 
-    public void RemoveVillagerSmith(int amount)
-    {
-        if (_vAllocated - amount < 0)
-            return;
-
-        _vMaterial -= amount;
-        _vAllocated -= amount;  
-    }
-
-    public void RemoveVillagerSilk(int amount)
-    {
-        if (_vAllocated - amount < 0)
-            return;
-
-        _vCloth -= amount;  
-        _vAllocated -= amount;
-    }
+    #endregion
 }
