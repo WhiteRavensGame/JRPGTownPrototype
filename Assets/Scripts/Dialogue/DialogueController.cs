@@ -1,18 +1,17 @@
 using Ink.Runtime;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI dialogueText;
-    [SerializeField]
-    private TextMeshProUGUI[] buttonsText;
-    [SerializeField]
-    private GameObject[] dialogObjects;
+    [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private GameObject[] dialogObjects;
+    private List<GameObject> buttonObjects;
+    private List<int> functionIndex;
 
-    [SerializeField]
-    private TextAsset[] inkJson;
+    [SerializeField] private TextAsset[] inkJson;
     private Story[] story;
     private string currentStory;
 
@@ -27,6 +26,9 @@ public class DialogueController : MonoBehaviour
     private void Awake()
     {
         story = new Story[inkJson.Length];
+        buttonObjects = new List<GameObject>();
+        functionIndex = new List<int>();
+
         story[0] = new Story(inkJson[0].text);
         story[1] = new Story(inkJson[1].text);
 
@@ -40,16 +42,16 @@ public class DialogueController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(loadingText && currentWord <= currentStory.Length)
+        if (loadingText && currentWord <= currentStory.Length)
         {
             dialogueText.text = currentStory;
-            Debug.Log("stop");
+            currentWord = currentStory.Length;
             return;
         }
 
         dialogObjects[0].SetActive(true);
 
-        if(story[0].canContinue)
+        if (story[0].canContinue)
         {
             ContinueStory(0);
         }
@@ -71,10 +73,12 @@ public class DialogueController : MonoBehaviour
         story[1].ChooseChoiceIndex(index);
         ContinueStory(1);
 
-        for (int i = 1; i < dialogObjects.Length; ++i)
+        for (int i = 0; i < buttonObjects.Count; ++i)
         {
-            dialogObjects[i].SetActive(false);
+            Destroy(buttonObjects[i]);
         }
+        buttonObjects.Clear();
+        functionIndex.Clear();
     }
 
     private void LoadTextWithAnim()
@@ -83,22 +87,26 @@ public class DialogueController : MonoBehaviour
         {
             textAnimTimer -= Time.deltaTime;
 
-            if(textAnimTimer <= 0 && currentWord < currentStory.Length)
+            if (textAnimTimer <= 0 && currentWord < currentStory.Length)
             {
                 dialogueText.text += currentStory[currentWord++];
                 textAnimTimer = wordSpeed;
             }
-            else if(currentWord >= currentStory.Length)
+            else if (currentWord >= currentStory.Length)
             {
                 loadingText = false;
             }
         }
-        else
+        else if (story[1].currentChoices.Count > 0 && buttonObjects.Count == 0)
         {
             for (int i = 0; i < story[1].currentChoices.Count; ++i)
             {
-                buttonsText[i].text = story[1].currentChoices[i].text;
-                dialogObjects[i + 1].SetActive(true);
+                int index = i;
+                functionIndex.Add(index);
+                buttonObjects.Add(Instantiate(dialogObjects[1], Vector3.zero, Quaternion.identity, transform.GetChild(0)));
+                buttonObjects[i].transform.localPosition = new Vector3(-100, 0 + (i * 50), 0);
+                buttonObjects[i].gameObject.GetComponentInChildren<TextMeshProUGUI>().text = story[1].currentChoices[i].text;
+                buttonObjects[i].gameObject.GetComponent<Button>().onClick.AddListener(delegate { ChooseDialogue(functionIndex[index]); });
             }
         }
     }
