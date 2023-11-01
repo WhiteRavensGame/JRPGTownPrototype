@@ -8,6 +8,8 @@ public class VillageManager : MonoBehaviour
     //the amount of villagers for allocating villagers will also be here
 
     private int _morale;
+    private int _defense;
+    private int _reputation;
 
     private int _vTotal;
     private int _vAllocated;
@@ -36,7 +38,6 @@ public class VillageManager : MonoBehaviour
     #endregion
 
     
-
     public void InitializeBuildings(List<Building> buildings)
     {
         for (int i = 0; i < 6; i++)
@@ -75,6 +76,5 @@ public class VillageManager : MonoBehaviour
         _villagerAllocation[buildingType] -= amount;
         _vAllocated -= amount;
     }
-
     #endregion
 }
