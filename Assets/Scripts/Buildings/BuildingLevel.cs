@@ -9,6 +9,8 @@ public abstract class BuildingLevel: ScriptableObject
     private Sprite buildingSprite;
     [SerializeField]
     private int maxVillagers;
+    [SerializeField]
+    private int resourcesProduced;
 
     [Space, Header("Panel Settings")] 
     [SerializeField, TextArea(3, 10)]

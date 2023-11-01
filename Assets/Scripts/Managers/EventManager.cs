@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    private int _defense;
-
     #region IGameModule Implementation
     public bool IsInitialized { get { return _isInitialized; } }
     private bool _isInitialized = false;
