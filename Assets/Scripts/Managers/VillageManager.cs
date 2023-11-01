@@ -7,6 +7,8 @@ public class VillageManager : MonoBehaviour
     //all the different types of buildings present in the village will be here
     //the amount of villagers for allocating villagers will also be here
 
+    private int _morale;
+
     private int _vTotal;
     private int _vAllocated;
     private int _vFood;
@@ -24,7 +26,7 @@ public class VillageManager : MonoBehaviour
         InitializeVillage();
         yield return new WaitUntil(() => { return IsInitialized; });
 
-        ServiceLocator.Register<ResourceManager>(this);
+        ServiceLocator.Register<VillageManager>(this);
         yield return null;
     }
     private void InitializeVillage()
@@ -50,7 +52,7 @@ public class VillageManager : MonoBehaviour
         _vTotal += amount;
     }
 
-    public void AddVillagerFood(int amount)
+    public void AddVillagerInn(int amount)
     {
         if (_vAllocated + amount >= _vTotal)
             return;
@@ -59,7 +61,7 @@ public class VillageManager : MonoBehaviour
         _vAllocated += amount;
     }
 
-    public void AddVillagerMaterial(int amount)
+    public void AddVillagerSmith(int amount)
     {
         if (_vAllocated + amount >= _vTotal)
             return;
@@ -68,7 +70,7 @@ public class VillageManager : MonoBehaviour
         _vAllocated += amount;
     }
 
-    public void AddVillagerCloth(int amount)
+    public void AddVillagerSilk(int amount)
     {
         if (_vAllocated + amount >= _vTotal)
             return;
@@ -77,7 +79,7 @@ public class VillageManager : MonoBehaviour
         _vAllocated += amount;
     }
 
-    public void RemoveVillagerFood(int amount)
+    public void RemoveVillagerInn(int amount)
     {
         if (_vAllocated - amount < 0)
             return;
@@ -86,7 +88,7 @@ public class VillageManager : MonoBehaviour
         _vAllocated -= amount;
     }
 
-    public void RemoveVillagerMaterial(int amount)
+    public void RemoveVillagerSmith(int amount)
     {
         if (_vAllocated - amount < 0)
             return;
@@ -95,7 +97,7 @@ public class VillageManager : MonoBehaviour
         _vAllocated -= amount;  
     }
 
-    public void RemoveVillagerCloth(int amount)
+    public void RemoveVillagerSilk(int amount)
     {
         if (_vAllocated - amount < 0)
             return;

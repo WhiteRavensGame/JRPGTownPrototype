@@ -20,33 +20,33 @@ public class AllocateVillagers : MonoBehaviour
         vm = ServiceLocator.Get<VillageManager>();
     }    
 
-    public void SetVillagerFood()
+    public void SetVillagerInn()
     {
-        vm.AddVillagerFood(1);
+        vm.AddVillagerInn(1);
     }
 
-    public void SetVillagerMaterial()
+    public void SetVillagerSmith()
     {
-        vm.AddVillagerMaterial(1);
+        vm.AddVillagerSmith(1);
     }
 
-    public void SetVillageCloth()
+    public void SetVillageSilk()
     {
-        vm.AddVillagerCloth(1);
+        vm.AddVillagerSilk(1);
     }
 
-    public void RemoveVillagerFood()
+    public void RemoveVillagerInn()
     {
-        vm.RemoveVillagerFood(1);
+        vm.RemoveVillagerInn(1);
     }
 
-    public void RemoveVillagerMaterial()
+    public void RemoveVillagerSmith()
     {
-        vm.RemoveVillagerMaterial(1);
+        vm.RemoveVillagerSmith(1);
     }
 
-    public void RemoveVillageCloth()
+    public void RemoveVillageSilk()
     {
-        vm.RemoveVillagerCloth(1);
+        vm.RemoveVillagerSilk(1);
     }
 }

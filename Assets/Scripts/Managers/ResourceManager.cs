@@ -7,7 +7,7 @@ public class ResourceManager : MonoBehaviour, IGameModule
     //all the amounts of different resources will be here
     //functions for exchanging resources will also be here
 
-    private int _gold;
+    private int _gold = 1500;
     private int _food;
     private int _materials;
     private int _cloth;
