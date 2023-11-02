@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c0850531c7ec7f4b84ac01b7b449af5, type: 3}
-  m_Name: InnLevel1
+  m_Script: {fileID: 11500000, guid: 83e5296e7965bee4da9bb0d58b5f01f2, type: 3}
+  m_Name: InnLevel1 1
   m_EditorClassIdentifier: 
   resources: 0
   buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
