@@ -21,6 +21,6 @@ public class BuildingController : MonoBehaviour
 
     public void ExecuteBuildingLevel()
     {
-        building.Execute();
+        building.LevelUp();
     }
 }

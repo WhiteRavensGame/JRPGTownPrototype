@@ -1,58 +1,62 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Building : MonoBehaviour
 {
-    [Header("Building Settings"), SerializeField]
-    private int buildingLevel;
-    [SerializeField]
-    private BuildingType buildingType;
-    [SerializeField]
-    private List<BuildingLevel> buildingLevelObjects;
+    [Header("Building Settings")]
+    [SerializeField] private BuildingType buildingType;
+    [SerializeField] private BuildingLevel buildingLevelInfo;
+    [SerializeField] private int buildingLevel;
+    [SerializeField] private int buildingMaxLevel;
 
     private SpriteRenderer buildingSR;
 
-    [Space, Header("Panel Settings"), SerializeField]
-    private GameObject infoPanel;
-    [SerializeField]
-    private TextMeshProUGUI panelText;
-    [SerializeField]
-    private TextMeshProUGUI buttonText;
+    [Space, Header("Panel Settings")]
+    [SerializeField] private GameObject infoPanel;
+    [SerializeField] private Image vendorImage;
+    [SerializeField] private TextMeshProUGUI storeName;
+    [SerializeField] private TextMeshProUGUI panelText;
+    [SerializeField] private TextMeshProUGUI minResourcesInfo;
+    [SerializeField] private TextMeshProUGUI maxResourcesInfo;
 
     private void Awake()
     {
         buildingSR = GetComponent<SpriteRenderer>();
-        ChangeBuilding();
+        ChangeBuilding(buildingLevelInfo);
     }
 
     public void ActivatePanel(bool activation)
     {
         infoPanel.SetActive(activation);
     }
-
-    public void ChangeBuilding()
+    public void ChangeBuilding(BuildingLevel newLevel)
     {
-        panelText.text = buildingLevelObjects[buildingLevel - 1].getPanelText;
-        buttonText.text = buildingLevelObjects[buildingLevel - 1].getButtonText;
-        buttonText.text = buildingLevelObjects[buildingLevel - 1].getButtonText;
-        buildingSR.sprite = buildingLevelObjects[buildingLevel - 1].getbuildingSprite;
+        buildingLevelInfo = newLevel;
+
+        panelText.text = buildingLevelInfo.getPanelText;
+        vendorImage.sprite = buildingLevelInfo.getVendorImage;
+        storeName.text = buildingLevelInfo.getVendorImage.name;
+        minResourcesInfo.text = buildingLevelInfo.getMinResourcesInfo;
+        maxResourcesInfo.text = buildingLevelInfo.getMaxResourcesInfo;
+
+        buildingSR.sprite = buildingLevelInfo.getbuildingSprite;
     }
 
     public void Execute()
     {
-        buildingLevelObjects[buildingLevel - 1].Execute();
+        buildingLevelInfo.Execute();
+    }
 
-        if (buildingLevel + 1 <= buildingLevelObjects.Count)
-        {
-            ++buildingLevel;
-            ChangeBuilding();
-        }
+    public void LevelUp()
+    {
+        buildingLevelInfo.LevelUp(this);
     }
 
     public int GetMaxVillagers()
     {
-        return buildingLevelObjects[buildingLevel - 1].getMaxVillagers;
+        return buildingLevelInfo.getMaxVillagers;
     }
 
     public BuildingType GetBuildingType()
