@@ -902,7 +902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingType: 0
-  buildingLevelInfo: {fileID: 11400000, guid: 678d1c7fec27021488027ffd2aa68fc6, type: 2}
+  buildingLevelInfo: {fileID: 11400000, guid: 1c0fdfd8cb5b132449775ebf8f112b2a, type: 2}
   buildingLevel: 1
   buildingMaxLevel: 3
   infoPanel: {fileID: 3604705399540843884}
