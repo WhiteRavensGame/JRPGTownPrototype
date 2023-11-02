@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-enum Resources { Fish, Iron, Silk }
+enum Resources { Fish, RawMaterial, Silk }
 
 public abstract class BuildingLevel: ScriptableObject
 {
@@ -11,6 +11,7 @@ public abstract class BuildingLevel: ScriptableObject
     [SerializeField] private Sprite buildingSprite;
     [SerializeField] private int maxVillagers;
     [SerializeField] private int resourcesProduced;
+    [SerializeField] private int upgradeCost;
     [SerializeField] protected BuildingLevel buildingNextLevel;
 
     [Space, Header("Panel Settings")] 

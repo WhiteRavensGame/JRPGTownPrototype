@@ -30,6 +30,7 @@ public class Building : MonoBehaviour
     {
         infoPanel.SetActive(activation);
     }
+
     public void ChangeBuilding(BuildingLevel newLevel)
     {
         buildingLevelInfo = newLevel;
