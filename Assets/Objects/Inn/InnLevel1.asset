@@ -13,12 +13,35 @@ MonoBehaviour:
   m_Name: InnLevel1
   m_EditorClassIdentifier: 
   resources: 0
-  buildingSprite: {fileID: 0}
-  maxVillagers: 0
-  resourcesProduced: 0
+  buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  maxVillagers: 2
+  resourcesProduced: 100
   buildingNextLevel: {fileID: 0}
-  storeName: 
-  panelText: 
-  minResourcesInfo: 
-  maxResourcesInfo: 
-  vendorImage: {fileID: 0}
+  panelText: 'Closed for the moment
+
+    LineOne'
+  minResourcesInfo: 'Fish
+
+    10
+
+    Civilian
+
+    1
+
+
+    Income
+
+    $50'
+  maxResourcesInfo: 'Fish
+
+    20
+
+    Civilian
+
+    2
+
+
+    Income
+
+    $100'
+  vendorImage: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
