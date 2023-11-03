@@ -41,5 +41,11 @@ public class TimeManager : MonoBehaviour
     {
         ++daysPassed;
         timePlaying = dailyTime;
+
+        if(daysPassed >= 5)
+        {
+            daysPassed = 0;
+            ++weeksPassed;
+        }
     }
 }
