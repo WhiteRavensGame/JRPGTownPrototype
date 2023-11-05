@@ -1,9 +1,12 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Building : MonoBehaviour
 {
+    VillageManager vm = null;
+
     [Header("Building Settings")]
     [SerializeField] private BuildingType buildingType;
     [SerializeField] private BuildingLevel buildingLevelInfo;
@@ -22,6 +25,7 @@ public class Building : MonoBehaviour
 
     private void Awake()
     {
+        vm = ServiceLocator.Get<VillageManager>();
         buildingSR = GetComponent<SpriteRenderer>();
         ChangeBuilding(buildingLevelInfo);
     }
@@ -51,7 +55,15 @@ public class Building : MonoBehaviour
 
     public void LevelUp()
     {
-        buildingLevelInfo.LevelUp(this);
+        if (vm.UpgradeBuilding(buildingType))
+        {
+            buildingLevelInfo.LevelUp(this);
+        }
+    }
+
+    public KeyValuePair<Resources, int> CalculateDayEarning()
+    {
+        return buildingLevelInfo.CalculateDayEarning(this);
     }
 
     public int GetMaxVillagers()
@@ -62,5 +74,10 @@ public class Building : MonoBehaviour
     public BuildingType GetBuildingType()
     {
         return buildingType;
+    }
+
+    public int GetUpgradeCost()
+    {
+        return buildingLevelInfo.getUpgradeCost;
     }
 }

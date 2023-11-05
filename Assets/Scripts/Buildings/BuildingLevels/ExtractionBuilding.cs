@@ -17,4 +17,23 @@ public class ExtractionBuilding : BuildingLevel
             building.ChangeBuilding(buildingNextLevel);
         }
     }
+
+    public override KeyValuePair<Resources, int> CalculateDayEarning(Building building)
+    {
+        Resources resource = getResources;
+        int villagers = vm.GetAllocatedVillagers(building.GetBuildingType());
+        int income = getIncome;
+
+        if (villagers == 0)
+        {
+            income = 0;
+        }
+        else
+        {
+            int missingVillagers = getMaxVillagers - villagers;
+            income -= missingVillagers * 5;
+        }
+
+        return new KeyValuePair<Resources, int>(resource, income);
+    }
 }

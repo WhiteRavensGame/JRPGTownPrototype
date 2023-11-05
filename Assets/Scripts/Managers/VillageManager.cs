@@ -14,29 +14,10 @@ public class VillageManager : MonoBehaviour
     private int _vTotal;
     private int _vAllocated;
 
+    private ResourceManager _rm = null;
+
     private Dictionary<BuildingType, int> _villagerAllocation = new Dictionary<BuildingType, int>();
     private Dictionary<BuildingType, Building> _buildings = new Dictionary<BuildingType, Building>();
-
-    #region IGameModule Implementation
-    public bool IsInitialized { get { return _isInitialized; } }
-    private bool _isInitialized = false;
-
-    public IEnumerator LoadModule()
-    {
-        Debug.Log("Loading Village Manager");
-
-        InitializeVillage();
-        yield return new WaitUntil(() => { return IsInitialized; });
-
-        ServiceLocator.Register<VillageManager>(this);
-        yield return null;
-    }
-    private void InitializeVillage()
-    {
-        _isInitialized = true;
-    }
-    #endregion
-
     
     public void InitializeBuildings(List<Building> buildings)
     {
@@ -45,8 +26,9 @@ public class VillageManager : MonoBehaviour
             _villagerAllocation.Add((BuildingType)i, 0);
             _buildings.Add(buildings[i].GetBuildingType(), buildings[i]);
         }
-    }
 
+        _rm = ServiceLocator.Get<ResourceManager>();
+    }
 
     //increase villagers that are in the town
     public void AddVillagers(int amount)
@@ -77,4 +59,22 @@ public class VillageManager : MonoBehaviour
         _vAllocated -= amount;
     }
     #endregion
+
+    public bool UpgradeBuilding(BuildingType buildingType)
+    {
+        int upgradeCost = _buildings[buildingType].GetUpgradeCost();
+
+        if (_rm.CanUseGold(upgradeCost))
+        {
+            _rm.AddGold(-upgradeCost);
+            return true;
+        }
+
+        return false;
+    }
+
+    public int GetAllocatedVillagers(BuildingType type)
+    {
+        return _villagerAllocation[type];
+    }
 }
