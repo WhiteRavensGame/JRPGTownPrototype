@@ -1,11 +1,15 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-enum Resources { Fish, RawMaterial, Silk, Gold }
+public enum Resources { Fish, Iron, Silk, Gold }
 
 public abstract class BuildingLevel: ScriptableObject
 {
+    protected VillageManager vm = null;
+    protected ResourceManager rm = null;
+
     [Header("Building Settings")]
     [SerializeField] protected BuildingLevel buildingNextLevel;
     [SerializeField] private Resources resourcesToProduce;
@@ -23,6 +27,8 @@ public abstract class BuildingLevel: ScriptableObject
     public Sprite getbuildingSprite { get { return buildingSprite; } }
     public int getMaxVillagers { get { return maxVillagers; } }
     public int getUpgradeCost { get { return upgradeCost; } }
+    public Resources getResources { get { return resourcesToProduce; } }
+    public int getIncome { get { return income; } }
 
     public string getPanelText { get { return panelText; } }
     public string getMinResourcesInfo { get { return minResourcesInfo; } }
@@ -31,4 +37,6 @@ public abstract class BuildingLevel: ScriptableObject
 
     public abstract void Execute();
     public abstract void LevelUp(Building building);
+
+    public abstract KeyValuePair<Resources, int> CalculateDayEarning(Building building);
 }

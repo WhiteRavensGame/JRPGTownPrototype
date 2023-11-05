@@ -8,6 +8,7 @@ public class VillageInitialization : MonoBehaviour
 
     private GameLoader loader = null;
     private VillageManager vm = null;
+    private DayManager dm = null;
 
     private void Awake()
     {
@@ -19,5 +20,6 @@ public class VillageInitialization : MonoBehaviour
     {
         vm = ServiceLocator.Get<VillageManager>();
         vm.InitializeBuildings(buildings);
+        dm.InitializeBuildings(buildings);
     }
 }

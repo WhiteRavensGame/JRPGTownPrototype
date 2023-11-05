@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -58,6 +59,11 @@ public class Building : MonoBehaviour
         {
             buildingLevelInfo.LevelUp(this);
         }
+    }
+
+    public KeyValuePair<Resources, int> CalculateDayEarning()
+    {
+        return buildingLevelInfo.CalculateDayEarning(this);
     }
 
     public int GetMaxVillagers()
