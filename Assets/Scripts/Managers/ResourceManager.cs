@@ -12,6 +12,10 @@ public class ResourceManager : MonoBehaviour, IGameModule
     private int _iron = 0;
     private int _silk = 0;
 
+    public int Fish { get { return _fish; } }
+    public int Iron { get { return _iron; } }
+    public int Silk { get { return _silk; } }
+
     #region IGameModule Implementation
     public bool IsInitialized { get { return _isInitialized; } }
     private bool _isInitialized = false;
@@ -54,42 +58,11 @@ public class ResourceManager : MonoBehaviour, IGameModule
     }
     #endregion
 
-    #region Use Resources
-    public bool UseGold(int amount)
+    public bool CanUseGold(int amount)
     {
         if (_gold - amount < 0)
             return false;
 
-        _gold -= amount;
         return true;
     }
-
-    public bool UseFish(int amount)
-    {
-        if (_fish - amount < 0)
-            return false;
-
-        _fish -= amount;
-        return true;
-    }
-
-    public bool UseIron(int amount)
-    {
-        if (_iron - amount < 0)
-            return false;
-
-        _iron -= amount;
-        return true;
-    }
-
-    public bool UseSilk(int amount)
-    {
-        if (_silk - amount < 0)
-            return false;
-
-        _silk -= amount;
-        return true;
-    }
-    #endregion
-
 }

@@ -22,6 +22,7 @@ public abstract class BuildingLevel: ScriptableObject
 
     public Sprite getbuildingSprite { get { return buildingSprite; } }
     public int getMaxVillagers { get { return maxVillagers; } }
+    public int getUpgradeCost { get { return upgradeCost; } }
 
     public string getPanelText { get { return panelText; } }
     public string getMinResourcesInfo { get { return minResourcesInfo; } }

@@ -7,6 +7,7 @@ public class BuildingController : MonoBehaviour
     private void Awake()
     {
         building = GetComponent<Building>();
+        vm = ServiceLocator.Get<VillageManager>();
     }
 
     private void OnMouseDown()
