@@ -13,7 +13,8 @@ public class Building : MonoBehaviour
     [SerializeField] private int buildingLevel;
     [SerializeField] private int buildingMaxLevel;
 
-    private SpriteRenderer buildingSR;
+    private SpriteRenderer _buildingSR;
+    private int _currentPeopleNum;
 
     [Space, Header("Panel Settings")]
     [SerializeField] private GameObject infoPanel;
@@ -26,7 +27,9 @@ public class Building : MonoBehaviour
     private void Awake()
     {
         vm = ServiceLocator.Get<VillageManager>();
-        buildingSR = GetComponent<SpriteRenderer>();
+
+        _buildingSR = GetComponent<SpriteRenderer>();
+
         ChangeBuilding(buildingLevelInfo);
     }
 
@@ -45,12 +48,21 @@ public class Building : MonoBehaviour
         minResourcesInfo.text = buildingLevelInfo.getMinResourcesInfo;
         maxResourcesInfo.text = buildingLevelInfo.getMaxResourcesInfo;
 
-        buildingSR.sprite = buildingLevelInfo.getbuildingSprite;
+        _buildingSR.sprite = buildingLevelInfo.getbuildingSprite;
     }
 
-    public void Execute()
+    public KeyValuePair<Resources, int> GetBuildingsEarnings()
     {
-        buildingLevelInfo.Execute();
+        int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeopleNum);
+        var resourcesType = buildingLevelInfo.getResources;
+        var dailyEarnings = new KeyValuePair<Resources, int>(resourcesType, rAmt);
+
+        return dailyEarnings;
+    }
+
+    public float EndOfDayEarnings()
+    {
+        return buildingLevelInfo.DailyEarnings(_currentPeopleNum);
     }
 
     public void LevelUp()
@@ -61,14 +73,9 @@ public class Building : MonoBehaviour
         }
     }
 
-    public KeyValuePair<Resources, int> CalculateDayEarning()
-    {
-        return buildingLevelInfo.CalculateDayEarning(this);
-    }
-
     public int GetMaxVillagers()
     {
-        return buildingLevelInfo.getMaxVillagers;
+        return buildingLevelInfo.getVillagersNeeded;
     }
 
     public BuildingType GetBuildingType()

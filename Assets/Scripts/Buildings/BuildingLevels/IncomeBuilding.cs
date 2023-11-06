@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "IncomeBuilding", menuName = "Building Types/Income Building")]
@@ -9,50 +10,19 @@ public class IncomeBuilding : BuildingLevel
     [SerializeField] private int resourceCount;
     [SerializeField] private float moralOutputPercentage;
 
-    private void Awake()
+    public override float DailyEarnings(int currentVillagersNum)
     {
-        rm = ServiceLocator.Get<ResourceManager>();
-        vm = ServiceLocator.Get<VillageManager>();
-    }
+        if (currentVillagersNum < villagersNeeded)
+        {
+            return 0;
+        }
 
-    public override void Execute()
-    {
-        Debug.Log("Method colled 1");
+        var rAmt = ServiceLocator.Get<ResourceManager>().GetResourceAmt(resourcesToRun);
+        return income * (rAmt / resourceCount);
     }
 
     public override void LevelUp(Building building)
     {
         building.ChangeBuilding(buildingNextLevel);
-    }
-
-    public override KeyValuePair<Resources, int> CalculateDayEarning(Building building)
-    {
-        bool canUseResources = false;
-        int villagers = vm.GetAllocatedVillagers(building.GetBuildingType());
-        float percentOfTotal = 0.0f;
-
-        while (!canUseResources && villagers > 0)
-        {
-            percentOfTotal = villagers / getMaxVillagers;
-
-            int resourcesRecquired = (int)((float)resourceCount * percentOfTotal);
-
-            if (rm.GetResourceAmt(resourcesToRun) > resourcesRecquired)
-            {
-                canUseResources = true;
-                rm.UseResources(resourcesToRun, resourcesRecquired);
-            }
-            else
-            {
-                villagers--;
-                percentOfTotal = 0.0f;
-            }
-        }
-
-        int income = getIncome;
-
-        income = (int)((float)income * percentOfTotal);
-
-        return new KeyValuePair<Resources, int>(Resources.Gold, income); // add resources to resource manager
     }
 }

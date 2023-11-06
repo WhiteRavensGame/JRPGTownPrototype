@@ -5,12 +5,11 @@ using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-    [SerializeField]
-    private float dailyTime;
-    [SerializeField]
-    private TextMeshProUGUI textTimer;
-    [SerializeField]
-    private List<BuildingLevel> buildings;
+    [SerializeField] private float dailyTime;
+    [SerializeField] private TextMeshProUGUI textTimer;
+    [SerializeField] private List<BuildingLevel> buildings;
+
+    private EarningsManager earningsManager;
 
     private float timePlaying;
     private TimeSpan elapsTime;
@@ -20,6 +19,8 @@ public class TimeManager : MonoBehaviour
 
     private void Awake()
     {
+        earningsManager = ServiceLocator.Get<EarningsManager>();
+
         elapsTime = TimeSpan.FromMinutes(dailyTime);
         timePlaying = dailyTime;
         textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
@@ -41,8 +42,9 @@ public class TimeManager : MonoBehaviour
     {
         ++daysPassed;
         timePlaying = dailyTime;
+        earningsManager.CalculateEarnings();
 
-        if(daysPassed >= 5)
+        if (daysPassed >= 5)
         {
             daysPassed = 0;
             ++weeksPassed;

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
@@ -20,6 +18,11 @@ public class ResourceManager : MonoBehaviour
     public void AddGold(int gold)
     {
         _gold += gold;
+    }
+
+    public void TakeGold(int gold)
+    {
+        _gold -= gold;
     }
 
     public void AddResource(Resources resource, int amount)
@@ -56,11 +59,11 @@ public class ResourceManager : MonoBehaviour
         switch(resource)
         {
             case Resources.Fish:
-                return Fish;
+                return _fish;
             case Resources.Iron:
-                return Iron;
+                return _iron;
             case Resources.Silk:
-                return Silk;
+                return _silk;
             default:
                 return 0;
         }

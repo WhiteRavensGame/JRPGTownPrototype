@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DayManager : MonoBehaviour
+public class EarningsManager : MonoBehaviour
 {
     private ResourceManager _rm = null;
 
@@ -39,7 +39,7 @@ public class DayManager : MonoBehaviour
     {
         for (int i = 0; i < 6; i++)
         {
-            dailyEarnings[i] = _buildings[i].CalculateDayEarning();
+            dailyEarnings[i] = _buildings[i].GetBuildingsEarnings();
         }
 
         for (int i = 0; i < 6; i++)
