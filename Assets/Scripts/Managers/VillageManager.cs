@@ -1,12 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class VillageManager : MonoBehaviour
 {
-    //all the different types of buildings present in the village will be here
-    //the amount of villagers for allocating villagers will also be here
-
     private int _morale;
     private int _defense;
     private int _reputation;
@@ -66,7 +62,7 @@ public class VillageManager : MonoBehaviour
 
         if (_rm.CanUseGold(upgradeCost))
         {
-            _rm.AddGold(-upgradeCost);
+            _rm.TakeGold(upgradeCost);
             return true;
         }
 

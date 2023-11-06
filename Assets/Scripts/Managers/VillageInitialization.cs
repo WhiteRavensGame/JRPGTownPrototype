@@ -8,7 +8,7 @@ public class VillageInitialization : MonoBehaviour
 
     private GameLoader loader = null;
     private VillageManager vm = null;
-    private DayManager dm = null;
+    private EarningsManager dm = null;
 
     private void Awake()
     {
