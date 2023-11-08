@@ -73,6 +73,8 @@ public class GameLoader : AsyncLoader
         ServiceLocator.Register<GameManager>(gm.GetComponent<GameManager>());
         ServiceLocator.Register<VillageManager>(gm.GetComponent<VillageManager>());
         ServiceLocator.Register<ResourceManager>(gm.GetComponent<ResourceManager>());
+        ServiceLocator.Register<EarningsManager>(gm.GetComponent<EarningsManager>());
+        ServiceLocator.Register<PlayerManager>(gm.GetComponent<PlayerManager>());
 
         yield return null;
     }
