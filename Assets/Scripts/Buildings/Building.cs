@@ -67,7 +67,7 @@ public class Building : MonoBehaviour
 
     public void LevelUp()
     {
-        if (buildingLevel < buildingMaxLevel && vm.UpgradeBuilding(buildingType))
+        if (buildingLevel < buildingMaxLevel && vm.UpgradeBuilding(this))
         {
             buildingLevelInfo.LevelUp(this);
         }
@@ -86,5 +86,10 @@ public class Building : MonoBehaviour
     public int GetUpgradeCost()
     {
         return buildingLevelInfo.getUpgradeCost;
+    }
+
+    public void EditPeople(int amount)
+    {
+        _currentPeopleNum += amount;
     }
 }

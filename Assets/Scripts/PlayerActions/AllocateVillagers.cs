@@ -1,11 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+enum AllocateVillagersNum
+{
+    removeVillager = -1,
+    addVillager = 1
+}
 
 public class AllocateVillagers : MonoBehaviour
 {
     private GameLoader loader = null;
     private VillageManager vm = null;
+    [SerializeField] private Building building;
+    [SerializeField] private AllocateVillagersNum villagerAmount;
 
     private void Awake()
     {
@@ -18,16 +24,10 @@ public class AllocateVillagers : MonoBehaviour
         Debug.Log($"{nameof(Initialize)}");
 
         vm = ServiceLocator.Get<VillageManager>();
-    }    
-
-    //sample for how to add villager / remove villagers
-    public void AddVToInn()
-    {
-        vm.AddVillager(BuildingType.Inn, 1);
     }
 
-    public void RemoveVFromInn()
+    private void OnMouseDown()
     {
-        vm.RemoveVillager(BuildingType.Inn, 1);
+        vm.AllocateVillager(building, (int)villagerAmount);
     }
 }
