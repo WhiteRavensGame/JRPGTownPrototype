@@ -8,7 +8,7 @@ public class VillageInitialization : MonoBehaviour
 
     private GameLoader loader = null;
     private VillageManager vm = null;
-    private EarningsManager dm = null;
+    private EarningsManager em = null;
 
     private void Awake()
     {
@@ -19,7 +19,8 @@ public class VillageInitialization : MonoBehaviour
     private void Initialize()
     {
         vm = ServiceLocator.Get<VillageManager>();
+        em = ServiceLocator.Get<EarningsManager>();
         vm.InitializeBuildings(buildings);
-        dm.InitializeBuildings(buildings);
+        em.InitializeBuildings(buildings);
     }
 }
