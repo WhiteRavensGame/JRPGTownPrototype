@@ -12,15 +12,13 @@ public class VillageManager : MonoBehaviour
 
     private ResourceManager _rm = null;
 
-    private Dictionary<BuildingType, int> _villagerAllocation = new Dictionary<BuildingType, int>();
-    private Dictionary<BuildingType, Building> _buildings = new Dictionary<BuildingType, Building>();
+    private Dictionary<Building, int> _villagerAllocation = new Dictionary<Building, int>();
     
     public void InitializeBuildings(List<Building> buildings)
     {
         for (int i = 0; i < 6; i++)
         {
-            _villagerAllocation.Add((BuildingType)i, 0);
-            _buildings.Add(buildings[i].GetBuildingType(), buildings[i]);
+            _villagerAllocation.Add(buildings[i], 0);
         }
 
         _rm = ServiceLocator.Get<ResourceManager>();
@@ -33,9 +31,9 @@ public class VillageManager : MonoBehaviour
     }
 
     #region Allocate Villagers to Buildings
-    public void AddVillager(BuildingType buildingType, int amount)
+    public void AllocateVillager(Building building, int amount)
     {
-        if (_villagerAllocation[buildingType] + amount > _buildings[buildingType].GetMaxVillagers())
+        if (_villagerAllocation[building] + amount > building.GetMaxVillagers())
         {
             return;
         }
@@ -44,29 +42,16 @@ public class VillageManager : MonoBehaviour
             return;
         }
 
-        _villagerAllocation[buildingType] += amount;
+        _villagerAllocation[building] += amount;
         _vAllocated += amount;
+        building.EditPeople(amount);
     }
 
-    public void RemoveVillager(BuildingType buildingType, int amount)
-    {
-        if (_villagerAllocation[buildingType] - amount < 0)
-        {
-            return;
-        }
-        if (_vAllocated - amount < 0)
-        {
-            return;
-        }
-
-        _villagerAllocation[buildingType] -= amount;
-        _vAllocated -= amount;
-    }
     #endregion
 
-    public bool UpgradeBuilding(BuildingType buildingType)
+    public bool UpgradeBuilding(Building building)
     {
-        int upgradeCost = _buildings[buildingType].GetUpgradeCost();
+        int upgradeCost = building.GetUpgradeCost();
 
         if (_rm.CanUseGold(upgradeCost))
         {
@@ -77,8 +62,8 @@ public class VillageManager : MonoBehaviour
         return false;
     }
 
-    public int GetAllocatedVillagers(BuildingType type)
+    public int GetAllocatedVillagers(Building building)
     {
-        return _villagerAllocation[type];
+        return _villagerAllocation[building];
     }
 }
