@@ -18,16 +18,10 @@ public class AllocateVillagers : MonoBehaviour
         Debug.Log($"{nameof(Initialize)}");
 
         vm = ServiceLocator.Get<VillageManager>();
-    }    
-
-    //sample for how to add villager / remove villagers
-    public void AddVToInn()
-    {
-        vm.AddVillager(BuildingType.Inn, 1);
     }
 
-    public void RemoveVFromInn()
+    private void OnMouseDown()
     {
-        vm.RemoveVillager(BuildingType.Inn, 1);
+        
     }
 }
