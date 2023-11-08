@@ -9,7 +9,7 @@ public abstract class BuildingLevel: ScriptableObject
     [SerializeField] protected BuildingLevel buildingNextLevel;
     [SerializeField] protected Resources resourcesToProduce;
     [SerializeField] protected Sprite buildingSprite;
-    [SerializeField] protected int villagersNeeded;
+    [SerializeField] protected int maxVillagers;
     [SerializeField] protected int income;
     [SerializeField] protected int upgradeCost;
 
@@ -20,7 +20,7 @@ public abstract class BuildingLevel: ScriptableObject
     [SerializeField] protected Sprite vendorImage;
 
     public Sprite getbuildingSprite { get { return buildingSprite; } }
-    public int getVillagersNeeded { get { return villagersNeeded; } }
+    public int getMaxVillagers { get { return maxVillagers; } }
     public int getUpgradeCost { get { return upgradeCost; } }
     public Resources getResources { get { return resourcesToProduce; } }
     public int getIncome { get { return income; } }
