@@ -92,4 +92,9 @@ public class Building : MonoBehaviour
     {
         _currentPeopleNum += amount;
     }
+
+    public Resources GetResoureType()
+    {
+        return buildingLevelInfo.getResources;
+    }
 }
