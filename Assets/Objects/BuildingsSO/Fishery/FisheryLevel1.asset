@@ -15,9 +15,9 @@ MonoBehaviour:
   buildingNextLevel: {fileID: 0}
   resourcesToProduce: 0
   buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  maxVillagers: 0
-  income: 0
-  upgradeCost: 0
+  maxVillagers: 1
+  income: 3
+  upgradeCost: 200
   panelText: 
   minResourcesInfo: 
   maxResourcesInfo: 

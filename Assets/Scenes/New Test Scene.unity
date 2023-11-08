@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 288339175}
   - component: {fileID: 288339174}
   m_Layer: 5
-  m_Name: Mats
+  m_Name: Iron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1692,6 +1692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 8115979005260444347, guid: 9045da7e293ffa54fbd09901ab5df41a, type: 3}
+      propertyPath: _moduleComponents.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9045da7e293ffa54fbd09901ab5df41a, type: 3}
 --- !u!1 &1134941828
@@ -1703,6 +1707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1134941829}
+  - component: {fileID: 1134941830}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -1732,6 +1737,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 475}
   m_SizeDelta: {x: 850, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1134941830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134941828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262def30be9a28142beeab673dfdc6a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _goldText: {fileID: 2070238029}
+  _fishText: {fileID: 1609819496}
+  _ironText: {fileID: 1539762522}
+  _silkText: {fileID: 631075304}
 --- !u!1 &1160299394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2062,7 +2083,7 @@ GameObject:
   - component: {fileID: 1539762523}
   - component: {fileID: 1539762522}
   m_Layer: 5
-  m_Name: MATSTEXT
+  m_Name: IRONTEXT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3019,10 +3040,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6021072334912459291, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: buildingLevelInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: e6f3c5c7700f9e5499cb959343dcd8f9, type: 2}
     - target: {fileID: 6676647699576581853, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7591059491913623096, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: buildingLevelInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 60d4ed21a85296f44b20bcb998bc1b75, type: 2}
     - target: {fileID: 7591059492493812890, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: m_IsActive
       value: 0

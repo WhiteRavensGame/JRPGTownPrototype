@@ -5,10 +5,13 @@ using UnityEngine;
 public class VillageInitialization : MonoBehaviour
 {
     [SerializeField] List<Building> buildings;
+    [SerializeField] UIManager ui;
 
     private GameLoader loader = null;
-    private VillageManager vm = null;
-    private EarningsManager em = null;
+    
+    private VillageManager village = null;
+    private EarningsManager earnings = null;
+    private ResourceManager resources = null;
 
     private void Awake()
     {
@@ -18,9 +21,12 @@ public class VillageInitialization : MonoBehaviour
 
     private void Initialize()
     {
-        vm = ServiceLocator.Get<VillageManager>();
-        em = ServiceLocator.Get<EarningsManager>();
-        vm.InitializeBuildings(buildings);
-        em.InitializeBuildings(buildings);
+        village = ServiceLocator.Get<VillageManager>();
+        earnings = ServiceLocator.Get<EarningsManager>();
+        resources = ServiceLocator.Get<ResourceManager>();
+
+        village.InitializeBuildings(buildings);
+        earnings.InitializeBuildings(buildings);
+        resources.Initialize(ui);
     }
 }

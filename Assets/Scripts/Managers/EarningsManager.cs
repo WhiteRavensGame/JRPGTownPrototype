@@ -23,10 +23,12 @@ public class EarningsManager : MonoBehaviour
 
     public void CalculateEarnings()
     {
-        for (int i = 0; i < _buildings.Count ; i++)
+        for (int i = 0; i < _buildings.Count; i++)
         {
             dailyEarnings[i] = _buildings[i].GetBuildingsEarnings();
             _rm.AddResource(dailyEarnings[i].Key, dailyEarnings[i].Value);
         }
+
+        _rm.UpdateResourceText();
     }
 }

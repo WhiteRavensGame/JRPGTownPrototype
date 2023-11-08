@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Building : MonoBehaviour
 {
+    GameLoader loader = null;
     VillageManager vm = null;
 
     [Header("Building Settings")]
@@ -25,6 +26,12 @@ public class Building : MonoBehaviour
     [SerializeField] private TextMeshProUGUI maxResourcesInfo;
 
     private void Awake()
+    {
+        loader = ServiceLocator.Get<GameLoader>();
+        loader.CallOnComplete(Initialize);
+    }
+
+    private void Initialize()
     {
         vm = ServiceLocator.Get<VillageManager>();
 

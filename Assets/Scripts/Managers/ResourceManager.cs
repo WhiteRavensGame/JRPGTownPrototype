@@ -1,19 +1,29 @@
 using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
-{ 
+{
     //all the amounts of different resources will be here
     //functions for exchanging resources will also be here
-
+    private UIManager _ui;
+   
     private int _gold = 1500;
     private int _fish = 0;
     private int _iron = 0;
     private int _silk = 0;
 
+    private int _morale = 0;
+    private int _reputation = 0;
+    private int _defense = 0;
+
     public int Fish { get { return _fish; } }
     public int Iron { get { return _iron; } }
-    public int Silk { get { return _silk; } }
+    public int Silk { get { return _silk; } }  
 
+    public void Initialize(UIManager ui)
+    {
+        _ui = ui;
+        _ui.UpdateResourceText(_gold, _fish, _iron, _silk);
+    }
 
     public void AddGold(int gold)
     {
@@ -85,5 +95,10 @@ public class ResourceManager : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void UpdateResourceText()
+    {
+        _ui.UpdateResourceText(_gold, _fish, _iron, _silk);
     }
 }
