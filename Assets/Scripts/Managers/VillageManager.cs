@@ -36,9 +36,13 @@ public class VillageManager : MonoBehaviour
     public void AddVillager(BuildingType buildingType, int amount)
     {
         if (_villagerAllocation[buildingType] + amount > _buildings[buildingType].GetMaxVillagers())
+        {
             return;
+        }
         if (_vAllocated + amount > _vTotal)
+        {
             return;
+        }
 
         _villagerAllocation[buildingType] += amount;
         _vAllocated += amount;
@@ -47,9 +51,13 @@ public class VillageManager : MonoBehaviour
     public void RemoveVillager(BuildingType buildingType, int amount)
     {
         if (_villagerAllocation[buildingType] - amount < 0)
+        {
             return;
+        }
         if (_vAllocated - amount < 0)
+        {
             return;
+        }
 
         _villagerAllocation[buildingType] -= amount;
         _vAllocated -= amount;

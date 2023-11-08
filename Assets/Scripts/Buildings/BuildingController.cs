@@ -11,12 +11,17 @@ public class BuildingController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        building.ActivatePanel(true);
+        //if (ServiceLocator.Get<PlayerManager>().gameState == GameStates.MainScreen)
+        //{
+        //    ServiceLocator.Get<PlayerManager>().gameState = GameStates.PanelInfo;
+        //}
+            building.ActivatePanel(true);
     }
 
     public void OnClosePanel()
     {
         building.ActivatePanel(false);
+        //ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
     }
 
     public void ExecuteBuildingLevel()

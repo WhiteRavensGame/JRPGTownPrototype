@@ -12,7 +12,7 @@ public class IncomeBuilding : BuildingLevel
 
     public override float DailyEarnings(int currentVillagersNum)
     {
-        if (currentVillagersNum < villagersNeeded)
+        if (currentVillagersNum < maxVillagers)
         {
             return 0;
         }

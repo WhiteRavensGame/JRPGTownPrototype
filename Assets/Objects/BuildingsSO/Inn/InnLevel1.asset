@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingNextLevel: {fileID: 0}
   resourcesToProduce: 3
-  buildingSprite: {fileID: 0}
+  buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   maxVillagers: 0
   income: 0
   upgradeCost: 0
   panelText: 
   minResourcesInfo: 
   maxResourcesInfo: 
-  vendorImage: {fileID: 0}
+  vendorImage: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   resourcesToRun: 0
   resourceCount: 0
   moralOutputPercentage: 0

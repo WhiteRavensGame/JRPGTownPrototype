@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ff152943396634eb1ccf5f92ce13eb, type: 3}
   m_Name: BlacksmithLevel1
   m_EditorClassIdentifier: 
-  resources: 0
-  buildingSprite: {fileID: 0}
-  maxVillagers: 0
-  resourcesProduced: 0
   buildingNextLevel: {fileID: 0}
+  resourcesToProduce: 0
+  buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  maxVillagers: 0
+  income: 0
+  upgradeCost: 0
   panelText: 
   minResourcesInfo: 
   maxResourcesInfo: 
-  vendorImage: {fileID: 0}
+  vendorImage: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}

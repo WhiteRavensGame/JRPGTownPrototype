@@ -67,7 +67,7 @@ public class Building : MonoBehaviour
 
     public void LevelUp()
     {
-        if (vm.UpgradeBuilding(buildingType))
+        if (buildingLevel < buildingMaxLevel && vm.UpgradeBuilding(buildingType))
         {
             buildingLevelInfo.LevelUp(this);
         }
@@ -75,7 +75,7 @@ public class Building : MonoBehaviour
 
     public int GetMaxVillagers()
     {
-        return buildingLevelInfo.getVillagersNeeded;
+        return buildingLevelInfo.getMaxVillagers;
     }
 
     public BuildingType GetBuildingType()
