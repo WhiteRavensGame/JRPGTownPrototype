@@ -3,22 +3,21 @@ using UnityEngine;
 
 public class VillageManager : MonoBehaviour
 {
-    private int _morale;
-    private int _defense;
-    private int _reputation;
-
     private int _vTotal;
     private int _vAllocated;
+    private int _extraVillagers;
 
     private ResourceManager _rm = null;
 
     private Dictionary<Building, int> _villagerAllocation = new Dictionary<Building, int>();
+    private List<Building> _buildings = new List<Building>();
     
     public void InitializeBuildings(List<Building> buildings)
     {
         for (int i = 0; i < 6; i++)
         {
             _villagerAllocation.Add(buildings[i], 0);
+            _buildings.Add(buildings[i]);
         }
 
         _rm = ServiceLocator.Get<ResourceManager>();
@@ -37,7 +36,11 @@ public class VillageManager : MonoBehaviour
         {
             return;
         }
-        if (_vAllocated + amount > _vTotal)
+        else if (_vAllocated + amount > _vTotal)
+        {
+            return;
+        }
+        else if (_extraVillagers <= 0 && amount > 0)
         {
             return;
         }
@@ -65,5 +68,21 @@ public class VillageManager : MonoBehaviour
     public int GetAllocatedVillagers(Building building)
     {
         return _villagerAllocation[building];
+    }
+
+    public void EndDayAllocationStart(int villagersAmt)
+    {
+        foreach(var building in _buildings)
+        {
+            building.ActivateAllocationButtons(true);
+        }
+
+        ServiceLocator.Get<PlayerManager>().gameState = GameStates.EndOfDay;
+        _extraVillagers += villagersAmt;
+    }
+
+    public int GetExtraVillagers()
+    {
+        return _extraVillagers;
     }
 }

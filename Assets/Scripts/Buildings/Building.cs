@@ -24,6 +24,9 @@ public class Building : MonoBehaviour
     [SerializeField] private TextMeshProUGUI minResourcesInfo;
     [SerializeField] private TextMeshProUGUI maxResourcesInfo;
 
+    [Space, Header("Extra Settings")]
+    [SerializeField] private GameObject allocationButtons;
+
     private void Awake()
     {
         vm = ServiceLocator.Get<VillageManager>();
@@ -36,6 +39,11 @@ public class Building : MonoBehaviour
     public void ActivatePanel(bool activation)
     {
         infoPanel.SetActive(activation);
+    }
+
+    public void ActivateAllocationButtons(bool activation)
+    {
+        allocationButtons.SetActive(activation);
     }
 
     public void ChangeBuilding(BuildingLevel newLevel)
