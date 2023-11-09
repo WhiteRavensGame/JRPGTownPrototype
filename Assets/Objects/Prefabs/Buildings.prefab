@@ -64,6 +64,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1684902959111561136}
     m_Modifications:
+    - target: {fileID: 689973575878951164, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 689973575878951164, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604705399538017864, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721484, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: m_Name
       value: Silk Store
@@ -153,6 +165,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1684902959111561136}
     m_Modifications:
+    - target: {fileID: 689973575878951164, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 689973575878951164, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604705399538017864, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721484, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: m_Name
       value: Mine
@@ -242,6 +266,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1684902959111561136}
     m_Modifications:
+    - target: {fileID: 689973575878951164, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 689973575878951164, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604705399538017864, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3604705399540843884, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -339,6 +375,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1684902959111561136}
     m_Modifications:
+    - target: {fileID: 689973575878951164, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 689973575878951164, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604705399538017864, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721484, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: m_Name
       value: Fishery
@@ -420,6 +468,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1684902959111561136}
     m_Modifications:
+    - target: {fileID: 689973575878951164, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 689973575878951164, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604705399538017864, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721484, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: m_Name
       value: Inn
@@ -501,6 +561,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1684902959111561136}
     m_Modifications:
+    - target: {fileID: 689973575878951164, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 689973575878951164, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604705399538017864, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721484, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: m_Name
       value: Worm Farm
