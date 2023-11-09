@@ -9,17 +9,20 @@ public class VillageManager : MonoBehaviour
 
     private int _vTotal = 4;
     private int _vAllocated = 0;
+    private int _extraVillagers;
 
     private ResourceManager _rm = null;
     private UIManager _ui = null;
 
     private Dictionary<Building, int> _villagerAllocation = new Dictionary<Building, int>();
+    private List<Building> _buildings = new List<Building>();
     
     public void Initialize(List<Building> buildings, UIManager ui)
     {
         for (int i = 0; i < 6; i++)
         {
             _villagerAllocation.Add(buildings[i], 0);
+            _buildings.Add(buildings[i]);
         }
 
         _rm = ServiceLocator.Get<ResourceManager>();
@@ -41,7 +44,11 @@ public class VillageManager : MonoBehaviour
         {
             return;
         }
-        if (_vAllocated + amount > _vTotal)
+        else if (_vAllocated + amount > _vTotal)
+        {
+            return;
+        }
+        else if (_extraVillagers <= 0 && amount > 0)
         {
             return;
         }
@@ -78,5 +85,20 @@ public class VillageManager : MonoBehaviour
         int left = _vTotal - _vAllocated;
 
         _ui.UpdateVillagerCount(total, left);
+    }
+    public void EndDayAllocationStart(int villagersAmt)
+    {
+        foreach(var building in _buildings)
+        {
+            building.ActivateAllocationButtons(true);
+        }
+
+        ServiceLocator.Get<PlayerManager>().gameState = GameStates.EndOfDay;
+        _extraVillagers += villagersAmt;
+    }
+
+    public int GetExtraVillagers()
+    {
+        return _extraVillagers;
     }
 }

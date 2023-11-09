@@ -1,6 +1,6 @@
 using System;
-using TMPro;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TimeManager : MonoBehaviour
@@ -28,6 +28,7 @@ public class TimeManager : MonoBehaviour
     private void Initialize()
     {
         earningsManager = ServiceLocator.Get<EarningsManager>();
+        ServiceLocator.Get<EventManager>().endOfDay.AddListener(ResetDay);
 
         elapsTime = TimeSpan.FromMinutes(dailyTime);
         timePlaying = dailyTime;
@@ -49,7 +50,7 @@ public class TimeManager : MonoBehaviour
 
         if(timePlaying <= 0.0f)
         {
-            ResetDay();
+            ServiceLocator.Get<EventManager>().endOfDay.Invoke();
         }
     }
 
@@ -58,6 +59,7 @@ public class TimeManager : MonoBehaviour
         ++daysPassed;
         timePlaying = dailyTime;
         earningsManager.CalculateEarnings();
+        ServiceLocator.Get<VillageManager>().EndDayAllocationStart(5);
 
         if (daysPassed >= 5)
         {
