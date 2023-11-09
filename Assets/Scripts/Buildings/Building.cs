@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Building : MonoBehaviour
 {
+    GameLoader loader = null;
     VillageManager vm = null;
 
     [Header("Building Settings")]
@@ -24,7 +25,16 @@ public class Building : MonoBehaviour
     [SerializeField] private TextMeshProUGUI minResourcesInfo;
     [SerializeField] private TextMeshProUGUI maxResourcesInfo;
 
+    [Space, Header("Extra Settings")]
+    [SerializeField] private GameObject allocationButtons;
+
     private void Awake()
+    {
+        loader = ServiceLocator.Get<GameLoader>();
+        loader.CallOnComplete(Initialize);
+    }
+
+    private void Initialize()
     {
         vm = ServiceLocator.Get<VillageManager>();
 
@@ -36,6 +46,11 @@ public class Building : MonoBehaviour
     public void ActivatePanel(bool activation)
     {
         infoPanel.SetActive(activation);
+    }
+
+    public void ActivateAllocationButtons(bool activation)
+    {
+        allocationButtons.SetActive(activation);
     }
 
     public void ChangeBuilding(BuildingLevel newLevel)
@@ -91,5 +106,10 @@ public class Building : MonoBehaviour
     public void EditPeople(int amount)
     {
         _currentPeopleNum += amount;
+    }
+
+    public Resources GetResoureType()
+    {
+        return buildingLevelInfo.getResources;
     }
 }
