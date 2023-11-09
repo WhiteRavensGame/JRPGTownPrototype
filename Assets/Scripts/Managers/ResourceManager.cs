@@ -7,13 +7,13 @@ public class ResourceManager : MonoBehaviour
     private UIManager _ui;
    
     private int _gold = 1500;
-    private int _fish = 0;
-    private int _iron = 0;
-    private int _silk = 0;
+    private int _fish = 20;
+    private int _iron = 20;
+    private int _silk = 20;
 
-    private int _morale = 0;
+    private int _morale = 50;
+    private int _defense = 50;
     private int _reputation = 0;
-    private int _defense = 0;
 
     public int Fish { get { return _fish; } }
     public int Iron { get { return _iron; } }

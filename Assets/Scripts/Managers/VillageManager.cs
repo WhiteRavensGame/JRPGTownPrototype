@@ -7,8 +7,8 @@ public class VillageManager : MonoBehaviour
     private int _defense;
     private int _reputation;
 
-    private int _vTotal;
-    private int _vAllocated;
+    private int _vTotal = 4;
+    private int _vAllocated = 0;
 
     private ResourceManager _rm = null;
 

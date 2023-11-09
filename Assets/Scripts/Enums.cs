@@ -12,3 +12,19 @@ public enum BuildingType
     WormFarm
 }
 
+public enum Resources
+{
+    Fish,
+    Iron,
+    Silk,
+    Gold,
+    Moral,
+    Defence
+}
+
+public enum GameStates
+{
+    MainScreen,
+    PanelInfo,
+    EndOfDay
+}

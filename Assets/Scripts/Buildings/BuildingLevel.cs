@@ -1,7 +1,4 @@
-using System.Collections.Generic;
 using UnityEngine;
-
-public enum Resources { Fish, Iron, Silk, Gold, Moral, Defence }
 
 public abstract class BuildingLevel: ScriptableObject
 {
