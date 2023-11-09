@@ -11,10 +11,11 @@ public class VillageManager : MonoBehaviour
     private int _vAllocated = 0;
 
     private ResourceManager _rm = null;
+    private UIManager _ui = null;
 
     private Dictionary<Building, int> _villagerAllocation = new Dictionary<Building, int>();
     
-    public void InitializeBuildings(List<Building> buildings)
+    public void Initialize(List<Building> buildings, UIManager ui)
     {
         for (int i = 0; i < 6; i++)
         {
@@ -22,12 +23,15 @@ public class VillageManager : MonoBehaviour
         }
 
         _rm = ServiceLocator.Get<ResourceManager>();
+        _ui = ui;
+        UpdateVillagerText();
     }
 
     //increase villagers that are in the town
     public void AddVillagers(int amount)
     {
         _vTotal += amount;
+        UpdateVillagerText();
     }
 
     #region Allocate Villagers to Buildings
@@ -45,6 +49,7 @@ public class VillageManager : MonoBehaviour
         _villagerAllocation[building] += amount;
         _vAllocated += amount;
         building.EditPeople(amount);
+        UpdateVillagerText();
     }
 
     #endregion
@@ -65,5 +70,13 @@ public class VillageManager : MonoBehaviour
     public int GetAllocatedVillagers(Building building)
     {
         return _villagerAllocation[building];
+    }
+
+    private void UpdateVillagerText()
+    {
+        int total = _vTotal;
+        int left = _vTotal - _vAllocated;
+
+        _ui.UpdateVillagerCount(total, left);
     }
 }
