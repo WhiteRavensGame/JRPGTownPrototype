@@ -22,11 +22,13 @@ public class Building : MonoBehaviour
     [SerializeField] private Image vendorImage;
     [SerializeField] private TextMeshProUGUI storeName;
     [SerializeField] private TextMeshProUGUI panelText;
-    [SerializeField] private TextMeshProUGUI minResourcesInfo;
-    [SerializeField] private TextMeshProUGUI maxResourcesInfo;
+    [SerializeField] private TextMeshProUGUI minCitizensText;
+    [SerializeField] private TextMeshProUGUI minOutput;
+    [SerializeField] private TextMeshProUGUI maxCitizensText;
+    [SerializeField] private TextMeshProUGUI maxOutput;
 
     [Space, Header("Extra Settings")]
-    [SerializeField] private GameObject allocationButtons;
+    [SerializeField] private GameObject[] allocationButtons;
 
     private void Awake()
     {
@@ -50,7 +52,8 @@ public class Building : MonoBehaviour
 
     public void ActivateAllocationButtons(bool activation)
     {
-        allocationButtons.SetActive(activation);
+        allocationButtons[0].SetActive(activation);
+        allocationButtons[1].SetActive(activation);
     }
 
     public void ChangeBuilding(BuildingLevel newLevel)
@@ -60,8 +63,10 @@ public class Building : MonoBehaviour
         panelText.text = buildingLevelInfo.getPanelText;
         vendorImage.sprite = buildingLevelInfo.getVendorImage;
         storeName.text = buildingLevelInfo.getVendorImage.name;
-        minResourcesInfo.text = buildingLevelInfo.getMinResourcesInfo;
-        maxResourcesInfo.text = buildingLevelInfo.getMaxResourcesInfo;
+        minCitizensText.text = buildingLevelInfo.getMinCitizensText;
+        minOutput.text = buildingLevelInfo.getMinOutput;
+        maxCitizensText.text = buildingLevelInfo.getMaxCitizensText;
+        maxOutput.text = buildingLevelInfo.getMaxOutput;
 
         _buildingSR.sprite = buildingLevelInfo.getbuildingSprite;
     }
@@ -73,11 +78,6 @@ public class Building : MonoBehaviour
         var dailyEarnings = new KeyValuePair<Resources, int>(resourcesType, rAmt);
 
         return dailyEarnings;
-    }
-
-    public float EndOfDayEarnings()
-    {
-        return buildingLevelInfo.DailyEarnings(_currentPeopleNum);
     }
 
     public void LevelUp()
@@ -106,6 +106,11 @@ public class Building : MonoBehaviour
     public void EditPeople(int amount)
     {
         _currentPeopleNum += amount;
+    }
+
+    public int GetPeopleAmt()
+    {
+        return _currentPeopleNum;
     }
 
     public Resources GetResoureType()

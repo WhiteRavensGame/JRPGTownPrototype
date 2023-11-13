@@ -19,8 +19,10 @@ MonoBehaviour:
   income: 10
   upgradeCost: 500
   panelText: 
-  minResourcesInfo: 
-  maxResourcesInfo: 
+  minCitizensText: 
+  minOutput: 
+  maxCitizensText: 
+  maxOutput: 
   vendorImage: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   resourcesToRun: 1
   resourceCount: 4

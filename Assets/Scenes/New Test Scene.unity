@@ -1801,6 +1801,7 @@ MonoBehaviour:
   dailyTime: 1
   textTimer: {fileID: 1851886893}
   buildings: []
+  weeklySlider: {fileID: 1781100532}
 --- !u!1 &1180390919
 GameObject:
   m_ObjectHideFlags: 0
@@ -2495,9 +2496,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 1
+  m_MaxValue: 4
+  m_WholeNumbers: 1
+  m_Value: 4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

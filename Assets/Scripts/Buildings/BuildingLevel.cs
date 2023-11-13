@@ -12,8 +12,10 @@ public abstract class BuildingLevel: ScriptableObject
 
     [Space, Header("Panel Settings")] 
     [SerializeField, TextArea(3, 10)] protected string panelText; 
-    [SerializeField, TextArea(3, 10)] protected string minResourcesInfo;
-    [SerializeField, TextArea(3, 10)] protected string maxResourcesInfo;
+    [SerializeField] protected string minCitizensText;
+    [SerializeField] protected string minOutput;
+    [SerializeField] protected string maxCitizensText;
+    [SerializeField] protected string maxOutput;
     [SerializeField] protected Sprite vendorImage;
 
     public Sprite getbuildingSprite { get { return buildingSprite; } }
@@ -23,8 +25,10 @@ public abstract class BuildingLevel: ScriptableObject
     public int getIncome { get { return income; } }
 
     public string getPanelText { get { return panelText; } }
-    public string getMinResourcesInfo { get { return minResourcesInfo; } }
-    public string getMaxResourcesInfo { get { return maxResourcesInfo; } }
+    public string getMinCitizensText { get { return minCitizensText; } }
+    public string getMinOutput { get { return minOutput; } }
+    public string getMaxCitizensText { get { return maxCitizensText; } }
+    public string getMaxOutput { get { return maxOutput; } }
     public Sprite getVendorImage { get { return vendorImage; } }
 
     public abstract float DailyEarnings(int currentVillagersNum);

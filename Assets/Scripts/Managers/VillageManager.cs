@@ -9,19 +9,16 @@ public class VillageManager : MonoBehaviour
 
     private int _vTotal = 4;
     private int _vAllocated = 0;
-    private int _extraVillagers;
 
     private ResourceManager _rm = null;
     private UIManager _ui = null;
 
-    private Dictionary<Building, int> _villagerAllocation = new Dictionary<Building, int>();
     private List<Building> _buildings = new List<Building>();
     
     public void Initialize(List<Building> buildings, UIManager ui)
     {
         for (int i = 0; i < 6; i++)
         {
-            _villagerAllocation.Add(buildings[i], 0);
             _buildings.Add(buildings[i]);
         }
 
@@ -40,7 +37,7 @@ public class VillageManager : MonoBehaviour
     #region Allocate Villagers to Buildings
     public void AllocateVillager(Building building, int amount)
     {
-        if (_villagerAllocation[building] + amount > building.GetMaxVillagers())
+        if (building.GetPeopleAmt() + amount > building.GetMaxVillagers())
         {
             return;
         }
@@ -48,12 +45,7 @@ public class VillageManager : MonoBehaviour
         {
             return;
         }
-        else if (_extraVillagers <= 0 && amount > 0)
-        {
-            return;
-        }
 
-        _villagerAllocation[building] += amount;
         _vAllocated += amount;
         building.EditPeople(amount);
         UpdateVillagerText();
@@ -74,11 +66,6 @@ public class VillageManager : MonoBehaviour
         return false;
     }
 
-    public int GetAllocatedVillagers(Building building)
-    {
-        return _villagerAllocation[building];
-    }
-
     private void UpdateVillagerText()
     {
         int total = _vTotal;
@@ -86,6 +73,7 @@ public class VillageManager : MonoBehaviour
 
         _ui.UpdateVillagerCount(total, left);
     }
+
     public void EndDayAllocationStart(int villagersAmt)
     {
         foreach(var building in _buildings)
@@ -93,12 +81,7 @@ public class VillageManager : MonoBehaviour
             building.ActivateAllocationButtons(true);
         }
 
-        ServiceLocator.Get<PlayerManager>().gameState = GameStates.EndOfDay;
-        _extraVillagers += villagersAmt;
-    }
-
-    public int GetExtraVillagers()
-    {
-        return _extraVillagers;
+        _vTotal += villagersAmt;
+        UpdateVillagerText();
     }
 }

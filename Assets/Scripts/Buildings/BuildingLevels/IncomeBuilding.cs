@@ -17,7 +17,7 @@ public class IncomeBuilding : BuildingLevel
             return 0;
         }
 
-        var rAmt = ServiceLocator.Get<ResourceManager>().GetResourceAmt(resourcesToRun);
+        var rAmt = ServiceLocator.Get<ResourceManager>().UseResources(resourcesToRun, resourceCount);
         return income * (rAmt / resourceCount);
     }
 
