@@ -17,9 +17,4 @@ public class EndOfDayHandler : MonoBehaviour
     {
         vManager = ServiceLocator.Get<VillageManager>();
     }
-
-    private void Update()
-    {
-        extraVillagersAmt.text = vManager.GetExtraVillagers().ToString();
-    }
 }

@@ -19,7 +19,8 @@ public enum Resources
     Silk,
     Gold,
     Moral,
-    Defence
+    Defence,
+    Reputation
 }
 
 public enum GameStates

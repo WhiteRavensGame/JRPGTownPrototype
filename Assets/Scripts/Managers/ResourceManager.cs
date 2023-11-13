@@ -40,16 +40,25 @@ public class ResourceManager : MonoBehaviour
         switch (resource)
         {
             case Resources.Fish:
-                _fish -= amount;
+                _fish += amount;
                 break;
             case Resources.Iron:
-                _iron -= amount;
+                _iron += amount;
                 break;
             case Resources.Silk:
-                _silk -= amount;
+                _silk += amount;
                 break;
             case Resources.Gold:
-                _gold -= amount;
+                _gold += amount;
+                break;
+            case Resources.Moral:
+                _morale += amount;
+                break;
+            case Resources.Defence:
+                _defense += amount;
+                break;
+            case Resources.Reputation:
+                _reputation += amount;
                 break;
             default:
                 break;
@@ -59,7 +68,9 @@ public class ResourceManager : MonoBehaviour
     public bool CanUseGold(int amount)
     {
         if (_gold - amount < 0)
+        {
             return false;
+        }
 
         return true;
     }
@@ -79,21 +90,66 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
-    public void UseResources(Resources resource, int amount)
+    public int UseResources(Resources resource, int amount)
     {
         switch (resource)
         {
             case Resources.Fish:
+                if (_fish - amount <= 0)
+                {
+                    amount = _fish;
+                    _fish = 0;
+                    return amount;
+                }
                 _fish -= amount;
-                break;
+                return amount;
             case Resources.Iron:
+                if (_iron - amount <= 0)
+                {
+                    amount = _iron;
+                    _iron = 0;
+                    return amount;
+                }
                 _iron -= amount;
-                break;
+                return amount;
             case Resources.Silk:
+                if (_silk - amount <= 0)
+                {
+                    amount = _silk;
+                    _silk = 0;
+                    return amount;
+                }
                 _silk -= amount;
-                break;
+                return amount;
+            case Resources.Moral:
+                if (_morale - amount <= 0)
+                {
+                    amount = _morale;
+                    _morale = 0;
+                    return amount;
+                }
+                _morale -= amount;
+                return amount;
+            case Resources.Defence:
+                if (_defense - amount <= 0)
+                {
+                    amount = _defense;
+                    _defense = 0;
+                    return amount;
+                }
+                _defense -= amount;
+                return amount;
+            case Resources.Reputation:
+                if (_reputation - amount <= 0)
+                {
+                    amount = _reputation;
+                    _reputation = 0;
+                    return amount;
+                }
+                _reputation -= amount;
+                return amount;
             default:
-                break;
+                return 0;
         }
     }
 
