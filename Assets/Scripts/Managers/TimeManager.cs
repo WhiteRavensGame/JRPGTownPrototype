@@ -6,11 +6,13 @@ using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
-    GameLoader loader;
+    private GameLoader loader;
     [SerializeField] private float dailyTime;
     [SerializeField] private TextMeshProUGUI textTimer;
     [SerializeField] private List<BuildingLevel> buildings;
     [SerializeField] private Slider weeklySlider;
+
+    [SerializeField] private GameObject _resourceManagementObj;
 
     private EarningsManager _earningsManager;
     private ResourceManager _resourceManager;
@@ -62,6 +64,11 @@ public class TimeManager : MonoBehaviour
 
     public void ResetDay()
     {
+        if (_playerManager.gameState != GameStates.MainScreen)
+        {
+            return;
+        }
+
         ++daysPassed;
         timePlaying = dailyTime;
         _earningsManager.CalculateEarnings();

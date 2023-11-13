@@ -3601,7 +3601,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6249053893868239908}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2140362190171884989}
+        m_TargetAssemblyTypeName: EndOfWeekPanel, Assembly-CSharp
+        m_MethodName: GoToResourcePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3343835959025264912
 GameObject:
   m_ObjectHideFlags: 0
@@ -3723,7 +3735,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7613305105308591914}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2140362190171884989}
+        m_TargetAssemblyTypeName: EndOfWeekPanel, Assembly-CSharp
+        m_MethodName: GoToBuildingPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3368047840658515475
 GameObject:
   m_ObjectHideFlags: 0
@@ -3921,7 +3945,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4573320727730184875}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2140362190171884989}
+        m_TargetAssemblyTypeName: EndOfWeekPanel, Assembly-CSharp
+        m_MethodName: EndWeek
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3384313576847107842
 GameObject:
   m_ObjectHideFlags: 0
@@ -4657,6 +4693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6536195807067128813}
+  - component: {fileID: 2140362190171884989}
   m_Layer: 0
   m_Name: ResourceManagement
   m_TagString: Untagged
@@ -4680,6 +4717,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2140362190171884989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3707933118349624548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed80b76d8bfcbbc4ba87bf7e99e65d37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _resourcePanel: {fileID: 4321768195553489469}
+  _buildingPanel: {fileID: 6523504526300572867}
 --- !u!1 &3738033316188528468
 GameObject:
   m_ObjectHideFlags: 0
@@ -8721,7 +8772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1497802808680547108
 RectTransform:
   m_ObjectHideFlags: 0
