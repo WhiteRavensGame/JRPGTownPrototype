@@ -13,6 +13,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private Slider weeklySlider;
 
     [SerializeField] private GameObject _resourceManagementObj;
+    [SerializeField] private GameObject _mainCanvas;
 
     private EarningsManager _earningsManager;
     private ResourceManager _resourceManager;
@@ -43,11 +44,12 @@ public class TimeManager : MonoBehaviour
         textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
 
         initialize = true;
+        EndOfWeek();
     }
 
     private void Update()
     {
-        if (!initialize || _playerManager.gameState == GameStates.EndOfDay)
+        if (!initialize || _playerManager.gameState == GameStates.EndOfWeek)
         {
             return;
         }
@@ -56,7 +58,7 @@ public class TimeManager : MonoBehaviour
         elapsTime = TimeSpan.FromMinutes(timePlaying);
         textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
 
-        if(timePlaying <= 0.0f)
+        if (timePlaying <= 0.0f)
         {
             ServiceLocator.Get<EventManager>().endOfDay.Invoke();
         }
@@ -69,18 +71,27 @@ public class TimeManager : MonoBehaviour
             return;
         }
 
+        if (daysPassed >= 5)
+        {
+            EndOfWeek();
+        }
+
         ++daysPassed;
         timePlaying = dailyTime;
         _earningsManager.CalculateEarnings();
-        _playerManager.gameState = GameStates.EndOfDay;
-        ServiceLocator.Get<VillageManager>().EndDayAllocationStart(5);
         _resourceManager.UpdateResourceText();
+        elapsTime = TimeSpan.FromMinutes(timePlaying);
+        textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
+    }
 
-        if (daysPassed >= 5)
-        {
-            daysPassed = 0;
-            ++weeksPassed;
-            weeklySlider.value = weeklySlider.maxValue - weeksPassed;
-        }
+    private void EndOfWeek()
+    {
+        daysPassed = 0;
+        ++weeksPassed;
+        weeklySlider.value = weeklySlider.maxValue - weeksPassed;
+        _mainCanvas.SetActive(false);
+        _resourceManagementObj.SetActive(true);
+        _playerManager.gameState = GameStates.EndOfWeek;
+        ServiceLocator.Get<VillageManager>().EndDayAllocationStart(5);
     }
 }

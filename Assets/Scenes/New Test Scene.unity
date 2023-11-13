@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2140362190171884989, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
+      propertyPath: _mainCanvas
+      value: 
+      objectReference: {fileID: 1042313601}
     - target: {fileID: 3707933118349624548, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
       propertyPath: m_Name
       value: ResourceManagement
@@ -1808,6 +1812,7 @@ MonoBehaviour:
   buildings: []
   weeklySlider: {fileID: 1781100532}
   _resourceManagementObj: {fileID: 70760456}
+  _mainCanvas: {fileID: 1042313601}
 --- !u!1 &1180390919
 GameObject:
   m_ObjectHideFlags: 0

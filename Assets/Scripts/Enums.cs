@@ -27,5 +27,5 @@ public enum GameStates
 {
     MainScreen,
     PanelInfo,
-    EndOfDay
+    EndOfWeek
 }

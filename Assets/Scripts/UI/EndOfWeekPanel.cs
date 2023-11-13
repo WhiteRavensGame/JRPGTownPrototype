@@ -6,6 +6,7 @@ public class EndOfWeekPanel : MonoBehaviour
 {
     [SerializeField] GameObject _resourcePanel;
     [SerializeField] GameObject _buildingPanel;
+    [SerializeField] GameObject _mainCanvas;
 
     public void GoToBuildingPanel()
     {
@@ -23,5 +24,6 @@ public class EndOfWeekPanel : MonoBehaviour
     {
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
         this.gameObject.SetActive(false);
+        _mainCanvas.SetActive(true);
     }
 }
