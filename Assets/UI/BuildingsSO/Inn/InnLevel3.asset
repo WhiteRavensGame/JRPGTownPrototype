@@ -10,20 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3725687e1ddb3ab4489e34eed2498fe0, type: 3}
-  m_Name: SilkLevel1
+  m_Name: InnLevel3
   m_EditorClassIdentifier: 
-  buildingNextLevel: {fileID: 11400000, guid: ef50c3a5ed301ea4a91f90d751f73028, type: 2}
+  buildingNextLevel: {fileID: 0}
   resourcesToProduce: 3
   buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  maxVillagers: 2
-  income: 30
-  upgradeCost: 500
-  panelText: Silk Store Level 1
+  maxVillagers: 6
+  income: 250
+  upgradeCost: 0
+  panelText: 'Inn Level 3
+
+
+'
   minCitizensText: 1
-  minOutput: 15
-  maxCitizensText: 2
-  maxOutput: 30
+  minOutput: 125
+  maxCitizensText: 6
+  maxOutput: 250
   vendorImage: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  resourcesToRun: 2
-  resourceCount: 4
-  moralOutputPercentage: 2
+  resourcesToRun: 0
+  resourceCount: 8
+  moralOutputPercentage: 0

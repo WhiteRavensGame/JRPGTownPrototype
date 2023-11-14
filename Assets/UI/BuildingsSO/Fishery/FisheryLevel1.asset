@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ff152943396634eb1ccf5f92ce13eb, type: 3}
   m_Name: FisheryLevel1
   m_EditorClassIdentifier: 
-  buildingNextLevel: {fileID: 0}
+  buildingNextLevel: {fileID: 11400000, guid: 458f289c7752aac4e8a200e814f7947e, type: 2}
   resourcesToProduce: 0
   buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  maxVillagers: 1
-  income: 3
-  upgradeCost: 200
-  panelText: 
-  minResourcesInfo: 
-  maxResourcesInfo: 
+  maxVillagers: 2
+  income: 4
+  upgradeCost: 400
+  panelText: Fishery Level 1
+  minCitizensText: 1
+  minOutput: 2
+  maxCitizensText: 2
+  maxOutput: 4
   vendorImage: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}

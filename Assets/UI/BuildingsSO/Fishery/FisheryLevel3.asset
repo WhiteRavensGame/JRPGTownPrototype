@@ -9,21 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3725687e1ddb3ab4489e34eed2498fe0, type: 3}
-  m_Name: SilkLevel1
+  m_Script: {fileID: 11500000, guid: f5ff152943396634eb1ccf5f92ce13eb, type: 3}
+  m_Name: FisheryLevel3
   m_EditorClassIdentifier: 
-  buildingNextLevel: {fileID: 11400000, guid: ef50c3a5ed301ea4a91f90d751f73028, type: 2}
-  resourcesToProduce: 3
+  buildingNextLevel: {fileID: 11400000, guid: bccecec5ef0c4824997e7d5714bc1c04, type: 2}
+  resourcesToProduce: 0
   buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  maxVillagers: 2
-  income: 30
-  upgradeCost: 500
-  panelText: Silk Store Level 1
+  maxVillagers: 4
+  income: 6
+  upgradeCost: 800
+  panelText: 'Fishery Level 3
+
+'
   minCitizensText: 1
-  minOutput: 15
-  maxCitizensText: 2
-  maxOutput: 30
+  minOutput: 3
+  maxCitizensText: 4
+  maxOutput: 6
   vendorImage: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  resourcesToRun: 2
-  resourceCount: 4
-  moralOutputPercentage: 2

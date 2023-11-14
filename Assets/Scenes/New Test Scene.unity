@@ -3087,6 +3087,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1570813608092697742, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: buildingMaxLevel
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1684902959111561136, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -3139,6 +3143,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5151994176909830588, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: buildingMaxLevel
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151994176909830588, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: buildingLevelInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: c031daee125a7e94e8ca077c8af4a439, type: 2}
     - target: {fileID: 5151994177407052574, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3146,6 +3158,10 @@ PrefabInstance:
     - target: {fileID: 6021072334416154809, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021072334912459291, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: buildingMaxLevel
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6021072334912459291, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: buildingLevelInfo
@@ -3156,9 +3172,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7591059491913623096, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: buildingLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591059491913623096, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: buildingLevelInfo
       value: 
-      objectReference: {fileID: 11400000, guid: 60d4ed21a85296f44b20bcb998bc1b75, type: 2}
+      objectReference: {fileID: 11400000, guid: 1a8e870b3dd8d2648a9f0564696a14c5, type: 2}
     - target: {fileID: 7591059492493812890, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: m_IsActive
       value: 0

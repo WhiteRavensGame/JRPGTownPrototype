@@ -1767,6 +1767,9 @@ MonoBehaviour:
   dailyTime: 1
   textTimer: {fileID: 1851886893}
   buildings: []
+  weeklySlider: {fileID: 0}
+  _resourceManagementObj: {fileID: 0}
+  _mainCanvas: {fileID: 0}
 --- !u!1 &1180390919
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,6 +3075,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7591059491913623096, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: buildingLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591059491913623096, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: buildingLevelInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: d241b4e9880841047bf16e7f8fbfd1ff, type: 2}
     - target: {fileID: 7591059492478289854, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
