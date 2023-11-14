@@ -84,6 +84,7 @@ public class Building : MonoBehaviour
     {
         if (buildingLevel < buildingMaxLevel && vm.UpgradeBuilding(this))
         {
+            ++buildingLevel;
             buildingLevelInfo.LevelUp(this);
         }
     }

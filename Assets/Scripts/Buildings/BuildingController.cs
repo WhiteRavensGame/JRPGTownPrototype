@@ -37,5 +37,6 @@ public class BuildingController : MonoBehaviour
     public void ExecuteBuildingLevel()
     {
         building.LevelUp();
+        ServiceLocator.Get<ResourceManager>().UpdateResourceText();
     }
 }
