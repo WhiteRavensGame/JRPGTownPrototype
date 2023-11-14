@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1675767299078784422, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
+      propertyPath: m_text
+      value: SILK STORE
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675767299078784422, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
+      propertyPath: m_fontSize
+      value: 30.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675767299078784422, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1776368183088925121, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
       propertyPath: building
       value: 
@@ -142,6 +154,10 @@ PrefabInstance:
       propertyPath: _mainCanvas
       value: 
       objectReference: {fileID: 1042313601}
+    - target: {fileID: 2649287086176989642, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3065532024053759690, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
       propertyPath: building
       value: 
@@ -154,10 +170,40 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4189939501433573353, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
+      propertyPath: m_text
+      value: BLACKSMITH
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189939501433573353, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
+      propertyPath: m_fontSize
+      value: 28.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189939501433573353, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4280341462034294856, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
       propertyPath: building
       value: 
       objectReference: {fileID: 2093234309}
+    - target: {fileID: 4321768195553489469, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5651284581704237368, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6457961640629195891, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
+      propertyPath: m_text
+      value: 'INN
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6523504526300572867, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6536195807067128813, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
       propertyPath: m_RootOrder
       value: 4

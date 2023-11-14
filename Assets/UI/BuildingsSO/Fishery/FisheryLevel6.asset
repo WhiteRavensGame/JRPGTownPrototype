@@ -10,17 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5ff152943396634eb1ccf5f92ce13eb, type: 3}
-  m_Name: FisheryBase
+  m_Name: FisheryLevel6
   m_EditorClassIdentifier: 
-  buildingNextLevel: {fileID: 11400000, guid: f8139544cedc76b4c94729bcd2f9d7a4, type: 2}
+  buildingNextLevel: {fileID: 0}
   resourcesToProduce: 0
   buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  maxVillagers: 1
-  income: 3
-  upgradeCost: 200
-  panelText: Fishery Base
+  maxVillagers: 6
+  income: 12
+  upgradeCost: 0
+  panelText: 'Fishery Level 6
+
+'
   minCitizensText: 1
-  minOutput: 3
-  maxCitizensText: 1
-  maxOutput: 3
+  minOutput: 6
+  maxCitizensText: 6
+  maxOutput: 12
   vendorImage: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
