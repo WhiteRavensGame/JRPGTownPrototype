@@ -86,12 +86,13 @@ public class TimeManager : MonoBehaviour
 
     private void EndOfWeek()
     {
+        ServiceLocator.Get<VillageManager>().EndDayAllocationStart(5);
+
         daysPassed = 0;
         ++weeksPassed;
         weeklySlider.value = weeklySlider.maxValue - weeksPassed;
         _mainCanvas.SetActive(false);
         _resourceManagementObj.SetActive(true);
         _playerManager.gameState = GameStates.EndOfWeek;
-        ServiceLocator.Get<VillageManager>().EndDayAllocationStart(5);
     }
 }
