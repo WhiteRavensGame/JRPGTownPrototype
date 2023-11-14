@@ -2655,6 +2655,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   building: {fileID: 0}
+  villagersCount: {fileID: 6178817940232178736}
+  endOfWeekPanel: {fileID: 2140362190171884989}
 --- !u!1 &2361701002249509885
 GameObject:
   m_ObjectHideFlags: 0
@@ -4794,6 +4796,7 @@ MonoBehaviour:
   _resourcePanel: {fileID: 4321768195553489469}
   _buildingPanel: {fileID: 6523504526300572867}
   _mainCanvas: {fileID: 0}
+  villagersCount: {fileID: 8016610093464781211}
 --- !u!1 &3738033316188528468
 GameObject:
   m_ObjectHideFlags: 0
@@ -4899,6 +4902,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   building: {fileID: 0}
+  villagersCount: {fileID: 6138199317703356354}
+  endOfWeekPanel: {fileID: 2140362190171884989}
 --- !u!1 &3887410278727942810
 GameObject:
   m_ObjectHideFlags: 0
@@ -7440,6 +7445,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   building: {fileID: 0}
+  villagersCount: {fileID: 1567522063239725912}
+  endOfWeekPanel: {fileID: 2140362190171884989}
 --- !u!1 &5572384770227516336
 GameObject:
   m_ObjectHideFlags: 0
@@ -10334,6 +10341,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   building: {fileID: 0}
+  villagersCount: {fileID: 8613008393081841641}
+  endOfWeekPanel: {fileID: 2140362190171884989}
 --- !u!1 &7295760914173896711
 GameObject:
   m_ObjectHideFlags: 0
@@ -10591,6 +10600,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   building: {fileID: 0}
+  villagersCount: {fileID: 5690563988996891585}
+  endOfWeekPanel: {fileID: 2140362190171884989}
 --- !u!1 &7583199064914249626
 GameObject:
   m_ObjectHideFlags: 0
@@ -13071,6 +13082,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   building: {fileID: 0}
+  villagersCount: {fileID: 2557739594998410032}
+  endOfWeekPanel: {fileID: 2140362190171884989}
 --- !u!1 &8764412874913121736
 GameObject:
   m_ObjectHideFlags: 0

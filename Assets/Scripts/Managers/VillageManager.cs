@@ -84,4 +84,9 @@ public class VillageManager : MonoBehaviour
         _vTotal += villagersAmt;
         UpdateVillagerText();
     }
+
+    public string GetVillagersAmt()
+    {
+        return _vTotal.ToString() + "/" + (_vTotal - _vAllocated).ToString();
+    }
 }

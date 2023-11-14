@@ -1,12 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EndOfWeekPanel : MonoBehaviour
 {
     [SerializeField] GameObject _resourcePanel;
     [SerializeField] GameObject _buildingPanel;
     [SerializeField] GameObject _mainCanvas;
+    [SerializeField] private TextMeshProUGUI villagersCount;
 
     public void GoToBuildingPanel()
     {
@@ -25,5 +25,10 @@ public class EndOfWeekPanel : MonoBehaviour
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
         this.gameObject.SetActive(false);
         _mainCanvas.SetActive(true);
+    }
+
+    public void UpdateVillagersNums()
+    {
+        villagersCount.text = ServiceLocator.Get<VillageManager>().GetVillagersAmt();
     }
 }
