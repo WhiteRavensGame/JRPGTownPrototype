@@ -13,12 +13,12 @@ public class AllocateVillagers : MonoBehaviour
     {
         loader = ServiceLocator.Get<GameLoader>();
         loader.CallOnComplete(Initialize);
-        villagersCount.text = building.GetPeopleAmt().ToString() + "/" + building.GetMaxVillagers().ToString();
     }
 
     private void OnEnable()
     {
         endOfWeekPanel.UpdateVillagersNums();
+        villagersCount.text = building.GetPeopleAmt().ToString() + "/" + building.GetMaxVillagers().ToString();
     }
 
     private void Initialize()
