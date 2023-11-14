@@ -121,7 +121,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9165896477650710073}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7053354819527467774}
+        m_TargetAssemblyTypeName: AllocateVillagers, Assembly-CSharp
+        m_MethodName: ChangeVillagersNum
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &114756512585617502
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,7 +677,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 554236413663049264}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8743157901209297931}
+        m_TargetAssemblyTypeName: AllocateVillagers, Assembly-CSharp
+        m_MethodName: ChangeVillagersNum
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &568064387821766275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,7 +1174,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6599550543310827349}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8743157901209297931}
+        m_TargetAssemblyTypeName: AllocateVillagers, Assembly-CSharp
+        m_MethodName: ChangeVillagersNum
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &704674464661650131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2525,6 +2561,7 @@ GameObject:
   - component: {fileID: 754508138506124558}
   - component: {fileID: 778905314289230033}
   - component: {fileID: 7277835932223419547}
+  - component: {fileID: 4280341462034294856}
   m_Layer: 5
   m_Name: BOAT
   m_TagString: Untagged
@@ -2605,6 +2642,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4280341462034294856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2343456681648075491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53be509b6599144ebab17155ed27253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building: {fileID: 0}
 --- !u!1 &2361701002249509885
 GameObject:
   m_ObjectHideFlags: 0
@@ -2726,7 +2776,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4725605370648909478}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3065532024053759690}
+        m_TargetAssemblyTypeName: AllocateVillagers, Assembly-CSharp
+        m_MethodName: ChangeVillagersNum
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2400878016767776227
 GameObject:
   m_ObjectHideFlags: 0
@@ -4731,6 +4793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resourcePanel: {fileID: 4321768195553489469}
   _buildingPanel: {fileID: 6523504526300572867}
+  _mainCanvas: {fileID: 0}
 --- !u!1 &3738033316188528468
 GameObject:
   m_ObjectHideFlags: 0
@@ -4742,6 +4805,7 @@ GameObject:
   - component: {fileID: 7890553860731076877}
   - component: {fileID: 2301337336964339211}
   - component: {fileID: 357839042610486220}
+  - component: {fileID: 3065532024053759690}
   m_Layer: 5
   m_Name: BOAT
   m_TagString: Untagged
@@ -4822,6 +4886,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3065532024053759690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738033316188528468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53be509b6599144ebab17155ed27253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building: {fileID: 0}
 --- !u!1 &3887410278727942810
 GameObject:
   m_ObjectHideFlags: 0
@@ -5441,7 +5518,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3647877575749874943}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1776368183088925121}
+        m_TargetAssemblyTypeName: AllocateVillagers, Assembly-CSharp
+        m_MethodName: ChangeVillagersNum
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4169511262727726108
 GameObject:
   m_ObjectHideFlags: 0
@@ -7257,6 +7346,7 @@ GameObject:
   - component: {fileID: 5204711929223899126}
   - component: {fileID: 5560622640353373701}
   - component: {fileID: 7361887136006633788}
+  - component: {fileID: 8743157901209297931}
   m_Layer: 5
   m_Name: MINES
   m_TagString: Untagged
@@ -7337,6 +7427,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8743157901209297931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5454068781451834496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53be509b6599144ebab17155ed27253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building: {fileID: 0}
 --- !u!1 &5572384770227516336
 GameObject:
   m_ObjectHideFlags: 0
@@ -7989,7 +8092,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9141288761760293429}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7053354819527467774}
+        m_TargetAssemblyTypeName: AllocateVillagers, Assembly-CSharp
+        m_MethodName: ChangeVillagersNum
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5985344824795084148
 GameObject:
   m_ObjectHideFlags: 0
@@ -8111,7 +8226,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3129159433868757996}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4280341462034294856}
+        m_TargetAssemblyTypeName: AllocateVillagers, Assembly-CSharp
+        m_MethodName: ChangeVillagersNum
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6029720694278290937
 GameObject:
   m_ObjectHideFlags: 0
@@ -9936,7 +10063,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5144111422190837612}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3065532024053759690}
+        m_TargetAssemblyTypeName: AllocateVillagers, Assembly-CSharp
+        m_MethodName: ChangeVillagersNum
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7178199404962759103
 GameObject:
   m_ObjectHideFlags: 0
@@ -10100,6 +10239,7 @@ GameObject:
   - component: {fileID: 2278450643605860173}
   - component: {fileID: 506532461537726766}
   - component: {fileID: 7470098099269618779}
+  - component: {fileID: 1960045560627617500}
   m_Layer: 5
   m_Name: FARM
   m_TagString: Untagged
@@ -10181,6 +10321,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1960045560627617500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282323023847183724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53be509b6599144ebab17155ed27253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building: {fileID: 0}
 --- !u!1 &7295760914173896711
 GameObject:
   m_ObjectHideFlags: 0
@@ -10344,6 +10497,7 @@ GameObject:
   - component: {fileID: 2571271213002211735}
   - component: {fileID: 5287153196190775541}
   - component: {fileID: 1158347986988863287}
+  - component: {fileID: 1776368183088925121}
   m_Layer: 5
   m_Name: MINES
   m_TagString: Untagged
@@ -10424,6 +10578,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1776368183088925121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7499941021485984580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53be509b6599144ebab17155ed27253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building: {fileID: 0}
 --- !u!1 &7583199064914249626
 GameObject:
   m_ObjectHideFlags: 0
@@ -10680,7 +10847,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5726972259837173286}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1776368183088925121}
+        m_TargetAssemblyTypeName: AllocateVillagers, Assembly-CSharp
+        m_MethodName: ChangeVillagersNum
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7671230705066855639
 GameObject:
   m_ObjectHideFlags: 0
@@ -11629,7 +11808,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3889535768332334854}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1960045560627617500}
+        m_TargetAssemblyTypeName: AllocateVillagers, Assembly-CSharp
+        m_MethodName: ChangeVillagersNum
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8263555357006226556
 GameObject:
   m_ObjectHideFlags: 0
@@ -11751,7 +11942,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4959577122993653272}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4280341462034294856}
+        m_TargetAssemblyTypeName: AllocateVillagers, Assembly-CSharp
+        m_MethodName: ChangeVillagersNum
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8367965299609030902
 GameObject:
   m_ObjectHideFlags: 0
@@ -12750,7 +12953,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8731401556851678107}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1960045560627617500}
+        m_TargetAssemblyTypeName: AllocateVillagers, Assembly-CSharp
+        m_MethodName: ChangeVillagersNum
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8757042388354873636
 GameObject:
   m_ObjectHideFlags: 0
@@ -12762,6 +12977,7 @@ GameObject:
   - component: {fileID: 8964189184671008685}
   - component: {fileID: 8137775861684305959}
   - component: {fileID: 884763958924899752}
+  - component: {fileID: 7053354819527467774}
   m_Layer: 5
   m_Name: FARM
   m_TagString: Untagged
@@ -12842,6 +13058,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7053354819527467774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8757042388354873636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53be509b6599144ebab17155ed27253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building: {fileID: 0}
 --- !u!1 &8764412874913121736
 GameObject:
   m_ObjectHideFlags: 0
