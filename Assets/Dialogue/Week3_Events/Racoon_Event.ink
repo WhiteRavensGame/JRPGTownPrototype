@@ -1,8 +1,8 @@
 -> Start
 
 == Start ==
-Blacksmith - Adelaine: Boss! I went out back of my shop and found a bunch of racoons going through the trash. 
-What should we do with them?
+Adelaine: "Boss! I went out back of my shop and found a bunch of racoons going through the trash."
+"What should we do with them?"
 
 -> Choices
 

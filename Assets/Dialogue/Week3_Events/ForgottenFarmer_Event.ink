@@ -1,10 +1,8 @@
 -> Start
 
 == Start ==
-Lorraine: Hey youngun, there’s a group of farmers at the gate. Those poor fellows had their homes destroyed by a pack of orcs and was wondering if we could let them stay for a few nights. 
-Maybe you should go talk with them and decide whether to let them or not, and also to know what was going on with the orcs.
-
-`
+Lorraine: "Hey youngun, there’s a group of farmers at the gate. Those poor fellows had their homes destroyed by a pack of orcs and was wondering if we could let them stay for a few nights."
+"Maybe you should go talk with them and decide whether to let them or not, and also to know what was going on with the orcs."
 
 -> Choices
 

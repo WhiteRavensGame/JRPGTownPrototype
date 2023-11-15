@@ -2,7 +2,7 @@
 -> Start
 
 == Start ==
-Miner: MAYOR!! The mines! They’ve been breached by goblins! I can’t mine with them here, what should we do?
+Roe Kimp: "MAYOR!! The mines! They’ve been breached by goblins! I can’t mine with them here, what should we do?"
 
 -> Choices
 

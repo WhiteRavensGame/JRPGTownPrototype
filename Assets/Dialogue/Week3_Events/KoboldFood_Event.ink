@@ -1,7 +1,8 @@
 -> Start
 
 == Start ==
-Two Kobolds: Heya big man, we got some food for yous if you’d like to partake. What’d ya say?
+In an odd manor two kobolds walk into town with sacks of food on a cart and ask for the mayor.
+Two Kobolds: "Heya big man, we got some food for yous if you’d like to partake. What’d ya say?"
 
 -> Choices
 

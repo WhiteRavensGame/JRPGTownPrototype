@@ -2,7 +2,7 @@
 -> Start
 
 == Start ==
-Blacksmith: Mayor! A group of adventurers have come to stay in Steadville, they are searching for work and weapons.
+Adelaine: "Mayor! A group of adventurers have come to stay in Steadville, they are searching for work and weapons."
 
 -> Choices
 

@@ -1,7 +1,7 @@
 -> Start
 
 == Start ==
-Fisherman - Oscar Herman: Sir. A giant lily pad was floating down the river and on it is a giant frog.  
+Oscar Herman: "Sir. A giant lily pad was floating down the river and on it is a giant frog."
 What should we do?
 
 -> Choices

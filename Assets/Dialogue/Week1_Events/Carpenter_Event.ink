@@ -2,9 +2,9 @@
 -> Start
 
 == Start ==
-Innkeeper: Hey Mayor, a carpenter and his family have come to town. 
+Will: "Hey Mayor, a carpenter and his family have come to town. 
 He doesn’t have any money but needs food and a place to stay. 
-He says he can pay us back with free labor. Should we trust him?
+He says he can pay us back with free labor. Should we trust him?"
 
 -> Choices
 
