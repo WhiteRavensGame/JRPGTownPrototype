@@ -15,7 +15,7 @@ public class GodModifier : MonoBehaviour
 {
     private ResourceManager _rm;
 
-    public GodModification Modification { get; private set; }
+    public static GodModification Modification { get; private set; }
     public bool ResourceGod { get; private set; } = false;
 
     public void ChooseGod(GodModification modification)

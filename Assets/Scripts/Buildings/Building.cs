@@ -8,6 +8,8 @@ public class Building : MonoBehaviour
     GameLoader loader = null;
     VillageManager vm = null;
 
+    [SerializeField] private TimeManager _timeManager;
+
     [Header("Building Settings")]
     [SerializeField] private BuildingType buildingType;
     [SerializeField] private BuildingLevel buildingLevelInfo;
@@ -74,6 +76,12 @@ public class Building : MonoBehaviour
     public KeyValuePair<Resources, int> GetBuildingsEarnings()
     {
         int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeopleNum);
+
+        if (_timeManager.IsWeekOne() && GodModifier.Modification == GodModification.DoubleProduction)
+        {
+            rAmt *= 2;
+        }
+
         var resourcesType = buildingLevelInfo.getResources;
         var dailyEarnings = new KeyValuePair<Resources, int>(resourcesType, rAmt);
 
