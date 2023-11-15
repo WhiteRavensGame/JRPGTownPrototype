@@ -3,10 +3,6 @@ using UnityEngine;
 
 public class VillageManager : MonoBehaviour
 {
-    private int _morale;
-    private int _defense;
-    private int _reputation;
-
     private int _vTotal = 4;
     private int _vAllocated = 0;
 
@@ -87,6 +83,6 @@ public class VillageManager : MonoBehaviour
 
     public string GetVillagersAmt()
     {
-        return _vTotal.ToString() + "/" + (_vTotal - _vAllocated).ToString();
+        return (_vTotal - _vAllocated).ToString() + "/" + _vTotal.ToString();
     }
 }

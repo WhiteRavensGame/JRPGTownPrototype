@@ -96,4 +96,14 @@ public class TimeManager : MonoBehaviour
         _resourceManagementObj.SetActive(true);
         _playerManager.gameState = GameStates.EndOfWeek;
     }
+
+    public bool IsWeekOne()
+    {
+        if (weeksPassed == 1)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }

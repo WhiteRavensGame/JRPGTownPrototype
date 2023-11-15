@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class VillageInitialization : MonoBehaviour
 {
-    [SerializeField] List<Building> buildings;
-    [SerializeField] UIManager ui;
-
+    [SerializeField] private List<Building> buildings;
+    [SerializeField] private UIManager ui;
+    [SerializeField] private TimeManager _timeManager;
+ 
     private GameLoader loader = null;
     
     private VillageManager village = null;
@@ -28,5 +29,10 @@ public class VillageInitialization : MonoBehaviour
         village.Initialize(buildings, ui);
         earnings.InitializeBuildings(buildings);
         resources.Initialize(ui);
+
+        for (int i = 0; i <  buildings.Count; i++)
+        {
+            buildings[i].TimeManager = _timeManager;
+        }
     }
 }
