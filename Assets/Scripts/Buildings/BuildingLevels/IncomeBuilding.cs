@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "IncomeBuilding", menuName = "Building Types/Income Building")]
@@ -10,17 +9,17 @@ public class IncomeBuilding : BuildingLevel
     [SerializeField] private int resourceCount;
     [SerializeField] private float moralOutputPercentage;
 
-    public override float DailyEarnings(int currentVillagersNum)
+    public override float DailyEarnings(List<Villager> villagers)
     {
-        var income = maxIncome;
+        int earnings = 0;
 
-        if (currentVillagersNum < maxVillagers)
+        foreach (var villager in villagers)
         {
-            income = minIncome * currentVillagersNum;
+            earnings += villager.incomeProfit;
         }
 
         var rAmt = ServiceLocator.Get<ResourceManager>().UseResources(resourcesToRun, resourceCount);
-        return income * (rAmt / resourceCount);
+        return earnings * (rAmt / resourceCount);
     }
 
     public override void LevelUp(Building building)

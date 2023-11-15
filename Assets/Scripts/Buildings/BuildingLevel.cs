@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class BuildingLevel: ScriptableObject
@@ -33,6 +34,6 @@ public abstract class BuildingLevel: ScriptableObject
     public string getMaxOutput { get { return maxOutput; } }
     public Sprite getVendorImage { get { return vendorImage; } }
 
-    public abstract float DailyEarnings(int currentVillagersNum);
+    public abstract float DailyEarnings(List<Villager> currentVillagersNum);
     public abstract void LevelUp(Building building);
 }

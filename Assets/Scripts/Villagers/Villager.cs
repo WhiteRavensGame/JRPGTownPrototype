@@ -11,7 +11,8 @@ public enum Efficiency
 public class Villager : MonoBehaviour
 {
     public string villagername;
-    public int profit;
+    public int incomeProfit;
+    public int resourceProfit;
     public Resources areaOfEfficiency;
     public Efficiency efficiency;
 }
