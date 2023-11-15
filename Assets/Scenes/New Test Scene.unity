@@ -3195,6 +3195,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1570813608092697742, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: _timeManager
+      value: 
+      objectReference: {fileID: 1160299396}
+    - target: {fileID: 1570813608092697742, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: buildingMaxLevel
       value: 6
       objectReference: {fileID: 0}
@@ -3250,6 +3254,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4170436986955967169, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: _timeManager
+      value: 
+      objectReference: {fileID: 1160299396}
+    - target: {fileID: 5151994176909830588, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: _timeManager
+      value: 
+      objectReference: {fileID: 1160299396}
     - target: {fileID: 5151994176909830588, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: buildingMaxLevel
       value: 6
@@ -3267,6 +3279,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6021072334912459291, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: _timeManager
+      value: 
+      objectReference: {fileID: 1160299396}
+    - target: {fileID: 6021072334912459291, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: buildingMaxLevel
       value: 6
       objectReference: {fileID: 0}
@@ -3278,6 +3294,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6676647700070263935, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: _timeManager
+      value: 
+      objectReference: {fileID: 1160299396}
+    - target: {fileID: 7591059491913623096, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: _timeManager
+      value: 
+      objectReference: {fileID: 1160299396}
     - target: {fileID: 7591059491913623096, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: buildingLevel
       value: 1
