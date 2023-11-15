@@ -86,7 +86,8 @@ public class TimeManager : MonoBehaviour
 
     private void EndOfWeek()
     {
-        ServiceLocator.Get<VillageManager>().EndDayAllocationStart(5);
+        int villagersNum = 6 * _resourceManager.GetResourceAmt(Resources.Moral) / 100 - 3;
+        ServiceLocator.Get<VillageManager>().EndDayAllocationStart(villagersNum);
 
         daysPassed = 0;
         ++weeksPassed;
