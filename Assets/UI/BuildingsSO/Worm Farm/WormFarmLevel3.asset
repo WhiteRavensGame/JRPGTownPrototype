@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ff152943396634eb1ccf5f92ce13eb, type: 3}
   m_Name: WormFarmLevel3
   m_EditorClassIdentifier: 
-  buildingNextLevel: {fileID: 0}
+  buildingNextLevel: {fileID: 11400000, guid: d93f96cc373e994478303d7c46274cb7, type: 2}
   resourcesToProduce: 2
   buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   maxVillagers: 3
