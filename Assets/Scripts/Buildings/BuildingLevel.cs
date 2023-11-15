@@ -7,7 +7,8 @@ public abstract class BuildingLevel: ScriptableObject
     [SerializeField] protected Resources resourcesToProduce;
     [SerializeField] protected Sprite buildingSprite;
     [SerializeField] protected int maxVillagers;
-    [SerializeField] protected int income;
+    [SerializeField] protected int maxIncome;
+    [SerializeField] protected int minIncome;
     [SerializeField] protected int upgradeCost;
 
     [Space, Header("Panel Settings")] 
@@ -22,7 +23,8 @@ public abstract class BuildingLevel: ScriptableObject
     public int getMaxVillagers { get { return maxVillagers; } }
     public int getUpgradeCost { get { return upgradeCost; } }
     public Resources getResources { get { return resourcesToProduce; } }
-    public int getIncome { get { return income; } }
+    public int getMaxIncome { get { return maxIncome; } }
+    public int getMinIncome { get { return minIncome; } }
 
     public string getPanelText { get { return panelText; } }
     public string getMinCitizensText { get { return minCitizensText; } }

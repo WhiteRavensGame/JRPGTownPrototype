@@ -12,9 +12,11 @@ public class IncomeBuilding : BuildingLevel
 
     public override float DailyEarnings(int currentVillagersNum)
     {
+        var income = maxIncome;
+
         if (currentVillagersNum < maxVillagers)
         {
-            return 0;
+            income = minIncome * currentVillagersNum;
         }
 
         var rAmt = ServiceLocator.Get<ResourceManager>().UseResources(resourcesToRun, resourceCount);
