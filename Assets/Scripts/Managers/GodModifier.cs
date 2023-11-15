@@ -16,6 +16,7 @@ public class GodModifier : MonoBehaviour
 
     public void ChooseGod(GodModification modification)
     {
+        DontDestroyOnLoad(this);
         Modification = modification;
     }
 }
