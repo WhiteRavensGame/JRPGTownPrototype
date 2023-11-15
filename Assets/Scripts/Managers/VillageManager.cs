@@ -41,7 +41,7 @@ public class VillageManager : MonoBehaviour
         {
             return;
         }
-        else if (_vAllocated + amount > _vTotal)
+        else if (_vAllocated + amount > _vTotal || building.GetPeopleAmt() + amount < 0)
         {
             return;
         }
