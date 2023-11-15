@@ -37,18 +37,7 @@ public class EarningsManager : MonoBehaviour
 
         if (_god.ResourceGod)
         {
-            switch(_god.Modification)
-            {
-                case GodModification.SilkBoost:
-                    _rm.AddResource(Resources.Silk, 3);
-                    break;
-                case GodModification.FoodBoost:
-                    _rm.AddResource(Resources.Fish, 3);
-                    break;
-                case GodModification.MineBoost:
-                    _rm.AddResource(Resources.Iron, 3);
-                    break;
-            }
+            _god.AddResource();
         }
 
         _rm.UpdateResourceText();
