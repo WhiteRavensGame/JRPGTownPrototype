@@ -206,7 +206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6536195807067128813, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6536195807067128813, guid: 36ad90a5264e5384ea7220de04b5dea6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1158,7 +1158,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &631075302
 GameObject:
@@ -1535,7 +1535,7 @@ RectTransform:
   m_Children:
   - {fileID: 1134941829}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2514,7 +2514,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1469266211434880057, guid: 9045da7e293ffa54fbd09901ab5df41a, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1469266211434880057, guid: 9045da7e293ffa54fbd09901ab5df41a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2592,7 +2592,7 @@ Transform:
   m_Children:
   - {fileID: 1160299395}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1781100530
 GameObject:
@@ -2986,7 +2986,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1863678001
 MonoBehaviour:
@@ -3195,12 +3195,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1570813608092697742, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: _timeManager
+      value: 
+      objectReference: {fileID: 1160299396}
+    - target: {fileID: 1570813608092697742, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: buildingMaxLevel
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1684902959111561136, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1684902959111561136, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3246,10 +3250,22 @@ PrefabInstance:
       propertyPath: ui
       value: 
       objectReference: {fileID: 1134941830}
+    - target: {fileID: 3576805735544376581, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: _timeManager
+      value: 
+      objectReference: {fileID: 1160299396}
     - target: {fileID: 4170436986441836643, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4170436986955967169, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: _timeManager
+      value: 
+      objectReference: {fileID: 1160299396}
+    - target: {fileID: 5151994176909830588, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: _timeManager
+      value: 
+      objectReference: {fileID: 1160299396}
     - target: {fileID: 5151994176909830588, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: buildingMaxLevel
       value: 6
@@ -3267,6 +3283,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6021072334912459291, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: _timeManager
+      value: 
+      objectReference: {fileID: 1160299396}
+    - target: {fileID: 6021072334912459291, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: buildingMaxLevel
       value: 6
       objectReference: {fileID: 0}
@@ -3278,6 +3298,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6676647700070263935, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: _timeManager
+      value: 
+      objectReference: {fileID: 1160299396}
+    - target: {fileID: 7591059491913623096, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+      propertyPath: _timeManager
+      value: 
+      objectReference: {fileID: 1160299396}
     - target: {fileID: 7591059491913623096, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
       propertyPath: buildingLevel
       value: 1
