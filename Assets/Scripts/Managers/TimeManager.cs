@@ -57,6 +57,7 @@ public class TimeManager : MonoBehaviour
         timePlaying -= Time.deltaTime / 60;
         elapsTime = TimeSpan.FromMinutes(timePlaying);
         textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
+        weeklySlider.value = timePlaying/dailyTime;
 
         if (timePlaying <= 0.0f)
         {
@@ -95,7 +96,6 @@ public class TimeManager : MonoBehaviour
 
         daysPassed = 0;
         ++weeksPassed;
-        weeklySlider.value = weeklySlider.maxValue - weeksPassed;
         _mainCanvas.SetActive(false);
         _resourceManagementObj.SetActive(true);
         _playerManager.gameState = GameStates.EndOfWeek;
