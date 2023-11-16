@@ -11,6 +11,11 @@ public class IncomeBuilding : BuildingLevel
 
     public override float DailyEarnings(List<Villager> villagers)
     {
+        if(villagers.Count <= 0)
+        {
+            return 0;
+        }
+
         int earnings = 0;
 
         foreach (var villager in villagers)
