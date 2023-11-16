@@ -13,15 +13,15 @@ public class VillageManager : MonoBehaviour
 
     [SerializeField] private List<Villager> villagers;
     
-    public void Initialize(List<Building> buildings, UIManager ui, List<Villager> villagers)
+    public void Initialize(List<Building> buildings, UIManager ui, List<Villager> newVillagers)
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 6; ++i)
         {
             _buildings.Add(buildings[i]);
         }
-        for (int i = 0; i < villagers.Count; i++)
+        for (int i = 0; i < newVillagers.Count; ++i)
         {
-            villagers.Add(villagers[i]);
+            villagers.Add(newVillagers[i]);
         }
 
         _rm = ServiceLocator.Get<ResourceManager>();
