@@ -18,8 +18,7 @@ public class Building : MonoBehaviour
     [SerializeField] private int buildingMaxLevel;
 
     private SpriteRenderer _buildingSR;
-    [SerializeField]
-    private List<Villager> _currentPeople;
+    [SerializeField] private List<Villager> _currentPeople;
 
     [Space, Header("Panel Settings")]
     [SerializeField] private GameObject infoPanel;
@@ -47,7 +46,6 @@ public class Building : MonoBehaviour
         _buildingSR = GetComponent<SpriteRenderer>();
 
         ChangeBuilding(buildingLevelInfo);
-        _currentPeople = new List<Villager>();
     }
 
     public void ActivatePanel(bool activation)
@@ -115,21 +113,15 @@ public class Building : MonoBehaviour
         return buildingLevelInfo.getUpgradeCost;
     }
 
-    public void EditPeople(int villager)
+    public void EditPeople(Villager villager, bool isAdding)
     {
-        if (villager >= 0)
+        if (isAdding)
         {
-            for (int i = 0; i < villager; ++i)
-            {
-                _currentPeople.Add(new Villager());
-            }
+            _currentPeople.Add(villager);
         }
         else
         {
-            for (int i = villager; i > 0; ++i)
-            {
-                _currentPeople.RemoveAt(0);
-            }
+            _currentPeople.RemoveAt(0);
         }
     }
 

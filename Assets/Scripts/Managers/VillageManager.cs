@@ -10,12 +10,18 @@ public class VillageManager : MonoBehaviour
     private UIManager _ui = null;
 
     private List<Building> _buildings = new List<Building>();
+
+    [SerializeField] private List<Villager> villagers;
     
-    public void Initialize(List<Building> buildings, UIManager ui)
+    public void Initialize(List<Building> buildings, UIManager ui, List<Villager> villagers)
     {
         for (int i = 0; i < 6; i++)
         {
             _buildings.Add(buildings[i]);
+        }
+        for (int i = 0; i < villagers.Count; i++)
+        {
+            villagers.Add(villagers[i]);
         }
 
         _rm = ServiceLocator.Get<ResourceManager>();
@@ -43,7 +49,7 @@ public class VillageManager : MonoBehaviour
         }
 
         _vAllocated += amount;
-        building.EditPeople(amount);
+        building.EditPeople(villagers[0], amount > 0);
         UpdateVillagerText();
     }
 
