@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GodModification
 {
@@ -45,6 +46,8 @@ public class GodModifier : MonoBehaviour
                 break;
             default: break;
         }
+
+        SceneManager.LoadScene(2);
     }
 
     public void AddResource()
