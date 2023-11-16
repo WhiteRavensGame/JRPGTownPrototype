@@ -89,7 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f7972f274561d459b54a2e8c473503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  villagername: 
-  profit: 0
+  villagername: Test
+  incomeProfit: 50
+  resourceProfit: 3
   areaOfEfficiency: 0
   efficiency: 0

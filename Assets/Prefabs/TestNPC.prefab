@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8199445239970544891
 RectTransform:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.60784316}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -317,13 +317,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1062078618206974765}
-  dialogObjects:
-  - {fileID: 1062078618206974764}
-  - {fileID: 8434198369117005138, guid: 43247ee9320aaf34ca1aa509e4df9abd, type: 3}
-  inkJson:
-  - {fileID: 4900000, guid: 29d7a45ca764c8440b141bff6cb59f73, type: 3}
-  - {fileID: 4900000, guid: bb40b7b800c78f844a6115146ebf3ed1, type: 3}
+  panel: {fileID: 412175292364750103}
+  inkJson: {fileID: 4900000, guid: bb40b7b800c78f844a6115146ebf3ed1, type: 3}
   wordSpeed: 0.05
+  buttons:
+  - {fileID: 7110995527377248434}
+  - {fileID: 6197792090713349785}
+  - {fileID: 1337787607860991285}
 --- !u!70 &1062078617389478383
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -639,7 +639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.60784316}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -673,7 +673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4142884292756549421
 RectTransform:
   m_ObjectHideFlags: 0
@@ -776,7 +776,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3190334756141252588}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1062078617389478380}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
+        m_MethodName: ChooseDialogue
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1780917057629694166
 GameObject:
   m_ObjectHideFlags: 0
@@ -1736,7 +1748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1361534417368351173
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1839,7 +1851,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 157406030659593690}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1062078617389478380}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
+        m_MethodName: ChooseDialogue
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7110995527377248434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,7 +1882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &868437036267367263
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1961,7 +1985,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5019084050204986657}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1062078617389478380}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
+        m_MethodName: ChooseDialogue
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8794082131455940750
 GameObject:
   m_ObjectHideFlags: 0
