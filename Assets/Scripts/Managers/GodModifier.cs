@@ -18,13 +18,13 @@ public class GodModifier : MonoBehaviour
     public static GodModification Modification { get; private set; }
     public bool ResourceGod { get; private set; } = false;
 
-    public void ChooseGod(GodModification modification)
+    public void ChooseGod(int modification)
     {
         DontDestroyOnLoad(this);
         ServiceLocator.Get<EarningsManager>().InitializeGod(this);
         _rm = ServiceLocator.Get<ResourceManager>();
 
-        Modification = modification;
+        Modification = (GodModification)modification;
 
         switch(Modification)
         {
