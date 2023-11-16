@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,10 +34,10 @@ public class EarningsManager : MonoBehaviour
             _rm.AddResource(dailyEarnings[i].Key, dailyEarnings[i].Value);
         }
 
-        //if (_god.ResourceGod)
-        //{
-        //    _god.AddResource();
-        //}
+        if (_god.ResourceGod)
+        {
+            _god.AddResource();
+        }
 
         _rm.UpdateResourceText();
     }
