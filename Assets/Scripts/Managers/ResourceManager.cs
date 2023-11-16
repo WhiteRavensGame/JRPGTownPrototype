@@ -85,6 +85,12 @@ public class ResourceManager : MonoBehaviour
                 return _iron;
             case Resources.Silk:
                 return _silk;
+            case Resources.Moral:
+                return _morale;
+            case Resources.Troops:
+                return _troops;
+            case Resources.Reputation:
+                return _reputation;
             default:
                 return 0;
         }

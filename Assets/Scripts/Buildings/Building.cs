@@ -18,7 +18,7 @@ public class Building : MonoBehaviour
     [SerializeField] private int buildingMaxLevel;
 
     private SpriteRenderer _buildingSR;
-    private int _currentPeopleNum;
+    [SerializeField] private List<Villager> _currentPeople;
 
     [Space, Header("Panel Settings")]
     [SerializeField] private GameObject infoPanel;
@@ -76,7 +76,7 @@ public class Building : MonoBehaviour
 
     public KeyValuePair<Resources, int> GetBuildingsEarnings()
     {
-        int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeopleNum);
+        int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeople);
 
         if (TimeManager.IsWeekOne() && GodModifier.Modification == GodModification.DoubleProduction)
         {
@@ -113,14 +113,21 @@ public class Building : MonoBehaviour
         return buildingLevelInfo.getUpgradeCost;
     }
 
-    public void EditPeople(int amount)
+    public void EditPeople(Villager villager, bool isAdding)
     {
-        _currentPeopleNum += amount;
+        if (isAdding)
+        {
+            _currentPeople.Add(villager);
+        }
+        else
+        {
+            _currentPeople.RemoveAt(0);
+        }
     }
 
     public int GetPeopleAmt()
     {
-        return _currentPeopleNum;
+        return _currentPeople.Count;
     }
 
     public Resources GetResoureType()

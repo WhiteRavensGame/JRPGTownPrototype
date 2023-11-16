@@ -4,16 +4,21 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ExtractionBuilding", menuName = "Building Types/Extraction Building")]
 public class ExtractionBuilding : BuildingLevel
 {
-    public override float DailyEarnings(int currentVillagersNum)
+    public override float DailyEarnings(List<Villager> villagers)
     {
-        if(currentVillagersNum < maxVillagers)
+        int earnings = 0;
+
+        foreach (var villager in villagers)
         {
-            return 0;
+            earnings += villager.resourceProfit;
+
+            if(resourcesToProduce == villager.areaOfEfficiency)
+            {
+                earnings += (int)villager.efficiency;
+            }
         }
-        else
-        {
-            return income;
-        }
+
+        return earnings;
     }
 
     public override void LevelUp(Building building)
