@@ -18,6 +18,7 @@ public class Building : MonoBehaviour
     [SerializeField] private int buildingMaxLevel;
 
     private SpriteRenderer _buildingSR;
+    [SerializeField]
     private List<Villager> _currentPeople;
 
     [Space, Header("Panel Settings")]
@@ -46,6 +47,7 @@ public class Building : MonoBehaviour
         _buildingSR = GetComponent<SpriteRenderer>();
 
         ChangeBuilding(buildingLevelInfo);
+        _currentPeople = new List<Villager>();
     }
 
     public void ActivatePanel(bool activation)
