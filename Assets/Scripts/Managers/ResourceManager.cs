@@ -5,7 +5,7 @@ public class ResourceManager : MonoBehaviour
     //all the amounts of different resources will be here
     //functions for exchanging resources will also be here
     private UIManager _ui;
-   
+
     private int _gold = 1500;
     private int _fish = 20;
     private int _iron = 20;
@@ -17,10 +17,29 @@ public class ResourceManager : MonoBehaviour
 
     public int Fish { get { return _fish; } }
     public int Iron { get { return _iron; } }
-    public int Silk { get { return _silk; } }  
+    public int Silk { get { return _silk; } }
 
     public void Initialize(UIManager ui)
     {
+        var newData = ServiceLocator.Get<SaveSystem>().Load<SaveResources>();
+        if (newData != default)
+        {
+            _gold = newData.gold;
+            _fish = newData.fish;
+            _iron = newData.iron;
+            _silk = newData.silk;
+
+            _morale = newData.morale;
+            _troops = newData.troops;
+            _reputation = newData.reputation;
+            Debug.Log("loaded");
+        }
+        else
+        {
+            Debug.Log("not loaded");
+            
+        }
+
         _ui = ui;
         _ui.UpdateResourceText(_gold, _fish, _iron, _silk);
     }
@@ -77,7 +96,7 @@ public class ResourceManager : MonoBehaviour
 
     public int GetResourceAmt(Resources resource)
     {
-        switch(resource)
+        switch (resource)
         {
             case Resources.Fish:
                 return _fish;
@@ -162,5 +181,31 @@ public class ResourceManager : MonoBehaviour
     public void UpdateResourceText()
     {
         _ui.UpdateResourceText(_gold, _fish, _iron, _silk);
+    }
+
+    private void OnDestroy()
+    {
+        SaveResources saveResources = new SaveResources();
+        saveResources.gold = _gold;
+        saveResources.fish = _fish;
+        saveResources.iron = _iron;
+        saveResources.silk = _silk;
+        saveResources.morale = _morale;
+        saveResources.troops = _troops;
+        saveResources.reputation = _reputation;
+        ServiceLocator.Get<SaveSystem>().Save<SaveResources>(saveResources);
+    }
+
+    [System.Serializable]
+    private class SaveResources
+    {
+        public int gold = 1500;
+        public int fish = 20;
+        public int iron = 20;
+        public int silk = 20;
+         
+        public int morale = 50;
+        public int troops = 10;
+        public int reputation = 0;
     }
 }

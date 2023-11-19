@@ -70,6 +70,7 @@ public class GameLoader : AsyncLoader
         Debug.Log("Loading Core Systems");
 
         var gm = Instantiate(_gameManager, SystemsParent);
+        ServiceLocator.Register<SaveSystem>(gm.GetComponent<SaveSystem>());
         ServiceLocator.Register<GameManager>(gm.GetComponent<GameManager>());
         ServiceLocator.Register<VillageManager>(gm.GetComponent<VillageManager>());
         ServiceLocator.Register<ResourceManager>(gm.GetComponent<ResourceManager>());

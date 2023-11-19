@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
-    private GameLoader loader;
     [SerializeField] private float dailyTime;
     [SerializeField] private TextMeshProUGUI textTimer;
     [SerializeField] private List<BuildingLevel> buildings;
@@ -26,13 +25,7 @@ public class TimeManager : MonoBehaviour
     private int weeksPassed = 0;
     private bool initialize = false;
 
-    private void Awake()
-    {
-        loader = ServiceLocator.Get<GameLoader>();
-        loader.CallOnComplete(Initialize);
-    }
-
-    private void Initialize()
+    public void Initialize()
     {
         _earningsManager = ServiceLocator.Get<EarningsManager>();
         _resourceManager = ServiceLocator.Get<ResourceManager>();
