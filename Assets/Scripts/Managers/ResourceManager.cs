@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
@@ -22,7 +23,7 @@ public class ResourceManager : MonoBehaviour
     public void Initialize(UIManager ui)
     {
         var newData = ServiceLocator.Get<SaveSystem>().Load<SaveResources>();
-        if (newData != default)
+        if (!EqualityComparer<SaveResources>.Default.Equals(newData, default))
         {
             _gold = newData.gold;
             _fish = newData.fish;
@@ -32,12 +33,6 @@ public class ResourceManager : MonoBehaviour
             _morale = newData.morale;
             _troops = newData.troops;
             _reputation = newData.reputation;
-            Debug.Log("loaded");
-        }
-        else
-        {
-            Debug.Log("not loaded");
-            
         }
 
         _ui = ui;

@@ -44,7 +44,7 @@ public class SaveSystem: MonoBehaviour
         }
         else
         {
-            Debug.LogError("Save File Not Found");
+            Debug.Log("Save File Not Found");
             return default(T);
         }
     }
