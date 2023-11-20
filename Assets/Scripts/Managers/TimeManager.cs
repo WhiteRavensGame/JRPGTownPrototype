@@ -33,11 +33,23 @@ public class TimeManager : MonoBehaviour
         ServiceLocator.Get<EventManager>().endOfDay.AddListener(ResetDay);
 
         elapsTime = TimeSpan.FromMinutes(dailyTime);
-        timePlaying = dailyTime;
+
+        var newData = ServiceLocator.Get<SaveSystem>().Load<SaveTime>("TMsave.doNotOpen");
+        if (!EqualityComparer<SaveTime>.Default.Equals(newData, default))
+        {
+            timePlaying = newData.timePlaying;
+            daysPassed = newData.daysPassed;
+            weeksPassed = newData.weeksPassed;
+        }
+        else
+        {
+            timePlaying = dailyTime;
+            EndOfWeek();
+        }
+
         textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
 
         initialize = true;
-        EndOfWeek();
     }
 
     private void Update()
@@ -47,15 +59,16 @@ public class TimeManager : MonoBehaviour
             return;
         }
 
-        timePlaying -= Time.deltaTime / 60;
-        elapsTime = TimeSpan.FromMinutes(timePlaying);
-        textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
-        weeklySlider.value = timePlaying/dailyTime;
-
         if (timePlaying <= 0.0f)
         {
             ServiceLocator.Get<EventManager>().endOfDay.Invoke();
         }
+
+        timePlaying -= Time.deltaTime / 60;
+        elapsTime = TimeSpan.FromMinutes(timePlaying);
+        textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
+        weeklySlider.value = timePlaying / dailyTime;
+
     }
 
     public void ResetDay()
@@ -82,7 +95,7 @@ public class TimeManager : MonoBehaviour
     {
         if (weeksPassed > 0)
         {
-            float villagers =  6 * _resourceManager.GetResourceAmt(Resources.Moral) / 100 - 3;
+            float villagers = 6 * _resourceManager.GetResourceAmt(Resources.Moral) / 100 - 3;
 
             ServiceLocator.Get<VillageManager>().EndDayAllocationStart((int)villagers);
         }
@@ -102,5 +115,22 @@ public class TimeManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void OnDestroy()
+    {
+        SaveTime saveTime = new SaveTime();
+        saveTime.timePlaying = timePlaying;
+        saveTime.daysPassed = daysPassed;
+        saveTime.weeksPassed = weeksPassed;
+        ServiceLocator.Get<SaveSystem>().Save<SaveTime>(saveTime, "TMsave.doNotOpen");
+    }
+
+    [System.Serializable]
+    private class SaveTime
+    {
+        public float timePlaying;
+        public int daysPassed;
+        public int weeksPassed;
     }
 }

@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class SaveSystem: MonoBehaviour
 {
-    private string savePath;
-
-    private void Awake()
-    {
-        savePath = Application.persistentDataPath + "JRPG.doNotOpen";
-    }
-
-
-    public void Save<T>(T data)
+    public void Save<T>(T data, string savePath)
     {
         BinaryFormatter formatter = new BinaryFormatter();
 
@@ -21,7 +13,7 @@ public class SaveSystem: MonoBehaviour
         fileStream.Close();
     }
 
-    public T Load<T>()
+    public T Load<T>(string savePath)
     {
         if (File.Exists(savePath))
         {

@@ -22,7 +22,7 @@ public class ResourceManager : MonoBehaviour
 
     public void Initialize(UIManager ui)
     {
-        var newData = ServiceLocator.Get<SaveSystem>().Load<SaveResources>();
+        var newData = ServiceLocator.Get<SaveSystem>().Load<SaveResources>("RMsave.doNotOpen");
         if (!EqualityComparer<SaveResources>.Default.Equals(newData, default))
         {
             _gold = newData.gold;
@@ -178,7 +178,7 @@ public class ResourceManager : MonoBehaviour
         _ui.UpdateResourceText(_gold, _fish, _iron, _silk);
     }
 
-    private void OnDestroy()
+    public void Save()
     {
         SaveResources saveResources = new SaveResources();
         saveResources.gold = _gold;
@@ -188,7 +188,7 @@ public class ResourceManager : MonoBehaviour
         saveResources.morale = _morale;
         saveResources.troops = _troops;
         saveResources.reputation = _reputation;
-        ServiceLocator.Get<SaveSystem>().Save<SaveResources>(saveResources);
+        ServiceLocator.Get<SaveSystem>().Save<SaveResources>(saveResources, "RMsave.doNotOpen");
     }
 
     [System.Serializable]
