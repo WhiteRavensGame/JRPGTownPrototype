@@ -8,6 +8,9 @@ public class Building : MonoBehaviour
     GameLoader loader = null;
     VillageManager vm = null;
 
+    [HideInInspector]
+    public TimeManager TimeManager { get; set; }
+
     [Header("Building Settings")]
     [SerializeField] private BuildingType buildingType;
     [SerializeField] private BuildingLevel buildingLevelInfo;
@@ -15,7 +18,7 @@ public class Building : MonoBehaviour
     [SerializeField] private int buildingMaxLevel;
 
     private SpriteRenderer _buildingSR;
-    private int _currentPeopleNum;
+    [SerializeField] private List<Villager> _currentPeople;
 
     [Space, Header("Panel Settings")]
     [SerializeField] private GameObject infoPanel;
@@ -29,6 +32,8 @@ public class Building : MonoBehaviour
 
     [Space, Header("Extra Settings")]
     [SerializeField] private GameObject[] allocationButtons;
+
+    public bool HasProduced { get; set; } = false;
 
     private void Awake()
     {
@@ -73,7 +78,17 @@ public class Building : MonoBehaviour
 
     public KeyValuePair<Resources, int> GetBuildingsEarnings()
     {
-        int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeopleNum);
+        int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeople);
+
+        if (TimeManager.IsWeekOne() && GodModifier.Modification == GodModification.DoubleProduction)
+        {
+            rAmt *= 2;
+        }
+        if (rAmt > 0)
+        {
+            HasProduced = true;
+        }
+
         var resourcesType = buildingLevelInfo.getResources;
         var dailyEarnings = new KeyValuePair<Resources, int>(resourcesType, rAmt);
 
@@ -104,18 +119,30 @@ public class Building : MonoBehaviour
         return buildingLevelInfo.getUpgradeCost;
     }
 
-    public void EditPeople(int amount)
+    public void EditPeople(Villager villager, bool isAdding)
     {
-        _currentPeopleNum += amount;
+        if (isAdding)
+        {
+            _currentPeople.Add(villager);
+        }
+        else
+        {
+            _currentPeople.RemoveAt(0);
+        }
     }
 
     public int GetPeopleAmt()
     {
-        return _currentPeopleNum;
+        return _currentPeople.Count;
     }
 
     public Resources GetResoureType()
     {
         return buildingLevelInfo.getResources;
+    }
+
+    public int GetLevel()
+    {
+        return buildingLevel;
     }
 }
