@@ -8,6 +8,7 @@ public enum Efficiency
     Heigh
 }
 
+[System.Serializable]
 public class Villager : MonoBehaviour
 {
     public string villagername;
@@ -15,4 +16,6 @@ public class Villager : MonoBehaviour
     public int resourceProfit;
     public Resources areaOfEfficiency;
     public Efficiency efficiency;
+
+
 }

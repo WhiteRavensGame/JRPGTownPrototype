@@ -117,7 +117,7 @@ public class TimeManager : MonoBehaviour
         return false;
     }
 
-    private void OnDestroy()
+    public void Save()
     {
         SaveTime saveTime = new SaveTime();
         saveTime.timePlaying = timePlaying;
