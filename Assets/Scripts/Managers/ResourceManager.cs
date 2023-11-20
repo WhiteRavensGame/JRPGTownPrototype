@@ -14,7 +14,6 @@ public class ResourceManager : MonoBehaviour
 
     private int _morale = 50;
     private int _troops = 10;
-    private int _reputation = 0;
 
     public int Fish { get { return _fish; } }
     public int Iron { get { return _iron; } }
@@ -32,7 +31,6 @@ public class ResourceManager : MonoBehaviour
 
             _morale = newData.morale;
             _troops = newData.troops;
-            _reputation = newData.reputation;
         }
 
         _ui = ui;
@@ -71,9 +69,6 @@ public class ResourceManager : MonoBehaviour
             case Resources.Troops:
                 _troops += amount;
                 break;
-            case Resources.Reputation:
-                _reputation += amount;
-                break;
             default:
                 break;
         }
@@ -103,10 +98,7 @@ public class ResourceManager : MonoBehaviour
                 return _morale;
             case Resources.Troops:
                 return _troops;
-            case Resources.Reputation:
-                return _reputation;
-            default:
-                return 0;
+            default: return 0;
         }
     }
 
@@ -159,15 +151,6 @@ public class ResourceManager : MonoBehaviour
                 }
                 _troops -= amount;
                 return amount;
-            case Resources.Reputation:
-                if (_reputation - amount <= 0)
-                {
-                    amount = _reputation;
-                    _reputation = 0;
-                    return amount;
-                }
-                _reputation -= amount;
-                return amount;
             default:
                 return 0;
         }
@@ -187,7 +170,6 @@ public class ResourceManager : MonoBehaviour
         saveResources.silk = _silk;
         saveResources.morale = _morale;
         saveResources.troops = _troops;
-        saveResources.reputation = _reputation;
         ServiceLocator.Get<SaveSystem>().Save<SaveResources>(saveResources, "RMsave.doNotOpen");
     }
 
@@ -201,6 +183,5 @@ public class ResourceManager : MonoBehaviour
          
         public int morale = 50;
         public int troops = 10;
-        public int reputation = 0;
     }
 }
