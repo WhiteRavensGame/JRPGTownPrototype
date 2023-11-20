@@ -47,7 +47,7 @@ public class GodModifier : MonoBehaviour
             default: break;
         }
 
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void AddResource()
