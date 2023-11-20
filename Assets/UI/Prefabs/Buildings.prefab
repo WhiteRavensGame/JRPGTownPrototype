@@ -57,10 +57,6 @@ MonoBehaviour:
   - {fileID: 1570813608092697742}
   - {fileID: 4170436986955967169}
   - {fileID: 5151994176909830588}
-  ui: {fileID: 0}
-  _timeManager: {fileID: 0}
-  villagers:
-  - {fileID: -2908146328160668738, guid: b86559e71fbf7d04b95d44871770c846, type: 3}
 --- !u!1001 &857410306414259471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -190,10 +186,6 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
-      propertyPath: buildingMaxLevel
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: buildingLevelInfo
       value: 
       objectReference: {fileID: 11400000, guid: 54995c82cdfa65440b1311921d2d4b83, type: 2}
@@ -301,7 +293,7 @@ PrefabInstance:
     - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: buildingLevelInfo
       value: 
-      objectReference: {fileID: 11400000, guid: 1a8e870b3dd8d2648a9f0564696a14c5, type: 2}
+      objectReference: {fileID: 11400000, guid: e737426e18b56d140aeb1d84a8eb7426, type: 2}
     - target: {fileID: 3604705400038721487, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: m_Color.b
       value: 0.3679245
@@ -404,13 +396,9 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
-      propertyPath: buildingMaxLevel
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: buildingLevelInfo
       value: 
-      objectReference: {fileID: 11400000, guid: e6f3c5c7700f9e5499cb959343dcd8f9, type: 2}
+      objectReference: {fileID: 11400000, guid: a3ad9238d2b9fc041ba991372c60b7c9, type: 2}
     - target: {fileID: 3604705400038721520, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -594,13 +582,9 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
-      propertyPath: buildingMaxLevel
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: buildingLevelInfo
       value: 
-      objectReference: {fileID: 11400000, guid: c031daee125a7e94e8ca077c8af4a439, type: 2}
+      objectReference: {fileID: 11400000, guid: 0af22e1de5d7811478c058886d121a6a, type: 2}
     - target: {fileID: 3604705400038721487, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: m_Color.b
       value: 0

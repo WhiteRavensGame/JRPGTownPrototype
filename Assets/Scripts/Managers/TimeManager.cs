@@ -57,7 +57,6 @@ public class TimeManager : MonoBehaviour
         timePlaying -= Time.deltaTime / 60;
         elapsTime = TimeSpan.FromMinutes(timePlaying);
         textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
-        weeklySlider.value = timePlaying/dailyTime;
 
         if (timePlaying <= 0.0f)
         {
@@ -87,27 +86,13 @@ public class TimeManager : MonoBehaviour
 
     private void EndOfWeek()
     {
-        if (weeksPassed > 0)
-        {
-            float villagers =  6 * _resourceManager.GetResourceAmt(Resources.Moral) / 100 - 3;
-
-            ServiceLocator.Get<VillageManager>().EndDayAllocationStart((int)villagers);
-        }
+        ServiceLocator.Get<VillageManager>().EndDayAllocationStart(5);
 
         daysPassed = 0;
         ++weeksPassed;
+        weeklySlider.value = weeklySlider.maxValue - weeksPassed;
         _mainCanvas.SetActive(false);
         _resourceManagementObj.SetActive(true);
         _playerManager.gameState = GameStates.EndOfWeek;
-    }
-
-    public bool IsWeekOne()
-    {
-        if (weeksPassed == 1)
-        {
-            return true;
-        }
-
-        return false;
     }
 }
