@@ -3323,6 +3323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeManager: {fileID: 1160299396}
+  _villager: {fileID: 6436430626800662923, guid: b86559e71fbf7d04b95d44871770c846, type: 3}
 --- !u!1 &1781100530
 GameObject:
   m_ObjectHideFlags: 0

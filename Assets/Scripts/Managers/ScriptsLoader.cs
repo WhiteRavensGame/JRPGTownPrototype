@@ -6,6 +6,8 @@ public class ScriptsLoader : MonoBehaviour
 
     [SerializeField] TimeManager _timeManager;
 
+    private Villager _villager;
+
     private void Awake()
     {
         loader = ServiceLocator.Get<GameLoader>();
