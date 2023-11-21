@@ -56,6 +56,11 @@ public class Building : MonoBehaviour
                 newVillager.LoadData(villagerData);
                 _currentPeople.Add(newVillager);
             }
+
+            for(int i = 1; i < buildingLevel; ++i)
+            {
+                buildingLevelInfo = buildingLevelInfo.getNextLevelBuilding;
+            }
         }
 
         ChangeBuilding(buildingLevelInfo);
