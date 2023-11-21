@@ -18,7 +18,7 @@ public class Building : MonoBehaviour
     [SerializeField] private int buildingMaxLevel;
 
     private SpriteRenderer _buildingSR;
-    [SerializeField] private List<Villager> _currentPeople;
+    [SerializeField] private List<Villager> _currentPeople = new();
 
     [Space, Header("Panel Settings")]
     [SerializeField] private GameObject infoPanel;
@@ -48,9 +48,14 @@ public class Building : MonoBehaviour
         var newData = ServiceLocator.Get<SaveSystem>().Load<BuildingSave>("Bsave.doNotOpen");
         if (!EqualityComparer<BuildingSave>.Default.Equals(newData, default))
         {
-
-
             buildingLevel = newData.buildingLevel;
+
+            foreach(var villagerData in newData.currentPeople)
+            {
+                var newVillager = ServiceLocator.Get<PrefabManager>().EmptyVillager.GetComponent<Villager>();
+                newVillager.LoadData(villagerData);
+                _currentPeople.Add(newVillager);
+            }
         }
 
         ChangeBuilding(buildingLevelInfo);
