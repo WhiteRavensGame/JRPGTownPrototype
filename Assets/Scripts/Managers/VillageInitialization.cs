@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class VillageInitialization : MonoBehaviour
 {
-    [SerializeField] private List<Building> buildings;
-    [SerializeField] private UIManager ui;
-    [SerializeField] private TimeManager _timeManager;
-    [SerializeField] private List<Villager> villagers;
+    [SerializeField] List<Building> buildings;
+    [SerializeField] UIManager ui;
 
     private GameLoader loader = null;
     
@@ -27,13 +25,8 @@ public class VillageInitialization : MonoBehaviour
         earnings = ServiceLocator.Get<EarningsManager>();
         resources = ServiceLocator.Get<ResourceManager>();
 
-        village.Initialize(buildings, ui, villagers);
+        village.Initialize(buildings, ui);
         earnings.InitializeBuildings(buildings);
         resources.Initialize(ui);
-
-        for (int i = 0; i <  buildings.Count; i++)
-        {
-            buildings[i].TimeManager = _timeManager;
-        }
     }
 }

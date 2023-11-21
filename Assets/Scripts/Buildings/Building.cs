@@ -8,9 +8,6 @@ public class Building : MonoBehaviour
     GameLoader loader = null;
     VillageManager vm = null;
 
-    [HideInInspector]
-    public TimeManager TimeManager { get; set; }
-
     [Header("Building Settings")]
     [SerializeField] private BuildingType buildingType;
     [SerializeField] private BuildingLevel buildingLevelInfo;
@@ -94,13 +91,7 @@ public class Building : MonoBehaviour
 
     public KeyValuePair<Resources, int> GetBuildingsEarnings()
     {
-        int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeople);
-
-        if (TimeManager.IsWeekOne() && GodModifier.Modification == GodModification.DoubleProduction)
-        {
-            rAmt *= 2;
-        }
-
+        int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeopleNum);
         var resourcesType = buildingLevelInfo.getResources;
         var dailyEarnings = new KeyValuePair<Resources, int>(resourcesType, rAmt);
 
@@ -131,21 +122,14 @@ public class Building : MonoBehaviour
         return buildingLevelInfo.getUpgradeCost;
     }
 
-    public void EditPeople(Villager villager, bool isAdding)
+    public void EditPeople(int amount)
     {
-        if (isAdding)
-        {
-            _currentPeople.Add(villager);
-        }
-        else
-        {
-            _currentPeople.RemoveAt(0);
-        }
+        _currentPeopleNum += amount;
     }
 
     public int GetPeopleAmt()
     {
-        return _currentPeople.Count;
+        return _currentPeopleNum;
     }
 
     public Resources GetResoureType()

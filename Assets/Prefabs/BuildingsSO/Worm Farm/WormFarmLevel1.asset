@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ff152943396634eb1ccf5f92ce13eb, type: 3}
   m_Name: WormFarmLevel1
   m_EditorClassIdentifier: 
-  buildingNextLevel: {fileID: 11400000, guid: 0af22e1de5d7811478c058886d121a6a, type: 2}
+  buildingNextLevel: {fileID: 0}
   resourcesToProduce: 2
   buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   maxVillagers: 1
-  maxIncome: 0
-  minIncome: 0
+  income: 3
   upgradeCost: 100
   panelText: Worm Farm Level 1
   minCitizensText: 1

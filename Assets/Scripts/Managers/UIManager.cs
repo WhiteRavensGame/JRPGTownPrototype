@@ -20,6 +20,6 @@ public class UIManager : MonoBehaviour
 
     public void UpdateVillagerCount(int total, int left)
     {
-        _villagerCount.text = left.ToString() + "/" + total.ToString();
+        _villagerCount.text = total.ToString() + "/" + left.ToString();
     }
 }
