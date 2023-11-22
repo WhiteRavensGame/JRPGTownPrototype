@@ -33,6 +33,8 @@ public class Building : MonoBehaviour
     [Space, Header("Extra Settings")]
     [SerializeField] private GameObject[] allocationButtons;
 
+    public bool HasProduced { get; set; } = false;
+
     private void Awake()
     {
         loader = ServiceLocator.Get<GameLoader>();
@@ -79,6 +81,10 @@ public class Building : MonoBehaviour
         if (TimeManager.IsWeekOne() && GodModifier.Modification == GodModification.DoubleProduction)
         {
             rAmt *= 2;
+        }
+        if (rAmt > 0)
+        {
+            HasProduced = true;
         }
 
         var resourcesType = buildingLevelInfo.getResources;
@@ -131,6 +137,11 @@ public class Building : MonoBehaviour
     public Resources GetResoureType()
     {
         return buildingLevelInfo.getResources;
+    }
+
+    public int GetLevel()
+    {
+        return buildingLevel;
     }
 
     public void Load()

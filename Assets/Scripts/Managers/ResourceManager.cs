@@ -13,7 +13,6 @@ public class ResourceManager : MonoBehaviour
     private int _silk = 20;
 
     private int _morale = 50;
-    private int _reputation = 0;
     private int _troops = 10;
 
     public int Fish { get { return _fish; } }
