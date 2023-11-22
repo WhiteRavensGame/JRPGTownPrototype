@@ -13,9 +13,9 @@ public class UIManager : MonoBehaviour
     public void UpdateResourceText(int gold, int fish, int iron, int silk)
     {
         _goldText.text = gold.ToString();
-        _ironText.text = fish.ToString();
-        _silkText.text = iron.ToString();
-        _fishText.text = silk.ToString();
+        _ironText.text = iron.ToString();
+        _silkText.text = silk.ToString();
+        _fishText.text = fish.ToString();
     }
 
     public void UpdateVillagerCount(int total, int left)

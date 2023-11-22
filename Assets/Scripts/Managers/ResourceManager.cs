@@ -109,45 +109,35 @@ public class ResourceManager : MonoBehaviour
             case Resources.Fish:
                 if (_fish - amount <= 0)
                 {
-                    amount = _fish;
-                    _fish = 0;
-                    return amount;
+                    return 0;
                 }
                 _fish -= amount;
                 return amount;
             case Resources.Iron:
                 if (_iron - amount <= 0)
                 {
-                    amount = _iron;
-                    _iron = 0;
-                    return amount;
+                    return 0;
                 }
                 _iron -= amount;
                 return amount;
             case Resources.Silk:
                 if (_silk - amount <= 0)
                 {
-                    amount = _silk;
-                    _silk = 0;
-                    return amount;
+                    return 0;
                 }
                 _silk -= amount;
                 return amount;
             case Resources.Moral:
                 if (_morale - amount <= 0)
                 {
-                    amount = _morale;
-                    _morale = 0;
-                    return amount;
+                    return 0;
                 }
                 _morale -= amount;
                 return amount;
             case Resources.Troops:
                 if (_troops - amount <= 0)
                 {
-                    amount = _troops;
-                    _troops = 0;
-                    return amount;
+                    return 0;
                 }
                 _troops -= amount;
                 return amount;

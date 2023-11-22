@@ -149,7 +149,7 @@ public class Building : MonoBehaviour
 
     public void Load()
     {
-        var newData = ServiceLocator.Get<SaveSystem>().Load<BuildingSave>("Bsave.doNotOpen");
+        var newData = ServiceLocator.Get<SaveSystem>().Load<BuildingSave>("B" + storeName.text + "save.doNotOpen");
         if (!EqualityComparer<BuildingSave>.Default.Equals(newData, default))
         {
             buildingLevel = newData.buildingLevel;
@@ -178,7 +178,7 @@ public class Building : MonoBehaviour
         {
             saveBuilding.currentPeople.Add(v.ToSaveData());
         }
-        ServiceLocator.Get<SaveSystem>().Save<BuildingSave>(saveBuilding, "Bsave.doNotOpen");
+        ServiceLocator.Get<SaveSystem>().Save<BuildingSave>(saveBuilding, "B" + storeName.text + "save.doNotOpen");
     }
 
     [System.Serializable]
