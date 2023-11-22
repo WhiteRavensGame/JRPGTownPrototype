@@ -13,7 +13,7 @@ public class ResourceManager : MonoBehaviour
     private int _silk = 20;
 
     private int _morale = 50;
-    private int _defense = 50;
+    private int _troops = 50;
     private int _reputation = 0;
 
     public int Fish { get { return _fish; } }
@@ -69,7 +69,7 @@ public class ResourceManager : MonoBehaviour
                 _morale += amount;
                 break;
             case Resources.Defence:
-                _defense += amount;
+                _troops += amount;
                 break;
             case Resources.Reputation:
                 _reputation += amount;
@@ -145,13 +145,13 @@ public class ResourceManager : MonoBehaviour
                 _morale -= amount;
                 return amount;
             case Resources.Defence:
-                if (_defense - amount <= 0)
+                if (_troops - amount <= 0)
                 {
-                    amount = _defense;
-                    _defense = 0;
+                    amount = _troops;
+                    _troops = 0;
                     return amount;
                 }
-                _defense -= amount;
+                _troops -= amount;
                 return amount;
             case Resources.Reputation:
                 if (_reputation - amount <= 0)

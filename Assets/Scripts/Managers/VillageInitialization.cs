@@ -6,6 +6,7 @@ public class VillageInitialization : MonoBehaviour
 {
     [SerializeField] List<Building> buildings;
     [SerializeField] UIManager ui;
+    [SerializeField] List<Villager> villagers;
 
     private GameLoader loader = null;
     
@@ -25,7 +26,7 @@ public class VillageInitialization : MonoBehaviour
         earnings = ServiceLocator.Get<EarningsManager>();
         resources = ServiceLocator.Get<ResourceManager>();
 
-        village.Initialize(buildings, ui);
+        village.Initialize(buildings, ui, villagers);
         earnings.InitializeBuildings(buildings);
         resources.Initialize(ui);
     }

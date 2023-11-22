@@ -42,24 +42,6 @@ public class Building : MonoBehaviour
 
         _buildingSR = GetComponent<SpriteRenderer>();
 
-        var newData = ServiceLocator.Get<SaveSystem>().Load<BuildingSave>("Bsave.doNotOpen");
-        if (!EqualityComparer<BuildingSave>.Default.Equals(newData, default))
-        {
-            buildingLevel = newData.buildingLevel;
-
-            foreach(var villagerData in newData.currentPeople)
-            {
-                var newVillager = ServiceLocator.Get<PrefabManager>().EmptyVillager.GetComponent<Villager>();
-                newVillager.LoadData(villagerData);
-                _currentPeople.Add(newVillager);
-            }
-
-            for(int i = 1; i < buildingLevel; ++i)
-            {
-                buildingLevelInfo = buildingLevelInfo.getNextLevelBuilding;
-            }
-        }
-
         ChangeBuilding(buildingLevelInfo);
     }
 
@@ -91,7 +73,7 @@ public class Building : MonoBehaviour
 
     public KeyValuePair<Resources, int> GetBuildingsEarnings()
     {
-        int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeopleNum);
+        int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeople.Count);
         var resourcesType = buildingLevelInfo.getResources;
         var dailyEarnings = new KeyValuePair<Resources, int>(resourcesType, rAmt);
 
@@ -122,19 +104,47 @@ public class Building : MonoBehaviour
         return buildingLevelInfo.getUpgradeCost;
     }
 
-    public void EditPeople(int amount)
+    public void EditPeople(Villager villager, bool isAdding)
     {
-        _currentPeopleNum += amount;
+        if (isAdding)
+        {
+            _currentPeople.Add(villager);
+        }
+        else
+        {
+            _currentPeople.RemoveAt(0);
+        }
     }
 
     public int GetPeopleAmt()
     {
-        return _currentPeopleNum;
+        return _currentPeople.Count;
     }
 
     public Resources GetResoureType()
     {
         return buildingLevelInfo.getResources;
+    }
+
+    public void Load()
+    {
+        var newData = ServiceLocator.Get<SaveSystem>().Load<BuildingSave>("Bsave.doNotOpen");
+        if (!EqualityComparer<BuildingSave>.Default.Equals(newData, default))
+        {
+            buildingLevel = newData.buildingLevel;
+
+            foreach (var villagerData in newData.currentPeople)
+            {
+                var newVillager = ServiceLocator.Get<PrefabManager>().EmptyVillager.GetComponent<Villager>();
+                newVillager.LoadData(villagerData);
+                _currentPeople.Add(newVillager);
+            }
+
+            for (int i = 1; i < buildingLevel; ++i)
+            {
+                buildingLevelInfo = buildingLevelInfo.getNextLevelBuilding;
+            }
+        }
     }
 
     [ContextMenu("TestSave")]

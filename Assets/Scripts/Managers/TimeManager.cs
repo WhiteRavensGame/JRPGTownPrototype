@@ -34,18 +34,8 @@ public class TimeManager : MonoBehaviour
 
         elapsTime = TimeSpan.FromMinutes(dailyTime);
 
-        var newData = ServiceLocator.Get<SaveSystem>().Load<SaveTime>("TMsave.doNotOpen");
-        if (!EqualityComparer<SaveTime>.Default.Equals(newData, default))
-        {
-            timePlaying = newData.timePlaying;
-            daysPassed = newData.daysPassed;
-            weeksPassed = newData.weeksPassed;
-        }
-        else
-        {
-            timePlaying = dailyTime;
-            EndOfWeek();
-        }
+        timePlaying = dailyTime;
+        EndOfWeek();
 
         textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
 
@@ -116,6 +106,18 @@ public class TimeManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void Load()
+    {
+        var newData = ServiceLocator.Get<SaveSystem>().Load<SaveTime>("TMsave.doNotOpen");
+        if (!EqualityComparer<SaveTime>.Default.Equals(newData, default))
+        {
+            elapsTime = TimeSpan.FromMinutes(dailyTime);
+            timePlaying = newData.timePlaying;
+            daysPassed = newData.daysPassed;
+            weeksPassed = newData.weeksPassed;
+        }
     }
 
     public void Save()
