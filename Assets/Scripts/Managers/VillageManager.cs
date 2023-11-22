@@ -18,12 +18,8 @@ public class VillageManager : MonoBehaviour
         for (int i = 0; i < 6; ++i)
         {
             _buildings.Add(buildings[i]);
-        }
-        for (int i = 0; i < newVillagers.Count; ++i)
-        {
-            villagers.Add(newVillagers[i]);
-        }
 
+        }
         for (int i = 0; i < newVillagers.Count; ++i)
         {
             villagers.Add(newVillagers[i]);

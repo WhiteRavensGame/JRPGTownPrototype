@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class Building : MonoBehaviour
 {
-    GameLoader loader = null;
-    VillageManager vm = null;
+    private GameLoader loader = null;
+    private VillageManager vm = null;
 
-    [HideInInspector]
-    public TimeManager TimeManager { get; set; }
+    [HideInInspector] public TimeManager TimeManager { get; set; }
+    [HideInInspector] public NPC AttachedNPC { get; set; }
 
     [Header("Building Settings")]
     [SerializeField] private BuildingType buildingType;
@@ -102,6 +102,18 @@ public class Building : MonoBehaviour
         {
             ++buildingLevel;
             buildingLevelInfo.LevelUp(this);
+        }
+
+        if (AttachedNPC != null)
+        {
+            if ((int)buildingType < 3)
+            {
+                AttachedNPC.IncomeReputation();
+            }
+            else
+            {
+                AttachedNPC.ExtractionReputation();
+            }
         }
     }
 
