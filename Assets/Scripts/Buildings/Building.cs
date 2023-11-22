@@ -45,6 +45,9 @@ public class Building : MonoBehaviour
     {
         vm = ServiceLocator.Get<VillageManager>();
         _buildingSR = GetComponent<SpriteRenderer>();
+
+        Load();
+
         ChangeBuilding(buildingLevelInfo);
     }
 

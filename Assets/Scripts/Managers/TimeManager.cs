@@ -34,8 +34,7 @@ public class TimeManager : MonoBehaviour
 
         elapsTime = TimeSpan.FromMinutes(dailyTime);
 
-        timePlaying = dailyTime;
-        EndOfWeek();
+        Load();
 
         textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
 
@@ -117,8 +116,14 @@ public class TimeManager : MonoBehaviour
             daysPassed = newData.daysPassed;
             weeksPassed = newData.weeksPassed;
         }
+        else
+        {
+            timePlaying = dailyTime;
+            EndOfWeek();
+        }
     }
 
+    [ContextMenu("TestSave")]
     public void Save()
     {
         SaveTime saveTime = new SaveTime();

@@ -161,6 +161,7 @@ public class ResourceManager : MonoBehaviour
         _ui.UpdateResourceText(_gold, _fish, _iron, _silk);
     }
 
+    [ContextMenu("TestSave")]
     public void Save()
     {
         SaveResources saveResources = new SaveResources();
