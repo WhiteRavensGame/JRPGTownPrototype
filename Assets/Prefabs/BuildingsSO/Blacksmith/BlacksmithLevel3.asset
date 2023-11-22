@@ -16,7 +16,8 @@ MonoBehaviour:
   resourcesToProduce: 5
   buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   maxVillagers: 6
-  income: 40
+  maxIncome: 20
+  minIncome: 40
   upgradeCost: 0
   panelText: 'Blacksmith Level 3
 

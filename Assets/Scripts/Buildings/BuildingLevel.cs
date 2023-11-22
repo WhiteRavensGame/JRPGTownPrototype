@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class BuildingLevel: ScriptableObject
@@ -7,7 +8,8 @@ public abstract class BuildingLevel: ScriptableObject
     [SerializeField] protected Resources resourcesToProduce;
     [SerializeField] protected Sprite buildingSprite;
     [SerializeField] protected int maxVillagers;
-    [SerializeField] protected int income;
+    [SerializeField] protected int maxIncome;
+    [SerializeField] protected int minIncome;
     [SerializeField] protected int upgradeCost;
 
     [Space, Header("Panel Settings")] 
@@ -18,12 +20,12 @@ public abstract class BuildingLevel: ScriptableObject
     [SerializeField] protected string maxOutput;
     [SerializeField] protected Sprite vendorImage;
 
-    public BuildingLevel getNextLevelBuilding { get { return buildingNextLevel; } }
     public Sprite getbuildingSprite { get { return buildingSprite; } }
     public int getMaxVillagers { get { return maxVillagers; } }
     public int getUpgradeCost { get { return upgradeCost; } }
     public Resources getResources { get { return resourcesToProduce; } }
-    public int getIncome { get { return income; } }
+    public int getMaxIncome { get { return maxIncome; } }
+    public int getMinIncome { get { return minIncome; } }
 
     public string getPanelText { get { return panelText; } }
     public string getMinCitizensText { get { return minCitizensText; } }
@@ -32,6 +34,6 @@ public abstract class BuildingLevel: ScriptableObject
     public string getMaxOutput { get { return maxOutput; } }
     public Sprite getVendorImage { get { return vendorImage; } }
 
-    public abstract float DailyEarnings(int currentVillagersNum);
+    public abstract float DailyEarnings(List<Villager> currentVillagersNum);
     public abstract void LevelUp(Building building);
 }

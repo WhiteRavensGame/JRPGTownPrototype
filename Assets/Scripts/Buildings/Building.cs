@@ -8,6 +8,9 @@ public class Building : MonoBehaviour
     GameLoader loader = null;
     VillageManager vm = null;
 
+    [HideInInspector]
+    public TimeManager TimeManager { get; set; }
+
     [Header("Building Settings")]
     [SerializeField] private BuildingType buildingType;
     [SerializeField] private BuildingLevel buildingLevelInfo;
@@ -15,7 +18,7 @@ public class Building : MonoBehaviour
     [SerializeField] private int buildingMaxLevel;
 
     private SpriteRenderer _buildingSR;
-    [SerializeField] private List<Villager> _currentPeople = new();
+    [SerializeField] private List<Villager> _currentPeople;
 
     [Space, Header("Panel Settings")]
     [SerializeField] private GameObject infoPanel;
@@ -45,19 +48,13 @@ public class Building : MonoBehaviour
         var newData = ServiceLocator.Get<SaveSystem>().Load<BuildingSave>("Bsave.doNotOpen");
         if (!EqualityComparer<BuildingSave>.Default.Equals(newData, default))
         {
+            foreach (var b in newData.currentPeople)
+            {
+                _currentPeople.Add(b);
+            }
+
             buildingLevel = newData.buildingLevel;
-
-            foreach(var villagerData in newData.currentPeople)
-            {
-                var newVillager = ServiceLocator.Get<PrefabManager>().EmptyVillager.GetComponent<Villager>();
-                newVillager.LoadData(villagerData);
-                _currentPeople.Add(newVillager);
-            }
-
-            for(int i = 1; i < buildingLevel; ++i)
-            {
-                buildingLevelInfo = buildingLevelInfo.getNextLevelBuilding;
-            }
+            //buildingLevelInfo = newData.buildingLevelInfo;
         }
 
         ChangeBuilding(buildingLevelInfo);
@@ -91,7 +88,13 @@ public class Building : MonoBehaviour
 
     public KeyValuePair<Resources, int> GetBuildingsEarnings()
     {
-        int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeopleNum);
+        int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeople);
+
+        if (TimeManager.IsWeekOne() && GodModifier.Modification == GodModification.DoubleProduction)
+        {
+            rAmt *= 2;
+        }
+
         var resourcesType = buildingLevelInfo.getResources;
         var dailyEarnings = new KeyValuePair<Resources, int>(resourcesType, rAmt);
 
@@ -122,14 +125,21 @@ public class Building : MonoBehaviour
         return buildingLevelInfo.getUpgradeCost;
     }
 
-    public void EditPeople(int amount)
+    public void EditPeople(Villager villager, bool isAdding)
     {
-        _currentPeopleNum += amount;
+        if (isAdding)
+        {
+            _currentPeople.Add(villager);
+        }
+        else
+        {
+            _currentPeople.RemoveAt(0);
+        }
     }
 
     public int GetPeopleAmt()
     {
-        return _currentPeopleNum;
+        return _currentPeople.Count;
     }
 
     public Resources GetResoureType()
@@ -137,26 +147,25 @@ public class Building : MonoBehaviour
         return buildingLevelInfo.getResources;
     }
 
-    [ContextMenu("TestSave")]
-    private void TestSave()
+    private void Save()
     {
         BuildingSave saveBuilding = new BuildingSave();
-
-        saveBuilding.buildingLevel = buildingLevel;
-        saveBuilding.currentPeople = new List<VillagerSaveData>();
-
-        foreach (var v in _currentPeople)
+        saveBuilding.currentPeople = new List<Villager>();
+        foreach (var b in _currentPeople)
         {
-            saveBuilding.currentPeople.Add(v.ToSaveData());
+            saveBuilding.currentPeople.Add(b);
         }
 
+        saveBuilding.buildingLevel = buildingLevel;
+        //saveBuilding.buildingLevelInfo = buildingLevelInfo;
         ServiceLocator.Get<SaveSystem>().Save<BuildingSave>(saveBuilding, "Bsave.doNotOpen");
     }
 
     [System.Serializable]
     private class BuildingSave
     {
+        public List<Villager> currentPeople;
         public int buildingLevel;
-        public List<VillagerSaveData> currentPeople;
+        //public BuildingLevel buildingLevelInfo;
     }
 }
