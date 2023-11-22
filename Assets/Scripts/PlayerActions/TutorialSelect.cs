@@ -3,22 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class TutorialSelect : MonoBehaviour
 {
-    PlayerManager _playerManager = null;
-
-    private void Awake()
-    {
-        GameLoader loader = ServiceLocator.Get<GameLoader>();
-        loader.CallOnComplete(Initialize);
-    }
-
-    private void Initialize()
-    {
-        _playerManager = ServiceLocator.Get<PlayerManager>();
-    }
+    static public bool TutorialMode { get; private set; } = false;
 
     public void YesTutorial()
     {
-        _playerManager.InTutorial = true;
+        TutorialMode = true;
         SceneManager.LoadScene(2);
 
     }
