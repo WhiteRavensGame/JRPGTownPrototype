@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial Activate.unity
     guid: 264abf962b1141c4cbc69fe46488f17c
   - enabled: 1
-    path: Assets/Scenes/God Select.unity
-    guid: 3d82dfbff26496f47a2c105b59c30ccb
-  - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/New Test Scene.unity
     guid: b3891b3da2611664dbc363b36a3a00b0
   m_configObjects: {}

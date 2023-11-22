@@ -19,7 +19,7 @@ public enum Resources
     Silk,
     Gold,
     Moral,
-    Troops,
+    Defence,
     Reputation
 }
 
