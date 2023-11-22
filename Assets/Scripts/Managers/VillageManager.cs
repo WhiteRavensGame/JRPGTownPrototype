@@ -3,23 +3,30 @@ using UnityEngine;
 
 public class VillageManager : MonoBehaviour
 {
-    private int _morale;
-    private int _defense;
-    private int _reputation;
-
     private int _vTotal = 4;
     private int _vAllocated = 0;
 
     private ResourceManager _rm = null;
     private UIManager _ui = null;
 
+    [SerializeField] private List<Villager> villagers;
+
     private List<Building> _buildings = new List<Building>();
-    
-    public void Initialize(List<Building> buildings, UIManager ui)
+
+    public void Initialize(List<Building> buildings, UIManager ui, List<Villager> newVillagers)
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 6; ++i)
         {
             _buildings.Add(buildings[i]);
+        }
+        for (int i = 0; i < newVillagers.Count; ++i)
+        {
+            villagers.Add(newVillagers[i]);
+        }
+
+        for (int i = 0; i < newVillagers.Count; ++i)
+        {
+            villagers.Add(newVillagers[i]);
         }
 
         _rm = ServiceLocator.Get<ResourceManager>();
@@ -41,13 +48,13 @@ public class VillageManager : MonoBehaviour
         {
             return;
         }
-        else if (_vAllocated + amount > _vTotal)
+        else if (_vAllocated + amount > _vTotal || building.GetPeopleAmt() + amount < 0)
         {
             return;
         }
 
         _vAllocated += amount;
-        building.EditPeople(amount);
+        building.EditPeople(villagers[0], amount > 0);
         UpdateVillagerText();
     }
 
@@ -87,6 +94,6 @@ public class VillageManager : MonoBehaviour
 
     public string GetVillagersAmt()
     {
-        return _vTotal.ToString() + "/" + (_vTotal - _vAllocated).ToString();
+        return (_vTotal - _vAllocated).ToString() + "/" + _vTotal.ToString();
     }
 }

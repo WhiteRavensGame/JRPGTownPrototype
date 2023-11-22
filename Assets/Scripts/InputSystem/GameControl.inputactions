@@ -1,0 +1,34 @@
+{
+    "name": "Controlls",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "d5fe12f6-84a8-4d50-bdf9-5a8f85d21dc7",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "PassThrough",
+                    "id": "6ef44a23-7c88-4a10-aea3-c0dcd400a2fe",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7d29de4f-760d-4836-be7b-60db23c2144c",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

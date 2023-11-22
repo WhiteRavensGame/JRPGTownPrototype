@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
@@ -5,22 +6,33 @@ public class ResourceManager : MonoBehaviour
     //all the amounts of different resources will be here
     //functions for exchanging resources will also be here
     private UIManager _ui;
-   
+
     private int _gold = 1500;
     private int _fish = 20;
     private int _iron = 20;
     private int _silk = 20;
 
     private int _morale = 50;
-    private int _defense = 50;
-    private int _reputation = 0;
+    private int _troops = 10;
 
     public int Fish { get { return _fish; } }
     public int Iron { get { return _iron; } }
-    public int Silk { get { return _silk; } }  
+    public int Silk { get { return _silk; } }
 
     public void Initialize(UIManager ui)
     {
+        var newData = ServiceLocator.Get<SaveSystem>().Load<SaveResources>("RMsave.doNotOpen");
+        if (!EqualityComparer<SaveResources>.Default.Equals(newData, default))
+        {
+            _gold = newData.gold;
+            _fish = newData.fish;
+            _iron = newData.iron;
+            _silk = newData.silk;
+
+            _morale = newData.morale;
+            _troops = newData.troops;
+        }
+
         _ui = ui;
         _ui.UpdateResourceText(_gold, _fish, _iron, _silk);
     }
@@ -54,11 +66,8 @@ public class ResourceManager : MonoBehaviour
             case Resources.Moral:
                 _morale += amount;
                 break;
-            case Resources.Defence:
-                _defense += amount;
-                break;
-            case Resources.Reputation:
-                _reputation += amount;
+            case Resources.Troops:
+                _troops += amount;
                 break;
             default:
                 break;
@@ -77,7 +86,7 @@ public class ResourceManager : MonoBehaviour
 
     public int GetResourceAmt(Resources resource)
     {
-        switch(resource)
+        switch (resource)
         {
             case Resources.Fish:
                 return _fish;
@@ -85,8 +94,11 @@ public class ResourceManager : MonoBehaviour
                 return _iron;
             case Resources.Silk:
                 return _silk;
-            default:
-                return 0;
+            case Resources.Moral:
+                return _morale;
+            case Resources.Troops:
+                return _troops;
+            default: return 0;
         }
     }
 
@@ -97,56 +109,37 @@ public class ResourceManager : MonoBehaviour
             case Resources.Fish:
                 if (_fish - amount <= 0)
                 {
-                    amount = _fish;
-                    _fish = 0;
-                    return amount;
+                    return 0;
                 }
                 _fish -= amount;
                 return amount;
             case Resources.Iron:
                 if (_iron - amount <= 0)
                 {
-                    amount = _iron;
-                    _iron = 0;
-                    return amount;
+                    return 0;
                 }
                 _iron -= amount;
                 return amount;
             case Resources.Silk:
                 if (_silk - amount <= 0)
                 {
-                    amount = _silk;
-                    _silk = 0;
-                    return amount;
+                    return 0;
                 }
                 _silk -= amount;
                 return amount;
             case Resources.Moral:
                 if (_morale - amount <= 0)
                 {
-                    amount = _morale;
-                    _morale = 0;
-                    return amount;
+                    return 0;
                 }
                 _morale -= amount;
                 return amount;
-            case Resources.Defence:
-                if (_defense - amount <= 0)
+            case Resources.Troops:
+                if (_troops - amount <= 0)
                 {
-                    amount = _defense;
-                    _defense = 0;
-                    return amount;
+                    return 0;
                 }
-                _defense -= amount;
-                return amount;
-            case Resources.Reputation:
-                if (_reputation - amount <= 0)
-                {
-                    amount = _reputation;
-                    _reputation = 0;
-                    return amount;
-                }
-                _reputation -= amount;
+                _troops -= amount;
                 return amount;
             default:
                 return 0;
@@ -156,5 +149,30 @@ public class ResourceManager : MonoBehaviour
     public void UpdateResourceText()
     {
         _ui.UpdateResourceText(_gold, _fish, _iron, _silk);
+    }
+
+    [ContextMenu("TestSave")]
+    public void Save()
+    {
+        SaveResources saveResources = new SaveResources();
+        saveResources.gold = _gold;
+        saveResources.fish = _fish;
+        saveResources.iron = _iron;
+        saveResources.silk = _silk;
+        saveResources.morale = _morale;
+        saveResources.troops = _troops;
+        ServiceLocator.Get<SaveSystem>().Save<SaveResources>(saveResources, "RMsave.doNotOpen");
+    }
+
+    [System.Serializable]
+    private class SaveResources
+    {
+        public int gold = 1500;
+        public int fish = 20;
+        public int iron = 20;
+        public int silk = 20;
+         
+        public int morale = 50;
+        public int troops = 10;
     }
 }

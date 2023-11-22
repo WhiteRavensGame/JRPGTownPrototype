@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ff152943396634eb1ccf5f92ce13eb, type: 3}
+  m_Name: WormFarmLevel3
+  m_EditorClassIdentifier: 
+  buildingNextLevel: {fileID: 11400000, guid: d93f96cc373e994478303d7c46274cb7, type: 2}
+  resourcesToProduce: 2
+  buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  maxVillagers: 3
+  maxIncome: 0
+  minIncome: 0
+  upgradeCost: 300
+  panelText: Worm Farm Level 3
+  minCitizensText: 1
+  minOutput: 2.5
+  maxCitizensText: 3
+  maxOutput: 5
+  vendorImage: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}

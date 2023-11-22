@@ -8,6 +8,9 @@ public class Building : MonoBehaviour
     GameLoader loader = null;
     VillageManager vm = null;
 
+    [HideInInspector]
+    public TimeManager TimeManager { get; set; }
+
     [Header("Building Settings")]
     [SerializeField] private BuildingType buildingType;
     [SerializeField] private BuildingLevel buildingLevelInfo;
@@ -15,7 +18,7 @@ public class Building : MonoBehaviour
     [SerializeField] private int buildingMaxLevel;
 
     private SpriteRenderer _buildingSR;
-    private int _currentPeopleNum;
+    [SerializeField] private List<Villager> _currentPeople;
 
     [Space, Header("Panel Settings")]
     [SerializeField] private GameObject infoPanel;
@@ -30,6 +33,8 @@ public class Building : MonoBehaviour
     [Space, Header("Extra Settings")]
     [SerializeField] private GameObject[] allocationButtons;
 
+    public bool HasProduced { get; set; } = false;
+
     private void Awake()
     {
         loader = ServiceLocator.Get<GameLoader>();
@@ -39,8 +44,9 @@ public class Building : MonoBehaviour
     private void Initialize()
     {
         vm = ServiceLocator.Get<VillageManager>();
-
         _buildingSR = GetComponent<SpriteRenderer>();
+
+        Load();
 
         ChangeBuilding(buildingLevelInfo);
     }
@@ -73,7 +79,17 @@ public class Building : MonoBehaviour
 
     public KeyValuePair<Resources, int> GetBuildingsEarnings()
     {
-        int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeopleNum);
+        int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeople);
+
+        if (TimeManager.IsWeekOne() && GodModifier.Modification == GodModification.DoubleProduction)
+        {
+            rAmt *= 2;
+        }
+        if (rAmt > 0)
+        {
+            HasProduced = true;
+        }
+
         var resourcesType = buildingLevelInfo.getResources;
         var dailyEarnings = new KeyValuePair<Resources, int>(resourcesType, rAmt);
 
@@ -104,18 +120,71 @@ public class Building : MonoBehaviour
         return buildingLevelInfo.getUpgradeCost;
     }
 
-    public void EditPeople(int amount)
+    public void EditPeople(Villager villager, bool isAdding)
     {
-        _currentPeopleNum += amount;
+        if (isAdding)
+        {
+            _currentPeople.Add(villager);
+        }
+        else
+        {
+            _currentPeople.RemoveAt(0);
+        }
     }
 
     public int GetPeopleAmt()
     {
-        return _currentPeopleNum;
+        return _currentPeople.Count;
     }
 
     public Resources GetResoureType()
     {
         return buildingLevelInfo.getResources;
+    }
+
+    public int GetLevel()
+    {
+        return buildingLevel;
+    }
+
+    public void Load()
+    {
+        var newData = ServiceLocator.Get<SaveSystem>().Load<BuildingSave>("B" + storeName.text + "save.doNotOpen");
+        if (!EqualityComparer<BuildingSave>.Default.Equals(newData, default))
+        {
+            buildingLevel = newData.buildingLevel;
+
+            foreach (var villagerData in newData.currentPeople)
+            {
+                var newVillager = ServiceLocator.Get<PrefabManager>().EmptyVillager.GetComponent<Villager>();
+                newVillager.LoadData(villagerData);
+                _currentPeople.Add(newVillager);
+            }
+
+            for (int i = 1; i < buildingLevel; ++i)
+            {
+                buildingLevelInfo = buildingLevelInfo.getNextLevelBuilding;
+            }
+        }
+    }
+
+    [ContextMenu("TestSave")]
+    private void TestSave()
+    {
+        BuildingSave saveBuilding = new BuildingSave();
+        saveBuilding.buildingLevel = buildingLevel;
+        saveBuilding.currentPeople = new List<VillagerSaveData>();
+        foreach (var v in _currentPeople)
+        {
+            saveBuilding.currentPeople.Add(v.ToSaveData());
+        }
+        ServiceLocator.Get<SaveSystem>().Save<BuildingSave>(saveBuilding, "B" + storeName.text + "save.doNotOpen");
+    }
+
+    [System.Serializable]
+    private class BuildingSave
+    {
+        public int buildingLevel;
+        public List<VillagerSaveData> currentPeople;
     }
 }

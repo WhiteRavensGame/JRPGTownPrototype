@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
-    private GameLoader loader;
     [SerializeField] private float dailyTime;
     [SerializeField] private TextMeshProUGUI textTimer;
     [SerializeField] private List<BuildingLevel> buildings;
@@ -26,13 +25,7 @@ public class TimeManager : MonoBehaviour
     private int weeksPassed = 0;
     private bool initialize = false;
 
-    private void Awake()
-    {
-        loader = ServiceLocator.Get<GameLoader>();
-        loader.CallOnComplete(Initialize);
-    }
-
-    private void Initialize()
+    public void Initialize()
     {
         _earningsManager = ServiceLocator.Get<EarningsManager>();
         _resourceManager = ServiceLocator.Get<ResourceManager>();
@@ -40,11 +33,12 @@ public class TimeManager : MonoBehaviour
         ServiceLocator.Get<EventManager>().endOfDay.AddListener(ResetDay);
 
         elapsTime = TimeSpan.FromMinutes(dailyTime);
-        timePlaying = dailyTime;
+
+        Load();
+
         textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
 
         initialize = true;
-        EndOfWeek();
     }
 
     private void Update()
@@ -54,14 +48,16 @@ public class TimeManager : MonoBehaviour
             return;
         }
 
-        timePlaying -= Time.deltaTime / 60;
-        elapsTime = TimeSpan.FromMinutes(timePlaying);
-        textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
-
         if (timePlaying <= 0.0f)
         {
             ServiceLocator.Get<EventManager>().endOfDay.Invoke();
         }
+
+        timePlaying -= Time.deltaTime / 60;
+        elapsTime = TimeSpan.FromMinutes(timePlaying);
+        textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
+        weeklySlider.value = timePlaying / dailyTime;
+
     }
 
     public void ResetDay()
@@ -86,13 +82,62 @@ public class TimeManager : MonoBehaviour
 
     private void EndOfWeek()
     {
-        ServiceLocator.Get<VillageManager>().EndDayAllocationStart(5);
+        if (weeksPassed > 0)
+        {
+            float villagers = 6 * _resourceManager.GetResourceAmt(Resources.Moral) / 100 - 3;
+
+            ServiceLocator.Get<VillageManager>().EndDayAllocationStart((int)villagers);
+        }
 
         daysPassed = 0;
         ++weeksPassed;
-        weeklySlider.value = weeklySlider.maxValue - weeksPassed;
         _mainCanvas.SetActive(false);
         _resourceManagementObj.SetActive(true);
         _playerManager.gameState = GameStates.EndOfWeek;
+    }
+
+    public bool IsWeekOne()
+    {
+        if (weeksPassed == 1)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public void Load()
+    {
+        var newData = ServiceLocator.Get<SaveSystem>().Load<SaveTime>("TMsave.doNotOpen");
+        if (!EqualityComparer<SaveTime>.Default.Equals(newData, default))
+        {
+            elapsTime = TimeSpan.FromMinutes(dailyTime);
+            timePlaying = newData.timePlaying;
+            daysPassed = newData.daysPassed;
+            weeksPassed = newData.weeksPassed;
+        }
+        else
+        {
+            timePlaying = dailyTime;
+            EndOfWeek();
+        }
+    }
+
+    [ContextMenu("TestSave")]
+    public void Save()
+    {
+        SaveTime saveTime = new SaveTime();
+        saveTime.timePlaying = timePlaying;
+        saveTime.daysPassed = daysPassed;
+        saveTime.weeksPassed = weeksPassed;
+        ServiceLocator.Get<SaveSystem>().Save<SaveTime>(saveTime, "TMsave.doNotOpen");
+    }
+
+    [System.Serializable]
+    private class SaveTime
+    {
+        public float timePlaying;
+        public int daysPassed;
+        public int weeksPassed;
     }
 }

@@ -9,6 +9,8 @@ public class AllocateVillagers : MonoBehaviour
     [SerializeField] private TextMeshProUGUI villagersCount;
     [SerializeField] private EndOfWeekPanel endOfWeekPanel;
 
+    private bool initialized = false;
+
     private void Awake()
     {
         loader = ServiceLocator.Get<GameLoader>();
@@ -17,6 +19,10 @@ public class AllocateVillagers : MonoBehaviour
 
     private void OnEnable()
     {
+        if (!initialized)
+        {
+            return;
+        }
         endOfWeekPanel.UpdateVillagersNums();
         villagersCount.text = building.GetPeopleAmt().ToString() + "/" + building.GetMaxVillagers().ToString();
     }
@@ -26,6 +32,8 @@ public class AllocateVillagers : MonoBehaviour
         Debug.Log($"{nameof(Initialize)}");
 
         vm = ServiceLocator.Get<VillageManager>();
+        
+        initialized = true;
     }
 
     public void ChangeVillagersNum(int villagerAmt)

@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 7366996219847129332}
   - component: {fileID: 4697701057497528545}
   - component: {fileID: 410383517463811977}
+  - component: {fileID: 7857225648335904365}
+  - component: {fileID: 6611084304367850924}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -74,6 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ea4ef3cc2cdf94ca1d8544efe6e931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  villagers: []
 --- !u!114 &7366996219847129332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,3 +117,27 @@ MonoBehaviour:
   endOfDay:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7857225648335904365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2686016013968739283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c5c782adac0744998888e90b3a2c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6611084304367850924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2686016013968739283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e7d3ac601910e44b5435631f54e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
