@@ -20,6 +20,7 @@ public abstract class BuildingLevel: ScriptableObject
     [SerializeField] protected string maxOutput;
     [SerializeField] protected Sprite vendorImage;
 
+    public BuildingLevel getNextLevelBuilding { get { return buildingNextLevel; } }
     public Sprite getbuildingSprite { get { return buildingSprite; } }
     public int getMaxVillagers { get { return maxVillagers; } }
     public int getUpgradeCost { get { return upgradeCost; } }

@@ -42,20 +42,7 @@ public class Building : MonoBehaviour
     private void Initialize()
     {
         vm = ServiceLocator.Get<VillageManager>();
-
         _buildingSR = GetComponent<SpriteRenderer>();
-
-        var newData = ServiceLocator.Get<SaveSystem>().Load<BuildingSave>("Bsave.doNotOpen");
-        if (!EqualityComparer<BuildingSave>.Default.Equals(newData, default))
-        {
-            foreach (var b in newData.currentPeople)
-            {
-                _currentPeople.Add(b);
-            }
-
-            buildingLevel = newData.buildingLevel;
-        }
-
         ChangeBuilding(buildingLevelInfo);
     }
 
@@ -171,20 +158,19 @@ public class Building : MonoBehaviour
     private void TestSave()
     {
         BuildingSave saveBuilding = new BuildingSave();
-        saveBuilding.currentPeople = new List<Villager>();
-        foreach (var b in _currentPeople)
-        {
-            saveBuilding.currentPeople.Add(b);
-        }
-
         saveBuilding.buildingLevel = buildingLevel;
+        saveBuilding.currentPeople = new List<VillagerSaveData>();
+        foreach (var v in _currentPeople)
+        {
+            saveBuilding.currentPeople.Add(v.ToSaveData());
+        }
         ServiceLocator.Get<SaveSystem>().Save<BuildingSave>(saveBuilding, "Bsave.doNotOpen");
     }
 
     [System.Serializable]
     private class BuildingSave
     {
-        public List<Villager> currentPeople;
         public int buildingLevel;
+        public List<VillagerSaveData> currentPeople;
     }
 }
