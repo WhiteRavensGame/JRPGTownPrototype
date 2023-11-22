@@ -13,8 +13,8 @@ public class ResourceManager : MonoBehaviour
     private int _silk = 20;
 
     private int _morale = 50;
-    private int _troops = 50;
     private int _reputation = 0;
+    private int _troops = 10;
 
     public int Fish { get { return _fish; } }
     public int Iron { get { return _iron; } }
@@ -32,7 +32,6 @@ public class ResourceManager : MonoBehaviour
 
             _morale = newData.morale;
             _troops = newData.troops;
-            _reputation = newData.reputation;
         }
 
         _ui = ui;
@@ -68,11 +67,8 @@ public class ResourceManager : MonoBehaviour
             case Resources.Moral:
                 _morale += amount;
                 break;
-            case Resources.Defence:
+            case Resources.Troops:
                 _troops += amount;
-                break;
-            case Resources.Reputation:
-                _reputation += amount;
                 break;
             default:
                 break;
@@ -99,8 +95,11 @@ public class ResourceManager : MonoBehaviour
                 return _iron;
             case Resources.Silk:
                 return _silk;
-            default:
-                return 0;
+            case Resources.Moral:
+                return _morale;
+            case Resources.Troops:
+                return _troops;
+            default: return 0;
         }
     }
 
@@ -144,7 +143,7 @@ public class ResourceManager : MonoBehaviour
                 }
                 _morale -= amount;
                 return amount;
-            case Resources.Defence:
+            case Resources.Troops:
                 if (_troops - amount <= 0)
                 {
                     amount = _troops;
@@ -152,15 +151,6 @@ public class ResourceManager : MonoBehaviour
                     return amount;
                 }
                 _troops -= amount;
-                return amount;
-            case Resources.Reputation:
-                if (_reputation - amount <= 0)
-                {
-                    amount = _reputation;
-                    _reputation = 0;
-                    return amount;
-                }
-                _reputation -= amount;
                 return amount;
             default:
                 return 0;
@@ -181,7 +171,6 @@ public class ResourceManager : MonoBehaviour
         saveResources.silk = _silk;
         saveResources.morale = _morale;
         saveResources.troops = _troops;
-        saveResources.reputation = _reputation;
         ServiceLocator.Get<SaveSystem>().Save<SaveResources>(saveResources, "RMsave.doNotOpen");
     }
 
@@ -195,6 +184,5 @@ public class ResourceManager : MonoBehaviour
          
         public int morale = 50;
         public int troops = 10;
-        public int reputation = 0;
     }
 }

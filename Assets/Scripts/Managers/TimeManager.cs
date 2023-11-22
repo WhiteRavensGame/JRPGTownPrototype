@@ -92,7 +92,6 @@ public class TimeManager : MonoBehaviour
 
         daysPassed = 0;
         ++weeksPassed;
-        weeklySlider.value = weeklySlider.maxValue - weeksPassed;
         _mainCanvas.SetActive(false);
         _resourceManagementObj.SetActive(true);
         _playerManager.gameState = GameStates.EndOfWeek;

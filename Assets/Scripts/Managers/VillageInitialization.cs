@@ -7,6 +7,7 @@ public class VillageInitialization : MonoBehaviour
     [SerializeField] List<Building> buildings;
     [SerializeField] UIManager ui;
     [SerializeField] List<Villager> villagers;
+    [SerializeField] private TimeManager _timeManager;
 
     private GameLoader loader = null;
     
@@ -29,5 +30,10 @@ public class VillageInitialization : MonoBehaviour
         village.Initialize(buildings, ui, villagers);
         earnings.InitializeBuildings(buildings);
         resources.Initialize(ui);
+
+        for (int i = 0; i <  buildings.Count; i++)
+        {
+            buildings[i].TimeManager = _timeManager;
+        }
     }
 }
