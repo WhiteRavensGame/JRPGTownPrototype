@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ReputationManager : MonoBehaviour
 {
-    private List<int> _reputationList = new List<int>();
+    private List<float> _reputationList = new List<float>();
+
+    //add ten when building is updgraded
 
     public int AddNPC()
     {
@@ -12,13 +14,16 @@ public class ReputationManager : MonoBehaviour
         return _reputationList.Count - 1;
     }
 
-    public void AddReputation(int id, int amount)
+    public void BuildingUpgrade(int id, float amt)
     {
-        _reputationList[id] += amount;
-    }
+        for (int i = 0; i < _reputationList.Count; ++i)
+        {
+            if (i != id)
+            {
+                _reputationList[i] -= 5f;
+            }
+        }
 
-    public int GetReputation(int id)
-    {
-        return _reputationList[id];
+        _reputationList[id] += amt;
     }
 }
