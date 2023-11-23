@@ -18,7 +18,12 @@ public class IncomeBuilding : BuildingLevel
             earnings += villager.incomeProfit;
         }
 
-        var rAmt = ServiceLocator.Get<ResourceManager>().UseResources(resourcesToRun, resourceCount);
+        int rAmt = 0;
+        if (earnings > 0)
+        {
+            rAmt = ServiceLocator.Get<ResourceManager>().UseResources(resourcesToRun, resourceCount);
+        }
+
         return earnings * (rAmt / resourceCount);
     }
 
