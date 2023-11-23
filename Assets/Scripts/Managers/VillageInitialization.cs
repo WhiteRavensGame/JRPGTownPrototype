@@ -27,9 +27,14 @@ public class VillageInitialization : MonoBehaviour
         earnings = ServiceLocator.Get<EarningsManager>();
         resources = ServiceLocator.Get<ResourceManager>();
 
-        village.Initialize(buildings, ui, villagers);
+        foreach (var building in buildings)
+        {
+            building.Initialize();
+        }
+
         earnings.InitializeBuildings(buildings);
         resources.Initialize(ui);
+        village.Initialize(buildings, ui, villagers);
 
         for (int i = 0; i <  buildings.Count; i++)
         {

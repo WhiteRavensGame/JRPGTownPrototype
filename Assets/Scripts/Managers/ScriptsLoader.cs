@@ -6,6 +6,7 @@ public class ScriptsLoader : MonoBehaviour
 
     [SerializeField] TimeManager _timeManager;
     [SerializeField] PrefabManager _prefabManager;
+    [SerializeField] SaveManager _saveManager;
 
     private void Awake()
     {
@@ -17,7 +18,9 @@ public class ScriptsLoader : MonoBehaviour
     {
         ServiceLocator.Register<TimeManager>(_timeManager);
         ServiceLocator.Register<PrefabManager>(_prefabManager);
+        ServiceLocator.Register<SaveManager>(_saveManager);
 
         _timeManager.Initialize();
+        _saveManager.Initialize();
     }
 }

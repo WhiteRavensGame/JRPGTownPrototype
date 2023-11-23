@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
         _fishText.text = fish.ToString();
     }
 
-    public void UpdateVillagerCount(int total, int left)
+    public void UpdateVillagerCount(int left, int total)
     {
         _villagerCount.text = left.ToString() + "/" + total.ToString();
     }

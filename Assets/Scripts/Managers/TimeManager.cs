@@ -67,12 +67,13 @@ public class TimeManager : MonoBehaviour
             return;
         }
 
+        ++daysPassed;
+
         if (daysPassed >= 5)
         {
             EndOfWeek();
         }
 
-        ++daysPassed;
         timePlaying = dailyTime;
         _earningsManager.CalculateEarnings();
         _resourceManager.UpdateResourceText();
@@ -109,7 +110,7 @@ public class TimeManager : MonoBehaviour
     public void Load()
     {
         var newData = ServiceLocator.Get<SaveSystem>().Load<SaveTime>("TMsave.doNotOpen");
-        if (!EqualityComparer<SaveTime>.Default.Equals(newData, default))
+        if (ServiceLocator.Get<GameManager>().LoadGame && !EqualityComparer<SaveTime>.Default.Equals(newData, default))
         {
             elapsTime = TimeSpan.FromMinutes(dailyTime);
             timePlaying = newData.timePlaying;

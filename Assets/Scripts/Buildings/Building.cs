@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Building : MonoBehaviour
 {
-    GameLoader loader = null;
     VillageManager vm = null;
 
     [HideInInspector]
@@ -34,19 +33,16 @@ public class Building : MonoBehaviour
     [SerializeField] private GameObject[] allocationButtons;
 
     public bool HasProduced { get; set; } = false;
-
-    private void Awake()
-    {
-        loader = ServiceLocator.Get<GameLoader>();
-        loader.CallOnComplete(Initialize);
-    }
-
-    private void Initialize()
+    
+    public void Initialize()
     {
         vm = ServiceLocator.Get<VillageManager>();
         _buildingSR = GetComponent<SpriteRenderer>();
 
-        Load();
+        if (ServiceLocator.Get<GameManager>().LoadGame)
+        {
+            Load();
+        }
 
         ChangeBuilding(buildingLevelInfo);
     }
@@ -169,7 +165,7 @@ public class Building : MonoBehaviour
     }
 
     [ContextMenu("TestSave")]
-    private void TestSave()
+    public void Save()
     {
         BuildingSave saveBuilding = new BuildingSave();
         saveBuilding.buildingLevel = buildingLevel;

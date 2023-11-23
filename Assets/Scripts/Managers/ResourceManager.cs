@@ -21,16 +21,9 @@ public class ResourceManager : MonoBehaviour
 
     public void Initialize(UIManager ui)
     {
-        var newData = ServiceLocator.Get<SaveSystem>().Load<SaveResources>("RMsave.doNotOpen");
-        if (!EqualityComparer<SaveResources>.Default.Equals(newData, default))
+        if (ServiceLocator.Get<GameManager>().LoadGame)
         {
-            _gold = newData.gold;
-            _fish = newData.fish;
-            _iron = newData.iron;
-            _silk = newData.silk;
-
-            _morale = newData.morale;
-            _troops = newData.troops;
+            Load();
         }
 
         _ui = ui;
@@ -151,6 +144,21 @@ public class ResourceManager : MonoBehaviour
         _ui.UpdateResourceText(_gold, _fish, _iron, _silk);
     }
 
+    private void Load()
+    {
+        var newData = ServiceLocator.Get<SaveSystem>().Load<SaveResources>("RMsave.doNotOpen");
+        if (!EqualityComparer<SaveResources>.Default.Equals(newData, default))
+        {
+            _gold = newData.gold;
+            _fish = newData.fish;
+            _iron = newData.iron;
+            _silk = newData.silk;
+
+            _morale = newData.morale;
+            _troops = newData.troops;
+        }
+    }
+
     [ContextMenu("TestSave")]
     public void Save()
     {
@@ -165,7 +173,7 @@ public class ResourceManager : MonoBehaviour
     }
 
     [System.Serializable]
-    private class SaveResources
+    public class SaveResources
     {
         public int gold = 1500;
         public int fish = 20;

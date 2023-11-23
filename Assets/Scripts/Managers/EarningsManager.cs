@@ -24,7 +24,6 @@ public class EarningsManager : MonoBehaviour
             }
         }
 
-
         _rm = ServiceLocator.Get<ResourceManager>();
     }
 
@@ -48,7 +47,7 @@ public class EarningsManager : MonoBehaviour
             _silkStore.HasProduced = false;
         }
 
-        if (_god.ResourceGod)
+        if (_god && _god.ResourceGod)
         {
             _god.AddResource();
         }
