@@ -7,6 +7,8 @@ public class NPC : MonoBehaviour
     private GameLoader _loader;
     private ReputationManager _reputation;
 
+    [SerializeField] private Building _attachedBuilding;
+
     private int _id;
 
     private void Awake()
@@ -19,15 +21,17 @@ public class NPC : MonoBehaviour
     {
         _reputation = ServiceLocator.Get<ReputationManager>();
         _id = _reputation.AddNPC();
+
+        _attachedBuilding.AttachedNPC = this;
     }
 
-    public void IncreaseReputation(int amount)
+    public void ExtractionReputation()
     {
-        _reputation.AddReputation(_id, amount);
+        _reputation.BuildingUpgrade(_id, 13.3f);
     }
 
-    public void DecreaseReputation(int amount)
+    public void IncomeReputation()
     {
-        _reputation.AddReputation(_id, -amount);
+        _reputation.BuildingUpgrade(_id, 40f);
     }
 }

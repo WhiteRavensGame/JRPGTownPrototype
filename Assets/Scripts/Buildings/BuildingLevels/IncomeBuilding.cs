@@ -19,7 +19,6 @@ public class IncomeBuilding : BuildingLevel
         }
 
         var rAmt = 0;
-
         if (villagers.Count > 0)
         {
             rAmt = ServiceLocator.Get<ResourceManager>().UseResources(resourcesToRun, resourceCount);
