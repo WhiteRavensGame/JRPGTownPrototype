@@ -23,6 +23,7 @@ public class VillageManager : MonoBehaviour
         {
             _buildings.Add(buildings[i]);
             _vTotal += buildings[i].GetPeopleAmt();
+            _vAllocated += buildings[i].GetPeopleAmt();
         }
         for (int i = 0; i < newVillagers.Count; ++i)
         {

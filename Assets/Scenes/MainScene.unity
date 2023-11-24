@@ -2316,7 +2316,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 'Save
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3693,6 +3695,7 @@ MonoBehaviour:
   _timeManager: {fileID: 1160299396}
   _prefabManager: {fileID: 589932507}
   _saveManager: {fileID: 935023401}
+  _villageInit: {fileID: 5257281932705625572}
 --- !u!1 &1781100530
 GameObject:
   m_ObjectHideFlags: 0
@@ -4339,3 +4342,14 @@ PrefabInstance:
       objectReference: {fileID: 1160299396}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+--- !u!114 &5257281932705625572 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3576805735544376581, guid: 77f037d316ec90a4b9cc00a9c191f870, type: 3}
+  m_PrefabInstance: {fileID: 5257281932705625571}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10efdcf33d11dc442b6a68ffa945bcd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

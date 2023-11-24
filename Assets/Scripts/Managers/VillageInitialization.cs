@@ -9,19 +9,11 @@ public class VillageInitialization : MonoBehaviour
     [SerializeField] List<Villager> villagers;
     [SerializeField] private TimeManager _timeManager;
 
-    private GameLoader loader = null;
-    
     private VillageManager village = null;
     private EarningsManager earnings = null;
     private ResourceManager resources = null;
 
-    private void Awake()
-    {
-        loader = ServiceLocator.Get<GameLoader>();
-        loader.CallOnComplete(Initialize);
-    }
-
-    private void Initialize()
+    public void Initialize()
     {
         village = ServiceLocator.Get<VillageManager>();
         earnings = ServiceLocator.Get<EarningsManager>();
@@ -36,7 +28,7 @@ public class VillageInitialization : MonoBehaviour
         resources.Initialize(ui);
         village.Initialize(buildings, ui, villagers);
 
-        for (int i = 0; i <  buildings.Count; i++)
+        for (int i = 0; i < buildings.Count; i++)
         {
             buildings[i].TimeManager = _timeManager;
         }
