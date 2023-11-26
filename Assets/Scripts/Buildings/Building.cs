@@ -14,6 +14,7 @@ public class Building : MonoBehaviour
     [Header("Building Settings")]
     [SerializeField] private BuildingType buildingType;
     [SerializeField] private BuildingLevel buildingLevelInfo;
+    [SerializeField] private BuildingUpgradeInfo _buildingUpgrade;
     [SerializeField] private int buildingLevel;
     [SerializeField] private int buildingMaxLevel;
 
@@ -112,11 +113,25 @@ public class Building : MonoBehaviour
                 AttachedNPC.ExtractionReputation();
             }
         }
+
+        //make building upgrade also level up
     }
 
     public int GetMaxVillagers()
     {
         return buildingLevelInfo.getMaxVillagers;
+    }
+
+    public int GetNextMaxVillagers()
+    {
+        if (buildingLevelInfo.GetNextLevel != null)
+        {
+            return buildingLevelInfo.GetNextLevel.getMaxVillagers;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     public BuildingType GetBuildingType()
@@ -154,6 +169,11 @@ public class Building : MonoBehaviour
     public int GetLevel()
     {
         return buildingLevel;
+    }
+
+    public BuildingLevel GetBuildingLevelInfo()
+    {
+        return buildingLevelInfo;
     }
 
     public void Load()

@@ -31,4 +31,9 @@ public class IncomeBuilding : BuildingLevel
     {
         building.ChangeBuilding(buildingNextLevel);
     }
+
+    public override int GetResourcesToRun()
+    {
+        return resourceCount;
+    }
 }

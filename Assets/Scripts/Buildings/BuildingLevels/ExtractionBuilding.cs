@@ -28,4 +28,10 @@ public class ExtractionBuilding : BuildingLevel
             building.ChangeBuilding(buildingNextLevel);
         }
     }
+
+    public override int GetResourcesToRun()
+    {
+        Debug.Log("Getting Resources to run from a building that is not an income building");
+        return 0;
+    }
 }

@@ -35,6 +35,10 @@ public abstract class BuildingLevel: ScriptableObject
     public string getMaxOutput { get { return maxOutput; } }
     public Sprite getVendorImage { get { return vendorImage; } }
 
+    public BuildingLevel GetNextLevel { get { return buildingNextLevel; } }
+
     public abstract float DailyEarnings(List<Villager> currentVillagersNum);
     public abstract void LevelUp(Building building);
+
+    public abstract int GetResourcesToRun();
 }
