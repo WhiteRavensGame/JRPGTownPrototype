@@ -28,8 +28,6 @@ public class MainDialogue : MonoBehaviour
 
     public void Enter(TextAsset jsonAsset)
     {
-        gameObject.SetActive(true);
-
         _currentStory = new Story(jsonAsset.text);
         CheckVariable();
         LoadTextAnim();
@@ -78,6 +76,7 @@ public class MainDialogue : MonoBehaviour
             Exit();
         }
     }
+
     public void LoadTextAnim()
     {
         if (!loadingText && _currentStory.canContinue)
@@ -114,7 +113,15 @@ public class MainDialogue : MonoBehaviour
     {
         CheckAnswers(false);
         _currentStory.ChooseChoiceIndex(index);
-        _currentStory.Continue();
+
+        if (!_currentStory.canContinue)
+        {
+            Exit();
+        }
+        else
+        {
+            LoadTextAnim();
+        }
     }
 
     private void CheckVariable()

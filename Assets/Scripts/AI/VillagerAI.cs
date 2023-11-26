@@ -1,9 +1,10 @@
 using UnityEngine;
+using System.Collections.Generic;
 using Pathfinding;
 
 public class VillagerAI : MonoBehaviour
 {
-    [SerializeField] private Transform _target;
+    [SerializeField] private List<Transform> _targetBuildings = new();
     [SerializeField] private float _speed;
     [SerializeField] private float _waypointDistance;
 
@@ -11,11 +12,14 @@ public class VillagerAI : MonoBehaviour
     [SerializeField] private Seeker _seeker;
     private Path _path;
 
+    [SerializeField, Range(0.0f, 30.0f)] int _WalkingRangeMax;
+    [SerializeField, Range(-30.0f, 0.0f)] int _WalkingRangeMin;
+    private Vector2 _currentTarget;
     private int _currentWaypoint = 0;
-    bool _reachedEndOfPath = false;
 
     private void Start()
     {
+        ChooseTarget();
         InvokeRepeating("PathUpdate", 0.0f, 0.5f);
     }
 
@@ -37,8 +41,7 @@ public class VillagerAI : MonoBehaviour
 
         if (_currentWaypoint >= _path.vectorPath.Count)
         {
-            _reachedEndOfPath = true;
-            return;
+            ChooseTarget();
         }
 
         CalculateDirForce();
@@ -62,7 +65,54 @@ public class VillagerAI : MonoBehaviour
     {
         if (_seeker.IsDone())
         {
-            _seeker.StartPath(_rb.position, _target.position, EndOfPathReached);
+            _seeker.StartPath(_rb.position, _currentTarget, EndOfPathReached);
+        }
+    }
+
+    private void ChooseTarget()
+    {
+        _currentWaypoint = 0;
+        switch (Random.Range(0, 10) % 2)
+        {
+            case 0:
+                _currentTarget = GetTargetsEntrance(Random.Range(0, _targetBuildings.Count));
+                break;
+            case 1:
+                SetRandomPlace();
+                break;
+            default: break;
+        }
+        _seeker.StartPath(_rb.position, _currentTarget, EndOfPathReached);
+    }
+
+    private Vector2 GetTargetsEntrance(int randNum)
+    {
+        var bounds = _targetBuildings[randNum].GetComponent<Collider2D>().bounds;
+        return new Vector2(bounds.center.x, bounds.min.y);
+    }
+
+    private void SetRandomPlace()
+    {
+        do
+        {
+            float randX = Random.Range(_WalkingRangeMin, _WalkingRangeMax);
+            float randY = Random.Range(_WalkingRangeMin, _WalkingRangeMax);
+            _currentTarget = new Vector2(randX, randY);
+        }
+        while (IsPointOccupied(_currentTarget));
+    }
+
+    private bool IsPointOccupied(Vector2 point)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(point, Vector2.zero);
+
+        if(hit.collider == null)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
         }
     }
 }

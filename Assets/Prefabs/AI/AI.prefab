@@ -113,11 +113,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5567e4f6e40408d439837fc2120434b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 0}
+  _targetBuildings: []
   _speed: 400
   _waypointDistance: 3
   _rb: {fileID: 4286093567569126986}
   _seeker: {fileID: 4286093567569126980}
+  _WalkingRangeMax: 15
+  _WalkingRangeMin: -14
 --- !u!1 &4286093568078959091
 GameObject:
   m_ObjectHideFlags: 0

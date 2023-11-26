@@ -47,6 +47,7 @@ public class EventManager : MonoBehaviour
         }
 
         var randNum = Random.Range(0, weeksList.Count);
+        dialogue.gameObject.SetActive(true);
         dialogue.Enter(weeksList[randNum]);
     }
 }
