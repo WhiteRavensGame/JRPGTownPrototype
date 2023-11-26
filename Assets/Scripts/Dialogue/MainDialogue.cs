@@ -12,11 +12,9 @@ public class MainDialogue : MonoBehaviour
 
     [Space, Header("UI")]
     [SerializeField] private TextMeshProUGUI dialogueText;
-    [SerializeField] private GameObject _UIpanel;
     [SerializeField] private List<GameObject> buttons;
 
     [Space, Header("Story")]
-    [SerializeField] private TextAsset _inkJson;
     private Story _currentStory;
 
     [Space, Header("Variables")]
@@ -28,21 +26,21 @@ public class MainDialogue : MonoBehaviour
     private bool _isWaitingForAnswer = false;
     private bool loadingText = false;
 
-    public void Enter()
+    public void Enter(TextAsset jsonAsset)
     {
-        _UIpanel.SetActive(true);
+        gameObject.SetActive(true);
+
+        _currentStory = new Story(jsonAsset.text);
+        CheckVariable();
     }
 
     private void Exit()
     {
-        _UIpanel.SetActive(false);
+        gameObject.SetActive(false);
     }
 
-    private void Awake()
+    private void OnEnable()
     {
-        _currentStory = new Story(_inkJson.text);
-        CheckVariable();
-
         _leftClick = _action.action;
         _leftClick.Enable();
         _leftClick.performed += OnClick;
@@ -70,7 +68,7 @@ public class MainDialogue : MonoBehaviour
 
     private void OnClick(InputAction.CallbackContext input)
     {
-        if (_currentStory.canContinue && !_isWaitingForAnswer)
+        if (!_isWaitingForAnswer)
         {
             LoadTextAnim();
         }
@@ -81,7 +79,7 @@ public class MainDialogue : MonoBehaviour
     }
     public void LoadTextAnim()
     {
-        if (!loadingText)
+        if (!loadingText && _currentStory.canContinue)
         {
             dialogueText.text = "";
             loadingText = true;
@@ -122,10 +120,16 @@ public class MainDialogue : MonoBehaviour
 
         //});
     }
-    private void OnDestroy()
+
+    private void UnbindVariable()
+    {
+        //_currentStory.UnbindExternalFunction("AddValue");
+    }
+
+    private void OnDisable()
     {
         _leftClick.Disable();
         _leftClick.performed -= OnClick;
-        //_currentStory.UnbindExternalFunction("AddValue");
+        UnbindVariable();
     }
 }
