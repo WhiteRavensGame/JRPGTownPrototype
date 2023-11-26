@@ -32,6 +32,7 @@ public class MainDialogue : MonoBehaviour
 
         _currentStory = new Story(jsonAsset.text);
         CheckVariable();
+        LoadTextAnim();
     }
 
     private void Exit()
@@ -102,6 +103,8 @@ public class MainDialogue : MonoBehaviour
             _isWaitingForAnswer = active;
             for (int i = 0; _currentStory.currentChoices.Count > i; ++i)
             {
+                var text = buttons[i].GetComponentInChildren<TextMeshProUGUI>();
+                text.text = _currentStory.currentChoices[i].text;
                 buttons[i].SetActive(active);
             }
         }
