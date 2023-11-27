@@ -13,6 +13,9 @@ public class VillageManager : MonoBehaviour
 
     private List<Building> _buildings = new List<Building>();
 
+    private List<GameObject> _villagersObj = new();
+    [SerializeField] private Vector2 _villagersSpawn;
+
     public void Initialize(List<Building> buildings, UIManager ui, List<Villager> newVillagers)
     {
         if(!ServiceLocator.Get<GameManager>().LoadGame)
@@ -38,6 +41,7 @@ public class VillageManager : MonoBehaviour
         _rm = ServiceLocator.Get<ResourceManager>();
         _ui = ui;
         UpdateVillagerText();
+        InstantiateVillagers();
     }
 
     //increase villagers that are in the town
@@ -101,5 +105,18 @@ public class VillageManager : MonoBehaviour
     public string GetVillagersAmt()
     {
         return _vTotal.ToString() + "/" + (_vTotal - _vAllocated).ToString();
+    }
+
+    public void InstantiateVillagers()
+    {
+        var villagerObj = ServiceLocator.Get<PrefabManager>().AIVillager;
+        int count = _villagersObj.Count;
+
+        for (int i = 0; i < _vTotal - count; ++i)
+        {
+            var villager = Instantiate(villagerObj, _villagersSpawn, Quaternion.identity);
+            villager.GetComponent<VillagerAI>().Initialize(_buildings);
+            _villagersObj.Add(villager);
+        }
     }
 }

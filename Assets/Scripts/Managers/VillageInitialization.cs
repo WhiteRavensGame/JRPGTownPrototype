@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class VillageInitialization : MonoBehaviour
 {
-    [SerializeField] List<Building> buildings;
-    [SerializeField] UIManager ui;
-    [SerializeField] List<Villager> villagers;
+    [SerializeField] private List<Building> buildings;
+    [SerializeField] private UIManager ui;
+    [SerializeField] private List<Villager> villagers;
     [SerializeField] private TimeManager _timeManager;
 
     private VillageManager village = null;

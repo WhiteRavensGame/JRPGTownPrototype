@@ -56,6 +56,11 @@ public class VillagerAI : MonoBehaviour
 
     private void Update()
     {
+        if(Path == null)
+        {
+            return;
+        }
+
         if (_currentWaypoint >= Path.vectorPath.Count)
         {
             EndOfPath();
