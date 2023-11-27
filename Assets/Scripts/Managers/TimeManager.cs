@@ -43,7 +43,8 @@ public class TimeManager : MonoBehaviour
 
     private void Update()
     {
-        if (!initialize || _playerManager.gameState == GameStates.EndOfWeek)
+        if (!initialize || _playerManager.gameState == GameStates.EndOfWeek || 
+            _playerManager.gameState == GameStates.Talking)
         {
             return;
         }
@@ -105,6 +106,11 @@ public class TimeManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    public int GetWeek()
+    {
+        return weeksPassed;
     }
 
     public void Load()

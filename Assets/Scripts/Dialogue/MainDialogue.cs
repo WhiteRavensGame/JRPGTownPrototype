@@ -68,11 +68,11 @@ public class MainDialogue : MonoBehaviour
 
     private void OnClick(InputAction.CallbackContext input)
     {
-        if (!_isWaitingForAnswer)
+        if (!_isWaitingForAnswer && _currentStory.canContinue)
         {
             LoadTextAnim();
         }
-        else if (!_currentStory.canContinue && !_isWaitingForAnswer)
+        else if (!_currentStory.canContinue && !_isWaitingForAnswer && _currentStory.currentChoices.Count <= 0)
         {
             Exit();
         }

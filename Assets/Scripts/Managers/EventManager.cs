@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class EventManager : MonoBehaviour
 {
     [HideInInspector] public UnityEvent endOfDay;
+    private GameObject _mainCanvas;
 
     private MainDialogue dialogue;
     [SerializeField] private List<TextAsset> _weekOneTexts = new();
@@ -16,6 +17,7 @@ public class EventManager : MonoBehaviour
     public void Initialize()
     {
         dialogue = ServiceLocator.Get<MainDialogue>();
+
     }
 
     public void WeeklyEvent(int weekNum)
