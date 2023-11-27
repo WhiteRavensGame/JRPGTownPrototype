@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class VillageManager : MonoBehaviour
 {
-    private int _vTotal = 4;
+    private int _vTotal = 0;
     private int _vAllocated = 0;
 
     private ResourceManager _rm = null;
@@ -15,11 +15,21 @@ public class VillageManager : MonoBehaviour
 
     public void Initialize(List<Building> buildings, UIManager ui, List<Villager> newVillagers)
     {
-        for (int i = 0; i < 6; ++i)
+        if(!ServiceLocator.Get<GameManager>().LoadGame)
+        {
+            _vTotal = 4;
+        }
+        for (int i = 0; i < buildings.Count; ++i)
         {
             _buildings.Add(buildings[i]);
-
+            _vTotal += buildings[i].GetPeopleAmt();
+            _vAllocated += buildings[i].GetPeopleAmt();
         }
+        for (int i = 0; i < newVillagers.Count; ++i)
+        {
+            villagers.Add(newVillagers[i]);
+        }
+
         for (int i = 0; i < newVillagers.Count; ++i)
         {
             villagers.Add(newVillagers[i]);
@@ -90,6 +100,6 @@ public class VillageManager : MonoBehaviour
 
     public string GetVillagersAmt()
     {
-        return (_vTotal - _vAllocated).ToString() + "/" + _vTotal.ToString();
+        return _vTotal.ToString() + "/" + (_vTotal - _vAllocated).ToString();
     }
 }

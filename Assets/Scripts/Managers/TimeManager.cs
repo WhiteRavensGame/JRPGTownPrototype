@@ -34,8 +34,7 @@ public class TimeManager : MonoBehaviour
 
         elapsTime = TimeSpan.FromMinutes(dailyTime);
 
-        timePlaying = dailyTime;
-        EndOfWeek();
+        Load();
 
         textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
 
@@ -44,7 +43,8 @@ public class TimeManager : MonoBehaviour
 
     private void Update()
     {
-        if (!initialize || _playerManager.gameState == GameStates.EndOfWeek)
+        if (!initialize || _playerManager.gameState == GameStates.EndOfWeek || 
+            _playerManager.gameState == GameStates.Talking)
         {
             return;
         }
@@ -68,12 +68,13 @@ public class TimeManager : MonoBehaviour
             return;
         }
 
+        ++daysPassed;
+
         if (daysPassed >= 5)
         {
             EndOfWeek();
         }
 
-        ++daysPassed;
         timePlaying = dailyTime;
         _earningsManager.CalculateEarnings();
         _resourceManager.UpdateResourceText();
@@ -107,18 +108,29 @@ public class TimeManager : MonoBehaviour
         return false;
     }
 
+    public int GetWeek()
+    {
+        return weeksPassed;
+    }
+
     public void Load()
     {
         var newData = ServiceLocator.Get<SaveSystem>().Load<SaveTime>("TMsave.doNotOpen");
-        if (!EqualityComparer<SaveTime>.Default.Equals(newData, default))
+        if (ServiceLocator.Get<GameManager>().LoadGame && !EqualityComparer<SaveTime>.Default.Equals(newData, default))
         {
             elapsTime = TimeSpan.FromMinutes(dailyTime);
             timePlaying = newData.timePlaying;
             daysPassed = newData.daysPassed;
             weeksPassed = newData.weeksPassed;
         }
+        else
+        {
+            timePlaying = dailyTime;
+            EndOfWeek();
+        }
     }
 
+    [ContextMenu("TestSave")]
     public void Save()
     {
         SaveTime saveTime = new SaveTime();
