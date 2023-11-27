@@ -64,15 +64,15 @@ public class Building : MonoBehaviour
     {
         buildingLevelInfo = newLevel;
 
-        panelText.text = buildingLevelInfo.getPanelText;
-        vendorImage.sprite = buildingLevelInfo.getVendorImage;
-        storeName.text = buildingLevelInfo.getVendorImage.name;
-        minCitizensText.text = buildingLevelInfo.getMinCitizensText;
-        minOutput.text = buildingLevelInfo.getMinOutput;
-        maxCitizensText.text = buildingLevelInfo.getMaxCitizensText;
-        maxOutput.text = buildingLevelInfo.getMaxOutput;
-
-        _buildingSR.sprite = buildingLevelInfo.getbuildingSprite;
+        //panelText.text = buildingLevelInfo.getPanelText;
+        //vendorImage.sprite = buildingLevelInfo.getVendorImage;
+        //storeName.text = buildingLevelInfo.getVendorImage.name;
+        //minCitizensText.text = buildingLevelInfo.getMinCitizensText;
+        //minOutput.text = buildingLevelInfo.getMinOutput;
+        //maxCitizensText.text = buildingLevelInfo.getMaxCitizensText;
+        //maxOutput.text = buildingLevelInfo.getMaxOutput;
+        //
+        //_buildingSR.sprite = buildingLevelInfo.getbuildingSprite;
 
         _buildingUpgrade.UpdateResources();
     }
