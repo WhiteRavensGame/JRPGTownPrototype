@@ -7,6 +7,7 @@ public enum Efficiency
     Heigh
 }
 
+[System.Serializable]
 public struct VillagerSaveData
 {
     public string s_Villagername;

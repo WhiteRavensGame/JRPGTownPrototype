@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: 001
+  LoadGame: 0
 --- !u!114 &1007293565225004820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +118,10 @@ MonoBehaviour:
   endOfDay:
     m_PersistentCalls:
       m_Calls: []
+  _weekOneTexts: []
+  _weekTwoTexts: []
+  _weekThreeTexts: []
+  _weekFourTexts: []
 --- !u!114 &7857225648335904365
 MonoBehaviour:
   m_ObjectHideFlags: 0

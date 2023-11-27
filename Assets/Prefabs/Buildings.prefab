@@ -60,6 +60,7 @@ MonoBehaviour:
   ui: {fileID: 0}
   villagers:
   - {fileID: 2850249661672668897, guid: 515f3ab316ecb1d479f5a76bafac2059, type: 3}
+  _timeManager: {fileID: 0}
 --- !u!1001 &857410306414259471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88,6 +89,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: buildingSaveName
+      value: SilkStore
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: buildingLevelInfo
       value: 
       objectReference: {fileID: 11400000, guid: aa51ae945ed5eec49b3936c9cdc18445, type: 2}
@@ -102,6 +107,10 @@ PrefabInstance:
     - target: {fileID: 3604705400038721487, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: m_Color.r
       value: 0.93037516
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604705400038721487, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721520, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: m_RootOrder
@@ -195,6 +204,10 @@ PrefabInstance:
     - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: buildingMaxLevel
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: buildingSaveName
+      value: Mine
       objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: buildingLevelInfo
@@ -300,6 +313,10 @@ PrefabInstance:
     - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: buildingType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: buildingSaveName
+      value: BlackSmith
       objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: buildingLevelInfo
@@ -419,6 +436,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: buildingSaveName
+      value: Fishery
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: buildingLevelInfo
       value: 
       objectReference: {fileID: 11400000, guid: e6f3c5c7700f9e5499cb959343dcd8f9, type: 2}
@@ -513,6 +534,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721484, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: m_Name
+      value: Inn
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: buildingSaveName
       value: Inn
       objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
@@ -623,6 +648,10 @@ PrefabInstance:
     - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: buildingMaxLevel
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
+      propertyPath: buildingSaveName
+      value: WormFarm
       objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721486, guid: b0614bba2c15bd44a9be3d89b960db8d, type: 3}
       propertyPath: buildingLevelInfo

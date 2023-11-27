@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Building : MonoBehaviour
 {
-    private GameLoader loader = null;
     private VillageManager vm = null;
 
     [HideInInspector] public TimeManager TimeManager { get; set; }
@@ -33,19 +32,20 @@ public class Building : MonoBehaviour
 
     [Space, Header("Extra Settings")]
     [SerializeField] private GameObject[] allocationButtons;
+    [SerializeField] private string buildingSaveName;
 
     public bool HasProduced { get; set; } = false;
-
-    private void Awake()
-    {
-        loader = ServiceLocator.Get<GameLoader>();
-        loader.CallOnComplete(Initialize);
-    }
-
-    private void Initialize()
+    
+    public void Initialize()
     {
         vm = ServiceLocator.Get<VillageManager>();
         _buildingSR = GetComponent<SpriteRenderer>();
+
+        if (ServiceLocator.Get<GameManager>().LoadGame)
+        {
+            Load();
+        }
+
         ChangeBuilding(buildingLevelInfo);
     }
 
@@ -178,14 +178,15 @@ public class Building : MonoBehaviour
 
     public void Load()
     {
-        var newData = ServiceLocator.Get<SaveSystem>().Load<BuildingSave>("Bsave.doNotOpen");
+        var newData = ServiceLocator.Get<SaveSystem>().Load<BuildingSave>("B" + buildingSaveName + "save.doNotOpen");
         if (!EqualityComparer<BuildingSave>.Default.Equals(newData, default))
         {
             buildingLevel = newData.buildingLevel;
 
             foreach (var villagerData in newData.currentPeople)
             {
-                var newVillager = ServiceLocator.Get<PrefabManager>().EmptyVillager.GetComponent<Villager>();
+                var neData = ServiceLocator.Get<PrefabManager>().EmptyVillager;
+                var newVillager = neData.GetComponent<Villager>();
                 newVillager.LoadData(villagerData);
                 _currentPeople.Add(newVillager);
             }
@@ -198,7 +199,7 @@ public class Building : MonoBehaviour
     }
 
     [ContextMenu("TestSave")]
-    private void TestSave()
+    public void Save()
     {
         BuildingSave saveBuilding = new BuildingSave();
         saveBuilding.buildingLevel = buildingLevel;
@@ -207,7 +208,7 @@ public class Building : MonoBehaviour
         {
             saveBuilding.currentPeople.Add(v.ToSaveData());
         }
-        ServiceLocator.Get<SaveSystem>().Save<BuildingSave>(saveBuilding, "Bsave.doNotOpen");
+        ServiceLocator.Get<SaveSystem>().Save<BuildingSave>(saveBuilding, "B" + buildingSaveName + "save.doNotOpen");
     }
 
     [System.Serializable]

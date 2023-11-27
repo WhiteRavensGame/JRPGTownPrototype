@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public interface StateClass<AgentType> where AgentType : class
 {
     public void Enter(AgentType agent);
     public void Update(AgentType agent, float dt);
     public void FixedUpdate(AgentType agent);
+    public void CollisionEnter(AgentType agent, Collision2D collision);
     public void Exit(AgentType agent);
 }
 
@@ -44,6 +46,16 @@ public class StateMachine<AgentType> where AgentType : class
         }
 
         _currentState.FixedUpdate(mAgent);
+    }
+
+    public void CollisionEnter( Collision2D collision)
+    {
+        if (_currentState is null)
+        {
+            return;
+        }
+
+        _currentState.CollisionEnter(mAgent, collision);
     }
 
     public void ChangeState(int index)
