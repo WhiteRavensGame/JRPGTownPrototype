@@ -27,6 +27,7 @@ public class EndOfWeekPanel : MonoBehaviour
         _mainCanvas.SetActive(true);
         int week = ServiceLocator.Get<TimeManager>().GetWeek();
         ServiceLocator.Get<EventManager>().WeeklyEvent(week);
+        ServiceLocator.Get<VillageManager>().InstantiateVillagers();
     }
 
     public void UpdateVillagersNums()

@@ -37,6 +37,11 @@ public class ChasingBuilding : StateClass<VillagerAI>
 
     private void StartRandPath(VillagerAI agent)
     {
+        if(agent.TargetBuildings.Count <= 0)
+        {
+            agent.ChangeTarget(Target.None);
+        }
+
         int randNum = Random.Range(0, agent.TargetBuildings.Count);
         var bounds = agent.TargetBuildings[randNum].GetComponent<Collider2D>().bounds;
         agent.CurrentTarget = new Vector2(bounds.center.x, bounds.min.y);
