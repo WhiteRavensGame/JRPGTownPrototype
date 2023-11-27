@@ -73,6 +73,8 @@ public class Building : MonoBehaviour
         maxOutput.text = buildingLevelInfo.getMaxOutput;
 
         _buildingSR.sprite = buildingLevelInfo.getbuildingSprite;
+
+        _buildingUpgrade.UpdateResources();
     }
 
     public KeyValuePair<Resources, int> GetBuildingsEarnings()

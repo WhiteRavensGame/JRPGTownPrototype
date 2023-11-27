@@ -118,6 +118,7 @@ public class TimeManager : MonoBehaviour
         var newData = ServiceLocator.Get<SaveSystem>().Load<SaveTime>("TMsave.doNotOpen");
         if (ServiceLocator.Get<GameManager>().LoadGame && !EqualityComparer<SaveTime>.Default.Equals(newData, default))
         {
+            _resourceManagementObj.SetActive(false);
             elapsTime = TimeSpan.FromMinutes(dailyTime);
             timePlaying = newData.timePlaying;
             daysPassed = newData.daysPassed;

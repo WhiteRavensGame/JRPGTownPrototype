@@ -26,6 +26,8 @@ public class BuildingUpgradeInfo : MonoBehaviour
     {
         _buildingLevel = _building.GetBuildingLevelInfo();
 
+        _upgradeCost.text = "Upgrade " + _buildingLevel.getUpgradeCost.ToString();
+
         _vNeedCurrent.text = _buildingLevel.getMaxVillagers.ToString();
         _rProdCurrent.text = _buildingLevel.getMaxOutput;
 

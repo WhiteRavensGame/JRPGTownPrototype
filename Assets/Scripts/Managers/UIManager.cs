@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _fishText;
     [SerializeField] private TextMeshProUGUI _ironText;
     [SerializeField] private TextMeshProUGUI _silkText;
+    [SerializeField] private GameObject _upgradeScreen;
+    [SerializeField] private GameObject _upgradeButton;
 
     [SerializeField] private TextMeshProUGUI _villagerCount;
 
@@ -44,5 +46,17 @@ public class UIManager : MonoBehaviour
                 playerManager.gameState = GameStates.MainScreen;
             }
         }
+    }
+
+    public void ActivateUpgradeScreen()
+    {
+        _upgradeScreen.SetActive(true);
+        _upgradeButton.SetActive(false);
+    }
+
+    public void DeactivateUpgradeScreen()
+    {
+        _upgradeScreen.SetActive(false);
+        _upgradeButton.SetActive(true);
     }
 }
