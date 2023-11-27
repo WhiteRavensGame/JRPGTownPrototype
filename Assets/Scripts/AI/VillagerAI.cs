@@ -2,117 +2,121 @@ using UnityEngine;
 using System.Collections.Generic;
 using Pathfinding;
 
+public enum Target
+{
+    Building,
+    Path,
+    None
+}
+
 public class VillagerAI : MonoBehaviour
 {
-    [SerializeField] private List<Transform> _targetBuildings = new();
+    [Header("Attachable")]
+    public List<Transform> TargetBuildings = new();
+    public Rigidbody2D Rb;
+    public Seeker Seeker;
+
+    [HideInInspector] public Path Path;
+    [HideInInspector] public Vector2 CurrentTarget;
+
+    [Space, Header("Info")]
     [SerializeField] private float _speed;
     [SerializeField] private float _waypointDistance;
+    [SerializeField] private Target _target = Target.None;
+    public Collider2D Collider;
+    public SpriteRenderer Sprite;
 
-    [SerializeField] private Rigidbody2D _rb;
-    [SerializeField] private Seeker _seeker;
-    private Path _path;
+    [Space, Header("Walking Range")]
+    public int WalkingRangeMax;
+    public int WalkingRangeMin;
 
-    [SerializeField, Range(0.0f, 30.0f)] int _WalkingRangeMax;
-    [SerializeField, Range(-30.0f, 0.0f)] int _WalkingRangeMin;
-    private Vector2 _currentTarget;
     private int _currentWaypoint = 0;
+    private StateMachine<VillagerAI> _stateMachine;
+
+    private void Awake()
+    {
+        _stateMachine = new StateMachine<VillagerAI>(this);
+        _stateMachine.AddState<ChasingBuilding>();
+        _stateMachine.AddState<ChasingPath>();
+        _stateMachine.AddState<Idle>();
+    }
 
     private void Start()
     {
         ChooseTarget();
-        InvokeRepeating("PathUpdate", 0.0f, 0.5f);
     }
 
-    private void EndOfPathReached(Path path)
+    private void Update()
     {
-        if (!path.error)
+        if (_currentWaypoint >= Path.vectorPath.Count)
         {
-            _path = path;
+            EndOfPath();
             _currentWaypoint = 0;
         }
+
+        _stateMachine.Update(Time.deltaTime);
     }
 
     private void FixedUpdate()
     {
-        if (_path == null)
+        if (Path == null)
         {
             return;
         }
 
-        if (_currentWaypoint >= _path.vectorPath.Count)
-        {
-            ChooseTarget();
-        }
-
-        CalculateDirForce();
+        _stateMachine.FixedUpdate();
     }
 
-    private void CalculateDirForce()
-    {
-        var dir = ((Vector2)_path.vectorPath[_currentWaypoint] - _rb.position).normalized;
-        var forceDir = dir * _speed * Time.deltaTime;
-        _rb.AddForce(forceDir);
-
-        float distance = Vector2.Distance(_rb.position, _path.vectorPath[_currentWaypoint]);
-
-        if (distance < _waypointDistance)
-        {
-            ++_currentWaypoint;
-        }
-    }
-
-    private void PathUpdate()
-    {
-        if (_seeker.IsDone())
-        {
-            _seeker.StartPath(_rb.position, _currentTarget, EndOfPathReached);
-        }
-    }
-
-    private void ChooseTarget()
+    public void ChooseTarget()
     {
         _currentWaypoint = 0;
         switch (Random.Range(0, 10) % 2)
         {
             case 0:
-                _currentTarget = GetTargetsEntrance(Random.Range(0, _targetBuildings.Count));
+                {
+                    ChangeTarget(Target.Building);
+                }
                 break;
             case 1:
-                SetRandomPlace();
+                {
+                    ChangeTarget(Target.Path);
+                }
                 break;
             default: break;
         }
-        _seeker.StartPath(_rb.position, _currentTarget, EndOfPathReached);
     }
 
-    private Vector2 GetTargetsEntrance(int randNum)
+    private void EndOfPath()
     {
-        var bounds = _targetBuildings[randNum].GetComponent<Collider2D>().bounds;
-        return new Vector2(bounds.center.x, bounds.min.y);
-    }
-
-    private void SetRandomPlace()
-    {
-        do
+        if(_target == Target.Building)
         {
-            float randX = Random.Range(_WalkingRangeMin, _WalkingRangeMax);
-            float randY = Random.Range(_WalkingRangeMin, _WalkingRangeMax);
-            _currentTarget = new Vector2(randX, randY);
+            Collider.enabled = false;
+            Sprite.enabled = false;
+            ChangeTarget(Target.None);
         }
-        while (IsPointOccupied(_currentTarget));
+        else if(_target == Target.Path)
+        {
+            ChangeTarget(Target.None);
+        }
     }
 
-    private bool IsPointOccupied(Vector2 point)
+    public void ChangeTarget(Target target)
     {
-        RaycastHit2D hit = Physics2D.Raycast(point, Vector2.zero);
+        _target = target;
+        _stateMachine.ChangeState((int)_target);
+    }
 
-        if(hit.collider == null)
+    public void CalculateDirForce(int waypoint)
+    {
+        var dir = ((Vector2)Path.vectorPath[_currentWaypoint] - Rb.position).normalized;
+        var forceDir = dir * _speed * Time.deltaTime;
+        Rb.AddForce(forceDir);
+
+        float distance = Vector2.Distance(Rb.position, Path.vectorPath[_currentWaypoint]);
+
+        if (distance < _waypointDistance)
         {
-            return false;
-        }
-        else
-        {
-            return true;
+            ++_currentWaypoint;
         }
     }
 }

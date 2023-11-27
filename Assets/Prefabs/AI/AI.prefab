@@ -113,13 +113,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5567e4f6e40408d439837fc2120434b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetBuildings: []
+  TargetBuildings:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Rb: {fileID: 4286093567569126986}
+  Seeker: {fileID: 4286093567569126980}
+  CurrentTarget: {x: 0, y: 0}
   _speed: 400
-  _waypointDistance: 3
-  _rb: {fileID: 4286093567569126986}
-  _seeker: {fileID: 4286093567569126980}
-  _WalkingRangeMax: 15
-  _WalkingRangeMin: -14
+  _waypointDistance: 0.5
+  _target: 2
+  Collider: {fileID: 4286093567569126987}
+  Sprite: {fileID: 4286093568078959084}
+  WalkingRangeMax: 6
+  WalkingRangeMin: -3
 --- !u!1 &4286093568078959091
 GameObject:
   m_ObjectHideFlags: 0
