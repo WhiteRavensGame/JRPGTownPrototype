@@ -27,5 +27,6 @@ public enum GameStates
 {
     MainScreen,
     PanelInfo,
-    EndOfWeek
+    EndOfWeek,
+    Paused
 }
