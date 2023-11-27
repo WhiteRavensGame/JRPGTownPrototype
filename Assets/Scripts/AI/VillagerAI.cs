@@ -41,6 +41,14 @@ public class VillagerAI : MonoBehaviour
         _stateMachine.AddState<Idle>();
     }
 
+    public void Initialize(List<Building> buildings)
+    {
+        foreach (Building building in buildings)
+        {
+            TargetBuildings.Add(building.transform);
+        }
+    }
+
     private void Start()
     {
         ChooseTarget();
