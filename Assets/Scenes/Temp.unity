@@ -1064,14 +1064,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4286093567569126981, guid: ef581c8917cfd484e998ac199ddc8010, type: 3}
-      propertyPath: _speed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 4286093567569126981, guid: ef581c8917cfd484e998ac199ddc8010, type: 3}
-      propertyPath: _waypointDistance
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4286093567569126981, guid: ef581c8917cfd484e998ac199ddc8010, type: 3}
       propertyPath: TargetBuildings.Array.data[0]
       value: 
       objectReference: {fileID: 734942472}
@@ -1101,7 +1093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4286093567569126985, guid: ef581c8917cfd484e998ac199ddc8010, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.76
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4286093567569126985, guid: ef581c8917cfd484e998ac199ddc8010, type: 3}
       propertyPath: m_LocalPosition.y

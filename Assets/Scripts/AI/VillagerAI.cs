@@ -109,8 +109,7 @@ public class VillagerAI : MonoBehaviour
     public void CalculateDirForce(int waypoint)
     {
         var dir = ((Vector2)Path.vectorPath[_currentWaypoint] - Rb.position).normalized;
-        var forceDir = dir * _speed * Time.deltaTime;
-        Rb.AddForce(forceDir);
+        Rb.velocity = dir * _speed;
 
         float distance = Vector2.Distance(Rb.position, Path.vectorPath[_currentWaypoint]);
 

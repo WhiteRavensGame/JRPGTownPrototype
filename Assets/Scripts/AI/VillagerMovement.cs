@@ -129,6 +129,7 @@ public class Idle : StateClass<VillagerAI>
     public void Enter(VillagerAI agent)
     {
         _timer = Random.Range(10, 26);
+        agent.Rb.velocity = Vector2.zero;
     }
 
     public void Update(VillagerAI agent, float dt)

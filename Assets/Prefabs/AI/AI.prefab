@@ -122,7 +122,7 @@ MonoBehaviour:
   Rb: {fileID: 4286093567569126986}
   Seeker: {fileID: 4286093567569126980}
   CurrentTarget: {x: 0, y: 0}
-  _speed: 400
+  _speed: 5
   _waypointDistance: 0.5
   _target: 2
   Collider: {fileID: 4286093567569126987}
