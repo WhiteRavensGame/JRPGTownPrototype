@@ -1,8 +1,11 @@
-
+EXTERNAL Changegold(value)
+EXTERNAL Changefood(value)
+EXTERNAL Changetroops(value)
 -> Start
 
 == Start ==
-Adelaine: "Mayor! A group of adventurers have come to stay in Steadville, they are searching for work and weapons."
+Adelaine: "Mayor! A group of adventurers have come to stay in Steadville, they are searching for work and weapons." 
+
 
 -> Choices
 
@@ -14,6 +17,10 @@ Adelaine: "Mayor! A group of adventurers have come to stay in Steadville, they a
 You recruit the heroes for 40 food and 20 gold per day.
 You recieve +6 troops.
 # -40 Food & -20 gold per day, +6 troops
+~ Changegold(-20)
+~ Changefood(-40)
+~ Changetroops(6)
+
 ->END
 
 == Turn_down ==
