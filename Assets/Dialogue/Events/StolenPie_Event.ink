@@ -1,3 +1,4 @@
+EXTERNAL Changemorale(value)
 
 -> Start
 
@@ -19,15 +20,18 @@ Peter the Thief: His name is Peter the Thief, it just seems like good practice t
 
 == Lergon ==
 It was not Lergon and he is very offended you thought it was him.
-#-5% reputation
+~ Changemorale(-5)
+#-5% morale
 ->END
 
 == Martin ==
 It was not Mr. Martin and he is offended you thought it was him.
-#-5% reputation
+~ Changemorale(-5)
+#-5% morale
 ->END
 
 == Peter ==
 It was Peter the Thief, who would've thought.
-#+5% Reputation
+~ Changemorale(5)
+#+5% morale
 ->END

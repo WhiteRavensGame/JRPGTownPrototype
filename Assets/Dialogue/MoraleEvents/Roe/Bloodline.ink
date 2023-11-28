@@ -1,3 +1,6 @@
+EXTERNAL ChangeRoeMorale(value)
+EXTERNAL ChangeMiningProduction(value)
+// Need function for mining production
 ->START
 
 == START ==
@@ -16,18 +19,21 @@ What do you do?
 
 == Accept ==
 “Thanks Mayor, have some dirt cakes for being so nice!”
+~ ChangeRoeMorale(2)
+~ ChangeMiningProduction(1)
 # +2% Roe Morale, +1 Mining Production
-
 ->END
 
 == Accept_and_help ==
 “That actually means a lot, I’ll give you my favorite rock for being so nice. His name is Bombabombo and he likes to eat gravel like ME!”
+~ ChangeRoeMorale(5)
+~ ChangeMiningProduction(2)
 # +5% Roe Morale, +2 Mining Production
-
 ->END
 
 == Dont_care ==
 “Oh uh sorry for saying anything then…”
+~ ChangeRoeMorale(-5)
+~ ChangeMiningProduction(-1)
 # -5% Roe Morale, -1 Mining Production
-
 ->END

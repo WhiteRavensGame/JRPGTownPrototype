@@ -1,3 +1,7 @@
+EXTERNAL ChangeAdelaineMorale(value)
+EXTERNAL ChangeOscarMorale(value)
+EXTERNAL Changetroops(value)
+
 ->START
 
 == START ==
@@ -17,18 +21,18 @@ After he leaves happily, what do you do?
 
 == KEEP_AN_EYE ==
 You end up finding him at Adelaine’s place and he seems likely to tell her about her father, so you step in and stop him, and Adelaine is really upset with your sudden interruption
-
+~ ChangeAdelaineMorale(-5)
 # -5% Adelaine morale
 ->END
 
 == LEAVE_HIM ==
 He ends up telling Adelaine everything about her father. Oscar, upon knowing this, becomes very upset
-
-# -5% Oscar morale, may have consequence on Adelaine’s ending
+~ ChangeOscarMorale(-5)
+// May have consequence on Adelaine’s ending
 ->END
 
 == LET_OSCAR_KNOW ==
 As you’re spying on him, you see him having conversations with different people in town, so you ask them what they were talking about, and they tell you that he was asking for Black Smith’s place. You then figure out his intention and tell Oscar about it, and the two of you stop him before he can reach Adelaine’s place.
-
+~ ChangeOscarMorale(5)
 # +5% Oscar morale
 ->END
