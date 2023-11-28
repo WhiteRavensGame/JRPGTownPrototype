@@ -30,7 +30,6 @@ public class VillagerAI : MonoBehaviour
     public int WalkingRangeMax;
     public int WalkingRangeMin;
 
-    private int _currentWaypoint = 0;
     private StateMachine<VillagerAI> _stateMachine;
 
     private void Awake()
@@ -61,12 +60,6 @@ public class VillagerAI : MonoBehaviour
             return;
         }
 
-        if (_currentWaypoint >= Path.vectorPath.Count)
-        {
-            EndOfPath();
-            _currentWaypoint = 0;
-        }
-
         _stateMachine.Update(Time.deltaTime);
     }
 
@@ -82,7 +75,6 @@ public class VillagerAI : MonoBehaviour
 
     public void ChooseTarget()
     {
-        _currentWaypoint = 0;
         switch (Random.Range(0, 10) % 2)
         {
             case 0:
@@ -99,20 +91,6 @@ public class VillagerAI : MonoBehaviour
         }
     }
 
-    private void EndOfPath()
-    {
-        if(_target == Target.Building)
-        {
-            Collider.enabled = false;
-            Sprite.enabled = false;
-            ChangeTarget(Target.None);
-        }
-        else if(_target == Target.Path)
-        {
-            ChangeTarget(Target.None);
-        }
-    }
-
     public void ChangeTarget(Target target)
     {
         _target = target;
@@ -121,14 +99,14 @@ public class VillagerAI : MonoBehaviour
 
     public void CalculateDirForce(int waypoint)
     {
-        var dir = ((Vector2)Path.vectorPath[_currentWaypoint] - Rb.position).normalized;
+        var dir = ((Vector2)Path.vectorPath[waypoint] - Rb.position).normalized;
         Rb.velocity = dir * _speed;
 
-        float distance = Vector2.Distance(Rb.position, Path.vectorPath[_currentWaypoint]);
+        float distance = Vector2.Distance(Rb.position, Path.vectorPath[waypoint]);
 
         if (distance < _waypointDistance)
         {
-            ++_currentWaypoint;
+            ++waypoint;
         }
     }
 }

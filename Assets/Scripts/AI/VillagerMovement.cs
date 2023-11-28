@@ -10,6 +10,7 @@ public class ChasingBuilding : StateClass<VillagerAI>
 
     public void Enter(VillagerAI agent)
     {
+        _currentWaypoint = 0;
         _villager = agent;
         StartRandPath(agent);
         agent.Seeker.StartPath(agent.Rb.position, agent.CurrentTarget, EndOfPathReached);
@@ -17,7 +18,12 @@ public class ChasingBuilding : StateClass<VillagerAI>
 
     public void Update(VillagerAI agent, float dt)
     {
-
+        if (_currentWaypoint >= agent.Path.vectorPath.Count)
+        {
+            agent.Collider.enabled = false;
+            agent.Sprite.enabled = false;
+            agent.ChangeTarget(Target.None);
+        }
     }
 
     public void FixedUpdate(VillagerAI agent)
@@ -64,6 +70,7 @@ public class ChasingPath : StateClass<VillagerAI>
 
     public void Enter(VillagerAI agent)
     {
+        _currentWaypoint = 0;
         _villager = agent;
         SetRandomPlace(agent);
         agent.Seeker.StartPath(agent.Rb.position, agent.CurrentTarget, EndOfPathReached);
