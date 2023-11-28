@@ -119,9 +119,11 @@ MonoBehaviour:
   endOfDay:
     m_PersistentCalls:
       m_Calls: []
-  _weekOneTexts: []
+  _weekOneTexts:
+  - {fileID: 4900000, guid: 03cfd75bce827d747816a3f382ee51e3, type: 3}
   _weekTwoTexts: []
-  _weekThreeTexts: []
+  _weekThreeTexts:
+  - {fileID: 4900000, guid: c2e92dbeeb6cb5d448c3ddb67e981f2b, type: 3}
   _weekFourTexts: []
 --- !u!114 &7857225648335904365
 MonoBehaviour:
