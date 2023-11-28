@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingNextLevel: {fileID: 11400000, guid: d7846bbe1201ed04aa2ae8fd2075170a, type: 2}
   resourcesToProduce: 3
-  buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  buildingSprite: {fileID: 21300000, guid: de48a5c0ef276a547b108bf3358ead7a, type: 3}
   maxVillagers: 4
-  income: 150
+  maxIncome: 0
+  minIncome: 0
   upgradeCost: 1000
   panelText: 'Inn Level 2
 
