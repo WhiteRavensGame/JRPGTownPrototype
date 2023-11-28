@@ -5894,6 +5894,7 @@ MonoBehaviour:
   _fishText: {fileID: 1609819496}
   _ironText: {fileID: 1539762522}
   _silkText: {fileID: 631075304}
+  _moralText: {fileID: 0}
   _upgradeScreen: {fileID: 0}
   _upgradeButton: {fileID: 0}
   _villagerCount: {fileID: 1043118891}
@@ -8236,6 +8237,7 @@ MonoBehaviour:
   _fishText: {fileID: 482661959}
   _ironText: {fileID: 1674061963}
   _silkText: {fileID: 14832890}
+  _moralText: {fileID: 1486517213}
   _upgradeScreen: {fileID: 1774100847}
   _upgradeButton: {fileID: 721072420}
   _villagerCount: {fileID: 686376413}

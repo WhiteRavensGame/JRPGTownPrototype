@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _fishText;
     [SerializeField] private TextMeshProUGUI _ironText;
     [SerializeField] private TextMeshProUGUI _silkText;
+    [SerializeField] private TextMeshProUGUI _moralText;
     [SerializeField] private GameObject _upgradeScreen;
     [SerializeField] private GameObject _upgradeButton;
 
@@ -18,12 +19,13 @@ public class UIManager : MonoBehaviour
         playerManager = ServiceLocator.Get<PlayerManager>();
     }
 
-    public void UpdateResourceText(int gold, int fish, int iron, int silk)
+    public void UpdateResourceText(int gold, int fish, int iron, int silk, int morale)
     {
         _goldText.text = gold.ToString();
         _ironText.text = iron.ToString();
         _silkText.text = silk.ToString();
         _fishText.text = fish.ToString();
+        _moralText.text = morale.ToString() + "%";
     }
 
     public void UpdateVillagerCount(int left, int total)
