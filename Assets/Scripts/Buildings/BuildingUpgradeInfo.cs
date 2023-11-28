@@ -6,6 +6,7 @@ using TMPro;
 public class BuildingUpgradeInfo : MonoBehaviour
 {
     [SerializeField] private Building _building;
+    [SerializeField] private BuildingController _buildingController;
     private BuildingLevel _buildingLevel;
                    
     [SerializeField] private TextMeshProUGUI _vNeedCurrent;
@@ -88,7 +89,7 @@ public class BuildingUpgradeInfo : MonoBehaviour
 
     public void UpgradeBuilding()
     {
-        _building.LevelUp();
+        _buildingController.ExecuteBuildingLevel();
         ServiceLocator.Get<ResourceManager>().UpdateResourceText();
     }
 }                                   
