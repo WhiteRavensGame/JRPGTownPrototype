@@ -23,10 +23,8 @@ What do you want to do?
 
 == Help ==
 You tell Wymm that he can perform and you begin gathering resources to set up a stage, he performs a few days later giving your town a magical night to remember.
-~ Changefood(-6)
-~ Changesilk(-6)
-~ Changematerials(-6)
-~ Changemorale(30)
+~ Changematerials(-5)
+~ Changemorale(25)
 ->END
 
 == Leave ==
