@@ -4,6 +4,7 @@ using Mono.Cecil;
 
 public class EndOfWeekPanel : MonoBehaviour
 {
+    private bool initialized = false;
     [SerializeField] GameObject _mainCanvas;
     [SerializeField] private TextMeshProUGUI _villagersCount;
     [SerializeField] private TextMeshProUGUI _villagersMoral;
@@ -16,6 +17,16 @@ public class EndOfWeekPanel : MonoBehaviour
     {
         UpdateVillagersNums();
         UpdateResources();
+        initialized = true;
+    }
+
+    private void OnEnable()
+    {
+        if (initialized)
+        {
+            UpdateVillagersNums();
+            UpdateResources();
+        }
     }
 
     public void EndWeek()
