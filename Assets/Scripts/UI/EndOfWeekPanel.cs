@@ -5,12 +5,17 @@ using Mono.Cecil;
 public class EndOfWeekPanel : MonoBehaviour
 {
     [SerializeField] GameObject _mainCanvas;
-    [SerializeField] private TextMeshProUGUI villagersCount;
-    [SerializeField] private TextMeshProUGUI villagersMoral;
+    [SerializeField] private TextMeshProUGUI _villagersCount;
+    [SerializeField] private TextMeshProUGUI _villagersMoral;
+    [SerializeField] private TextMeshProUGUI _silkText;
+    [SerializeField] private TextMeshProUGUI _fishText;
+    [SerializeField] private TextMeshProUGUI _ironText;
+    [SerializeField] private TextMeshProUGUI _goldText;
 
     public void Initialize()
     {
         UpdateVillagersNums();
+        UpdateResources();
     }
 
     public void EndWeek()
@@ -24,7 +29,16 @@ public class EndOfWeekPanel : MonoBehaviour
 
     public void UpdateVillagersNums()
     {
-        villagersCount.text = ServiceLocator.Get<VillageManager>().GetVillagersAmt();
-        villagersMoral.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Moral) + "%";
+        _villagersCount.text = ServiceLocator.Get<VillageManager>().GetVillagersAmt();
+        _villagersMoral.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Moral) + "%";
+    }
+
+    public void UpdateResources()
+    {
+        ServiceLocator.Get<ResourceManager>().UpdateResourceText();
+        _silkText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Silk).ToString();
+        _fishText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Fish).ToString();
+        _ironText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Iron).ToString();
+        _goldText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Gold).ToString();
     }
 }
