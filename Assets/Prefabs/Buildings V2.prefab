@@ -107,7 +107,7 @@ MonoBehaviour:
   buildingMaxLevel: 6
   _currentPeople: []
   infoPanel: {fileID: 6918696584081242797}
-  buildingSaveName: 
+  buildingSaveName: mine
 --- !u!114 &7837617696432904264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,7 +455,7 @@ MonoBehaviour:
   buildingMaxLevel: 3
   _currentPeople: []
   infoPanel: {fileID: 3891796355799200770}
-  buildingSaveName: 
+  buildingSaveName: inn
 --- !u!114 &7019669433861624573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,7 +661,7 @@ MonoBehaviour:
   buildingMaxLevel: 6
   _currentPeople: []
   infoPanel: {fileID: 7005316923735771251}
-  buildingSaveName: 
+  buildingSaveName: wf
 --- !u!114 &5492198401210620412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   buildingMaxLevel: 3
   _currentPeople: []
   infoPanel: {fileID: 4840067345646521997}
-  buildingSaveName: 
+  buildingSaveName: ss
 --- !u!114 &3169474724551329208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1256,7 +1256,7 @@ MonoBehaviour:
   buildingMaxLevel: 6
   _currentPeople: []
   infoPanel: {fileID: 324834977357102837}
-  buildingSaveName: 
+  buildingSaveName: fish
 --- !u!114 &1508199333398379738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1321,6 +1321,10 @@ PrefabInstance:
     - target: {fileID: 3604705400038721486, guid: f828cf3c6a7a10045a15e0bf8a9657dd, type: 3}
       propertyPath: buildingType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604705400038721486, guid: f828cf3c6a7a10045a15e0bf8a9657dd, type: 3}
+      propertyPath: buildingSaveName
+      value: bs
       objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721486, guid: f828cf3c6a7a10045a15e0bf8a9657dd, type: 3}
       propertyPath: buildingLevelInfo

@@ -2282,12 +2282,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buildings:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 206254046}
+  - {fileID: 206254045}
+  - {fileID: 206254044}
+  - {fileID: 206254043}
+  - {fileID: 206254042}
+  - {fileID: 206254041}
 --- !u!4 &935023402
 Transform:
   m_ObjectHideFlags: 0
@@ -2688,7 +2688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec4d2b778b046e4f9d7d566ca141b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dailyTime: 1
+  dailyTime: 0.2
   textTimer: {fileID: 917929179}
   buildings: []
   _resourceManagementObj: {fileID: 1156705557}
