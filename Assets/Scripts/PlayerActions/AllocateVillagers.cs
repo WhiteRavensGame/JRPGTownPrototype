@@ -47,11 +47,4 @@ public class AllocateVillagers : MonoBehaviour
         villagersCount.text = building.GetPeopleAmt().ToString() + "/" + building.GetMaxVillagers().ToString();
         endOfWeekPanel.UpdateVillagersNums();
     }
-
-    public void ChangeResourceNum(int resourceAmt)
-    {
-        rm.AddResource(building.GetResoureType() ,resourceAmt);
-        resourcesCount.text = rm.GetResourceAmt(building.GetResoureType()).ToString();
-        endOfWeekPanel.UpdateResources();
-    }
 }
