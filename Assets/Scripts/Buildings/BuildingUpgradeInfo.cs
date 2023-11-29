@@ -37,7 +37,7 @@ public class BuildingUpgradeInfo : MonoBehaviour
         _upgradeCost.text = "Upgrade " + _buildingLevel.getUpgradeCost.ToString();
 
         _vNeedCurrent.text = _buildingLevel.getMaxVillagers.ToString();
-        _rProdCurrent.text = _buildingLevel.getMaxOutput;
+        _rProdCurrent.text = _buildingLevel.getMaxIncome.ToString();
 
         switch ((int)_building.GetBuildingType())
         {
@@ -66,7 +66,7 @@ public class BuildingUpgradeInfo : MonoBehaviour
         if (_buildingLevel.GetNextLevel != null)
         {
             _vNeedNext.text = _buildingLevel.GetNextLevel.getMaxVillagers.ToString();
-            _rProdNext.text = _buildingLevel.GetNextLevel.getMaxOutput;
+            _rProdNext.text = _buildingLevel.GetNextLevel.getMaxIncome.ToString();
 
             switch ((int)_building.GetBuildingType())
             {
@@ -77,14 +77,14 @@ public class BuildingUpgradeInfo : MonoBehaviour
                     }
                 case 1:
                     {
-                        _rNeedNext.text = _buildingLevel.GetResourcesToRun().ToString();
-                        _r2ProdNext.text = (_building.GetLevel() * _building.GetLevel()).ToString();
+                        _rNeedNext.text = _buildingLevel.GetNextLevel.GetResourcesToRun().ToString();
+                        _r2ProdNext.text = (_building.GetNextLevel() * _building.GetNextLevel()).ToString();
                         break;
                     }
                 case 2:
                     {
-                        _rNeedNext.text = _buildingLevel.GetResourcesToRun().ToString();
-                        int x = _building.GetLevel();
+                        _rNeedNext.text = _buildingLevel.GetNextLevel.GetResourcesToRun().ToString();
+                        int x = _building.GetNextLevel();
                         int amt = (int)(((x * x) * 0.5f) - (x * 0.5f) + 1);
                         _r2ProdNext.text = amt.ToString();
                         break;

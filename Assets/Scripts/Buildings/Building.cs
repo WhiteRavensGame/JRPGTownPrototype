@@ -16,7 +16,6 @@ public class Building : MonoBehaviour
     [SerializeField] private int buildingLevel;
     [SerializeField] private int buildingMaxLevel;
 
-    private SpriteRenderer _buildingSR;
     [SerializeField] private List<Villager> _currentPeople;
 
     [Space, Header("Panel Settings")]
@@ -30,7 +29,6 @@ public class Building : MonoBehaviour
     public void Initialize()
     {
         vm = ServiceLocator.Get<VillageManager>();
-        _buildingSR = GetComponent<SpriteRenderer>();
 
         if (ServiceLocator.Get<GameManager>().LoadGame)
         {
@@ -148,6 +146,18 @@ public class Building : MonoBehaviour
         return buildingLevel;
     }
 
+    public int GetNextLevel()
+    {
+        if (buildingLevelInfo.GetNextLevel != null)
+        {
+            return buildingLevel + 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
     public int GetMaxLevel()
     {
         return buildingMaxLevel;
@@ -164,7 +174,7 @@ public class Building : MonoBehaviour
         if (!EqualityComparer<BuildingSave>.Default.Equals(newData, default))
         {
             buildingLevel = newData.buildingLevel;
-
+            ServiceLocator.Get<VillageManager>().SetVillagersNum(newData.totalVillagers);
             foreach (var villagerData in newData.currentPeople)
             {
                 var neData = ServiceLocator.Get<PrefabManager>().EmptyVillager;
@@ -186,6 +196,7 @@ public class Building : MonoBehaviour
         BuildingSave saveBuilding = new BuildingSave();
         saveBuilding.buildingLevel = buildingLevel;
         saveBuilding.currentPeople = new List<VillagerSaveData>();
+        saveBuilding.totalVillagers = ServiceLocator.Get<VillageManager>().GetVillagersNum();
         foreach (var v in _currentPeople)
         {
             saveBuilding.currentPeople.Add(v.ToSaveData());
@@ -198,5 +209,6 @@ public class Building : MonoBehaviour
     {
         public int buildingLevel;
         public List<VillagerSaveData> currentPeople;
+        public int totalVillagers;
     }
 }

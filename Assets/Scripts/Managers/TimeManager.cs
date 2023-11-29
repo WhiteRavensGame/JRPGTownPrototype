@@ -50,7 +50,7 @@ public class TimeManager : MonoBehaviour
 
         if (timePlaying <= 0.0f)
         {
-            ServiceLocator.Get<EventManager>().endOfDay.Invoke();
+            ResetDay();
         }
 
         timePlaying -= Time.deltaTime / 60;
@@ -121,6 +121,8 @@ public class TimeManager : MonoBehaviour
             timePlaying = newData.timePlaying;
             daysPassed = newData.daysPassed;
             weeksPassed = newData.weeksPassed;
+            _mainCanvas.SetActive(false);
+            _resourceManagementObj.SetActive(true);
         }
         else
         {

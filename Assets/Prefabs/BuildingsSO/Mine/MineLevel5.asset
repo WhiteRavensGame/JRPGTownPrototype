@@ -16,14 +16,6 @@ MonoBehaviour:
   resourcesToProduce: 1
   buildingSprite: {fileID: 21300000, guid: b808b5a525ed0ff43a47059610557451, type: 3}
   maxVillagers: 5
-  maxIncome: 0
+  maxIncome: 7
   minIncome: 0
   upgradeCost: 1000
-  panelText: 'Mine Level 5
-
-'
-  minCitizensText: 1
-  minOutput: 3.5
-  maxCitizensText: 5
-  maxOutput: 7
-  vendorImage: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
