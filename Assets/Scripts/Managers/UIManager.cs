@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject _upgradeScreen;
     [SerializeField] private GameObject _characterScreen;
+    [SerializeField] private GameObject _upgradeButton;
+    [SerializeField] private GameObject _pauseScreen;
 
     [SerializeField] private TextMeshProUGUI _villagerCount;
 
@@ -44,6 +46,7 @@ public class UIManager : MonoBehaviour
         if (playerManager.gameState == GameStates.Paused || playerManager.gameState == GameStates.MainScreen)
         {
             Time.timeScale = Time.timeScale == 1 ? 0 : 1;
+            _pauseScreen.SetActive(true);
 
             if (playerManager.gameState == GameStates.MainScreen)
             {
@@ -52,6 +55,7 @@ public class UIManager : MonoBehaviour
             else
             {
                 playerManager.gameState = GameStates.MainScreen;
+                _pauseScreen.SetActive(false);
             }
         }
     }
@@ -63,6 +67,7 @@ public class UIManager : MonoBehaviour
             Debug.Log("opening upgrade screen");
             ServiceLocator.Get<PlayerManager>().gameState = GameStates.PanelInfo;
             _upgradeScreen.SetActive(true);
+            _upgradeButton.SetActive(false);
         }
     }
 
@@ -71,6 +76,7 @@ public class UIManager : MonoBehaviour
         Debug.Log("closing upgrade screen");
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
         _upgradeScreen.SetActive(false);
+        _upgradeButton.SetActive(true);
     }
 
     public void ActivateCharacterScreen()
