@@ -18,7 +18,7 @@ public class ResourceManager : MonoBehaviour
     public int Fish { get { return _fish; } }
     public int Iron { get { return _iron; } }
     public int Silk { get { return _silk; } }
-    public int Morale { get { return _morale; } }
+    public int Morale { get { return _morale; } set { _morale = Morale; } }
 
     public void Initialize(UIManager ui)
     {
