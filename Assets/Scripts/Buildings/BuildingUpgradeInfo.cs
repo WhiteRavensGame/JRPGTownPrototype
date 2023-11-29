@@ -23,6 +23,13 @@ public class BuildingUpgradeInfo : MonoBehaviour
                     
     [SerializeField] private TextMeshProUGUI _upgradeCost;
 
+    [SerializeField] private TextMeshProUGUI _levelText;
+
+    private void Awake()
+    {
+        _levelText.text = "Level: " + _building.GetLevel() + "/" + _building.GetMaxLevel();
+    }
+
     public void UpdateResources()
     {
         _buildingLevel = _building.GetBuildingLevelInfo();
@@ -91,6 +98,7 @@ public class BuildingUpgradeInfo : MonoBehaviour
     {
         _buildingController.ExecuteBuildingLevel();
         ServiceLocator.Get<ResourceManager>().UpdateResourceText();
+        _levelText.text = "Level: " + _building.GetLevel() + "/" + _building.GetMaxLevel();
     }
 }                                   
                                     
