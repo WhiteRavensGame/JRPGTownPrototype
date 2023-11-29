@@ -27,8 +27,8 @@ public class VillagerAI : MonoBehaviour
     public SpriteRenderer Sprite;
 
     [Space, Header("Walking Range")]
-    public int WalkingRangeMax;
-    public int WalkingRangeMin;
+    public Vector2 WalkingRangeMax;
+    public Vector2 WalkingRangeMin;
 
     private StateMachine<VillagerAI> _stateMachine;
 

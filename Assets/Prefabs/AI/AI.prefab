@@ -122,8 +122,8 @@ MonoBehaviour:
   _target: 2
   Collider: {fileID: 4286093567569126987}
   Sprite: {fileID: 4286093568078959084}
-  WalkingRangeMax: 6
-  WalkingRangeMin: -3
+  WalkingRangeMax: {x: 8.6, y: 1.6}
+  WalkingRangeMin: {x: -8.8, y: -5}
 --- !u!1 &4286093568078959091
 GameObject:
   m_ObjectHideFlags: 0
