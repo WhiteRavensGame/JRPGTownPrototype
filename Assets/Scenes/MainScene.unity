@@ -2688,7 +2688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec4d2b778b046e4f9d7d566ca141b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dailyTime: 0.2
+  dailyTime: 1
   textTimer: {fileID: 917929179}
   buildings: []
   _resourceManagementObj: {fileID: 1156705557}
