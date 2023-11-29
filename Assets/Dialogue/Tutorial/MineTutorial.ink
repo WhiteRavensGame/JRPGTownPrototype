@@ -1,0 +1,2 @@
+Roe Kimp: Hey boss! You need me to do some DIGGING today? I mean I’ll  definitely DIG anyway but might as well grab you something on the way! No? Just the usual material for Addie over at her smithy? You got it. If you want even more DIGGING to be done, just send over some people, and we’ll DIG together! OOO-WEEE! IT’S TIME TO DIG!
+	#The mine produces Materials for the Smithy. It needs citizens to run well.
