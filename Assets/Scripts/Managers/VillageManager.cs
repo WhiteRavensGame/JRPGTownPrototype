@@ -88,7 +88,7 @@ public class VillageManager : MonoBehaviour
         int total = _vTotal;
         int left = _vTotal - _vAllocated;
 
-        _ui.UpdateVillagerCount(total, left);
+        _ui.UpdateVillagerCount(left, total);
     }
 
     public void EndDayAllocationStart(int villagersAmt)
@@ -99,7 +99,7 @@ public class VillageManager : MonoBehaviour
 
     public string GetVillagersAmt()
     {
-        return _vTotal.ToString() + "/" + (_vTotal - _vAllocated).ToString();
+        return (_vTotal - _vAllocated).ToString() + "/" + _vTotal.ToString();
     }
 
     public void InstantiateVillagers()

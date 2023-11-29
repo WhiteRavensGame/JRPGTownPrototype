@@ -30,4 +30,13 @@ public class BuildingController : MonoBehaviour
         building.LevelUp();
         ServiceLocator.Get<ResourceManager>().UpdateResourceText();
     }
+
+    private void OnMouseDown()
+    {
+        if (_playerManager.gameState == GameStates.MainScreen)
+        {
+            _playerManager.gameState = GameStates.PanelInfo;
+            building.ActivatePanel(true);
+        }
+    }
 }
