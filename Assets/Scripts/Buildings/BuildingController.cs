@@ -5,7 +5,7 @@ public class BuildingController : MonoBehaviour
     GameLoader _loader = null;
     PlayerManager _playerManager = null;
 
-    private Building building;
+    [SerializeField] private Building building;
 
     private void Awake()
     {
@@ -15,7 +15,6 @@ public class BuildingController : MonoBehaviour
 
     private void Initialize()
     {
-        building = GetComponent<Building>();
         _playerManager = ServiceLocator.Get<PlayerManager>();
     }
 
