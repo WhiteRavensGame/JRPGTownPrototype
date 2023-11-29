@@ -1,3 +1,4 @@
+EXTERNAL Changegold(value)
 
 -> Start
 
@@ -39,6 +40,7 @@ Adelaine: Hey boss, there’s a pretty big guy at the gate, says he wants a chal
 His hand shows scissors.
 “Yes! At last I find a worthy opponent! Congratulations, warrior, you have bested me. Here lies your reward.”
 +1000 Gold
+~ Changegold(1000)
 #+1000 Gold
 ->END
 
@@ -46,6 +48,7 @@ His hand shows scissors.
 His hand shows rock.
 “Yes! At last I find a worthy opponent! Congratulations, warrior, you have bested me. Here lies your reward.”
 +1000 Gold
+~ Changegold(1000)
 #+1000 Gold
 ->END
 
@@ -53,6 +56,7 @@ His hand shows rock.
 His hand shows paper.
 “Yes! At last I find a worthy opponent! Congratulations, warrior, you have bested me. Here lies your reward.”
 +1000 Gold
+~ Changegold(1000)
 #+1000 Gold
 ->END
 

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,8 +18,18 @@ public class GodModifier : MonoBehaviour
 {
     private ResourceManager _rm;
 
-    public static GodModification Modification { get; private set; }
+    public GodModification Modification { get; private set; }
     public bool ResourceGod { get; private set; } = false;
+
+    private void Awake()
+    {
+        ServiceLocator.Register<GodModifier>(this);
+        if(ServiceLocator.Get<GameManager>().LoadGame)
+        {
+            ServiceLocator.Get<EarningsManager>().InitializeGod(this);
+            SceneManager.LoadScene("MainScene");
+        }
+    }
 
     public void ChooseGod(int modification)
     {
@@ -47,7 +59,8 @@ public class GodModifier : MonoBehaviour
             default: break;
         }
 
-        SceneManager.LoadScene(3);
+        Save();
+        SceneManager.LoadScene(4);
     }
 
     public void AddResource()
@@ -64,5 +77,20 @@ public class GodModifier : MonoBehaviour
                 _rm.AddResource(Resources.Iron, 3);
                 break;
         }
+    }
+
+    private void Save()
+    {
+        GodSave saveGod = new GodSave();
+        saveGod.Modification = Modification;
+        saveGod.ResourceGod = ResourceGod;
+        ServiceLocator.Get<SaveSystem>().Save<GodSave>(saveGod, "Godsave.doNotOpen");
+    }
+
+    [System.Serializable]
+    private struct GodSave
+    {
+        public GodModification Modification;
+        public bool ResourceGod;
     }
 }

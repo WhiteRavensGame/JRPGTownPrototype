@@ -8,12 +8,12 @@ public class TutorialSelect : MonoBehaviour
     public void YesTutorial()
     {
         TutorialMode = true;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("God Select");
 
     }
 
     public void NoTutorial()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("God Select");
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class VillageManager : MonoBehaviour
 {
-    private int _vTotal = 4;
+    private int _vTotal = 0;
     private int _vAllocated = 0;
 
     private ResourceManager _rm = null;
@@ -13,13 +13,26 @@ public class VillageManager : MonoBehaviour
 
     private List<Building> _buildings = new List<Building>();
 
+    private List<GameObject> _villagersObj = new();
+    [SerializeField] private Vector2 _villagersSpawn;
+
     public void Initialize(List<Building> buildings, UIManager ui, List<Villager> newVillagers)
     {
-        for (int i = 0; i < 6; ++i)
+        if(!ServiceLocator.Get<GameManager>().LoadGame)
+        {
+            _vTotal = 4;
+        }
+        for (int i = 0; i < buildings.Count; ++i)
         {
             _buildings.Add(buildings[i]);
-
+            _vTotal += buildings[i].GetPeopleAmt();
+            _vAllocated += buildings[i].GetPeopleAmt();
         }
+        for (int i = 0; i < newVillagers.Count; ++i)
+        {
+            villagers.Add(newVillagers[i]);
+        }
+
         for (int i = 0; i < newVillagers.Count; ++i)
         {
             villagers.Add(newVillagers[i]);
@@ -28,6 +41,7 @@ public class VillageManager : MonoBehaviour
         _rm = ServiceLocator.Get<ResourceManager>();
         _ui = ui;
         UpdateVillagerText();
+        InstantiateVillagers();
     }
 
     //increase villagers that are in the town
@@ -79,17 +93,36 @@ public class VillageManager : MonoBehaviour
 
     public void EndDayAllocationStart(int villagersAmt)
     {
-        foreach(var building in _buildings)
-        {
-            building.ActivateAllocationButtons(true);
-        }
-
         _vTotal += villagersAmt;
         UpdateVillagerText();
     }
 
     public string GetVillagersAmt()
     {
-        return (_vTotal - _vAllocated).ToString() + "/" + _vTotal.ToString();
+        return _vTotal.ToString() + "/" + (_vTotal - _vAllocated).ToString();
+    }
+
+    public void InstantiateVillagers()
+    {
+        var villagerObj = ServiceLocator.Get<PrefabManager>().AIVillager;
+        int count = _villagersObj.Count;
+
+        for (int i = 0; i < _vTotal - count; ++i)
+        {
+            var villager = Instantiate(villagerObj, _villagersSpawn, Quaternion.identity);
+            villager.GetComponent<VillagerAI>().Initialize(_buildings);
+            _villagersObj.Add(villager);
+        }
+    }
+
+    public void DeleteVillagers()
+    {
+        int count = _villagersObj.Count;
+
+        for (int i = count; i > _vTotal; --i)
+        {
+            Destroy(_villagersObj[i - 1]);
+            _villagersObj.RemoveAt(i - 1);
+        }
     }
 }

@@ -5,4 +5,5 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public string levelName = "Unknown";
+    public bool LoadGame = false;
 }

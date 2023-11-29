@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingNextLevel: {fileID: 0}
   resourcesToProduce: 3
-  buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  buildingSprite: {fileID: 21300000, guid: b673ec769bdd596448cdd358219e9663, type: 3}
   maxVillagers: 6
-  income: 100
+  maxIncome: 0
+  minIncome: 0
   upgradeCost: 0
   panelText: "Silk Store Level 3\n\t\t\t"
   minCitizensText: 1

@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: 001
+  LoadGame: 0
 --- !u!114 &1007293565225004820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   villagers: []
+  _villagersSpawn: {x: 0, y: -5}
 --- !u!114 &7366996219847129332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +119,12 @@ MonoBehaviour:
   endOfDay:
     m_PersistentCalls:
       m_Calls: []
+  _weekOneTexts:
+  - {fileID: 4900000, guid: 03cfd75bce827d747816a3f382ee51e3, type: 3}
+  _weekTwoTexts: []
+  _weekThreeTexts:
+  - {fileID: 4900000, guid: c2e92dbeeb6cb5d448c3ddb67e981f2b, type: 3}
+  _weekFourTexts: []
 --- !u!114 &7857225648335904365
 MonoBehaviour:
   m_ObjectHideFlags: 0

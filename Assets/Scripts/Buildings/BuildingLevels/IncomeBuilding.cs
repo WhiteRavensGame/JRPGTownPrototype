@@ -19,7 +19,6 @@ public class IncomeBuilding : BuildingLevel
         }
 
         var rAmt = 0;
-
         if (villagers.Count > 0)
         {
             rAmt = ServiceLocator.Get<ResourceManager>().UseResources(resourcesToRun, resourceCount);
@@ -31,5 +30,10 @@ public class IncomeBuilding : BuildingLevel
     public override void LevelUp(Building building)
     {
         building.ChangeBuilding(buildingNextLevel);
+    }
+
+    public override int GetResourcesToRun()
+    {
+        return resourceCount;
     }
 }
