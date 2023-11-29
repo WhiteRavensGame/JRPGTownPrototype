@@ -146,6 +146,18 @@ public class Building : MonoBehaviour
         return buildingLevel;
     }
 
+    public int GetNextLevel()
+    {
+        if (buildingLevelInfo.GetNextLevel != null)
+        {
+            return buildingLevel + 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
     public int GetMaxLevel()
     {
         return buildingMaxLevel;

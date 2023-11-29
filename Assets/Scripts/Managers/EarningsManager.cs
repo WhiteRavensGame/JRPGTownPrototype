@@ -40,10 +40,15 @@ public class EarningsManager : MonoBehaviour
             _rm.AddResource(dailyEarnings[i].Key, dailyEarnings[i].Value);
         }
 
-        if (_silkStore.HasProduced)
+        if (_silkStore.HasProduced && _rm.GetResourceAmt(Resources.Moral) < 100)
         {
             int silkLevel = _silkStore.GetLevel();
+         
             _rm.AddResource(Resources.Moral, (silkLevel * silkLevel) + 1);
+            if (_rm.GetResourceAmt(Resources.Moral) > 100)
+            {
+                _rm.
+            }
             _silkStore.HasProduced = false;
         }
 
