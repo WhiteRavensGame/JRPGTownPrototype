@@ -22,7 +22,10 @@ public class NPC : MonoBehaviour
         _reputation = ServiceLocator.Get<ReputationManager>();
         _id = _reputation.AddNPC();
 
-        _attachedBuilding.AttachedNPC = this;
+        if (_attachedBuilding != null)
+        {
+            _attachedBuilding.AttachedNPC = this;
+        }
     }
 
     public void ExtractionReputation()
