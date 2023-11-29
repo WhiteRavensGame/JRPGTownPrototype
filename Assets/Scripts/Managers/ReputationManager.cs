@@ -16,14 +16,6 @@ public class ReputationManager : MonoBehaviour
 
     public void BuildingUpgrade(int id, float amt)
     {
-        for (int i = 0; i < _reputationList.Count; ++i)
-        {
-            if (i != id)
-            {
-                _reputationList[i] -= 5f;
-            }
-        }
-
         _reputationList[id] += amt;
     }
 }
