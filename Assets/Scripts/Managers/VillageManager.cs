@@ -93,11 +93,6 @@ public class VillageManager : MonoBehaviour
 
     public void EndDayAllocationStart(int villagersAmt)
     {
-        foreach(var building in _buildings)
-        {
-            building.ActivateAllocationButtons(true);
-        }
-
         _vTotal += villagersAmt;
         UpdateVillagerText();
     }

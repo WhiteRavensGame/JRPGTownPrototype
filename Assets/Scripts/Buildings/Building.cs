@@ -7,7 +7,6 @@ public class Building : MonoBehaviour
 {
     private VillageManager vm = null;
 
-    [HideInInspector] public TimeManager TimeManager { get; set; }
     [HideInInspector] public NPC AttachedNPC { get; set; }
 
     [Header("Building Settings")]
@@ -22,16 +21,8 @@ public class Building : MonoBehaviour
 
     [Space, Header("Panel Settings")]
     [SerializeField] private GameObject infoPanel;
-    [SerializeField] private Image vendorImage;
-    [SerializeField] private TextMeshProUGUI storeName;
-    [SerializeField] private TextMeshProUGUI panelText;
-    [SerializeField] private TextMeshProUGUI minCitizensText;
-    [SerializeField] private TextMeshProUGUI minOutput;
-    [SerializeField] private TextMeshProUGUI maxCitizensText;
-    [SerializeField] private TextMeshProUGUI maxOutput;
 
     [Space, Header("Extra Settings")]
-    [SerializeField] private GameObject[] allocationButtons;
     [SerializeField] private string buildingSaveName;
 
     public bool HasProduced { get; set; } = false;
@@ -54,26 +45,9 @@ public class Building : MonoBehaviour
         infoPanel.SetActive(activation);
     }
 
-    public void ActivateAllocationButtons(bool activation)
-    {
-        allocationButtons[0].SetActive(activation);
-        allocationButtons[1].SetActive(activation);
-    }
-
     public void ChangeBuilding(BuildingLevel newLevel)
     {
         buildingLevelInfo = newLevel;
-
-        //panelText.text = buildingLevelInfo.getPanelText;
-        //vendorImage.sprite = buildingLevelInfo.getVendorImage;
-        //storeName.text = buildingLevelInfo.getVendorImage.name;
-        //minCitizensText.text = buildingLevelInfo.getMinCitizensText;
-        //minOutput.text = buildingLevelInfo.getMinOutput;
-        //maxCitizensText.text = buildingLevelInfo.getMaxCitizensText;
-        //maxOutput.text = buildingLevelInfo.getMaxOutput;
-        //
-        //_buildingSR.sprite = buildingLevelInfo.getbuildingSprite;
-
         _buildingUpgrade.UpdateResources();
     }
 
@@ -81,7 +55,8 @@ public class Building : MonoBehaviour
     {
         int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeople);
 
-        if (TimeManager.IsWeekOne() && GodModifier.Modification == GodModification.DoubleProduction)
+        if (ServiceLocator.Get<TimeManager>().IsWeekOne() && 
+            ServiceLocator.Get<GodModifier>().Modification == GodModification.DoubleProduction)
         {
             rAmt *= 2;
         }

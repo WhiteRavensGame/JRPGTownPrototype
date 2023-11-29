@@ -6,7 +6,6 @@ using System.Collections.Generic;
 public class EventManager : MonoBehaviour
 {
     [HideInInspector] public UnityEvent endOfDay;
-    private GameObject _mainCanvas;
 
     private MainDialogue dialogue;
     [SerializeField] private List<TextAsset> _weekOneTexts = new();

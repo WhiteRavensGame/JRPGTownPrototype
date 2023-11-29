@@ -8,6 +8,11 @@ public class EndOfWeekPanel : MonoBehaviour
     [SerializeField] GameObject _mainCanvas;
     [SerializeField] private TextMeshProUGUI villagersCount;
 
+    public void Initialize()
+    {
+        UpdateVillagersNums();
+    }
+
     public void GoToBuildingPanel()
     {
         _resourcePanel.SetActive(false);
