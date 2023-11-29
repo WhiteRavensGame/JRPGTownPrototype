@@ -57,12 +57,17 @@ public class UIManager : MonoBehaviour
 
     public void ActivateUpgradeScreen()
     {
-        _upgradeScreen.SetActive(true);
-        _upgradeButton.SetActive(false);
+        if (ServiceLocator.Get<PlayerManager>().gameState == GameStates.MainScreen)
+        {
+            ServiceLocator.Get<PlayerManager>().gameState = GameStates.PanelInfo;
+            _upgradeScreen.SetActive(true);
+            _upgradeButton.SetActive(false);
+        }
     }
 
     public void DeactivateUpgradeScreen()
     {
+        ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
         _upgradeScreen.SetActive(false);
         _upgradeButton.SetActive(true);
     }
