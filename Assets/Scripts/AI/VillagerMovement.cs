@@ -28,7 +28,7 @@ public class ChasingBuilding : StateClass<VillagerAI>
 
     public void FixedUpdate(VillagerAI agent)
     {
-        agent.CalculateDirForce(_currentWaypoint);
+        agent.CalculateDirForce(ref _currentWaypoint);
     }
 
     public void Exit(VillagerAI agent)
@@ -86,7 +86,7 @@ public class ChasingPath : StateClass<VillagerAI>
 
     public void FixedUpdate(VillagerAI agent)
     {
-        agent.CalculateDirForce(_currentWaypoint);
+        agent.CalculateDirForce(ref _currentWaypoint);
     }
 
     public void Exit(VillagerAI agent)

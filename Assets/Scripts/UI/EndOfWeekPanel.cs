@@ -1,28 +1,16 @@
 using UnityEngine;
 using TMPro;
+using Mono.Cecil;
 
 public class EndOfWeekPanel : MonoBehaviour
 {
-    [SerializeField] GameObject _resourcePanel;
-    [SerializeField] GameObject _buildingPanel;
     [SerializeField] GameObject _mainCanvas;
     [SerializeField] private TextMeshProUGUI villagersCount;
+    [SerializeField] private TextMeshProUGUI villagersMoral;
 
     public void Initialize()
     {
         UpdateVillagersNums();
-    }
-
-    public void GoToBuildingPanel()
-    {
-        _resourcePanel.SetActive(false);
-        _buildingPanel.SetActive(true);
-    }
-
-    public void GoToResourcePanel()
-    {
-        _resourcePanel.SetActive(true);
-        _buildingPanel.SetActive(false);
     }
 
     public void EndWeek()
@@ -30,13 +18,13 @@ public class EndOfWeekPanel : MonoBehaviour
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
         this.gameObject.SetActive(false);
         _mainCanvas.SetActive(true);
-        int week = ServiceLocator.Get<TimeManager>().GetWeek();
-        ServiceLocator.Get<EventManager>().WeeklyEvent(week);
+        ServiceLocator.Get<EventManager>().CheckEvent();
         ServiceLocator.Get<VillageManager>().InstantiateVillagers();
     }
 
     public void UpdateVillagersNums()
     {
         villagersCount.text = ServiceLocator.Get<VillageManager>().GetVillagersAmt();
+        villagersMoral.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Moral) + "%";
     }
 }

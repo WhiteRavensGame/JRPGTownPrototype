@@ -1,9 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     private PlayerManager playerManager;
+
+    [SerializeField] private Button _eventButton;
+
     [SerializeField] private TextMeshProUGUI _goldText;
     [SerializeField] private TextMeshProUGUI _fishText;
     [SerializeField] private TextMeshProUGUI _ironText;
@@ -17,6 +21,7 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         playerManager = ServiceLocator.Get<PlayerManager>();
+        ServiceLocator.Get<EventManager>().SetUpButton(_eventButton);
     }
 
     public void UpdateResourceText(int gold, int fish, int iron, int silk, int morale)

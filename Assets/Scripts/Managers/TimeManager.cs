@@ -9,7 +9,6 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private float dailyTime;
     [SerializeField] private TextMeshProUGUI textTimer;
     [SerializeField] private List<BuildingLevel> buildings;
-    [SerializeField] private Slider weeklySlider;
 
     [SerializeField] private GameObject _resourceManagementObj;
     [SerializeField] private GameObject _mainCanvas;
@@ -57,7 +56,6 @@ public class TimeManager : MonoBehaviour
         timePlaying -= Time.deltaTime / 60;
         elapsTime = TimeSpan.FromMinutes(timePlaying);
         textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
-        weeklySlider.value = timePlaying / dailyTime;
 
     }
 
