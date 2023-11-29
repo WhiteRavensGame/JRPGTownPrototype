@@ -60,7 +60,7 @@ public class GodModifier : MonoBehaviour
         }
 
         Save();
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("MainScene");
     }
 
     public void AddResource()
