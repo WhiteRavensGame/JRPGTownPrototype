@@ -25,7 +25,6 @@ public class VillageManager : MonoBehaviour
         for (int i = 0; i < buildings.Count; ++i)
         {
             _buildings.Add(buildings[i]);
-            _vTotal += buildings[i].GetPeopleAmt();
             _vAllocated += buildings[i].GetPeopleAmt();
         }
         for (int i = 0; i < newVillagers.Count; ++i)
@@ -124,5 +123,15 @@ public class VillageManager : MonoBehaviour
             Destroy(_villagersObj[i - 1]);
             _villagersObj.RemoveAt(i - 1);
         }
+    }
+
+    public int GetVillagersNum()
+    {
+        return _vTotal;
+    }
+
+    public void SetVillagersNum(int num)
+    {
+        _vTotal = num;
     }
 }

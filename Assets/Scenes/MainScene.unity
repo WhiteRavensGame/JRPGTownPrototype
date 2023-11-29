@@ -2308,12 +2308,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buildings:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 206254046}
+  - {fileID: 206254045}
+  - {fileID: 206254044}
+  - {fileID: 206254043}
+  - {fileID: 206254042}
+  - {fileID: 206254041}
 --- !u!4 &935023402
 Transform:
   m_ObjectHideFlags: 0
