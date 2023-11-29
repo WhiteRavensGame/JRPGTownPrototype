@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
         ServiceLocator.Get<EventManager>().SetUpButton(_eventButton);
     }
 
-    public void UpdateResourceText(int gold, int fish, int iron, int silk, int morale)
+    public void UpdateResourceText(int gold, int fish, int iron, int silk, float morale)
     {
         _goldText.text = gold.ToString();
         _ironText.text = iron.ToString();
