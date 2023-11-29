@@ -16,13 +16,6 @@ MonoBehaviour:
   resourcesToProduce: 0
   buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   maxVillagers: 4
-  income: 6
+  maxIncome: 6
+  minIncome: 0
   upgradeCost: 800
-  panelText: 'Fishery Level 4
-
-'
-  minCitizensText: 1
-  minOutput: 3
-  maxCitizensText: 4
-  maxOutput: 6
-  vendorImage: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}

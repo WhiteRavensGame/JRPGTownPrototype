@@ -16,12 +16,6 @@ MonoBehaviour:
   resourcesToProduce: 2
   buildingSprite: {fileID: 21300000, guid: 1ca780b1613b76543a8b2cb9555ac270, type: 3}
   maxVillagers: 2
-  maxIncome: 0
+  maxIncome: 4
   minIncome: 0
   upgradeCost: 200
-  panelText: Worm Farm Level 2
-  minCitizensText: 1
-  minOutput: 2
-  maxCitizensText: 2
-  maxOutput: 4
-  vendorImage: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
