@@ -3,6 +3,7 @@ using Ink.Runtime;
 using TMPro;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using Mono.Cecil;
 
 public class MainDialogue : MonoBehaviour
 {
@@ -23,7 +24,6 @@ public class MainDialogue : MonoBehaviour
     private float textAnimTimer;
     private int currentWord;
 
-    private bool _isWaitingForAnswer = false;
     private bool loadingText = false;
 
     public void Enter(TextAsset jsonAsset)
@@ -68,11 +68,11 @@ public class MainDialogue : MonoBehaviour
 
     private void OnClick(InputAction.CallbackContext input)
     {
-        if (!_isWaitingForAnswer && _currentStory.canContinue)
+        if (_currentStory.canContinue || _currentStory.currentChoices.Count > 0)
         {
             LoadTextAnim();
         }
-        else if (!_currentStory.canContinue && !_isWaitingForAnswer && _currentStory.currentChoices.Count <= 0)
+        else if (!_currentStory.canContinue && _currentStory.currentChoices.Count <= 0)
         {
             Exit();
         }
@@ -94,13 +94,17 @@ public class MainDialogue : MonoBehaviour
             dialogueText.text = currentText;
             CheckAnswers(true);
         }
+
+        if(currentText == "")
+        {
+            Exit();
+        }
     }
 
     private void CheckAnswers(bool active)
     {
         if (_currentStory.currentChoices.Count > 0)
         {
-            _isWaitingForAnswer = active;
             for (int i = 0; _currentStory.currentChoices.Count > i; ++i)
             {
                 var text = buttons[i].GetComponentInChildren<TextMeshProUGUI>();
@@ -127,14 +131,65 @@ public class MainDialogue : MonoBehaviour
 
     private void CheckVariable()
     {
-        //_currentStory.BindExternalFunction("AddValue", (int val) => {
+        _currentStory.BindExternalFunction("Changegold", (int val) =>
+        {
+            ServiceLocator.Get<ResourceManager>().AddResource(Resources.Gold, val);
+            ServiceLocator.Get<ResourceManager>().UpdateResourceText();
+        });
 
-        //});
+        _currentStory.BindExternalFunction("Changecitizens", (int val) =>
+        {
+            ServiceLocator.Get<VillageManager>().AddVillagers(val);
+            if (val > 0)
+            {
+                ServiceLocator.Get<VillageManager>().InstantiateVillagers();
+            }
+            else
+            {
+                ServiceLocator.Get<VillageManager>().DeleteVillagers();
+            }
+        });
+
+        _currentStory.BindExternalFunction("Changefood", (int val) =>
+        {
+            ServiceLocator.Get<ResourceManager>().AddResource(Resources.Fish, val);
+            ServiceLocator.Get<ResourceManager>().UpdateResourceText();
+        });
+
+        _currentStory.BindExternalFunction("Changematerials", (int val) =>
+        {
+            ServiceLocator.Get<ResourceManager>().AddResource(Resources.Iron, val);
+            ServiceLocator.Get<ResourceManager>().UpdateResourceText();
+        });
+
+        _currentStory.BindExternalFunction("Changesilk", (int val) =>
+        {
+            ServiceLocator.Get<ResourceManager>().AddResource(Resources.Silk, val);
+            ServiceLocator.Get<ResourceManager>().UpdateResourceText();
+        });
+
+        _currentStory.BindExternalFunction("Changemorale", (int val) =>
+        {
+            ServiceLocator.Get<ResourceManager>().AddResource(Resources.Moral, val);
+            ServiceLocator.Get<ResourceManager>().UpdateResourceText();
+        });
+
+        _currentStory.BindExternalFunction("Changetroops", (int val) =>
+        {
+            ServiceLocator.Get<ResourceManager>().AddResource(Resources.Troops, val);
+            ServiceLocator.Get<ResourceManager>().UpdateResourceText();
+        });
     }
 
     private void UnbindVariable()
     {
-        //_currentStory.UnbindExternalFunction("AddValue");
+        _currentStory.UnbindExternalFunction("Changegold");
+        _currentStory.UnbindExternalFunction("Changecitizens");
+        _currentStory.UnbindExternalFunction("Changefood");
+        _currentStory.UnbindExternalFunction("Changematerials");
+        _currentStory.UnbindExternalFunction("Changesilk");
+        _currentStory.UnbindExternalFunction("Changemorale");
+        _currentStory.UnbindExternalFunction("Changetroops");
     }
 
     private void OnDisable()

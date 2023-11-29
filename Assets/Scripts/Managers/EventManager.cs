@@ -64,6 +64,7 @@ public class EventManager : MonoBehaviour
         int week = ServiceLocator.Get<TimeManager>().GetWeek();
 
         var randNum = 0;
+        dialogue.gameObject.SetActive(true);
 
         switch (week)
         {

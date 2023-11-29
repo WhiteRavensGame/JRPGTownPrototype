@@ -114,4 +114,15 @@ public class VillageManager : MonoBehaviour
             _villagersObj.Add(villager);
         }
     }
+
+    public void DeleteVillagers()
+    {
+        int count = _villagersObj.Count;
+
+        for (int i = count; i > _vTotal; --i)
+        {
+            Destroy(_villagersObj[i - 1]);
+            _villagersObj.RemoveAt(i - 1);
+        }
+    }
 }
