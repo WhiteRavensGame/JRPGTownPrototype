@@ -18,4 +18,9 @@ public class ReputationManager : MonoBehaviour
     {
         _reputationList[id] += amt;
     }
+
+    public float GetReputation(int id)
+    {
+        return _reputationList[id];
+    }
 }

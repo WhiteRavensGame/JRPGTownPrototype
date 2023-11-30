@@ -1,28 +1,38 @@
-EXTERNAL Changegold(value)
+EXTERNAL Changematerials(value)
 EXTERNAL Changefood(value)
 EXTERNAL Changetroops(value)
+EXTERNAL Changegold(value)
+
 -> Start
 
 == Start ==
-Adelaine: "Mayor! A group of adventurers have come to stay in Steadville, they are searching for work and weapons." 
+A band of heroes have come to stay in Steadville, they search for quests and for weapons.
+Blacksmith: "Mayor! A group of adventurers have come to stay in ⁸Steadville, they are searching for work and weapons."
+ 
 
 
 -> Choices
 
 == Choices ==
- * [Help them.] -> Help
- * [No] -> Turn_down
+ * [Keep them in town.] -> Keep
+ * [Direct them to the blacksmith.] -> Direct
+ * [Tell them to leave.] -> Turn_down
 
-== Help ==
-You recruit the heroes for 40 food and 20 gold per day.
-You recieve +6 troops.
-# -40 Food & -20 gold per day, +6 troops
-~ Changegold(-20)
-~ Changefood(-40)
-~ Changetroops(6)
+== Keep ==
+You let them stay in the Inn and in return they vow to protect your town should harm come to it.
+~ Changefood(-5)
+~ Changetroops(2)
+
+->END
+
+== Direct ==
+They give Adelaine all their business, they sharpen their swords and fix their armor and leave that day.
+~ Changematerials(-5)
+~ Changegold(250)
 
 ->END
 
 == Turn_down ==
-The heroes hang around but don't seem to help without incentive.
+They're respectful of your choice and leave immediately.
+# you don't gain or lose anything
 ->END

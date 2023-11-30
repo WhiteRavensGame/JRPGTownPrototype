@@ -30,7 +30,7 @@ public class NPC : MonoBehaviour
         {
             _attachedBuilding.AttachedNPC = this;
         }
-        if (_silkLadyExtraBuilding != null)
+        if (_silkLadyExtraBuilding != null && silkLady)
         {
             _silkLadyExtraBuilding.AttachedNPC = this;
         }
@@ -46,6 +46,7 @@ public class NPC : MonoBehaviour
         {
             _reputation.BuildingUpgrade(_id, 18f);
         }
+        _slider.value = _reputation.GetReputation(_id) / 100f;
     }
 
     public void IncomeReputation()
@@ -58,5 +59,6 @@ public class NPC : MonoBehaviour
         {
             _reputation.BuildingUpgrade(_id, 45f);
         }
+        _slider.value = _reputation.GetReputation(_id) / 100f;
     }
 }

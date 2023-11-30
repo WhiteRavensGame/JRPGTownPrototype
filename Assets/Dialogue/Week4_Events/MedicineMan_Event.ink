@@ -1,3 +1,8 @@
+EXTERNAL Changesilk(value)
+EXTERNAL Changemorale(value)
+EXTERNAL Changegold(value)
+EXTERNAL Changecitizens(value)
+
 -> Start
 
 == Start ==
@@ -17,6 +22,9 @@ Will: Boss: "Hey Mayor, we got a new guest for business."
 It turns out the medicine he offered are hard drugs that make the matters even worse after few people have taken them. 
 While the drugs are not killing anyone, the patients show some minor symptoms that are certainly not helping
 #+25 Silk, -5% Morale, -250 Gold
+~ Changegold(-250)
+~ Changesilk(25)
+~ Changemorale(-5)
 ->END
 
 == Reject ==
@@ -24,6 +32,7 @@ You turn down the offer due to your suspicion of it, and the cloaked man leaves 
 However, at midnight, someone reports a village folk being missing, and the cloaked man was last seen talking with him. 
 The reason he takes a sick man with him remains unclear.
 #-1 Population
+~ Changecitizens(-1)
 ->END   
 
 == Fight ==
@@ -36,9 +45,13 @@ Later he arrives at a house whose owner is ill, and upon hearing his attempt to 
 == Win ==
 The defeated cloaked man drops some of his stuff and runs away. The drugs he left are useless, but the silk is useful.
 #+10 Silk and +2% Morale
+~ Changesilk(10)
+~ Changemorale(2)
 ->END
 
 == Lose ==
 Without anyone getting in his way, the cloaked man eventually convinces the sick person to go with him, and his motive remains unclear.
 #-1 Population and -2% Morale
+~ Changecitizens(-1)
+~ Changemorale(-2)
 ->END   
