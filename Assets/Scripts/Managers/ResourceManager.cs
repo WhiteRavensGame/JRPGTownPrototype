@@ -27,7 +27,11 @@ public class ResourceManager : MonoBehaviour
         }
 
         _ui = ui;
+<<<<<<< Updated upstream
         _ui.UpdateResourceText(_gold, _fish, _iron, _silk);
+=======
+        _ui.UpdateResourceText(_gold, _fish, _iron, _silk, _morale, _troops);
+>>>>>>> Stashed changes
     }
 
     public void AddGold(int gold)
@@ -141,7 +145,11 @@ public class ResourceManager : MonoBehaviour
 
     public void UpdateResourceText()
     {
+<<<<<<< Updated upstream
         _ui.UpdateResourceText(_gold, _fish, _iron, _silk);
+=======
+        _ui.UpdateResourceText(_gold, _fish, _iron, _silk, _morale, _troops);
+>>>>>>> Stashed changes
     }
 
     private void Load()

@@ -8,6 +8,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _fishText;
     [SerializeField] private TextMeshProUGUI _ironText;
     [SerializeField] private TextMeshProUGUI _silkText;
+<<<<<<< Updated upstream
+=======
+    [SerializeField] private TextMeshProUGUI _moralText;
+    [SerializeField] private TextMeshProUGUI _troopText;
+
+>>>>>>> Stashed changes
     [SerializeField] private GameObject _upgradeScreen;
     [SerializeField] private GameObject _upgradeButton;
 
@@ -18,12 +24,21 @@ public class UIManager : MonoBehaviour
         playerManager = ServiceLocator.Get<PlayerManager>();
     }
 
+<<<<<<< Updated upstream
     public void UpdateResourceText(int gold, int fish, int iron, int silk)
+=======
+    public void UpdateResourceText(int gold, int fish, int iron, int silk, float morale, int troops)
+>>>>>>> Stashed changes
     {
         _goldText.text = gold.ToString();
         _ironText.text = iron.ToString();
         _silkText.text = silk.ToString();
         _fishText.text = fish.ToString();
+<<<<<<< Updated upstream
+=======
+        _moralText.text = morale.ToString() + "%";
+        _troopText.text = troops.ToString();
+>>>>>>> Stashed changes
     }
 
     public void UpdateVillagerCount(int left, int total)
