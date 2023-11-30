@@ -2,11 +2,12 @@ using UnityEngine;
 using UnityEngine.Events;
 using Ink.Runtime;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class EventManager : MonoBehaviour
 {
     [HideInInspector] public UnityEvent endOfDay;
-    private GameObject _mainCanvas;
+    [SerializeField] public GameObject _button;
 
     private MainDialogue dialogue;
     [SerializeField] private List<TextAsset> _weekOneTexts = new();
@@ -18,6 +19,12 @@ public class EventManager : MonoBehaviour
     {
         dialogue = ServiceLocator.Get<MainDialogue>();
 
+    }
+
+    public void CheckEvent()
+    {
+        int week = ServiceLocator.Get<TimeManager>().GetWeek();
+        WeeklyEvent(week);
     }
 
     public void WeeklyEvent(int weekNum)
@@ -43,14 +50,51 @@ public class EventManager : MonoBehaviour
 
     private void RandomizeEventList(List<TextAsset> weeksList)
     {
-        if(weeksList.Count <= 0)
+        if (weeksList.Count <= 0)
         {
             return;
         }
 
-        var randNum = Random.Range(0, weeksList.Count);
+        _button.SetActive(true);
+    }
+
+    public void ButtonPressed()
+    {
+        _button.SetActive(false);
+        int week = ServiceLocator.Get<TimeManager>().GetWeek();
+
+        var randNum = 0;
         dialogue.gameObject.SetActive(true);
-        dialogue.Enter(weeksList[randNum]);
+
+        switch (week)
+        {
+            case 1:
+                randNum = Random.Range(0, _weekOneTexts.Count);
+                dialogue.Enter(_weekOneTexts[randNum]);
+                break;
+            case 2:
+                randNum = Random.Range(0, _weekTwoTexts.Count);
+                dialogue.Enter(_weekTwoTexts[randNum]);
+                break;
+            case 3:
+                randNum = Random.Range(0, _weekThreeTexts.Count);
+                dialogue.Enter(_weekThreeTexts[randNum]);
+                break;
+            case 4:
+                randNum = Random.Range(0, _weekFourTexts.Count);
+                dialogue.Enter(_weekFourTexts[randNum]);
+                break;
+            default:
+                break;
+        }
+
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.Talking;
+    }
+
+    public void SetUpButton(Button button)
+    {
+        button.onClick.AddListener(ButtonPressed);
+        button.gameObject.SetActive(false);
+        _button = button.gameObject;
     }
 }

@@ -14,14 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingNextLevel: {fileID: 11400000, guid: 58d140581d1ed354b92fd92b6d2aeedb, type: 2}
   resourcesToProduce: 2
-  buildingSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  buildingSprite: {fileID: 21300000, guid: 09977befd0426bc43a1b498a230abe13, type: 3}
   maxVillagers: 5
-  maxIncome: 0
+  maxIncome: 7
   minIncome: 0
   upgradeCost: 1000
-  panelText: Worm Farm Level 5
-  minCitizensText: 1
-  minOutput: 3.5
-  maxCitizensText: 5
-  maxOutput: 5
-  vendorImage: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}

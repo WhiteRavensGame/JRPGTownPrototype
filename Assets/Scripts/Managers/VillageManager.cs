@@ -25,7 +25,6 @@ public class VillageManager : MonoBehaviour
         for (int i = 0; i < buildings.Count; ++i)
         {
             _buildings.Add(buildings[i]);
-            _vTotal += buildings[i].GetPeopleAmt();
             _vAllocated += buildings[i].GetPeopleAmt();
         }
         for (int i = 0; i < newVillagers.Count; ++i)
@@ -88,23 +87,18 @@ public class VillageManager : MonoBehaviour
         int total = _vTotal;
         int left = _vTotal - _vAllocated;
 
-        _ui.UpdateVillagerCount(total, left);
+        _ui.UpdateVillagerCount(left, total);
     }
 
     public void EndDayAllocationStart(int villagersAmt)
     {
-        foreach(var building in _buildings)
-        {
-            building.ActivateAllocationButtons(true);
-        }
-
         _vTotal += villagersAmt;
         UpdateVillagerText();
     }
 
     public string GetVillagersAmt()
     {
-        return _vTotal.ToString() + "/" + (_vTotal - _vAllocated).ToString();
+        return (_vTotal - _vAllocated).ToString() + "/" + _vTotal.ToString();
     }
 
     public void InstantiateVillagers()
@@ -118,5 +112,26 @@ public class VillageManager : MonoBehaviour
             villager.GetComponent<VillagerAI>().Initialize(_buildings);
             _villagersObj.Add(villager);
         }
+    }
+
+    public void DeleteVillagers()
+    {
+        int count = _villagersObj.Count;
+
+        for (int i = count; i > _vTotal; --i)
+        {
+            Destroy(_villagersObj[i - 1]);
+            _villagersObj.RemoveAt(i - 1);
+        }
+    }
+
+    public int GetVillagersNum()
+    {
+        return _vTotal;
+    }
+
+    public void SetVillagersNum(int num)
+    {
+        _vTotal = num;
     }
 }

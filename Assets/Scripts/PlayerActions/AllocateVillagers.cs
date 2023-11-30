@@ -5,8 +5,13 @@ public class AllocateVillagers : MonoBehaviour
 {
     private GameLoader loader = null;
     private VillageManager vm = null;
+    private ResourceManager rm = null;
     [SerializeField] private Building building;
     [SerializeField] private TextMeshProUGUI villagersCount;
+    [SerializeField] private TextMeshProUGUI resourcesCount;
+    [SerializeField] private TextMeshProUGUI buildingLevel;
+    [SerializeField] private TextMeshProUGUI resourcesText;
+    [SerializeField] private TextMeshProUGUI incomeText;
     [SerializeField] private EndOfWeekPanel endOfWeekPanel;
 
     private bool initialized = false;
@@ -23,6 +28,7 @@ public class AllocateVillagers : MonoBehaviour
         {
             return;
         }
+        buildingLevel.text = building.GetLevel().ToString();
         endOfWeekPanel.UpdateVillagersNums();
         villagersCount.text = building.GetPeopleAmt().ToString() + "/" + building.GetMaxVillagers().ToString();
     }
@@ -32,6 +38,7 @@ public class AllocateVillagers : MonoBehaviour
         Debug.Log($"{nameof(Initialize)}");
 
         vm = ServiceLocator.Get<VillageManager>();
+        rm = ServiceLocator.Get<ResourceManager>();
         
         initialized = true;
     }

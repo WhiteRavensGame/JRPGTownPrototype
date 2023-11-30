@@ -18,11 +18,12 @@ public class GodModifier : MonoBehaviour
 {
     private ResourceManager _rm;
 
-    public static GodModification Modification { get; private set; }
+    public GodModification Modification { get; private set; }
     public bool ResourceGod { get; private set; } = false;
 
     private void Awake()
     {
+        ServiceLocator.Register<GodModifier>(this);
         if(ServiceLocator.Get<GameManager>().LoadGame)
         {
             ServiceLocator.Get<EarningsManager>().InitializeGod(this);
@@ -59,7 +60,7 @@ public class GodModifier : MonoBehaviour
         }
 
         Save();
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("MainScene");
     }
 
     public void AddResource()

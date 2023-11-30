@@ -10,6 +10,7 @@ public class ChasingBuilding : StateClass<VillagerAI>
 
     public void Enter(VillagerAI agent)
     {
+        _currentWaypoint = 0;
         _villager = agent;
         StartRandPath(agent);
         agent.Seeker.StartPath(agent.Rb.position, agent.CurrentTarget, EndOfPathReached);
@@ -22,7 +23,15 @@ public class ChasingBuilding : StateClass<VillagerAI>
 
     public void FixedUpdate(VillagerAI agent)
     {
-        agent.CalculateDirForce(_currentWaypoint);
+        if (_currentWaypoint >= agent.Path.vectorPath.Count)
+        {
+            agent.Collider.enabled = false;
+            agent.Sprite.enabled = false;
+            agent.ChangeTarget(Target.None);
+            return;
+        }
+
+        agent.CalculateDirForce(ref _currentWaypoint);
     }
 
     public void Exit(VillagerAI agent)
@@ -64,6 +73,7 @@ public class ChasingPath : StateClass<VillagerAI>
 
     public void Enter(VillagerAI agent)
     {
+        _currentWaypoint = 0;
         _villager = agent;
         SetRandomPlace(agent);
         agent.Seeker.StartPath(agent.Rb.position, agent.CurrentTarget, EndOfPathReached);
@@ -71,15 +81,18 @@ public class ChasingPath : StateClass<VillagerAI>
 
     public void Update(VillagerAI agent, float dt)
     {
-        if (_currentWaypoint >= agent.Path.vectorPath.Count)
-        {
-            agent.ChangeTarget(Target.None);
-        }
+
     }
 
     public void FixedUpdate(VillagerAI agent)
     {
-        agent.CalculateDirForce(_currentWaypoint);
+        if (_currentWaypoint >= agent.Path.vectorPath.Count)
+        {
+            agent.ChangeTarget(Target.None);
+            return;
+        }
+
+        agent.CalculateDirForce(ref _currentWaypoint);
     }
 
     public void Exit(VillagerAI agent)
@@ -96,8 +109,8 @@ public class ChasingPath : StateClass<VillagerAI>
     {
         do
         {
-            float randX = Random.Range(agent.WalkingRangeMin, agent.WalkingRangeMax);
-            float randY = Random.Range(agent.WalkingRangeMin, agent.WalkingRangeMax);
+            float randX = Random.Range(agent.WalkingRangeMin.x, agent.WalkingRangeMax.x);
+            float randY = Random.Range(agent.WalkingRangeMin.y, agent.WalkingRangeMax.y);
             agent.CurrentTarget = new Vector2(randX, randY);
         }
         while (IsPointOccupied(agent.CurrentTarget));

@@ -9,7 +9,6 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private float dailyTime;
     [SerializeField] private TextMeshProUGUI textTimer;
     [SerializeField] private List<BuildingLevel> buildings;
-    [SerializeField] private Slider weeklySlider;
 
     [SerializeField] private GameObject _resourceManagementObj;
     [SerializeField] private GameObject _mainCanvas;
@@ -43,7 +42,7 @@ public class TimeManager : MonoBehaviour
 
     private void Update()
     {
-        if (!initialize || _playerManager.gameState == GameStates.EndOfWeek || 
+        if (!initialize || _playerManager.gameState == GameStates.EndOfWeek ||
             _playerManager.gameState == GameStates.Talking)
         {
             return;
@@ -51,13 +50,12 @@ public class TimeManager : MonoBehaviour
 
         if (timePlaying <= 0.0f)
         {
-            ServiceLocator.Get<EventManager>().endOfDay.Invoke();
+            ResetDay();
         }
 
         timePlaying -= Time.deltaTime / 60;
         elapsTime = TimeSpan.FromMinutes(timePlaying);
         textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
-        weeklySlider.value = timePlaying / dailyTime;
 
     }
 
@@ -73,6 +71,7 @@ public class TimeManager : MonoBehaviour
         if (daysPassed >= 5)
         {
             EndOfWeek();
+            ServiceLocator.Get<SaveManager>().SaveData();
         }
 
         timePlaying = dailyTime;
@@ -118,11 +117,12 @@ public class TimeManager : MonoBehaviour
         var newData = ServiceLocator.Get<SaveSystem>().Load<SaveTime>("TMsave.doNotOpen");
         if (ServiceLocator.Get<GameManager>().LoadGame && !EqualityComparer<SaveTime>.Default.Equals(newData, default))
         {
-            _resourceManagementObj.SetActive(false);
             elapsTime = TimeSpan.FromMinutes(dailyTime);
             timePlaying = newData.timePlaying;
             daysPassed = newData.daysPassed;
             weeksPassed = newData.weeksPassed;
+            _mainCanvas.SetActive(false);
+            _resourceManagementObj.SetActive(true);
         }
         else
         {

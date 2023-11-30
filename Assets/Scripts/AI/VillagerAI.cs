@@ -27,10 +27,9 @@ public class VillagerAI : MonoBehaviour
     public SpriteRenderer Sprite;
 
     [Space, Header("Walking Range")]
-    public int WalkingRangeMax;
-    public int WalkingRangeMin;
+    public Vector2 WalkingRangeMax;
+    public Vector2 WalkingRangeMin;
 
-    private int _currentWaypoint = 0;
     private StateMachine<VillagerAI> _stateMachine;
 
     private void Awake()
@@ -61,12 +60,6 @@ public class VillagerAI : MonoBehaviour
             return;
         }
 
-        if (_currentWaypoint >= Path.vectorPath.Count)
-        {
-            EndOfPath();
-            _currentWaypoint = 0;
-        }
-
         _stateMachine.Update(Time.deltaTime);
     }
 
@@ -82,7 +75,6 @@ public class VillagerAI : MonoBehaviour
 
     public void ChooseTarget()
     {
-        _currentWaypoint = 0;
         switch (Random.Range(0, 10) % 2)
         {
             case 0:
@@ -99,36 +91,26 @@ public class VillagerAI : MonoBehaviour
         }
     }
 
-    private void EndOfPath()
-    {
-        if(_target == Target.Building)
-        {
-            Collider.enabled = false;
-            Sprite.enabled = false;
-            ChangeTarget(Target.None);
-        }
-        else if(_target == Target.Path)
-        {
-            ChangeTarget(Target.None);
-        }
-    }
-
     public void ChangeTarget(Target target)
     {
         _target = target;
         _stateMachine.ChangeState((int)_target);
     }
 
-    public void CalculateDirForce(int waypoint)
+    public void CalculateDirForce(ref int waypoint)
     {
-        var dir = ((Vector2)Path.vectorPath[_currentWaypoint] - Rb.position).normalized;
+        var d = (Vector2)Path.vectorPath[waypoint];
+        var f = Rb.position;
+        d -= f;
+        d = d.normalized;
+        var dir = ((Vector2)Path.vectorPath[waypoint] - Rb.position).normalized;
         Rb.velocity = dir * _speed;
 
-        float distance = Vector2.Distance(Rb.position, Path.vectorPath[_currentWaypoint]);
+        float distance = Vector2.Distance(Rb.position, Path.vectorPath[waypoint]);
 
         if (distance < _waypointDistance)
         {
-            ++_currentWaypoint;
+            ++waypoint;
         }
     }
 }

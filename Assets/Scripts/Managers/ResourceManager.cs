@@ -12,7 +12,7 @@ public class ResourceManager : MonoBehaviour
     private int _iron = 20;
     private int _silk = 20;
 
-    private int _morale = 50;
+    private float _morale = 50;
     private int _troops = 10;
 
     public int Fish { get { return _fish; } }
@@ -27,7 +27,7 @@ public class ResourceManager : MonoBehaviour
         }
 
         _ui = ui;
-        _ui.UpdateResourceText(_gold, _fish, _iron, _silk);
+        _ui.UpdateResourceText(_gold, _fish, _iron, _silk, _morale);
     }
 
     public void AddGold(int gold)
@@ -87,12 +87,27 @@ public class ResourceManager : MonoBehaviour
                 return _iron;
             case Resources.Silk:
                 return _silk;
-            case Resources.Moral:
-                return _morale;
             case Resources.Troops:
                 return _troops;
+            case Resources.Gold:
+                return _gold;
             default: return 0;
         }
+    }
+
+    public float GetMorale()
+    {
+        return _morale;
+    }
+
+    public void SetMorale(float morale)
+    {
+        _morale = morale;
+    }
+
+    public void AddMorale(float amount)
+    {
+        _morale += amount;
     }
 
     public int UseResources(Resources resource, int amount)
@@ -141,7 +156,7 @@ public class ResourceManager : MonoBehaviour
 
     public void UpdateResourceText()
     {
-        _ui.UpdateResourceText(_gold, _fish, _iron, _silk);
+        _ui.UpdateResourceText(_gold, _fish, _iron, _silk, _morale);
     }
 
     private void Load()
@@ -180,7 +195,7 @@ public class ResourceManager : MonoBehaviour
         public int iron = 20;
         public int silk = 20;
          
-        public int morale = 50;
+        public float morale = 50;
         public int troops = 10;
     }
 }

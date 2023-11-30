@@ -5,7 +5,7 @@ public class BuildingController : MonoBehaviour
     GameLoader _loader = null;
     PlayerManager _playerManager = null;
 
-    private Building building;
+    [SerializeField] private Building building;
 
     private void Awake()
     {
@@ -15,17 +15,7 @@ public class BuildingController : MonoBehaviour
 
     private void Initialize()
     {
-        building = GetComponent<Building>();
         _playerManager = ServiceLocator.Get<PlayerManager>();
-    }
-
-    private void OnMouseDown()
-    {
-        if (_playerManager.gameState == GameStates.MainScreen)
-        {
-            _playerManager.gameState = GameStates.PanelInfo;
-            building.ActivatePanel(true);
-        }
     }
 
     public void OnClosePanel()
@@ -38,5 +28,14 @@ public class BuildingController : MonoBehaviour
     {
         building.LevelUp();
         ServiceLocator.Get<ResourceManager>().UpdateResourceText();
+    }
+
+    private void OnMouseDown()
+    {
+        if (_playerManager.gameState == GameStates.MainScreen)
+        {
+            _playerManager.gameState = GameStates.PanelInfo;
+            building.ActivatePanel(true);
+        }
     }
 }

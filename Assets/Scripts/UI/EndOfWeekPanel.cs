@@ -1,23 +1,32 @@
 using UnityEngine;
 using TMPro;
+using Mono.Cecil;
 
 public class EndOfWeekPanel : MonoBehaviour
 {
-    [SerializeField] GameObject _resourcePanel;
-    [SerializeField] GameObject _buildingPanel;
+    private bool initialized = false;
     [SerializeField] GameObject _mainCanvas;
-    [SerializeField] private TextMeshProUGUI villagersCount;
+    [SerializeField] private TextMeshProUGUI _villagersCount;
+    [SerializeField] private TextMeshProUGUI _villagersMoral;
+    [SerializeField] private TextMeshProUGUI _silkText;
+    [SerializeField] private TextMeshProUGUI _fishText;
+    [SerializeField] private TextMeshProUGUI _ironText;
+    [SerializeField] private TextMeshProUGUI _goldText;
 
-    public void GoToBuildingPanel()
+    public void Initialize()
     {
-        _resourcePanel.SetActive(false);
-        _buildingPanel.SetActive(true);
+        UpdateVillagersNums();
+        UpdateResources();
+        initialized = true;
     }
 
-    public void GoToResourcePanel()
+    private void OnEnable()
     {
-        _resourcePanel.SetActive(true);
-        _buildingPanel.SetActive(false);
+        if (initialized)
+        {
+            UpdateVillagersNums();
+            UpdateResources();
+        }
     }
 
     public void EndWeek()
@@ -25,13 +34,22 @@ public class EndOfWeekPanel : MonoBehaviour
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
         this.gameObject.SetActive(false);
         _mainCanvas.SetActive(true);
-        int week = ServiceLocator.Get<TimeManager>().GetWeek();
-        ServiceLocator.Get<EventManager>().WeeklyEvent(week);
+        ServiceLocator.Get<EventManager>().CheckEvent();
         ServiceLocator.Get<VillageManager>().InstantiateVillagers();
     }
 
     public void UpdateVillagersNums()
     {
-        villagersCount.text = ServiceLocator.Get<VillageManager>().GetVillagersAmt();
+        _villagersCount.text = ServiceLocator.Get<VillageManager>().GetVillagersAmt();
+        _villagersMoral.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Moral) + "%";
+    }
+
+    public void UpdateResources()
+    {
+        ServiceLocator.Get<ResourceManager>().UpdateResourceText();
+        _silkText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Silk).ToString();
+        _fishText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Fish).ToString();
+        _ironText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Iron).ToString();
+        _goldText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Gold).ToString();
     }
 }
