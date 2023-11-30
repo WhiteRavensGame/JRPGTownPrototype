@@ -78,7 +78,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 2306989983388175686}
   m_HandleRect: {fileID: 0}
@@ -379,7 +379,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 765543311746877901}
   m_HandleRect: {fileID: 0}
@@ -520,7 +520,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attachedBuilding: {fileID: 0}
+  _silkLadyExtraBuilding: {fileID: 0}
   _slider: {fileID: 3623868155658129036}
+  silkLady: 0
 --- !u!1 &1850585080937176258
 GameObject:
   m_ObjectHideFlags: 0
@@ -2072,7 +2074,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 7494777297292055656}
   m_HandleRect: {fileID: 0}
@@ -2589,7 +2591,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attachedBuilding: {fileID: 0}
+  _silkLadyExtraBuilding: {fileID: 0}
   _slider: {fileID: 7975072507511201587}
+  silkLady: 0
 --- !u!1 &6756551249765718412
 GameObject:
   m_ObjectHideFlags: 0
@@ -2893,7 +2897,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attachedBuilding: {fileID: 0}
+  _silkLadyExtraBuilding: {fileID: 0}
   _slider: {fileID: 9068290591676163270}
+  silkLady: 0
 --- !u!1 &7139806543579849405
 GameObject:
   m_ObjectHideFlags: 0
@@ -3138,7 +3144,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attachedBuilding: {fileID: 0}
+  _silkLadyExtraBuilding: {fileID: 0}
   _slider: {fileID: 2315031834631774667}
+  silkLady: 1
 --- !u!1 &7293761196198651628
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,7 +3349,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 4118181492006104293}
   m_HandleRect: {fileID: 0}
@@ -3620,7 +3628,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 3105885604568056964}
   m_HandleRect: {fileID: 0}
@@ -3919,7 +3927,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attachedBuilding: {fileID: 0}
+  _silkLadyExtraBuilding: {fileID: 0}
   _slider: {fileID: 1870836985402775144}
+  silkLady: 0
 --- !u!1 &8783571169302023504
 GameObject:
   m_ObjectHideFlags: 0
