@@ -1421,6 +1421,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EmptyVillager: {fileID: 6436430626800662923, guid: b86559e71fbf7d04b95d44871770c846, type: 3}
   AIVillager: {fileID: 4286093567569126984, guid: ef581c8917cfd484e998ac199ddc8010, type: 3}
+  Buildings:
+  - {fileID: 206254044}
+  - {fileID: 206254045}
+  - {fileID: 206254043}
+  - {fileID: 206254046}
+  - {fileID: 206254041}
+  - {fileID: 206254042}
 --- !u!1 &594293671
 GameObject:
   m_ObjectHideFlags: 0

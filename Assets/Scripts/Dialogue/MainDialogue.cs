@@ -196,6 +196,11 @@ public class MainDialogue : MonoBehaviour
         {
             ServiceLocator.Get<ReputationManager>().BuildingUpgrade(Name, val);
         });
+
+        _currentStory.BindExternalFunction("ChangeTavernProduction", (int val, string Name) =>
+        {
+            ServiceLocator.Get<PrefabManager>().GetBuidlding(Name).ChangeProductionAmt(val);
+        });
     }
 
     private void UnbindVariable()
