@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class NPC : MonoBehaviour
     private ReputationManager _reputation;
 
     [SerializeField] private Building _attachedBuilding;
+    [SerializeField] private Building _silkLadyExtraBuilding;
+    [SerializeField] private Slider _slider;
+    public bool silkLady = false;
 
     private int _id;
 
@@ -26,15 +30,35 @@ public class NPC : MonoBehaviour
         {
             _attachedBuilding.AttachedNPC = this;
         }
+        if (_silkLadyExtraBuilding != null && silkLady)
+        {
+            _silkLadyExtraBuilding.AttachedNPC = this;
+        }
     }
 
     public void ExtractionReputation()
     {
-        _reputation.BuildingUpgrade(_id, 13.3f);
+        if (silkLady)
+        {
+            _reputation.BuildingUpgrade(_id, 9f);
+        }
+        else
+        {
+            _reputation.BuildingUpgrade(_id, 18f);
+        }
+        _slider.value = _reputation.GetReputation(_id) / 100f;
     }
 
     public void IncomeReputation()
     {
-        _reputation.BuildingUpgrade(_id, 40f);
+        if (silkLady)
+        {
+            _reputation.BuildingUpgrade(_id, 22.5f);
+        }
+        else
+        {
+            _reputation.BuildingUpgrade(_id, 45f);
+        }
+        _slider.value = _reputation.GetReputation(_id) / 100f;
     }
 }
