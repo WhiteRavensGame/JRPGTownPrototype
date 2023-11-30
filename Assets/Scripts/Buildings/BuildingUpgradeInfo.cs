@@ -49,7 +49,8 @@ public class BuildingUpgradeInfo : MonoBehaviour
             case 1:
                 {
                     _rNeedCurrent.text = _buildingLevel.GetResourcesToRun().ToString();
-                    //_r2ProdCurrent.text = (_building.GetLevel() * _building.GetLevel()).ToString();
+                    float smithLevel = _buildingLevel.getMaxVillagers / 2;
+                    _r2ProdCurrent.text = ((int)((0.5f * smithLevel * smithLevel) - (0.5f * smithLevel) + 1)).ToString();
                     break;
                 }
             case 2:
@@ -78,14 +79,15 @@ public class BuildingUpgradeInfo : MonoBehaviour
                 case 1:
                     {
                         _rNeedNext.text = _buildingLevel.GetNextLevel.GetResourcesToRun().ToString();
-                        _r2ProdNext.text = (_building.GetNextLevel() * _building.GetNextLevel()).ToString();
+                        float smithLevel = _buildingLevel.GetNextLevel.getMaxVillagers / 2;
+                        _r2ProdNext.text = ((int)((0.5f * smithLevel * smithLevel) - (0.5f * smithLevel) + 1)).ToString();
                         break;
                     }
                 case 2:
                     {
                         _rNeedNext.text = _buildingLevel.GetNextLevel.GetResourcesToRun().ToString();
-                        int x = _building.GetNextLevel();
-                        int amt = (int)(((x * x) * 0.5f) - (x * 0.5f) + 1);
+                        int silkLevel = _building.GetNextLevel();
+                        float amt = (0.25f * (silkLevel * silkLevel)) - (0.25f * silkLevel) + 0.5f;
                         _r2ProdNext.text = amt.ToString();
                         break;
                     }
