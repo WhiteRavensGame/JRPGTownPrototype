@@ -131,6 +131,18 @@ public class MainDialogue : MonoBehaviour
 
     private void CheckVariable()
     {
+        _currentStory.BindExternalFunction("ChangeAllResource", (int val) =>
+        {
+            ServiceLocator.Get<ResourceManager>().AddResource(Resources.Gold, val);
+            ServiceLocator.Get<ResourceManager>().AddResource(Resources.Reputation, val);
+            ServiceLocator.Get<ResourceManager>().AddResource(Resources.Fish, val);
+            ServiceLocator.Get<ResourceManager>().AddResource(Resources.Iron, val);
+            ServiceLocator.Get<ResourceManager>().AddResource(Resources.Moral, val);
+            ServiceLocator.Get<ResourceManager>().AddResource(Resources.Silk, val);
+            ServiceLocator.Get<ResourceManager>().AddResource(Resources.Troops, val);
+            ServiceLocator.Get<ResourceManager>().UpdateResourceText();
+        });
+
         _currentStory.BindExternalFunction("Changegold", (int val) =>
         {
             ServiceLocator.Get<ResourceManager>().AddResource(Resources.Gold, val);
