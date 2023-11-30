@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
@@ -90,7 +91,12 @@ public class TimeManager : MonoBehaviour
             ServiceLocator.Get<VillageManager>().EndDayAllocationStart((int)villagers);
         }
 
-        daysPassed = 0;
+        if (weeksPassed > 5)
+        {
+            SceneManager.LoadScene("RoundTable");
+        }
+
+            daysPassed = 0;
         ++weeksPassed;
         _mainCanvas.SetActive(false);
         _resourceManagementObj.SetActive(true);

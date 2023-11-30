@@ -20,4 +20,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: f1cca67b932a1504cb0f36f5d23191ba
+  - enabled: 1
+    path: Assets/Scenes/Ending/RoundTable.unity
+    guid: e335649071460cc48baafed7184f70fa
+  - enabled: 1
+    path: Assets/Scenes/Ending/DecisionScene.unity
+    guid: 036874e560a918242975affa3b0a0b7d
+  - enabled: 1
+    path: Assets/Scenes/Ending/Ending.unity
+    guid: f6605011a49c29844b5073b5de0bd67e
+  - enabled: 1
+    path: Assets/Scenes/Ending/CharacterEnding.unity
+    guid: ce8d18508bd48184aa69317fcc654ec7
   m_configObjects: {}
