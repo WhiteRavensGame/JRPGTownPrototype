@@ -3679,7 +3679,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 765543311746877901, guid: b72c62db5b09c7e4698eea66c709aed7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1596910483219769302, guid: b72c62db5b09c7e4698eea66c709aed7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3711,7 +3711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2306989983388175686, guid: b72c62db5b09c7e4698eea66c709aed7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2315031834631774667, guid: b72c62db5b09c7e4698eea66c709aed7, type: 3}
       propertyPath: m_Value
@@ -3731,7 +3731,7 @@ PrefabInstance:
       objectReference: {fileID: 206254044}
     - target: {fileID: 3105885604568056964, guid: b72c62db5b09c7e4698eea66c709aed7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3141150607294787448, guid: b72c62db5b09c7e4698eea66c709aed7, type: 3}
       propertyPath: m_Pivot.x
@@ -3815,7 +3815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3141150607294787448, guid: b72c62db5b09c7e4698eea66c709aed7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -540.11053
+      value: -529.86
       objectReference: {fileID: 0}
     - target: {fileID: 3141150607294787448, guid: b72c62db5b09c7e4698eea66c709aed7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3839,7 +3839,7 @@ PrefabInstance:
       objectReference: {fileID: 206254046}
     - target: {fileID: 4118181492006104293, guid: b72c62db5b09c7e4698eea66c709aed7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4795965912778517561, guid: b72c62db5b09c7e4698eea66c709aed7, type: 3}
       propertyPath: _attachedBuilding
@@ -3851,7 +3851,7 @@ PrefabInstance:
       objectReference: {fileID: 206254041}
     - target: {fileID: 7494777297292055656, guid: b72c62db5b09c7e4698eea66c709aed7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8403027981061230741, guid: b72c62db5b09c7e4698eea66c709aed7, type: 3}
       propertyPath: m_Name
@@ -3859,7 +3859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8403027981061230741, guid: b72c62db5b09c7e4698eea66c709aed7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9194678896255366798, guid: b72c62db5b09c7e4698eea66c709aed7, type: 3}
       propertyPath: _attachedBuilding

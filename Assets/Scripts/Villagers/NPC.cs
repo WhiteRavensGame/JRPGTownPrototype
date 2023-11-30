@@ -13,7 +13,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private Slider _slider;
     public bool silkLady = false;
 
-    private int _id;
+    public string Name;
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class NPC : MonoBehaviour
     private void Initialize()
     {
         _reputation = ServiceLocator.Get<ReputationManager>();
-        _id = _reputation.AddNPC();
+        _reputation.AddNPC(this);
 
         if (_attachedBuilding != null)
         {
@@ -40,25 +40,30 @@ public class NPC : MonoBehaviour
     {
         if (silkLady)
         {
-            _reputation.BuildingUpgrade(_id, 9f);
+            _reputation.BuildingUpgrade(Name, 9f);
         }
         else
         {
-            _reputation.BuildingUpgrade(_id, 18f);
+            _reputation.BuildingUpgrade(Name, 18f);
         }
-        _slider.value = _reputation.GetReputation(_id) / 100f;
+        _slider.value = _reputation.GetReputation(Name) / 100f;
     }
 
     public void IncomeReputation()
     {
         if (silkLady)
         {
-            _reputation.BuildingUpgrade(_id, 22.5f);
+            _reputation.BuildingUpgrade(Name, 22.5f);
         }
         else
         {
-            _reputation.BuildingUpgrade(_id, 45f);
+            _reputation.BuildingUpgrade(Name, 45f);
         }
-        _slider.value = _reputation.GetReputation(_id) / 100f;
+        _slider.value = _reputation.GetReputation(Name) / 100f;
+    }
+
+    public void ChangeReputation(int amount)
+    {
+        
     }
 }

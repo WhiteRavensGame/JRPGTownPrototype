@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,6 +26,8 @@ public class UIManager : MonoBehaviour
     {
         playerManager = ServiceLocator.Get<PlayerManager>();
         ServiceLocator.Get<EventManager>().SetUpButton(_eventButton);
+        _characterScreen.GetComponent<RectTransform>().localPosition = new Vector3(_characterScreen.transform.localPosition.x, -540.1105f, _characterScreen.transform.localPosition.z);
+        _characterScreen.SetActive(false);
     }
 
     public void UpdateResourceText(int gold, int fish, int iron, int silk, float morale)

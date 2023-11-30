@@ -6,6 +6,7 @@ public class EarningsManager : MonoBehaviour
     private ResourceManager _rm = null;
     private GodModifier _god = null;
     private Building _silkStore;
+    private Building _blackSmith;
 
     private List<Building> _buildings;
     List<KeyValuePair<Resources, int>> dailyEarnings = new List<KeyValuePair<Resources, int>>();
@@ -21,6 +22,10 @@ public class EarningsManager : MonoBehaviour
             if (buildings[i].GetBuildingType() == BuildingType.SilkStore)
             {
                 _silkStore = buildings[i];
+            }
+            if (buildings[i].GetBuildingType() == BuildingType.Blacksmith)
+            {
+                _blackSmith = buildings[i];
             }
         }
 
@@ -50,6 +55,15 @@ public class EarningsManager : MonoBehaviour
                 _rm.SetMorale(100);
             }
             _silkStore.HasProduced = false;
+        }
+
+        if (_blackSmith.HasProduced)
+        {
+            int smithLevel = _blackSmith.GetPeopleAmt() / 2;
+
+            _rm.AddResource(Resources.Troops,(int)((0.5f * smithLevel * smithLevel) - (0.5f * smithLevel) + 1));
+            
+            _blackSmith.HasProduced = false;
         }
 
         if (_god && _god.ResourceGod)
