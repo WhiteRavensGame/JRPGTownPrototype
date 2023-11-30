@@ -175,6 +175,7 @@ MonoBehaviour:
   buildingType: 4
   buildingLevelInfo: {fileID: 11400000, guid: 54995c82cdfa65440b1311921d2d4b83, type: 2}
   _buildingUpgrade: {fileID: 0}
+  spriteRenderer: {fileID: 305422813578570864}
   buildingLevel: 1
   buildingMaxLevel: 6
   _currentPeople: []
@@ -511,6 +512,7 @@ MonoBehaviour:
   buildingType: 0
   buildingLevelInfo: {fileID: 11400000, guid: d0581a6df7cbeaf488deb66ac67a8f52, type: 2}
   _buildingUpgrade: {fileID: 0}
+  spriteRenderer: {fileID: 689960598412797637}
   buildingLevel: 1
   buildingMaxLevel: 3
   _currentPeople: []
@@ -777,6 +779,7 @@ MonoBehaviour:
   buildingType: 5
   buildingLevelInfo: {fileID: 11400000, guid: c031daee125a7e94e8ca077c8af4a439, type: 2}
   _buildingUpgrade: {fileID: 0}
+  spriteRenderer: {fileID: 2648660780776746436}
   buildingLevel: 1
   buildingMaxLevel: 6
   _currentPeople: []
@@ -1113,6 +1116,7 @@ MonoBehaviour:
   buildingType: 2
   buildingLevelInfo: {fileID: 11400000, guid: aa51ae945ed5eec49b3936c9cdc18445, type: 2}
   _buildingUpgrade: {fileID: 0}
+  spriteRenderer: {fileID: 4829521067068518784}
   buildingLevel: 1
   buildingMaxLevel: 3
   _currentPeople: []
@@ -1537,6 +1541,7 @@ MonoBehaviour:
   buildingType: 3
   buildingLevelInfo: {fileID: 11400000, guid: e6f3c5c7700f9e5499cb959343dcd8f9, type: 2}
   _buildingUpgrade: {fileID: 0}
+  spriteRenderer: {fileID: 8941871664826976482}
   buildingLevel: 1
   buildingMaxLevel: 6
   _currentPeople: []
@@ -1668,6 +1673,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3604705400038721486, guid: f828cf3c6a7a10045a15e0bf8a9657dd, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 4212481761657774904}
+    - target: {fileID: 3604705400038721486, guid: f828cf3c6a7a10045a15e0bf8a9657dd, type: 3}
       propertyPath: buildingLevelInfo
       value: 
       objectReference: {fileID: 11400000, guid: 1a8e870b3dd8d2648a9f0564696a14c5, type: 2}
@@ -1778,6 +1787,11 @@ PrefabInstance:
 --- !u!4 &4212481761657774855 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3604705400038721520, guid: f828cf3c6a7a10045a15e0bf8a9657dd, type: 3}
+  m_PrefabInstance: {fileID: 609043274196444407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &4212481761657774904 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3604705400038721487, guid: f828cf3c6a7a10045a15e0bf8a9657dd, type: 3}
   m_PrefabInstance: {fileID: 609043274196444407}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &4212481761657774905 stripped

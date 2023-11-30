@@ -13,6 +13,7 @@ public class Building : MonoBehaviour
     [SerializeField] private BuildingType buildingType;
     [SerializeField] private BuildingLevel buildingLevelInfo;
     [SerializeField] private BuildingUpgradeInfo _buildingUpgrade;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private int buildingLevel;
     [SerializeField] private int buildingMaxLevel;
 
@@ -46,6 +47,9 @@ public class Building : MonoBehaviour
     public void ChangeBuilding(BuildingLevel newLevel)
     {
         buildingLevelInfo = newLevel;
+
+        spriteRenderer.sprite = buildingLevelInfo.getbuildingSprite;
+
         _buildingUpgrade.UpdateResources();
     }
 
