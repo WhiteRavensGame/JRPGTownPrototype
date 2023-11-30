@@ -10,6 +10,8 @@ public class AllocateVillagers : MonoBehaviour
     [SerializeField] private TextMeshProUGUI villagersCount;
     [SerializeField] private TextMeshProUGUI resourcesCount;
     [SerializeField] private TextMeshProUGUI buildingLevel;
+    [SerializeField] private TextMeshProUGUI resourcesText;
+    [SerializeField] private TextMeshProUGUI incomeText;
     [SerializeField] private EndOfWeekPanel endOfWeekPanel;
 
     private bool initialized = false;
