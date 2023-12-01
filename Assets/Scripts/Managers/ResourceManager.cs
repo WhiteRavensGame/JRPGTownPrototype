@@ -91,6 +91,8 @@ public class ResourceManager : MonoBehaviour
                 return _troops;
             case Resources.Gold:
                 return _gold;
+            case Resources.Moral:
+                return (int)_morale;
             default: return 0;
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ReputationManager : MonoBehaviour
 {
-    private Dictionary<string, float> _reputationList = new Dictionary<string, float>();
+    private Dictionary<string, float> _reputationList = new();
 
     public int AddNPC(NPC npc)
     {

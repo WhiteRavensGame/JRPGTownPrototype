@@ -92,6 +92,12 @@ public class VillageManager : MonoBehaviour
 
     public void EndDayAllocationStart(int villagersAmt)
     {
+        if(villagersAmt + _vTotal < 0)
+        {
+            _vTotal = 0;
+            UpdateVillagerText();
+            return;
+        }
         _vTotal += villagersAmt;
         UpdateVillagerText();
     }

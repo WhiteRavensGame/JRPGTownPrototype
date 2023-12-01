@@ -96,7 +96,7 @@ public class TimeManager : MonoBehaviour
             SceneManager.LoadScene("RoundTable");
         }
 
-            daysPassed = 0;
+        daysPassed = 0;
         ++weeksPassed;
         _mainCanvas.SetActive(false);
         _resourceManagementObj.SetActive(true);
