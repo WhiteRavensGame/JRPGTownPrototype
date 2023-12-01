@@ -191,6 +191,16 @@ public class MainDialogue : MonoBehaviour
             ServiceLocator.Get<ResourceManager>().AddResource(Resources.Troops, val);
             ServiceLocator.Get<ResourceManager>().UpdateResourceText();
         });
+
+        _currentStory.BindExternalFunction("ChangeVillagerMorale", (int val, string Name) =>
+        {
+            ServiceLocator.Get<ReputationManager>().BuildingUpgrade(Name, val);
+        });
+
+        _currentStory.BindExternalFunction("ChangeTavernProduction", (int val, string Name) =>
+        {
+            ServiceLocator.Get<PrefabManager>().GetBuidlding(Name).ChangeProductionAmt(val);
+        });
     }
 
     private void UnbindVariable()

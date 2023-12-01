@@ -24,9 +24,11 @@ public class Building : MonoBehaviour
 
     [Space, Header("Extra Settings")]
     [SerializeField] private string buildingSaveName;
+    private bool _hasFixedEarnings = false;
+    private int _dailyEarnings;
 
     public bool HasProduced { get; set; } = false;
-    
+
     public void Initialize()
     {
         vm = ServiceLocator.Get<VillageManager>();
@@ -55,9 +57,17 @@ public class Building : MonoBehaviour
 
     public KeyValuePair<Resources, int> GetBuildingsEarnings()
     {
-        int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeople);
+        int rAmt = 0;
+        if (_hasFixedEarnings)
+        {
+            rAmt = _dailyEarnings;
+        }
+        else
+        {
+            rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeople);
+        }
 
-        if (ServiceLocator.Get<TimeManager>().IsWeekOne() && 
+        if (ServiceLocator.Get<TimeManager>().IsWeekOne() &&
             ServiceLocator.Get<GodModifier>().Modification == GodModification.DoubleProduction)
         {
             rAmt *= 2;
@@ -170,6 +180,12 @@ public class Building : MonoBehaviour
     public BuildingLevel GetBuildingLevelInfo()
     {
         return buildingLevelInfo;
+    }
+
+    public void ChangeProductionAmt(int val)
+    {
+        _hasFixedEarnings = true;
+        _dailyEarnings = val;
     }
 
     public void Load()
