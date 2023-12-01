@@ -12,11 +12,11 @@ public class PrefabManager : MonoBehaviour
     {
         switch (name)
         {
-            case "INN":
+            case "Tavern":
                 return Buildings[0];
             case "Fishery":
                 return Buildings[1];
-            case "Mining":
+            case "Mine":
                 return Buildings[2];
             case "Smithy":
                 return Buildings[3];

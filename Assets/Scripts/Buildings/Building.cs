@@ -29,6 +29,9 @@ public class Building : MonoBehaviour
 
     public bool HasProduced { get; set; } = false;
 
+    public int RestingDaysLeft = 0;
+    public int DiscountOnUpgrade = 0;
+
     public void Initialize()
     {
         vm = ServiceLocator.Get<VillageManager>();
@@ -55,8 +58,19 @@ public class Building : MonoBehaviour
         _buildingUpgrade.UpdateResources();
     }
 
+    public void UpdateResourcesText()
+    {
+        _buildingUpgrade.UpdateResources();
+    }
+
     public KeyValuePair<Resources, int> GetBuildingsEarnings()
     {
+        if(RestingDaysLeft > 0)
+        {
+            --RestingDaysLeft;
+            return new KeyValuePair<Resources, int>(buildingLevelInfo.getResources, 0);
+        }
+
         int rAmt = 0;
         if (_hasFixedEarnings)
         {

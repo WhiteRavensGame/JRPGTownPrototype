@@ -71,7 +71,7 @@ public class VillageManager : MonoBehaviour
 
     public bool UpgradeBuilding(Building building)
     {
-        int upgradeCost = building.GetUpgradeCost();
+        int upgradeCost = building.GetUpgradeCost() * ( 1 - (building.DiscountOnUpgrade / 100));
 
         if (_rm.CanUseGold(upgradeCost))
         {

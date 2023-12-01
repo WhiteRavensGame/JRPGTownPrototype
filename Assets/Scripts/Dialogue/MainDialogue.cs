@@ -62,7 +62,6 @@ public class MainDialogue : MonoBehaviour
                 loadingText = false;
                 CheckAnswers(true);
             }
-
         }
     }
 
@@ -200,6 +199,17 @@ public class MainDialogue : MonoBehaviour
         _currentStory.BindExternalFunction("ChangeTavernProduction", (int val, string Name) =>
         {
             ServiceLocator.Get<PrefabManager>().GetBuidlding(Name).ChangeProductionAmt(val);
+        });
+
+        _currentStory.BindExternalFunction("TurnProductionOff", (int val, string Name) =>
+        {
+            ServiceLocator.Get<PrefabManager>().GetBuidlding(Name).RestingDaysLeft = val;
+        });
+
+        _currentStory.BindExternalFunction("DiscountOnUpgrade", (int val, string Name) =>
+        {
+            ServiceLocator.Get<PrefabManager>().GetBuidlding(Name).DiscountOnUpgrade = val;
+            ServiceLocator.Get<PrefabManager>().GetBuidlding(Name).UpdateResourcesText();
         });
     }
 
