@@ -27,4 +27,9 @@ public class PrefabManager : MonoBehaviour
                 default: return null;
         }
     }
+
+    public Building GetRandBuidlding()
+    {
+        return Buildings[Random.Range(0, Buildings.Count)];
+    }
 }

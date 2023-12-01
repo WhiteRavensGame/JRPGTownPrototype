@@ -18,7 +18,7 @@ public class VillageManager : MonoBehaviour
 
     public void Initialize(List<Building> buildings, UIManager ui, List<Villager> newVillagers)
     {
-        if(!ServiceLocator.Get<GameManager>().LoadGame)
+        if (!ServiceLocator.Get<GameManager>().LoadGame)
         {
             _vTotal = 4;
         }
@@ -92,13 +92,23 @@ public class VillageManager : MonoBehaviour
 
     public void EndDayAllocationStart(int villagersAmt)
     {
-        if(villagersAmt + _vTotal < 0)
+        _vTotal += villagersAmt;
+
+        if (villagersAmt < 0)
+        {
+            for (int i = villagersAmt; i < 0; ++i)
+            {
+                ServiceLocator.Get<PrefabManager>().GetRandBuidlding().EditPeople(villagers[0], false);
+            }
+            DeleteVillagers();
+        }
+
+        if (_vTotal < 0)
         {
             _vTotal = 0;
             UpdateVillagerText();
             return;
         }
-        _vTotal += villagersAmt;
         UpdateVillagerText();
     }
 
