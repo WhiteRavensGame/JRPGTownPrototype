@@ -1,5 +1,6 @@
 EXTERNAL Changefood(value)
-EXTERNAL ChangeOscarMorale(value)
+EXTERNAL Changesilk(value)
+EXTERNAL ChangeVillagerMorale(value, Name)
 
 ->START
 
@@ -19,16 +20,19 @@ Oscar: Mayor. I’m at the end of my fishing lines. Need silk to make more. I’
 == Five ==
 Thanks, Mayor. That’ll do.
 ~ Changefood(5)
+~ Changesilk(-5)
 ->END
 
 == Ten ==
 Thanks, Mayor. That’ll do.
 ~ Changefood(10)
-~ ChangeOscarMorale(2)
+~ Changesilk(-10)
+~ ChangeVillagerMorale(2, "Oscar")
 ->END
 
 == Twenty_five ==
 Thanks, Mayor. That’ll do.
 ~ Changefood(25)
-~ ChangeOscarMorale(5)
+~ Changesilk(-25)
+~ ChangeVillagerMorale(5, "Oscar")
 ->END
