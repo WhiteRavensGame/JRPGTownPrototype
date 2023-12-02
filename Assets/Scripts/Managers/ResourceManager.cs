@@ -27,7 +27,7 @@ public class ResourceManager : MonoBehaviour
         }
 
         _ui = ui;
-        _ui.UpdateResourceText(_gold, _fish, _iron, _silk, _morale);
+        _ui.UpdateResourceText(_gold, _fish, _iron, _silk, _morale, _troops);
     }
 
     public void AddGold(int gold)
@@ -158,7 +158,7 @@ public class ResourceManager : MonoBehaviour
 
     public void UpdateResourceText()
     {
-        _ui.UpdateResourceText(_gold, _fish, _iron, _silk, _morale);
+        _ui.UpdateResourceText(_gold, _fish, _iron, _silk, _morale, _troops);
     }
 
     private void Load()

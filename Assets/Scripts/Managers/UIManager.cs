@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _ironText;
     [SerializeField] private TextMeshProUGUI _silkText;
     [SerializeField] private TextMeshProUGUI _moralText;
+    [SerializeField] private TextMeshProUGUI _troopsText;
 
     [SerializeField] private GameObject _upgradeScreen;
     [SerializeField] private GameObject _characterScreen;
@@ -30,13 +31,14 @@ public class UIManager : MonoBehaviour
         _characterScreen.SetActive(false);
     }
 
-    public void UpdateResourceText(int gold, int fish, int iron, int silk, float morale)
+    public void UpdateResourceText(int gold, int fish, int iron, int silk, float morale, int troops)
     {
         _goldText.text = gold.ToString();
         _ironText.text = iron.ToString();
         _silkText.text = silk.ToString();
         _fishText.text = fish.ToString();
         _moralText.text = morale.ToString() + "%";
+        _troopsText.text = troops.ToString();
     }
 
     public void UpdateVillagerCount(int left, int total)
