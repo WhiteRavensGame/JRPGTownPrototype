@@ -555,6 +555,10 @@ PrefabInstance:
       propertyPath: _buildingUpgrade
       value: 
       objectReference: {fileID: 1774100851}
+    - target: {fileID: 7005316923735771251, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+      propertyPath: m_Name
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7357906925839311599, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1126,6 +1130,136 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415718062}
   m_CullTransparentMesh: 1
+--- !u!1 &419168259 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7005316923735771251, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+  m_PrefabInstance: {fileID: 206254040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &419168260 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6918696584081242797, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+  m_PrefabInstance: {fileID: 206254040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &419168261 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 324834977357102837, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+  m_PrefabInstance: {fileID: 206254040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &419168262 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4840067345646521997, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+  m_PrefabInstance: {fileID: 206254040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &419168263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3891796355799200770, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+  m_PrefabInstance: {fileID: 206254040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &419168264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419168259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a113bdab2ac584dbf19b4906fc0dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "\u201CMagic? I have more important things to worry about!\u201D"
+  - "\u201CWhat even is this cloak? That\u2019s supposed to keep warm? Idiot, take
+    these, and go sit by the fireplace.\u201D"
+  - "\u201CNo, you\u2019re not going to keep working, your forehead\u2019s burning
+    up, now stop talking and let me cure you.\u201D"
+  - "Ah quit your screaming, childbirth ain\u2019t that painful. I\u2019ve survived
+    it multiple times, you will too.\u201D"
+  text: {fileID: 1269022029}
+--- !u!114 &419168265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419168260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a113bdab2ac584dbf19b4906fc0dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "\u201CIs that EXPLOSIVE GAS I SMELL?? Must be a great MINING to be done there!\u201D"
+  - "\u201CNOOOOOO MY PICKAXE BROKE! Well, time to use my good ol\u2019 NAILS!\u201D\r"
+  - "\u201CI wonder what dirt tastes like\u2026 JUST KIDDING I already know!\u201D"
+  - "\u201CWATCH OUT, that mineral\u2019s HIGHLY VOLATILE! Oh actually nevermind,
+    that\u2019s a rock.\u201D"
+  text: {fileID: 1901402533}
+--- !u!114 &419168266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419168261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a113bdab2ac584dbf19b4906fc0dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "\u201CNoise scares fish\u201D"
+  - "\u201CHm\u201D"
+  - '"Shh"'
+  - "\u201CDon\u2019t go against the current. Follow it.\u201D"
+  - "\u201CFighting? Waste of time.\u201D "
+  text: {fileID: 1395157994}
+--- !u!114 &419168267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419168262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a113bdab2ac584dbf19b4906fc0dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "\u201CMagic? I have more important things to worry about!\u201D"
+  - "\u201CWhat even is this cloak? That\u2019s supposed to keep warm? Idiot, take
+    these, and go sit by the fireplace.\u201D"
+  - "\u201CNo, you\u2019re not going to keep working, your forehead\u2019s burning
+    up, now stop talking and let me cure you.\u201D"
+  - "Ah quit your screaming, childbirth ain\u2019t that painful. I\u2019ve survived
+    it multiple times, you will too.\u201D"
+  text: {fileID: 1316046333}
+--- !u!114 &419168268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419168263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a113bdab2ac584dbf19b4906fc0dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "\u201CA place for everything and everything in its place\u201D"
+  - "\u201CPlease, you don\u2019t look a day past 25\u201D"
+  - "\u201CWhat can I do for you?\u201D"
+  - '*Slides coasters across the bar timing it perfectly when someone put their cup
+    down*'
+  - "\u201CA bar should be clean enough to see your reflection\u201D *winks at his
+    reflection*"
+  - "\u201CWhiskey? What type? What Year? How do you want it?\u201D\r\nMiner: \u201C...In
+    the bottle?\u201D\r\n"
+  - "\u201CWar creates profit, but ends in sorrow\u201D"
+  - "\u201CYou guys have never had a party?\u201D"
+  text: {fileID: 1102019126}
 --- !u!1 &431453584
 GameObject:
   m_ObjectHideFlags: 0
@@ -2797,9 +2931,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - Hello bastard
-  - yoyo
-  - Brorororoororor
+  - "\u201CA smith? I am not a smith, I am a blacksmith. A blacksmith makes weapons,
+    tools and armor. A smith could be any smith. A weaponsmith, a coppersmith, a
+    bladesmith a\u2026\u201D [Goes on for 30min]\u201D"
+  - "\u201CI make every one of my weapons proudly, because I know that they\u2019ll
+    help defend the town and the people I love!\u201D"
+  - "\u201CWhat kind of weapon even is that? Who\u2019s been taking care of it? You?
+    My gods, give it here, some people shouldn\u2019t be allowed to have a sword
+    I swear\u2026\u201D"
+  - "\u201CI am not being loud, this is my speaking voice\u201D"
+  - "\u201CYou can do better\u201D"
   text: {fileID: 409923741}
 --- !u!1 &1089469561
 GameObject:
@@ -2947,7 +3088,7 @@ GameObject:
   - component: {fileID: 1102019127}
   - component: {fileID: 1102019126}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3642,7 +3783,7 @@ GameObject:
   - component: {fileID: 1316046334}
   - component: {fileID: 1316046333}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3931,7 +4072,7 @@ GameObject:
   - component: {fileID: 1395157995}
   - component: {fileID: 1395157994}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5681,7 +5822,7 @@ GameObject:
   - component: {fileID: 1901402534}
   - component: {fileID: 1901402533}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6217,8 +6358,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
