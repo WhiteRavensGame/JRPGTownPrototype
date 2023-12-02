@@ -1,3 +1,7 @@
+EXTERNAL Changemorale(value)
+EXTERNAL Changefood(value)
+
+
 One day, from the plains a man with a bald head comes to your village and requests an audience with you. They speak with fervor as they ask for your help with rebuilding their home which broke down. Additionally, they are in need of more clothes and food. Do you help?
 
 * [I will help]
@@ -14,7 +18,6 @@ One day, from the plains a man with a bald head comes to your village and reques
 #+10% Reputation
 #+1 Population
 #+25 Food
-#Brings food storage
 #5% Morale
 
 * [Offer more help]
