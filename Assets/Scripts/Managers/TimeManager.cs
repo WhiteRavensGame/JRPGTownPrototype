@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class TimeManager : MonoBehaviour
 {
     [SerializeField] private float dailyTime;
-    [SerializeField] private TextMeshProUGUI textTimer;
+    [SerializeField] private TextMeshProUGUI textWeek;
     [SerializeField] private List<BuildingLevel> buildings;
 
     [SerializeField] private GameObject _resourceManagementObj;
@@ -36,7 +36,7 @@ public class TimeManager : MonoBehaviour
 
         Load();
 
-        textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
+        textWeek.text = "Week " + weeksPassed;
 
         initialize = true;
     }
@@ -56,7 +56,6 @@ public class TimeManager : MonoBehaviour
 
         timePlaying -= Time.deltaTime / 60;
         elapsTime = TimeSpan.FromMinutes(timePlaying);
-        textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
 
     }
 
@@ -79,7 +78,6 @@ public class TimeManager : MonoBehaviour
         _earningsManager.CalculateEarnings();
         _resourceManager.UpdateResourceText();
         elapsTime = TimeSpan.FromMinutes(timePlaying);
-        textTimer.text = elapsTime.ToString("mm':'ss'.'ff");
     }
 
     private void EndOfWeek()
@@ -101,6 +99,7 @@ public class TimeManager : MonoBehaviour
         _mainCanvas.SetActive(false);
         _resourceManagementObj.SetActive(true);
         _playerManager.gameState = GameStates.EndOfWeek;
+        textWeek.text = "Week " + weeksPassed;
     }
 
     public bool IsWeekOne()
