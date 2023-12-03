@@ -59,9 +59,11 @@ public class EarningsManager : MonoBehaviour
 
         if (_blackSmith.HasProduced)
         {
-            int smithLevel = _blackSmith.GetPeopleAmt() / 2;
+            float smithLevel = _blackSmith.GetMaxVillagers() * 0.5f;
+            float amount = (0.5f * smithLevel * smithLevel) - (0.5f * smithLevel) + 1;
+            amount *= _blackSmith.GetPeopleAmt() / _blackSmith.GetMaxVillagers();
 
-            _rm.AddResource(Resources.Troops,(int)((0.5f * smithLevel * smithLevel) - (0.5f * smithLevel) + 1));
+            _rm.AddResource(Resources.Troops,(int)amount);
             
             _blackSmith.HasProduced = false;
         }

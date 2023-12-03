@@ -2240,7 +2240,7 @@ GameObject:
   - component: {fileID: 6674741236062709145}
   - component: {fileID: 1220328870436972004}
   m_Layer: 5
-  m_Name: Stats
+  m_Name: Silk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2645,7 +2645,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3080,7 +3080,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 0}
   villagersCount: {fileID: 8017727067603194012}
-  resourcesCount: {fileID: 704543613621287098}
+  resourcesText: {fileID: 7493568335393401639}
+  incomeText: {fileID: 1088488684992832274}
   buildingLevel: {fileID: 5002019653339892654}
   endOfWeekPanel: {fileID: 1156705559}
 --- !u!1 &1497486218719794139
@@ -3631,7 +3632,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4568,7 +4569,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 0}
   villagersCount: {fileID: 2759634338547570362}
-  resourcesCount: {fileID: 4916765304477356847}
+  resourcesText: {fileID: 6479436356967507522}
+  incomeText: {fileID: 4407125388336132329}
   buildingLevel: {fileID: 7097783720899792671}
   endOfWeekPanel: {fileID: 1156705559}
 --- !u!1 &2330636428036008062
@@ -4928,7 +4930,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5938,7 +5940,7 @@ GameObject:
   - component: {fileID: 4608634881482937712}
   - component: {fileID: 4984916493740214617}
   m_Layer: 5
-  m_Name: Stats
+  m_Name: Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6069,7 +6071,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6150,7 +6152,7 @@ GameObject:
   - component: {fileID: 7100105621687633511}
   - component: {fileID: 3675373532473339933}
   m_Layer: 5
-  m_Name: Stats
+  m_Name: Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7277,7 +7279,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7868,7 +7870,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 0}
   villagersCount: {fileID: 3515151976499867442}
-  resourcesCount: {fileID: 1008542139878607007}
+  resourcesText: {fileID: 0}
+  incomeText: {fileID: 3430696415975740359}
   buildingLevel: {fileID: 3300021547782166956}
   endOfWeekPanel: {fileID: 1156705559}
 --- !u!1 &4532311270397320962
@@ -7937,7 +7940,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8719,7 +8722,7 @@ GameObject:
   - component: {fileID: 5130379534088283494}
   - component: {fileID: 5072519731114617114}
   m_Layer: 5
-  m_Name: Stats
+  m_Name: Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9013,7 +9016,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 0}
   villagersCount: {fileID: 5701177326404228220}
-  resourcesCount: {fileID: 0}
+  resourcesText: {fileID: 0}
+  incomeText: {fileID: 8085634625255871755}
   buildingLevel: {fileID: 2158568349470092357}
   endOfWeekPanel: {fileID: 1156705559}
 --- !u!1 &5054446275510479828
@@ -9747,7 +9751,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 0}
   villagersCount: {fileID: 1552949215438814364}
-  resourcesCount: {fileID: 0}
+  resourcesText: {fileID: 0}
+  incomeText: {fileID: 1519487533286626025}
   buildingLevel: {fileID: 6605144318650642936}
   endOfWeekPanel: {fileID: 1156705559}
 --- !u!1 &5346825691242776198
@@ -9762,7 +9767,7 @@ GameObject:
   - component: {fileID: 5695557376092115280}
   - component: {fileID: 7609788037901626989}
   m_Layer: 5
-  m_Name: Happiness %
+  m_Name: Morale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10844,7 +10849,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12670,7 +12675,7 @@ GameObject:
   - component: {fileID: 3192368936066316245}
   - component: {fileID: 6367601841431391376}
   m_Layer: 5
-  m_Name: Stats
+  m_Name: Iron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12747,7 +12752,7 @@ GameObject:
   - component: {fileID: 4938108370635659389}
   - component: {fileID: 2040720697366169590}
   m_Layer: 5
-  m_Name: Stats
+  m_Name: Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14847,7 +14852,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15010,7 +15015,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 0}
   villagersCount: {fileID: 3635810142594159402}
-  resourcesCount: {fileID: 0}
+  resourcesText: {fileID: 0}
+  incomeText: {fileID: 5015810797993666846}
   buildingLevel: {fileID: 8206191995679481561}
   endOfWeekPanel: {fileID: 1156705559}
 --- !u!1 &8963405291961731334
@@ -15237,7 +15243,7 @@ GameObject:
   - component: {fileID: 3475629978399743544}
   - component: {fileID: 3322736529823370331}
   m_Layer: 5
-  m_Name: Happiness %
+  m_Name: Troops
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

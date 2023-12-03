@@ -30,6 +30,7 @@ public class AllocateVillagers : MonoBehaviour
         buildingLevel.text = building.GetLevel().ToString();
         endOfWeekPanel.UpdateVillagersNums();
         villagersCount.text = building.GetPeopleAmt().ToString() + "/" + building.GetMaxVillagers().ToString();
+        UpdateSecondaryResourceText();
     }
 
     private void Initialize()
@@ -40,6 +41,8 @@ public class AllocateVillagers : MonoBehaviour
         rm = ServiceLocator.Get<ResourceManager>();
         
         initialized = true;
+
+        UpdateSecondaryResourceText();
     }
 
     public void ChangeVillagersNum(int villagerAmt)
@@ -47,5 +50,42 @@ public class AllocateVillagers : MonoBehaviour
         vm.AllocateVillager(building, villagerAmt);
         villagersCount.text = building.GetPeopleAmt().ToString() + "/" + building.GetMaxVillagers().ToString();
         endOfWeekPanel.UpdateVillagersNums();
+
+        UpdateIncomeText();
+        UpdateSecondaryResourceText();
+
+    }
+
+    private void UpdateIncomeText()
+    {
+        int amount = building.GetBuildingsEarnings().Value;
+        incomeText.text = amount.ToString();
+    }
+
+    private void UpdateResourceNeededText()
+    {
+
+    }
+
+    private void UpdateSecondaryResourceText()
+    {
+        if (resourcesText == null)
+        {
+            return;
+        }
+
+        if (building.GetBuildingType() == BuildingType.Blacksmith)
+        {
+            float smithLevel = building.GetMaxVillagers() * 0.5f;
+            float amount = (0.5f * smithLevel * smithLevel) - (0.5f * smithLevel) + 1;
+            amount *= building.GetPeopleAmt() / building.GetMaxVillagers();
+            resourcesText.text = ((int)amount).ToString();
+        }
+        else if (building.GetBuildingType() == BuildingType.SilkStore)
+        {
+            int silkLevel = building.GetLevel();
+            float amount = (0.25f * (silkLevel * silkLevel)) - (0.25f * silkLevel) + 0.5f;
+            resourcesText.text = amount.ToString();
+        }
     }
 }
