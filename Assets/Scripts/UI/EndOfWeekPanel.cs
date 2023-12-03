@@ -17,6 +17,7 @@ public class EndOfWeekPanel : MonoBehaviour
     {
         UpdateVillagersNums();
         UpdateResources();
+        ServiceLocator.Get<PlayerManager>().AllocatingVillagers = true;
         initialized = true;
     }
 
@@ -26,11 +27,13 @@ public class EndOfWeekPanel : MonoBehaviour
         {
             UpdateVillagersNums();
             UpdateResources();
+            ServiceLocator.Get<PlayerManager>().AllocatingVillagers = true;
         }
     }
 
     public void EndWeek()
     {
+        ServiceLocator.Get<PlayerManager>().AllocatingVillagers = false;
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
         this.gameObject.SetActive(false);
         _mainCanvas.SetActive(true);
