@@ -1,5 +1,6 @@
 EXTERNAL Changefood(value)
 EXTERNAL Changecitizens(value)
+EXTERNAL DiscountOnNextUpgrade(value, Name)
 // Need a function for the discount
 
 ->START

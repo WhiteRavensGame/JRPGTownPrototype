@@ -2,7 +2,6 @@ EXTERNAL Changefood(value)
 EXTERNAL Changematerials(value)
 EXTERNAL Changesilk(value)
 EXTERNAL Changetroops(value)
-EXTERNAL TempChangeBuildingProduction(value, Name)
 
 Oscar:
 “Sir, due to all the fishing, some river seagulls have been harassing the fisherman and stealing some food, how do you want to deal with them?”

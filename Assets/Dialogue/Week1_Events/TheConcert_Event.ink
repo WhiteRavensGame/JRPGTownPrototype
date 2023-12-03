@@ -1,3 +1,5 @@
+EXTERNAL Changematerials(value)
+EXTERNAL Changemorale(value)
 
 -> Start
 
