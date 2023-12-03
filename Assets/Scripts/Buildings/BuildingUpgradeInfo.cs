@@ -8,7 +8,7 @@ public class BuildingUpgradeInfo : MonoBehaviour
     [SerializeField] private Building _building;
     [SerializeField] private BuildingController _buildingController;
     private BuildingLevel _buildingLevel;
-                   
+
     [SerializeField] private TextMeshProUGUI _vNeedCurrent;
     [SerializeField] private TextMeshProUGUI _vNeedNext;
 
@@ -17,13 +17,14 @@ public class BuildingUpgradeInfo : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _rNeedCurrent;
     [SerializeField] private TextMeshProUGUI _rNeedNext;
-                    
+
     [SerializeField] private TextMeshProUGUI _r2ProdCurrent;
     [SerializeField] private TextMeshProUGUI _r2ProdNext;
-                    
+
     [SerializeField] private TextMeshProUGUI _upgradeCost;
 
     [SerializeField] private TextMeshProUGUI _levelText;
+    [SerializeField] private GameObject _upgradeButton;
 
     private void Awake()
     {
@@ -34,7 +35,14 @@ public class BuildingUpgradeInfo : MonoBehaviour
     {
         _buildingLevel = _building.GetBuildingLevelInfo();
 
-        _upgradeCost.text = "Upgrade " + _buildingLevel.getUpgradeCost.ToString();
+        if (_buildingLevel.getUpgradeCost > 0)
+        {
+            _upgradeCost.text = "Upgrade " + _buildingLevel.getUpgradeCost.ToString();
+        }
+        else
+        {
+            _upgradeButton.SetActive(false);
+        }
 
         _vNeedCurrent.text = _buildingLevel.getMaxVillagers.ToString();
         _rProdCurrent.text = _buildingLevel.getMaxIncome.ToString();
@@ -102,7 +110,6 @@ public class BuildingUpgradeInfo : MonoBehaviour
         ServiceLocator.Get<ResourceManager>().UpdateResourceText();
         _levelText.text = "Level: " + _building.GetLevel() + "/" + _building.GetMaxLevel();
     }
-}                                   
-                                    
+}
 
-                                    
+
