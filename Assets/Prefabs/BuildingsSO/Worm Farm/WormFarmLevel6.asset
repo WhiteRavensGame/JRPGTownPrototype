@@ -16,14 +16,6 @@ MonoBehaviour:
   resourcesToProduce: 2
   buildingSprite: {fileID: 21300000, guid: 095cd29c63bcbd842b1dd19397ef70f5, type: 3}
   maxVillagers: 6
-  maxIncome: 0
+  maxIncome: 12
   minIncome: 0
   upgradeCost: 0
-  panelText: 'Worm Farm Level 6
-
-'
-  minCitizensText: 1
-  minOutput: 5
-  maxCitizensText: 6
-  maxOutput: 12
-  vendorImage: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}

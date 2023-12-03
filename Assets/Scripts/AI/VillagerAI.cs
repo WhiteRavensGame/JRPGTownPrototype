@@ -27,8 +27,8 @@ public class VillagerAI : MonoBehaviour
     public SpriteRenderer Sprite;
 
     [Space, Header("Walking Range")]
-    public int WalkingRangeMax;
-    public int WalkingRangeMin;
+    public Vector2 WalkingRangeMax;
+    public Vector2 WalkingRangeMin;
 
     private StateMachine<VillagerAI> _stateMachine;
 
@@ -97,8 +97,12 @@ public class VillagerAI : MonoBehaviour
         _stateMachine.ChangeState((int)_target);
     }
 
-    public void CalculateDirForce(int waypoint)
+    public void CalculateDirForce(ref int waypoint)
     {
+        var d = (Vector2)Path.vectorPath[waypoint];
+        var f = Rb.position;
+        d -= f;
+        d = d.normalized;
         var dir = ((Vector2)Path.vectorPath[waypoint] - Rb.position).normalized;
         Rb.velocity = dir * _speed;
 

@@ -16,17 +16,9 @@ MonoBehaviour:
   resourcesToProduce: 5
   buildingSprite: {fileID: 21300000, guid: b226fca41f12244419d8aaef3f9bdf78, type: 3}
   maxVillagers: 2
-  maxIncome: 5
-  minIncome: 10
+  maxIncome: 10
+  minIncome: 5
   upgradeCost: 500
-  panelText: 'Blacksmith Level 1
-
-'
-  minCitizensText: 1
-  minOutput: 5
-  maxCitizensText: 2
-  maxOutput: 10
-  vendorImage: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   resourcesToRun: 1
   resourceCount: 4
   moralOutputPercentage: 0

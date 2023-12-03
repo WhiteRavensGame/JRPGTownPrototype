@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
@@ -8,8 +9,11 @@ public class NPC : MonoBehaviour
     private ReputationManager _reputation;
 
     [SerializeField] private Building _attachedBuilding;
+    [SerializeField] private Building _silkLadyExtraBuilding;
+    [SerializeField] private Slider _slider;
+    public bool silkLady = false;
 
-    private int _id;
+    public string Name;
 
     private void Awake()
     {
@@ -20,18 +24,46 @@ public class NPC : MonoBehaviour
     private void Initialize()
     {
         _reputation = ServiceLocator.Get<ReputationManager>();
-        _id = _reputation.AddNPC();
+        _reputation.AddNPC(this);
 
-        _attachedBuilding.AttachedNPC = this;
+        if (_attachedBuilding != null)
+        {
+            _attachedBuilding.AttachedNPC = this;
+        }
+        if (_silkLadyExtraBuilding != null && silkLady)
+        {
+            _silkLadyExtraBuilding.AttachedNPC = this;
+        }
     }
 
     public void ExtractionReputation()
     {
-        _reputation.BuildingUpgrade(_id, 13.3f);
+        if (silkLady)
+        {
+            _reputation.BuildingUpgrade(Name, 9f);
+        }
+        else
+        {
+            _reputation.BuildingUpgrade(Name, 18f);
+        }
+        _slider.value = _reputation.GetReputation(Name) / 100f;
     }
 
     public void IncomeReputation()
     {
-        _reputation.BuildingUpgrade(_id, 40f);
+        if (silkLady)
+        {
+            _reputation.BuildingUpgrade(Name, 22.5f);
+        }
+        else
+        {
+            _reputation.BuildingUpgrade(Name, 45f);
+        }
+        _slider.value = _reputation.GetReputation(Name) / 100f;
+    }
+
+    public void ChangeReputation(int amount)
+    {
+        
     }
 }

@@ -16,15 +16,9 @@ MonoBehaviour:
   resourcesToProduce: 3
   buildingSprite: {fileID: 21300000, guid: 08a38e30b2eddbc4ab36dd30ad3bf5d3, type: 3}
   maxVillagers: 2
-  maxIncome: 0
+  maxIncome: 100
   minIncome: 0
   upgradeCost: 500
-  panelText: Inn Level 1
-  minCitizensText: 1
-  minOutput: 50
-  maxCitizensText: 2
-  maxOutput: 100
-  vendorImage: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   resourcesToRun: 0
   resourceCount: 4
   moralOutputPercentage: 0

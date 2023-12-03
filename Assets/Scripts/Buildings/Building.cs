@@ -7,39 +7,34 @@ public class Building : MonoBehaviour
 {
     private VillageManager vm = null;
 
-    [HideInInspector] public TimeManager TimeManager { get; set; }
     [HideInInspector] public NPC AttachedNPC { get; set; }
 
     [Header("Building Settings")]
     [SerializeField] private BuildingType buildingType;
     [SerializeField] private BuildingLevel buildingLevelInfo;
     [SerializeField] private BuildingUpgradeInfo _buildingUpgrade;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private int buildingLevel;
     [SerializeField] private int buildingMaxLevel;
 
-    private SpriteRenderer _buildingSR;
     [SerializeField] private List<Villager> _currentPeople;
 
     [Space, Header("Panel Settings")]
     [SerializeField] private GameObject infoPanel;
-    [SerializeField] private Image vendorImage;
-    [SerializeField] private TextMeshProUGUI storeName;
-    [SerializeField] private TextMeshProUGUI panelText;
-    [SerializeField] private TextMeshProUGUI minCitizensText;
-    [SerializeField] private TextMeshProUGUI minOutput;
-    [SerializeField] private TextMeshProUGUI maxCitizensText;
-    [SerializeField] private TextMeshProUGUI maxOutput;
 
     [Space, Header("Extra Settings")]
-    [SerializeField] private GameObject[] allocationButtons;
     [SerializeField] private string buildingSaveName;
+    private bool _hasFixedEarnings = false;
+    private int _dailyEarnings;
 
     public bool HasProduced { get; set; } = false;
-    
+
+    public int RestingDaysLeft = 0;
+    public int DiscountOnUpgrade = 0;
+
     public void Initialize()
     {
         vm = ServiceLocator.Get<VillageManager>();
-        _buildingSR = GetComponent<SpriteRenderer>();
 
         if (ServiceLocator.Get<GameManager>().LoadGame)
         {
@@ -54,34 +49,40 @@ public class Building : MonoBehaviour
         infoPanel.SetActive(activation);
     }
 
-    public void ActivateAllocationButtons(bool activation)
-    {
-        allocationButtons[0].SetActive(activation);
-        allocationButtons[1].SetActive(activation);
-    }
-
     public void ChangeBuilding(BuildingLevel newLevel)
     {
         buildingLevelInfo = newLevel;
 
-        //panelText.text = buildingLevelInfo.getPanelText;
-        //vendorImage.sprite = buildingLevelInfo.getVendorImage;
-        //storeName.text = buildingLevelInfo.getVendorImage.name;
-        //minCitizensText.text = buildingLevelInfo.getMinCitizensText;
-        //minOutput.text = buildingLevelInfo.getMinOutput;
-        //maxCitizensText.text = buildingLevelInfo.getMaxCitizensText;
-        //maxOutput.text = buildingLevelInfo.getMaxOutput;
-        //
-        //_buildingSR.sprite = buildingLevelInfo.getbuildingSprite;
+        spriteRenderer.sprite = buildingLevelInfo.getbuildingSprite;
 
+        _buildingUpgrade.UpdateResources();
+    }
+
+    public void UpdateResourcesText()
+    {
         _buildingUpgrade.UpdateResources();
     }
 
     public KeyValuePair<Resources, int> GetBuildingsEarnings()
     {
-        int rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeople);
+        if(RestingDaysLeft > 0)
+        {
+            --RestingDaysLeft;
+            return new KeyValuePair<Resources, int>(buildingLevelInfo.getResources, 0);
+        }
 
-        if (TimeManager.IsWeekOne() && GodModifier.Modification == GodModification.DoubleProduction)
+        int rAmt = 0;
+        if (_hasFixedEarnings)
+        {
+            rAmt = _dailyEarnings;
+        }
+        else
+        {
+            rAmt = (int)buildingLevelInfo.DailyEarnings(_currentPeople);
+        }
+
+        if (ServiceLocator.Get<TimeManager>().IsWeekOne() &&
+            ServiceLocator.Get<GodModifier>().Modification == GodModification.DoubleProduction)
         {
             rAmt *= 2;
         }
@@ -173,9 +174,32 @@ public class Building : MonoBehaviour
         return buildingLevel;
     }
 
+    public int GetNextLevel()
+    {
+        if (buildingLevelInfo.GetNextLevel != null)
+        {
+            return buildingLevel + 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public int GetMaxLevel()
+    {
+        return buildingMaxLevel;
+    }
+
     public BuildingLevel GetBuildingLevelInfo()
     {
         return buildingLevelInfo;
+    }
+
+    public void ChangeProductionAmt(int val)
+    {
+        _hasFixedEarnings = true;
+        _dailyEarnings = val;
     }
 
     public void Load()
@@ -184,7 +208,7 @@ public class Building : MonoBehaviour
         if (!EqualityComparer<BuildingSave>.Default.Equals(newData, default))
         {
             buildingLevel = newData.buildingLevel;
-
+            ServiceLocator.Get<VillageManager>().SetVillagersNum(newData.totalVillagers);
             foreach (var villagerData in newData.currentPeople)
             {
                 var neData = ServiceLocator.Get<PrefabManager>().EmptyVillager;
@@ -206,6 +230,7 @@ public class Building : MonoBehaviour
         BuildingSave saveBuilding = new BuildingSave();
         saveBuilding.buildingLevel = buildingLevel;
         saveBuilding.currentPeople = new List<VillagerSaveData>();
+        saveBuilding.totalVillagers = ServiceLocator.Get<VillageManager>().GetVillagersNum();
         foreach (var v in _currentPeople)
         {
             saveBuilding.currentPeople.Add(v.ToSaveData());
@@ -218,5 +243,6 @@ public class Building : MonoBehaviour
     {
         public int buildingLevel;
         public List<VillagerSaveData> currentPeople;
+        public int totalVillagers;
     }
 }

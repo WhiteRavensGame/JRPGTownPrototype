@@ -20,4 +20,17 @@ public class StartSave : MonoBehaviour
     {
         SceneManager.LoadScene("Tutorial Activate");
     }
+
+    public void QuitGame()
+    {
+        // This function will be called when the button is clicked
+        Debug.Log("Quitting game...");
+        Application.Quit();
+    }
+
+    public void OptionsButton()
+    {
+        SceneManager.LoadScene("Options");
+    }
+
 }

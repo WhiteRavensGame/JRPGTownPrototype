@@ -5,18 +5,13 @@ public class AllocateVillagers : MonoBehaviour
 {
     private GameLoader loader = null;
     private VillageManager vm = null;
+    private ResourceManager rm = null;
     [SerializeField] private Building building;
     [SerializeField] private TextMeshProUGUI villagersCount;
-<<<<<<< Updated upstream
-=======
-    [SerializeField] private TextMeshProUGUI resourcesCount;
+    [SerializeField] private TextMeshProUGUI resourcesText;
+    [SerializeField] private TextMeshProUGUI incomeText;
     [SerializeField] private TextMeshProUGUI buildingLevel;
-    [SerializeField] private TextMeshProUGUI resourcesToRun;
-    [SerializeField] private TextMeshProUGUI buildingBaseOutput;
-    [SerializeField] private TextMeshProUGUI buildingSecondaryOutput;
->>>>>>> Stashed changes
     [SerializeField] private EndOfWeekPanel endOfWeekPanel;
-    private BuildingLevel _buildingLevel;
 
     private bool initialized = false;
 
@@ -32,15 +27,10 @@ public class AllocateVillagers : MonoBehaviour
         {
             return;
         }
-<<<<<<< Updated upstream
-=======
-        _buildingLevel = building.GetBuildingLevelInfo();
         buildingLevel.text = building.GetLevel().ToString();
->>>>>>> Stashed changes
         endOfWeekPanel.UpdateVillagersNums();
         villagersCount.text = building.GetPeopleAmt().ToString() + "/" + building.GetMaxVillagers().ToString();
-        buildingBaseOutput.text = building.GetBuildingsEarnings().Value.ToString();
-        resourcesToRun.text = _buildingLevel.GetResourcesToRun().ToString();
+        UpdateSecondaryResourceText();
     }
 
     private void Initialize()
@@ -48,8 +38,11 @@ public class AllocateVillagers : MonoBehaviour
         Debug.Log($"{nameof(Initialize)}");
 
         vm = ServiceLocator.Get<VillageManager>();
+        rm = ServiceLocator.Get<ResourceManager>();
         
         initialized = true;
+
+        UpdateSecondaryResourceText();
     }
 
     public void ChangeVillagersNum(int villagerAmt)
@@ -57,18 +50,42 @@ public class AllocateVillagers : MonoBehaviour
         vm.AllocateVillager(building, villagerAmt);
         villagersCount.text = building.GetPeopleAmt().ToString() + "/" + building.GetMaxVillagers().ToString();
         endOfWeekPanel.UpdateVillagersNums();
-        buildingBaseOutput.text = building.GetBuildingsEarnings().Value.ToString();
-    }
-<<<<<<< Updated upstream
-=======
 
-    public void ChangeResourceNum(int resourceAmt)
+        UpdateIncomeText();
+        UpdateSecondaryResourceText();
+
+    }
+
+    private void UpdateIncomeText()
     {
-        rm.AddResource(building.GetResoureType() ,resourceAmt);
-        resourcesCount.text = rm.GetResourceAmt(building.GetResoureType()).ToString();
-        endOfWeekPanel.UpdateResources();
-        resourcesToRun.text = _buildingLevel.GetResourcesToRun().ToString();
+        int amount = building.GetBuildingsEarnings().Value;
+        incomeText.text = amount.ToString();
+    }
+
+    private void UpdateResourceNeededText()
+    {
 
     }
->>>>>>> Stashed changes
+
+    private void UpdateSecondaryResourceText()
+    {
+        if (resourcesText == null)
+        {
+            return;
+        }
+
+        if (building.GetBuildingType() == BuildingType.Blacksmith)
+        {
+            float smithLevel = building.GetMaxVillagers() * 0.5f;
+            float amount = (0.5f * smithLevel * smithLevel) - (0.5f * smithLevel) + 1;
+            amount *= building.GetPeopleAmt() / building.GetMaxVillagers();
+            resourcesText.text = ((int)amount).ToString();
+        }
+        else if (building.GetBuildingType() == BuildingType.SilkStore)
+        {
+            int silkLevel = building.GetLevel();
+            float amount = (0.25f * (silkLevel * silkLevel)) - (0.25f * silkLevel) + 0.5f;
+            resourcesText.text = amount.ToString();
+        }
+    }
 }

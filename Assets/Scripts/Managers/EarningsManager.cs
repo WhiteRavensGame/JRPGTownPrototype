@@ -6,6 +6,7 @@ public class EarningsManager : MonoBehaviour
     private ResourceManager _rm = null;
     private GodModifier _god = null;
     private Building _silkStore;
+    private Building _blackSmith;
 
     private List<Building> _buildings;
     List<KeyValuePair<Resources, int>> dailyEarnings = new List<KeyValuePair<Resources, int>>();
@@ -21,6 +22,10 @@ public class EarningsManager : MonoBehaviour
             if (buildings[i].GetBuildingType() == BuildingType.SilkStore)
             {
                 _silkStore = buildings[i];
+            }
+            if (buildings[i].GetBuildingType() == BuildingType.Blacksmith)
+            {
+                _blackSmith = buildings[i];
             }
         }
 
@@ -40,11 +45,27 @@ public class EarningsManager : MonoBehaviour
             _rm.AddResource(dailyEarnings[i].Key, dailyEarnings[i].Value);
         }
 
-        if (_silkStore.HasProduced)
+        if (_silkStore.HasProduced && _rm.GetResourceAmt(Resources.Moral) < 100)
         {
             int silkLevel = _silkStore.GetLevel();
-            _rm.AddResource(Resources.Moral, (silkLevel * silkLevel) + 1);
+         
+            _rm.AddMorale((0.25f * (silkLevel * silkLevel)) - (0.25f * silkLevel) + 0.5f);
+            if (_rm.GetResourceAmt(Resources.Moral) > 100)
+            {
+                _rm.SetMorale(100);
+            }
             _silkStore.HasProduced = false;
+        }
+
+        if (_blackSmith.HasProduced)
+        {
+            float smithLevel = _blackSmith.GetMaxVillagers() * 0.5f;
+            float amount = (0.5f * smithLevel * smithLevel) - (0.5f * smithLevel) + 1;
+            amount *= _blackSmith.GetPeopleAmt() / _blackSmith.GetMaxVillagers();
+
+            _rm.AddResource(Resources.Troops,(int)amount);
+            
+            _blackSmith.HasProduced = false;
         }
 
         if (_god && _god.ResourceGod)

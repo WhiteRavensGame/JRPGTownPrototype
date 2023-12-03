@@ -1,50 +1,48 @@
 using UnityEngine;
 using TMPro;
+using Mono.Cecil;
 
 public class EndOfWeekPanel : MonoBehaviour
 {
-    [SerializeField] GameObject _resourcePanel;
-    [SerializeField] GameObject _buildingPanel;
+    private bool initialized = false;
     [SerializeField] GameObject _mainCanvas;
-<<<<<<< Updated upstream
-    [SerializeField] private TextMeshProUGUI villagersCount;
-=======
     [SerializeField] private TextMeshProUGUI _villagersCount;
     [SerializeField] private TextMeshProUGUI _villagersMoral;
     [SerializeField] private TextMeshProUGUI _silkText;
     [SerializeField] private TextMeshProUGUI _fishText;
     [SerializeField] private TextMeshProUGUI _ironText;
-    [SerializeField] private TextMeshProUGUI _troopsText;
     [SerializeField] private TextMeshProUGUI _goldText;
->>>>>>> Stashed changes
 
-    public void GoToBuildingPanel()
+    public void Initialize()
     {
-        _resourcePanel.SetActive(false);
-        _buildingPanel.SetActive(true);
+        UpdateVillagersNums();
+        UpdateResources();
+        ServiceLocator.Get<PlayerManager>().AllocatingVillagers = true;
+        initialized = true;
     }
 
-    public void GoToResourcePanel()
+    private void OnEnable()
     {
-        _resourcePanel.SetActive(true);
-        _buildingPanel.SetActive(false);
+        if (initialized)
+        {
+            UpdateVillagersNums();
+            UpdateResources();
+            ServiceLocator.Get<PlayerManager>().AllocatingVillagers = true;
+        }
     }
 
     public void EndWeek()
     {
+        ServiceLocator.Get<PlayerManager>().AllocatingVillagers = false;
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
         this.gameObject.SetActive(false);
         _mainCanvas.SetActive(true);
-        int week = ServiceLocator.Get<TimeManager>().GetWeek();
-        ServiceLocator.Get<EventManager>().WeeklyEvent(week);
+        ServiceLocator.Get<EventManager>().CheckEvent();
         ServiceLocator.Get<VillageManager>().InstantiateVillagers();
     }
 
     public void UpdateVillagersNums()
     {
-<<<<<<< Updated upstream
-        villagersCount.text = ServiceLocator.Get<VillageManager>().GetVillagersAmt();
-=======
         _villagersCount.text = ServiceLocator.Get<VillageManager>().GetVillagersAmt();
         _villagersMoral.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Moral) + "%";
     }
@@ -55,9 +53,6 @@ public class EndOfWeekPanel : MonoBehaviour
         _silkText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Silk).ToString();
         _fishText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Fish).ToString();
         _ironText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Iron).ToString();
-        _troopsText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Troops).ToString();
         _goldText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Gold).ToString();
->>>>>>> Stashed changes
     }
-
 }

@@ -4,26 +4,21 @@ using UnityEngine;
 
 public class ReputationManager : MonoBehaviour
 {
-    private List<float> _reputationList = new List<float>();
+    private Dictionary<string, float> _reputationList = new();
 
-    //add ten when building is updgraded
-
-    public int AddNPC()
+    public int AddNPC(NPC npc)
     {
-        _reputationList.Add(0);
+        _reputationList.Add(npc.Name, 0f);
         return _reputationList.Count - 1;
     }
 
-    public void BuildingUpgrade(int id, float amt)
+    public void BuildingUpgrade(string id, float amt)
     {
-        for (int i = 0; i < _reputationList.Count; ++i)
-        {
-            if (i != id)
-            {
-                _reputationList[i] -= 5f;
-            }
-        }
-
         _reputationList[id] += amt;
+    }
+
+    public float GetReputation(string id)
+    {
+        return _reputationList[id];
     }
 }
