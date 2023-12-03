@@ -12,6 +12,7 @@ public class EndOfWeekPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _fishText;
     [SerializeField] private TextMeshProUGUI _ironText;
     [SerializeField] private TextMeshProUGUI _goldText;
+    [SerializeField] private TextMeshProUGUI _troopsText;
 
     public void Initialize()
     {
@@ -53,6 +54,7 @@ public class EndOfWeekPanel : MonoBehaviour
         _silkText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Silk).ToString();
         _fishText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Fish).ToString();
         _ironText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Iron).ToString();
+        _troopsText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Troops).ToString();
         _goldText.text = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Gold).ToString();
     }
 }

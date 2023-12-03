@@ -8,6 +8,7 @@ public class AllocateVillagers : MonoBehaviour
     private ResourceManager rm = null;
     [SerializeField] private Building building;
     [SerializeField] private TextMeshProUGUI villagersCount;
+    [SerializeField] private TextMeshProUGUI inputText;
     [SerializeField] private TextMeshProUGUI resourcesText;
     [SerializeField] private TextMeshProUGUI incomeText;
     [SerializeField] private TextMeshProUGUI buildingLevel;
@@ -31,6 +32,7 @@ public class AllocateVillagers : MonoBehaviour
         endOfWeekPanel.UpdateVillagersNums();
         villagersCount.text = building.GetPeopleAmt().ToString() + "/" + building.GetMaxVillagers().ToString();
         UpdateSecondaryResourceText();
+        UpdateResourceNeededText();
     }
 
     private void Initialize()
@@ -64,7 +66,15 @@ public class AllocateVillagers : MonoBehaviour
 
     private void UpdateResourceNeededText()
     {
-
+        if (inputText == null)
+        {
+            return;
+        }
+        else
+        {
+            inputText.text = building.GetBuildingLevelInfo().GetResourcesToRun().ToString();
+        }
+        
     }
 
     private void UpdateSecondaryResourceText()
