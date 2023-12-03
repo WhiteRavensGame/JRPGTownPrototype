@@ -497,6 +497,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Buildings V2
       objectReference: {fileID: 0}
+    - target: {fileID: 929770863832206826, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1163829712491486887, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
       propertyPath: m_Size.x
       value: 2.1662078
@@ -717,6 +721,36 @@ RectTransform:
 --- !u!224 &348623248 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3141150607294787448, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
+  m_PrefabInstance: {fileID: 1774100846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &371356098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8089063743386636249, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
+  m_PrefabInstance: {fileID: 1774100846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &371356099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8745009833320289773, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
+  m_PrefabInstance: {fileID: 1774100846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &371356100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3959935577383918301, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
+  m_PrefabInstance: {fileID: 1774100846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &371356101 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4970876577569546666, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
+  m_PrefabInstance: {fileID: 1774100846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &371356102 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5309542048041349085, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
+  m_PrefabInstance: {fileID: 1774100846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &371356103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6875419501984652694, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
   m_PrefabInstance: {fileID: 1774100846}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &373854322
@@ -5400,6 +5434,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 206254044}
     - target: {fileID: 1307892305913261206, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
+      propertyPath: _upgradeButton
+      value: 
+      objectReference: {fileID: 371356103}
+    - target: {fileID: 1307892305913261206, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
       propertyPath: _buildingController
       value: 
       objectReference: {fileID: 1217004497}
@@ -5496,6 +5534,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 206254045}
     - target: {fileID: 3248328060736303489, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
+      propertyPath: _upgradeButton
+      value: 
+      objectReference: {fileID: 371356100}
+    - target: {fileID: 3248328060736303489, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
       propertyPath: _buildingController
       value: 
       objectReference: {fileID: 1217004495}
@@ -5503,6 +5545,10 @@ PrefabInstance:
       propertyPath: _building
       value: 
       objectReference: {fileID: 206254043}
+    - target: {fileID: 3357011334450243388, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
+      propertyPath: _upgradeButton
+      value: 
+      objectReference: {fileID: 371356099}
     - target: {fileID: 3357011334450243388, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
       propertyPath: _buildingController
       value: 
@@ -5528,6 +5574,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 206254041}
     - target: {fileID: 5642670754039703958, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
+      propertyPath: _upgradeButton
+      value: 
+      objectReference: {fileID: 371356098}
+    - target: {fileID: 5642670754039703958, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
       propertyPath: _buildingController
       value: 
       objectReference: {fileID: 1022257438}
@@ -5535,6 +5585,10 @@ PrefabInstance:
       propertyPath: _building
       value: 
       objectReference: {fileID: 206254042}
+    - target: {fileID: 7614782930725676844, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
+      propertyPath: _upgradeButton
+      value: 
+      objectReference: {fileID: 371356101}
     - target: {fileID: 7614782930725676844, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
       propertyPath: _buildingController
       value: 
@@ -5559,6 +5613,10 @@ PrefabInstance:
       propertyPath: _building
       value: 
       objectReference: {fileID: 206254046}
+    - target: {fileID: 9136329011108949890, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
+      propertyPath: _upgradeButton
+      value: 
+      objectReference: {fileID: 371356102}
     - target: {fileID: 9136329011108949890, guid: 0ea4af8e90838db4aab35e3d1fc8e4dd, type: 3}
       propertyPath: _buildingController
       value: 
@@ -12160,7 +12218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &3735887819330273779
 CanvasRenderer:
   m_ObjectHideFlags: 0
