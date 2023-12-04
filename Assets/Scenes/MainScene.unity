@@ -2872,7 +2872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_text
-      value: You'll be upgrading by pressing the button above..
+      value: You can upgrade buildings by pressing the button above...
       objectReference: {fileID: 0}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
