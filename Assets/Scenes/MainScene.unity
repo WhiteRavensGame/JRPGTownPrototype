@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 206254042}
   villagersCount: {fileID: 2759634337554561966}
+  inputText: {fileID: 0}
   resourcesText: {fileID: 0}
   incomeText: {fileID: 0}
   buildingLevel: {fileID: 7097783719883809291}
@@ -155,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 206254046}
   villagersCount: {fileID: 8017727066595409288}
+  inputText: {fileID: 0}
   resourcesText: {fileID: 0}
   incomeText: {fileID: 0}
   buildingLevel: {fileID: 5002019652187530938}
@@ -173,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 206254044}
   villagersCount: {fileID: 3515151977631220262}
+  inputText: {fileID: 0}
   resourcesText: {fileID: 0}
   incomeText: {fileID: 0}
   buildingLevel: {fileID: 3300021548915700920}
@@ -1470,6 +1473,123 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &433807240
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 470462099899363663, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_text
+      value: This is your assign citizens hub!
+      objectReference: {fileID: 0}
+    - target: {fileID: 470462100922453835, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -556
+      objectReference: {fileID: 0}
+    - target: {fileID: 470462100922453835, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 309
+      objectReference: {fileID: 0}
+    - target: {fileID: 470462101760666193, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 470462101760666197, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202293018973001711, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512403137487460785, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512403139094089240, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1931706
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.14137015
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 37.41988
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229077572600085, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229077572600085, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229078146607288, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_text
+      value: Click the plus or minus buttons to add citizens.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229078695821073, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_text
+      value: You will assign citizens to certain buildings to produce gold or resources!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229079170717372, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 639
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229079170717372, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449084927568571424, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_Name
+      value: AssignTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449084927568571424, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
 --- !u!1 &482661958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,6 +1992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 206254043}
   villagersCount: {fileID: 5701177325251737960}
+  inputText: {fileID: 0}
   resourcesText: {fileID: 0}
   incomeText: {fileID: 0}
   buildingLevel: {fileID: 2158568350473584977}
@@ -2926,6 +3047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 206254045}
   villagersCount: {fileID: 3635810143614516798}
+  inputText: {fileID: 0}
   resourcesText: {fileID: 0}
   incomeText: {fileID: 0}
   buildingLevel: {fileID: 8206191994550154189}
@@ -4870,6 +4992,140 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8403027981061230741, guid: b72c62db5b09c7e4698eea66c709aed7, type: 3}
   m_PrefabInstance: {fileID: 1550679903}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1579069188
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 470462099899363663, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_text
+      value: This is your assign citizens hub!
+      objectReference: {fileID: 0}
+    - target: {fileID: 470462100562577820, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: _firstScreen
+      value: 
+      objectReference: {fileID: 3371533210965858090}
+    - target: {fileID: 470462100562577820, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: _tutorialType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 470462100922453835, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -556
+      objectReference: {fileID: 0}
+    - target: {fileID: 470462100922453835, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 309
+      objectReference: {fileID: 0}
+    - target: {fileID: 470462101760666193, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 470462101760666197, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202293018973001711, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512403137487460785, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512403139094089240, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1931706
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.14137015
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 37.41988
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229077572600085, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229077572600085, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229078146607288, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_text
+      value: This is a test!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229078695821073, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_text
+      value: Welcome to the main map!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229078695821079, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229079170717372, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 639
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229079170717372, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449084927568571424, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_Name
+      value: MainTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449084927568571424, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+--- !u!1 &1579069189 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5512403137487460785, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+  m_PrefabInstance: {fileID: 1579069188}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1633289342
 GameObject:
   m_ObjectHideFlags: 0
@@ -5785,6 +6041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 206254041}
   villagersCount: {fileID: 1552949214298919304}
+  inputText: {fileID: 0}
   resourcesText: {fileID: 0}
   incomeText: {fileID: 0}
   buildingLevel: {fileID: 6605144319796813036}
@@ -11481,6 +11738,7 @@ GameObject:
   - component: {fileID: 3689312690168307294}
   - component: {fileID: 4573320728744038335}
   - component: {fileID: 523407840239350589}
+  - component: {fileID: 5480807438016462788}
   m_Layer: 5
   m_Name: END WEEK
   m_TagString: Untagged
@@ -12218,7 +12476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &3735887819330273779
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15176,6 +15434,20 @@ RectTransform:
   m_AnchoredPosition: {x: -202, y: -71.5}
   m_SizeDelta: {x: 300, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5480807438016462788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3371533210965858090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29a615543e8a2b4ca59c3bf542dea8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _current: {fileID: 523407840239350589}
+  _next: {fileID: 1579069189}
 --- !u!222 &5499359722041302705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16500,6 +16772,7 @@ MonoBehaviour:
   _fishText: {fileID: 4559221148308751253}
   _ironText: {fileID: 2157733613197276416}
   _goldText: {fileID: 559325597913172724}
+  _troopsText: {fileID: 0}
 --- !u!222 &6545054498818702238
 CanvasRenderer:
   m_ObjectHideFlags: 0
