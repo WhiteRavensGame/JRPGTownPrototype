@@ -1,5 +1,5 @@
 EXTERNAL Changefood(value)
-EXTERNAL ChangeLorraineMorale(value)
+EXTERNAL ChangeVillagerMorale(value, Name)
 EXTERNAL Changetroops(value)
 EXTERNAL Changegold(value)
 EXTERNAL Changemorale(value)
@@ -20,14 +20,14 @@ Lorraine: "Hey youngun, there’s a group of farmers at the gate. Those poor fel
 
 == Help ==
 Out of sympathy, you let them stay for a few nights for free, and they are full of gratitude
-~ ChangeLorraineMorale(5)
+~ ChangeVillagerMorale(5, "Lorraine")
 ~ Changefood(-10)
 ~ Changemorale(2)
 ->END
 
 == No_Help ==
 At this critical time when the two kingdoms are at the brink of war, there really is no spare resources to share with outsiders. Thus, despite that they may not last long out there, they can’t stay in the village
-~ ChangeLorraineMorale(-5)
+~ ChangeVillagerMorale(-5, "Lorraine")
 ->END   
 
 == Ask ==
@@ -44,7 +44,7 @@ You got out to challenge the orcs in a hard battle against them.
 
 == No_fight == 
 You decide to not battle the orcs due to their overwhelming strength.
-~ ChangeLorraineMorale(-5)
+~ ChangeVillagerMorale(-5, "Lorraine")
 ->END
 
 == Win ==

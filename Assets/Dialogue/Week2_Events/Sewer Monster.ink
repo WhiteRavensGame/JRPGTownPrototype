@@ -1,5 +1,6 @@
 EXTERNAL Changematerials(value)
 EXTERNAL Changemorale(value)
+EXTERNAL ChangeVillagerMorale(value, Name)
 
 ->START
 
@@ -32,4 +33,5 @@ Will:
 == Face ==
 “Mayor I can’t believe you managed to fight that thing 1 on 1! That’s very impressive but you do stink so please go wash up.”
 ~ Changemorale(5)
+~ ChangeVillagerMorale(2, "Will")
 ->END

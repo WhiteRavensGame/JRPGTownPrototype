@@ -30,7 +30,6 @@ You tell Wymm that he can perform and you begin gathering resources to set up a 
 == Leave ==
 You realize you don’t have a stage, and it would cost too much to build one. Unfortunately you have to tell him to leave.
 ~ Changemorale(-5)
-# +5% Roe morale, -5% Lorraine morale, -10% materials
 ->END
 
 == Inn ==
@@ -38,5 +37,4 @@ You get him to perform in the Inn, unfortunately it’s not big enough for the w
 ~ Changefood(-5)
 ~ Changesilk(-5)
 ~ Changemorale(10)
-# +10% Lorraine morale, -2% Oscar morale, -2% Roe morale
 ->END
