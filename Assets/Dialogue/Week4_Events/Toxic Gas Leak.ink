@@ -1,6 +1,6 @@
 EXTERNAL Changegold(value)
 EXTERNAL Changematerials(value)
-EXTERNAL ChangeRoeMorale(value)
+EXTERNAL ChangeVillagerMorale(value, Name)
 EXTERNAL Changecitizens(value)
 
 ->START
@@ -23,7 +23,7 @@ Roe:
 “Boss y’know I like the helmets and the safety gear but it really gets in the way of my dirt munching. But thanks anyways!”
 ~ Changegold(-500)
 ~ Changematerials(-10)
-~ ChangeRoeMorale(-2)
+~ ChangeVillagerMorale(-2, "Roe")
 ->END
 
 == Ventilate ==
@@ -35,5 +35,5 @@ Roe:
 == Seal ==
 “Boss whyyyyyyyy. He starts crying. I know we found some danger but I felt we were on the road to greatness by going in that direction! Ah fine I’ll dig somewhere else.”
 ~ Changematerials(-5)
-~ ChangeRoeMorale(-5)
+~ ChangeVillagerMorale(-5, "Roe")
 ->END
