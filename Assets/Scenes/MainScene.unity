@@ -431,6 +431,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 305422813578570864, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 305422813578570865, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
       propertyPath: _buildingUpgrade
       value: 
@@ -439,6 +443,10 @@ PrefabInstance:
       propertyPath: _buildingUpgrade
       value: 
       objectReference: {fileID: 1774100853}
+    - target: {fileID: 689960598412797637, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 929770863832206826, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
       propertyPath: m_Name
       value: Buildings V2
@@ -515,6 +523,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.34830266
       objectReference: {fileID: 0}
+    - target: {fileID: 2648660780776746436, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 2648660780776746437, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
       propertyPath: _buildingUpgrade
       value: 
@@ -539,6 +551,10 @@ PrefabInstance:
       propertyPath: ui
       value: 
       objectReference: {fileID: 1739022048}
+    - target: {fileID: 4212481761657774904, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4212481761657774905, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
       propertyPath: _buildingUpgrade
       value: 
@@ -555,6 +571,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -1.1363511
       objectReference: {fileID: 0}
+    - target: {fileID: 4829521067068518784, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4829521067068518785, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
       propertyPath: _buildingUpgrade
       value: 
@@ -566,6 +586,10 @@ PrefabInstance:
     - target: {fileID: 7357906925839311599, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941871664826976482, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8941871664826976483, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
       propertyPath: _buildingUpgrade
@@ -3314,7 +3338,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &1042313605
 RectTransform:
@@ -5136,7 +5160,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2534ee1253dd23544a9df3842ef5c28e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6422,7 +6446,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c3bc281fb21c0954eac174f3ec0e4df6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
