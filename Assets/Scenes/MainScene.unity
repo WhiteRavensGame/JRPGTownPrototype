@@ -6216,6 +6216,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2768272776199153613, guid: ec22128a27f42e841aace6145e411042, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -225
+      objectReference: {fileID: 0}
+    - target: {fileID: 2939111227722217105, guid: ec22128a27f42e841aace6145e411042, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -65
+      objectReference: {fileID: 0}
     - target: {fileID: 3707933118349624548, guid: ec22128a27f42e841aace6145e411042, type: 3}
       propertyPath: m_Name
       value: Assign Citezen
@@ -6235,6 +6243,10 @@ PrefabInstance:
     - target: {fileID: 6054989786248190913, guid: ec22128a27f42e841aace6145e411042, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532700703925015978, guid: ec22128a27f42e841aace6145e411042, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -395
       objectReference: {fileID: 0}
     - target: {fileID: 6536195807067128813, guid: ec22128a27f42e841aace6145e411042, type: 3}
       propertyPath: m_RootOrder
@@ -6279,6 +6291,14 @@ PrefabInstance:
     - target: {fileID: 6536195807067128813, guid: ec22128a27f42e841aace6145e411042, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6664786270724506991, guid: ec22128a27f42e841aace6145e411042, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291476086949865514, guid: ec22128a27f42e841aace6145e411042, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -225
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec22128a27f42e841aace6145e411042, type: 3}
