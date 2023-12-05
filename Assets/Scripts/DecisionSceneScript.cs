@@ -4,9 +4,8 @@ using TMPro;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using Mono.Cecil;
-using UnityEngine.SceneManagement;
 
-public class RoundTable : MonoBehaviour
+public class DecisionSceneScript : MonoBehaviour
 {
     [Header("Inputs")]
     [SerializeField] private InputActionReference _action;
@@ -28,15 +27,15 @@ public class RoundTable : MonoBehaviour
     private bool loadingText = false;
     static string choice;
 
-    [SerializeField]private TextAsset jsonAsset;
-
-    [SerializeField] private GameObject continueButton;
+    [SerializeField] private TextAsset jsonAsset;
 
     public void Awake()
     {
-        continueButton.SetActive(false);
         _currentStory = new Story(jsonAsset.text);
+
         LoadTextAnim();
+
+        switch (choice) { case "characterChoice": break; }
     }
 
     private void Exit()
@@ -114,17 +113,16 @@ public class RoundTable : MonoBehaviour
             {
                 var text = buttons[i].GetComponentInChildren<TextMeshProUGUI>();
                 text.text = _currentStory.currentChoices[i].text;
-                
+
             }
         }
     }
 
     public void ChooseOption(int index)
     {
-        if(_currentStory.currentChoices.Count > 0)
+        if (_currentStory.currentChoices.Count > 0)
         {
-            continueButton.SetActive(true);
-            choice = _currentStory.currentChoices[index].text;
+            
             _currentStory.ChooseChoiceIndex(index);
 
             if (!_currentStory.canContinue)
@@ -136,20 +134,15 @@ public class RoundTable : MonoBehaviour
                 LoadTextAnim();
             }
         }
-        
+
     }
 
-    public void Continue(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
 
     private void OnDisable()
     {
         _leftClick.Disable();
         _leftClick.performed -= OnClick;
-        
-    }
 
-    
+    }
 }
+

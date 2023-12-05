@@ -278,6 +278,7 @@ MonoBehaviour:
   - {fileID: 845491296}
   wordSpeed: 0.05
   jsonAsset: {fileID: 0}
+  continueButton: {fileID: 0}
 --- !u!1 &845491296 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 539740122038733239, guid: fb7ee59e2b328344da1483b3f7c20cc6, type: 3}
@@ -361,6 +362,26 @@ PrefabInstance:
     - target: {fileID: 6310198870861687583, guid: fb7ee59e2b328344da1483b3f7c20cc6, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995900947838678982, guid: fb7ee59e2b328344da1483b3f7c20cc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995900947838678982, guid: fb7ee59e2b328344da1483b3f7c20cc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 741851063}
+    - target: {fileID: 7995900947838678982, guid: fb7ee59e2b328344da1483b3f7c20cc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Continue
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995900947838678982, guid: fb7ee59e2b328344da1483b3f7c20cc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RoundTable, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995900947838678982, guid: fb7ee59e2b328344da1483b3f7c20cc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: DecisionScene
       objectReference: {fileID: 0}
     - target: {fileID: 9012467342285214672, guid: fb7ee59e2b328344da1483b3f7c20cc6, type: 3}
       propertyPath: m_SortingOrder
