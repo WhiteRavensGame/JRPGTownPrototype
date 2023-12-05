@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using Mono.Cecil;
+using UnityEngine.SceneManagement;
 
 public class DecisionSceneScript : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class DecisionSceneScript : MonoBehaviour
     {
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
         gameObject.SetActive(false);
+        SceneManager.LoadScene("Character Ending");
     }
 
     private void OnEnable()
