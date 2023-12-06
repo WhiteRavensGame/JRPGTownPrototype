@@ -296,6 +296,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1906802626749467162, guid: 0eaf84a34df469e4284872cfb9af49b6, type: 3}
+      propertyPath: jsonAsset
+      value: 
+      objectReference: {fileID: 4900000, guid: fa4dae5f0cfca0549b48c526c5ee5189, type: 3}
+    - target: {fileID: 3095149935555259811, guid: 0eaf84a34df469e4284872cfb9af49b6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095149935555259811, guid: 0eaf84a34df469e4284872cfb9af49b6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653771718727614373, guid: 0eaf84a34df469e4284872cfb9af49b6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946079512254927037, guid: 0eaf84a34df469e4284872cfb9af49b6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946079512254927037, guid: 0eaf84a34df469e4284872cfb9af49b6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 162
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421853555049055485, guid: 0eaf84a34df469e4284872cfb9af49b6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -604
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421853555049055485, guid: 0eaf84a34df469e4284872cfb9af49b6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773464528042836084, guid: 0eaf84a34df469e4284872cfb9af49b6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773464528042836084, guid: 0eaf84a34df469e4284872cfb9af49b6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 162
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eaf84a34df469e4284872cfb9af49b6, type: 3}
 --- !u!1 &1736900336
