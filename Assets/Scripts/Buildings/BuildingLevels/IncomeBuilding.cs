@@ -12,10 +12,11 @@ public class IncomeBuilding : BuildingLevel
     public override float DailyEarnings(List<Villager> villagers)
     {
         int earnings = 0;
+        int earningPerVillager = maxIncome / maxVillagers;
 
         foreach (var villager in villagers)
         {
-            earnings += villager.incomeProfit;
+            earnings += (int)(earningPerVillager * villager.incomeMultiplier);
         }
 
         var rAmt = 0;
