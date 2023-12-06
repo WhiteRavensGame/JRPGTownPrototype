@@ -3743,6 +3743,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 470462099899363663, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_text
+      value: 'Gods will give you special bonuses.     '
+      objectReference: {fileID: 0}
     - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
       propertyPath: m_RootOrder
       value: 4
