@@ -8,7 +8,7 @@ EXTERNAL ChangeVillagerMorale(value, Name)
 Sewer Monster
 
 Will:
-“Mayor, Mayor! We have a really big problem down in the sewers! There’s some sort of creature slime creature living down there. What should we do?”
+“Mayor! Mayor! We have a really big problem down in the sewers! There’s some sort of creature slime creature living down there. What should we do?”
 
 ->CHOICES
 
