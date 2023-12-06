@@ -39,11 +39,6 @@ public class RoundTable : MonoBehaviour
         LoadTextAnim();
     }
 
-    private void Exit()
-    {
-        
-        gameObject.SetActive(false);
-    }
 
     private void OnEnable()
     {
@@ -77,10 +72,7 @@ public class RoundTable : MonoBehaviour
         {
             LoadTextAnim();
         }
-        else if (!_currentStory.canContinue && _currentStory.currentChoices.Count <= 0)
-        {
-            Exit();
-        }
+        
     }
 
     public void LoadTextAnim()
@@ -100,10 +92,7 @@ public class RoundTable : MonoBehaviour
             CheckAnswers(true);
         }
 
-        if (currentText == "")
-        {
-            Exit();
-        }
+        
     }
 
     private void CheckAnswers(bool active)
@@ -127,11 +116,8 @@ public class RoundTable : MonoBehaviour
             choice = _currentStory.currentChoices[index].text;
             _currentStory.ChooseChoiceIndex(index);
 
-            if (!_currentStory.canContinue)
-            {
-                Exit();
-            }
-            else
+          
+            if(_currentStory.canContinue)
             {
                 LoadTextAnim();
             }

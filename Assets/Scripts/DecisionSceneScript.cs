@@ -32,11 +32,12 @@ public class DecisionSceneScript : MonoBehaviour
 
     public void Awake()
     {
+        switch (choice) { case "characterChoice": break; }
         _currentStory = new Story(jsonAsset.text);
 
         LoadTextAnim();
 
-        switch (choice) { case "characterChoice": break; }
+        
     }
 
     private void Exit()
