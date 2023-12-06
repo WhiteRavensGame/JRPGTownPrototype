@@ -15,7 +15,6 @@ public class RoundTable : MonoBehaviour
     [Space, Header("UI")]
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private List<GameObject> buttons;
-    [SerializeField] private GameObject newStory;
 
     [Space, Header("Story")]
     private Story _currentStory;
@@ -128,7 +127,7 @@ public class RoundTable : MonoBehaviour
     public void Continue()
     {
         gameObject.SetActive(false);
-        newStory.SetActive(true);
+        decisionScene.gameObject.SetActive(true);
     }
 
     private void OnDisable()

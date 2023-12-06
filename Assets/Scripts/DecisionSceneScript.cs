@@ -17,6 +17,7 @@ public class DecisionSceneScript : MonoBehaviour
     [SerializeField] private List<GameObject> buttons;
 
     [Space, Header("Story")]
+    [SerializeField] private Ending storyEnding;
     private Story _currentStory;
 
     [Space, Header("Variables")]
@@ -131,7 +132,8 @@ public class DecisionSceneScript : MonoBehaviour
         if (_currentStory.currentChoices.Count > 0)
         {
             _currentStory.ChooseChoiceIndex(index);
-            SceneManager.LoadScene("CharacterEnding");
+            storyEnding.gameObject.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 

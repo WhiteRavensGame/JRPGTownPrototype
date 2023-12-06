@@ -2,7 +2,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     private PlayerManager playerManager;
@@ -67,10 +67,10 @@ public class UIManager : MonoBehaviour
 
     public void ActivateUpgradeScreen()
     {
-        if (ServiceLocator.Get<PlayerManager>().gameState == GameStates.MainScreen)
+        if (playerManager.gameState == GameStates.MainScreen)
         {
             Debug.Log("opening upgrade screen");
-            ServiceLocator.Get<PlayerManager>().gameState = GameStates.PanelInfo;
+            playerManager.gameState = GameStates.PanelInfo;
             _upgradeScreen.SetActive(true);
             _upgradeButton.SetActive(false);
         }
@@ -79,17 +79,17 @@ public class UIManager : MonoBehaviour
     public void DeactivateUpgradeScreen()
     {
         Debug.Log("closing upgrade screen");
-        ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
+        playerManager.gameState = GameStates.MainScreen;
         _upgradeScreen.SetActive(false);
         _upgradeButton.SetActive(true);
     }
 
     public void ActivateCharacterScreen()
     {
-        if (ServiceLocator.Get<PlayerManager>().gameState == GameStates.MainScreen)
+        if (playerManager.gameState == GameStates.MainScreen)
         {
             Debug.Log("opening character screen");
-            ServiceLocator.Get<PlayerManager>().gameState = GameStates.PanelInfo;
+            playerManager.gameState = GameStates.PanelInfo;
             _characterScreen.SetActive(true);
         }
     }
@@ -97,7 +97,11 @@ public class UIManager : MonoBehaviour
     public void DeactivateCharacterScreen()
     {
         Debug.Log("closing character screen");
-        ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
+        playerManager.gameState = GameStates.MainScreen;
         _characterScreen.SetActive(false);
+    }
+    public void OptionsButton()
+    {
+        SceneManager.LoadScene("SaveScene");
     }
 }
