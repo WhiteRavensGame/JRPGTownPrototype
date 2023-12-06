@@ -22,7 +22,5 @@ VAR Morale = 0
     Will has been okay, he still smiles to you when you pass each other and makes small talk with everyone at his Inn. Unfortunately you fear that small talk is the only talk he’s making. You used to see him bring lunch to Adelaine, he’d knock on her door and ask to eat with her and sometimes she’d even let him. But lately he'll leave food at her doorstep, knock and walk away, sometimes Adelaine won’t even pick up the food. 
     
     Her routine has stayed the same, she wakes up early, watches the sunrise and then begins her work in the field. She then spends the rest of the day strolling the town and talking to people, as always she is the heart of the town but you’ve noticed something is off, She’s not quite the same. It’s not a limp in her step or a missing smile, it’s something deeper, a sadness that you don’t think you have the power to solve. But Lorraine is tough, she will be okay.
-
-
 }
 
