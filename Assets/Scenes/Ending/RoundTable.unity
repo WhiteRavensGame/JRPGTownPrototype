@@ -291,9 +291,9 @@ MonoBehaviour:
   - {fileID: 1084264622}
   - {fileID: 1449697750}
   - {fileID: 258722235}
-  wordSpeed: 0
+  wordSpeed: 0.05
   choice: 
-  jsonAsset: {fileID: 0}
+  jsonAsset: {fileID: 4900000, guid: 80386f48198dc644d8fa4c0bca2fc1f2, type: 3}
 --- !u!1 &258722235 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 509750111880130679, guid: 447b8e98be242cf48a5fcf41cbd0d92c, type: 3}
@@ -651,6 +651,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3668484903414974727, guid: 447b8e98be242cf48a5fcf41cbd0d92c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 223530302}
+    - target: {fileID: 6025016525962425417, guid: 447b8e98be242cf48a5fcf41cbd0d92c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 223530302}
+    - target: {fileID: 6408650808954327936, guid: 447b8e98be242cf48a5fcf41cbd0d92c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 223530302}
     - target: {fileID: 6660900445677364878, guid: 447b8e98be242cf48a5fcf41cbd0d92c, type: 3}
       propertyPath: m_Name
       value: Pop-Up

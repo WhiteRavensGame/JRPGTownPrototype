@@ -32,26 +32,35 @@ public class DecisionSceneScript : MonoBehaviour
 
     public void OnEnable()
     {
-        switch (choice) 
-        { 
-            case "characterChoice": 
-                break; 
-        }
         _currentStory = new Story(jsonAsset.text);
 
+        switch (choice)
+        {
+            case "Oscar Herring":
+                _currentStory.variablesState["Oscar"] = true;
+                break;
+            case "Lorraine Florrace":
+                _currentStory.variablesState["Lorraine"] = true;
+                break;
+            case "Will Van Merrin":
+                _currentStory.variablesState["Roe"] = true;
+                break;
+            case "Adelaine Sharp":
+                _currentStory.variablesState["Adelaine"] = true;
+                break;
+            case "Roe Kimp":
+                _currentStory.variablesState["Will"] = true;
+                break;
+            default: break;
+        }
+
         LoadTextAnim();
+        CheckAnswers();
 
         _leftClick = _action.action;
         _leftClick.Enable();
         _leftClick.performed += OnClick;
 
-    }
-
-    private void Exit()
-    {
-        ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
-        gameObject.SetActive(false);
-        SceneManager.LoadScene("Character Ending");
     }
 
     private void Update()
@@ -68,7 +77,7 @@ public class DecisionSceneScript : MonoBehaviour
             else if (currentWord >= currentText.Length)
             {
                 loadingText = false;
-                CheckAnswers(true);
+                CheckAnswers();
             }
         }
     }
@@ -78,10 +87,6 @@ public class DecisionSceneScript : MonoBehaviour
         if (_currentStory.canContinue || _currentStory.currentChoices.Count > 0)
         {
             LoadTextAnim();
-        }
-        else if (!_currentStory.canContinue && _currentStory.currentChoices.Count <= 0)
-        {
-            Exit();
         }
     }
 
@@ -99,25 +104,25 @@ public class DecisionSceneScript : MonoBehaviour
         {
             loadingText = false;
             dialogueText.text = currentText;
-            CheckAnswers(true);
-        }
-
-        if (currentText == "")
-        {
-            Exit();
+            CheckAnswers();
         }
     }
 
-    private void CheckAnswers(bool active)
+    private void CheckAnswers()
     {
-        if (_currentStory.currentChoices.Count > 0)
+        if(_currentStory.currentChoices.Count == 0 && buttons[0].active)
         {
-            for (int i = 0; _currentStory.currentChoices.Count > i; ++i)
+            for (int i = 0; buttons.Count > i; ++i)
             {
-                var text = buttons[i].GetComponentInChildren<TextMeshProUGUI>();
-                text.text = _currentStory.currentChoices[i].text;
-
+                buttons[i].SetActive(false);
             }
+        }
+
+        for (int i = 0; _currentStory.currentChoices.Count > i; ++i)
+        {
+            buttons[i].SetActive(true);
+            var text = buttons[i].GetComponentInChildren<TextMeshProUGUI>();
+            text.text = _currentStory.currentChoices[i].text;
         }
     }
 
@@ -125,19 +130,9 @@ public class DecisionSceneScript : MonoBehaviour
     {
         if (_currentStory.currentChoices.Count > 0)
         {
-            
             _currentStory.ChooseChoiceIndex(index);
-
-            if (!_currentStory.canContinue)
-            {
-                Exit();
-            }
-            else
-            {
-                LoadTextAnim();
-            }
+            SceneManager.LoadScene("CharacterEnding");
         }
-
     }
 
 

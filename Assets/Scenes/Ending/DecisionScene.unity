@@ -393,7 +393,8 @@ MonoBehaviour:
   - {fileID: 1821374084}
   - {fileID: 1821374083}
   wordSpeed: 0
-  jsonAsset: {fileID: 0}
+  choice: 
+  jsonAsset: {fileID: 4900000, guid: 80386f48198dc644d8fa4c0bca2fc1f2, type: 3}
 --- !u!1001 &1821374081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -404,6 +405,10 @@ PrefabInstance:
     - target: {fileID: 2460927620483918973, guid: 447b8e98be242cf48a5fcf41cbd0d92c, type: 3}
       propertyPath: m_text
       value: Bribe them
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160046702944573830, guid: 447b8e98be242cf48a5fcf41cbd0d92c, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3175836840424349436, guid: 447b8e98be242cf48a5fcf41cbd0d92c, type: 3}
       propertyPath: m_Pivot.x
@@ -553,6 +558,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Trick them
       objectReference: {fileID: 0}
+    - target: {fileID: 6200428808665691607, guid: 447b8e98be242cf48a5fcf41cbd0d92c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6408650808954327936, guid: 447b8e98be242cf48a5fcf41cbd0d92c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -588,6 +597,10 @@ PrefabInstance:
     - target: {fileID: 7889187714687424932, guid: 447b8e98be242cf48a5fcf41cbd0d92c, type: 3}
       propertyPath: m_text
       value: Fight them
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547559944439042618, guid: 447b8e98be242cf48a5fcf41cbd0d92c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9133144636416184777, guid: 447b8e98be242cf48a5fcf41cbd0d92c, type: 3}
       propertyPath: m_Name
