@@ -3,6 +3,8 @@ EXTERNAL Changemorale(value)
 EXTERNAL Changesilk(value)
 EXTERNAL ChangeVillagerMorale(value, Name)
 
+Dancing Dave
+
 Will:
 “Mayor, there's this guy named Dancing Dave who came to my Tavern.  He’s insisting I give him a chance to show off his dance skills to entertain my customers. I’m not sure if I should hire him or not, what should I do?”
 
