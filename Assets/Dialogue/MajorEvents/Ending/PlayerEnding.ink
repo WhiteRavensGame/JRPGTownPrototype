@@ -10,9 +10,16 @@ VAR material = 50
 VAR silk = 50
 
 
-{troops >= 50 && morale >= 75: ->GoodFight | ->MidFight | -> BadFight}
-{food >= 50 && material >= 50 && silk >= 50 && morale >= 75: ->GoodTrick | food >= 50 && material >= 50 && silk >= 50 && morale <= 75: ->MidTrick | food < 50 && material <= 50 && silk <= 50 && morale <= 75:-> BadTrick}
-{gold >= 5000 && morale >= 75: ->GoodBribe | gold >= 5000 && morale <= 75: ->MidBribe | gold <= 5000 && morale <= 75: -> BadBribe}
+{troops >= 50 && morale >= 75: ->GoodFight}
+{troops >= 10: ->MidFight | ->BadFight}
+
+{food >= 50 && material >= 50 && silk >= 50 && morale >= 75: ->GoodTrick |}
+{food >= 50 && material >= 50 && silk >= 50 && morale <= 75: ->MidTrick }
+{food < 50 && material <= 50 && silk <= 50 && morale <= 75:-> BadTrick}
+
+{gold >= 5000 && morale >= 75: ->GoodBribe}
+{gold >= 5000 && morale <= 75: ->MidBribe}
+{gold <= 5000 && morale <= 75: -> BadBribe}
 
 
 ==GoodFight==
@@ -63,7 +70,8 @@ The town, as well as its inhabitants, is safe. But what of its soul? Well, lives
 You tell the mayor that you surrender, and that the town shall throw a party in honor of the future victor of this war. 
 “Interesting… But tell me Mayor, do you take me for a fool? I’ve rarely seen a more obvious trap. Well, you may lack honor, but I do not. I will warn you: return to your town, and prepare our defenses. We attack at dawn.
 
-{troops >= 50 && morale >= 75: ->GoodFight | ->MidFight | -> BadFight}
+{troops >= 50 && morale >= 75: ->GoodFight}
+{troops >= 10: ->MidFight | ->BadFight}
 
 ==GoodBribe==
 “So, you would compromise your honor and ours for the safety of your town? But tell me, what would I stand to gain from this? From what I can tell, all I see is more mouths to feed for Leirrus. ”
@@ -82,4 +90,5 @@ You return to your town as the army is already starting to depart. You explain t
 ==BadBribe==
 “I’m afraid, dear Mayor, that the honor of Leirrus cannot be bought quite so easily. If you had been just slightly more generous perhaps. But not with this. I suggest you either flee or prepare your defenses. We attack at dawn.”
 You return to Steadville, to face the grave faces of your citizens. You announce the news: you tried to avoid it, but the battle will happen. You hear some sighs, some cries, and when you look in your citizens eyes, you see only quiet resignation. 
-{troops >= 50 && morale >= 75: ->GoodFight | ->MidFight | -> BadFight}
+{troops >= 50 && morale >= 75: ->GoodFight}
+{troops >= 10: ->MidFight | ->BadFight}
