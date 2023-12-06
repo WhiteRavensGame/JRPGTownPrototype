@@ -9,6 +9,7 @@ public class EventManager : MonoBehaviour
     [HideInInspector] public UnityEvent endOfDay;
     [SerializeField] public GameObject _button;
 
+    private PlayerManager _playerManager;
     private MainDialogue dialogue;
     [SerializeField] private List<TextAsset> _weekOneTexts = new();
     [SerializeField] private List<TextAsset> _weekTwoTexts = new();
@@ -18,7 +19,7 @@ public class EventManager : MonoBehaviour
     public void Initialize()
     {
         dialogue = ServiceLocator.Get<MainDialogue>();
-
+        _playerManager = ServiceLocator.Get<PlayerManager>();
     }
 
     public void CheckEvent()
@@ -60,6 +61,13 @@ public class EventManager : MonoBehaviour
 
     public void ButtonPressed()
     {
+        if (_playerManager.gameState != GameStates.MainScreen)
+        {
+            return;
+        }
+
+        _playerManager.gameState = GameStates.Talking;
+
         _button.SetActive(false);
         int week = ServiceLocator.Get<TimeManager>().GetWeek();
 
