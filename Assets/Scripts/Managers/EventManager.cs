@@ -95,8 +95,6 @@ public class EventManager : MonoBehaviour
             default:
                 break;
         }
-
-        ServiceLocator.Get<PlayerManager>().gameState = GameStates.Talking;
     }
 
     public void SetUpButton(Button button)
