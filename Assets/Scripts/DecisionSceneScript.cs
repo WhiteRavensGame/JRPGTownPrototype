@@ -26,18 +26,25 @@ public class DecisionSceneScript : MonoBehaviour
     private int currentWord;
 
     private bool loadingText = false;
-    static string choice;
+    public string choice;
 
     [SerializeField] private TextAsset jsonAsset;
 
-    public void Awake()
+    public void OnEnable()
     {
-        switch (choice) { case "characterChoice": break; }
+        switch (choice) 
+        { 
+            case "characterChoice": 
+                break; 
+        }
         _currentStory = new Story(jsonAsset.text);
 
         LoadTextAnim();
 
-        
+        _leftClick = _action.action;
+        _leftClick.Enable();
+        _leftClick.performed += OnClick;
+
     }
 
     private void Exit()
@@ -45,13 +52,6 @@ public class DecisionSceneScript : MonoBehaviour
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
         gameObject.SetActive(false);
         SceneManager.LoadScene("Character Ending");
-    }
-
-    private void OnEnable()
-    {
-        _leftClick = _action.action;
-        _leftClick.Enable();
-        _leftClick.performed += OnClick;
     }
 
     private void Update()

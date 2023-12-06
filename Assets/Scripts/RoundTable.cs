@@ -15,6 +15,7 @@ public class RoundTable : MonoBehaviour
     [Space, Header("UI")]
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private List<GameObject> buttons;
+    [SerializeField] private GameObject newStory;
 
     [Space, Header("Story")]
     private Story _currentStory;
@@ -26,9 +27,10 @@ public class RoundTable : MonoBehaviour
     private int currentWord;
 
     private bool loadingText = false;
-    static string choice;
 
-    [SerializeField]private TextAsset jsonAsset;
+    [SerializeField] private DecisionSceneScript decisionScene;
+
+    [SerializeField] private TextAsset jsonAsset;
 
     [SerializeField] private GameObject continueButton;
 
@@ -91,8 +93,6 @@ public class RoundTable : MonoBehaviour
             dialogueText.text = currentText;
             CheckAnswers(true);
         }
-
-        
     }
 
     private void CheckAnswers(bool active)
@@ -113,7 +113,7 @@ public class RoundTable : MonoBehaviour
         if(_currentStory.currentChoices.Count > 0)
         {
             continueButton.SetActive(true);
-            choice = _currentStory.currentChoices[index].text;
+            decisionScene.choice = _currentStory.currentChoices[index].text;
             _currentStory.ChooseChoiceIndex(index);
 
           
@@ -125,9 +125,10 @@ public class RoundTable : MonoBehaviour
         
     }
 
-    public void Continue(string sceneName)
+    public void Continue()
     {
-        SceneManager.LoadScene(sceneName);
+        gameObject.SetActive(false);
+        newStory.SetActive(true);
     }
 
     private void OnDisable()
