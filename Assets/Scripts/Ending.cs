@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Ending : MonoBehaviour
 {
-    public GameObject playerOutcomePopUp;
+    public GameObject playerButton;
 
     public List<GameObject> popUps;
     public GameObject button;
@@ -15,9 +15,7 @@ public class Ending : MonoBehaviour
     {
         if (index >= popUps.Count - 1)
         {
-            popUps[index].SetActive(false);
-            playerOutcomePopUp.SetActive(true);
-            button.gameObject.SetActive(false);
+            SceneManager.LoadScene("Ending");
             return;
         }
         popUps[index++].SetActive(false);
@@ -34,8 +32,12 @@ public class Ending : MonoBehaviour
     {
         SceneManager.LoadScene("CharacterEnding");
     }
-    public void Next()
+
+    public void PlayerNext()
     {
-        SceneManager.LoadScene("Ending");
+        playerButton.SetActive(false);
+        popUps[index++].SetActive(false);
+        popUps[index].SetActive(true);
+        button.gameObject.SetActive(true);
     }
 }

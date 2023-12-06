@@ -506,7 +506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &242951680
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2905,7 +2905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1537760733
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3638,7 +3638,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2098846330}
         m_TargetAssemblyTypeName: Ending, Assembly-CSharp
-        m_MethodName: Next
+        m_MethodName: PlayerNext
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4804,8 +4804,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7432b7815503f04ba70b2a563b29ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerOutcomePopUp: {fileID: 242951679}
+  playerButton: {fileID: 1839191279}
   popUps:
+  - {fileID: 242951679}
   - {fileID: 9008639245504201353}
   - {fileID: 577313120}
   - {fileID: 364619459}
@@ -5271,4 +5272,4 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
