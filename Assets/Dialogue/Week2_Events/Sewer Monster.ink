@@ -19,7 +19,7 @@ Will:
  * [Face it in single combat.] ->Face
 
 == Drawn ==
-“Mayor we tried pouring a bunch of water down there but it didn’t seem to do anything. I think we just have to board it up for now.”
+“Mayor, we tried pouring a bunch of water down there but it didn’t seem to do anything. I think we just have to board it up for now.”
 #-10 Materials, -5% Town Morale
 ~ Changematerials(-10)
 ~ Changemorale(-5)
