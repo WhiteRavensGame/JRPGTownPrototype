@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using Mono.Cecil;
 using UnityEngine.SceneManagement;
 
-public class RoundTable : MonoBehaviour
+public class DecisionSceneScript : MonoBehaviour
 {
     [Header("Inputs")]
     [SerializeField] private InputActionReference _action;
@@ -15,7 +15,6 @@ public class RoundTable : MonoBehaviour
     [Space, Header("UI")]
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private List<GameObject> buttons;
-    [SerializeField] private GameObject newStory;
 
     [Space, Header("Story")]
     private Story _currentStory;
@@ -27,26 +26,41 @@ public class RoundTable : MonoBehaviour
     private int currentWord;
 
     private bool loadingText = false;
-
-    [SerializeField] private DecisionSceneScript decisionScene;
+    public string choice;
 
     [SerializeField] private TextAsset jsonAsset;
 
-    [SerializeField] private GameObject continueButton;
-
-    public void Awake()
+    public void OnEnable()
     {
-        continueButton.SetActive(false);
         _currentStory = new Story(jsonAsset.text);
+
+        switch (choice)
+        {
+            case "Oscar Herring":
+                _currentStory.variablesState["Oscar"] = true;
+                break;
+            case "Lorraine Florrace":
+                _currentStory.variablesState["Lorraine"] = true;
+                break;
+            case "Will Van Merrin":
+                _currentStory.variablesState["Roe"] = true;
+                break;
+            case "Adelaine Sharp":
+                _currentStory.variablesState["Adelaine"] = true;
+                break;
+            case "Roe Kimp":
+                _currentStory.variablesState["Will"] = true;
+                break;
+            default: break;
+        }
+
         LoadTextAnim();
-    }
+        CheckAnswers();
 
-
-    private void OnEnable()
-    {
         _leftClick = _action.action;
         _leftClick.Enable();
         _leftClick.performed += OnClick;
+
     }
 
     private void Update()
@@ -63,7 +77,7 @@ public class RoundTable : MonoBehaviour
             else if (currentWord >= currentText.Length)
             {
                 loadingText = false;
-                CheckAnswers(true);
+                CheckAnswers();
             }
         }
     }
@@ -74,7 +88,6 @@ public class RoundTable : MonoBehaviour
         {
             LoadTextAnim();
         }
-        
     }
 
     public void LoadTextAnim()
@@ -91,52 +104,43 @@ public class RoundTable : MonoBehaviour
         {
             loadingText = false;
             dialogueText.text = currentText;
-            CheckAnswers(true);
+            CheckAnswers();
         }
     }
 
-    private void CheckAnswers(bool active)
+    private void CheckAnswers()
     {
-        if (_currentStory.currentChoices.Count > 0)
+        if(_currentStory.currentChoices.Count == 0 && buttons[0].active)
         {
-            for (int i = 0; _currentStory.currentChoices.Count > i; ++i)
+            for (int i = 0; buttons.Count > i; ++i)
             {
-                var text = buttons[i].GetComponentInChildren<TextMeshProUGUI>();
-                text.text = _currentStory.currentChoices[i].text;
-                
+                buttons[i].SetActive(false);
             }
+        }
+
+        for (int i = 0; _currentStory.currentChoices.Count > i; ++i)
+        {
+            buttons[i].SetActive(true);
+            var text = buttons[i].GetComponentInChildren<TextMeshProUGUI>();
+            text.text = _currentStory.currentChoices[i].text;
         }
     }
 
     public void ChooseOption(int index)
     {
-        if(_currentStory.currentChoices.Count > 0)
+        if (_currentStory.currentChoices.Count > 0)
         {
-            continueButton.SetActive(true);
-            decisionScene.choice = _currentStory.currentChoices[index].text;
             _currentStory.ChooseChoiceIndex(index);
-
-          
-            if(_currentStory.canContinue)
-            {
-                LoadTextAnim();
-            }
+            SceneManager.LoadScene("CharacterEnding");
         }
-        
     }
 
-    public void Continue()
-    {
-        gameObject.SetActive(false);
-        newStory.SetActive(true);
-    }
 
     private void OnDisable()
     {
         _leftClick.Disable();
         _leftClick.performed -= OnClick;
-        
-    }
 
-    
+    }
 }
+
