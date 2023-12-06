@@ -2,7 +2,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     private PlayerManager playerManager;
@@ -99,5 +99,9 @@ public class UIManager : MonoBehaviour
         Debug.Log("closing character screen");
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
         _characterScreen.SetActive(false);
+    }
+    public void OptionsButton()
+    {
+        SceneManager.LoadScene("SaveScene");
     }
 }
