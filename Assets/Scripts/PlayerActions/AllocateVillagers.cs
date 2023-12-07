@@ -28,7 +28,7 @@ public class AllocateVillagers : MonoBehaviour
         {
             return;
         }
-        buildingLevel.text = building.GetLevel().ToString();
+        buildingLevel.text = "Lvl: " + building.GetLevel().ToString();
         endOfWeekPanel.UpdateVillagersNums();
         villagersCount.text = building.GetPeopleAmt().ToString() + "/" + building.GetMaxVillagers().ToString();
         UpdateSecondaryResourceText();

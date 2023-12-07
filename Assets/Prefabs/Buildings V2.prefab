@@ -181,6 +181,8 @@ MonoBehaviour:
   _currentPeople: []
   infoPanel: {fileID: 6918696584081242797}
   buildingSaveName: 
+  RestingDaysLeft: 0
+  DiscountOnUpgrade: 0
 --- !u!61 &2575987793945661688
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -197,7 +199,7 @@ BoxCollider2D:
   m_Offset: {x: 0.010599792, y: -0.46210623}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.3606858}
     oldSize: {x: 2.07, y: 1.75}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -491,7 +493,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -518,6 +520,8 @@ MonoBehaviour:
   _currentPeople: []
   infoPanel: {fileID: 3891796355799200770}
   buildingSaveName: 
+  RestingDaysLeft: 0
+  DiscountOnUpgrade: 0
 --- !u!61 &1163829712491486887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -536,7 +540,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 5, y: 3.5}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 5, y: 3.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -785,6 +789,8 @@ MonoBehaviour:
   _currentPeople: []
   infoPanel: {fileID: 7005316923735771251}
   buildingSaveName: 
+  RestingDaysLeft: 0
+  DiscountOnUpgrade: 0
 --- !u!61 &4608151528112156208
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -801,7 +807,7 @@ BoxCollider2D:
   m_Offset: {x: 0.31070572, y: -0.6947535}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.3730736, y: 0.05489257}
     oldSize: {x: 2.31, y: 1.98}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -1122,6 +1128,8 @@ MonoBehaviour:
   _currentPeople: []
   infoPanel: {fileID: 4840067345646521997}
   buildingSaveName: 
+  RestingDaysLeft: 0
+  DiscountOnUpgrade: 0
 --- !u!61 &4456551657457096612
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1138,7 +1146,7 @@ BoxCollider2D:
   m_Offset: {x: 0.039372742, y: -1.2311873}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5085775, y: 0.19912423}
     oldSize: {x: 3.37, y: 4.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -1547,6 +1555,8 @@ MonoBehaviour:
   _currentPeople: []
   infoPanel: {fileID: 324834977357102837}
   buildingSaveName: 
+  RestingDaysLeft: 0
+  DiscountOnUpgrade: 0
 --- !u!61 &3324684373835481900
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1563,7 +1573,7 @@ BoxCollider2D:
   m_Offset: {x: 0.0056039095, y: -0.79044056}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.2825047}
     oldSize: {x: 5, y: 3}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -1826,7 +1836,7 @@ BoxCollider2D:
   m_Offset: {x: -0.0096331835, y: -0.56110066}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.1642992}
     oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
