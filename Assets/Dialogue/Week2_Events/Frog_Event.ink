@@ -1,6 +1,7 @@
 EXTERNAL Changefood(value)
 EXTERNAL ChangeBuildingProduction(value, Name)
 EXTERNAL Changecitizens(value)
+VAR food = 10
 
 -> Start
 
@@ -32,6 +33,7 @@ The frog steals fish from the river giving it -1 food production.
 ->END
 
 == Recruit_Frog ==
+{food >= 25: ->Recruit_Frog}
 You recruit the frog giving it 25 food and recieving a new villager.
 The fisherman recieves a new teacher, giving +3 food production.
 ~ Changefood(-25)

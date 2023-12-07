@@ -3,6 +3,7 @@ EXTERNAL Changemorale(value)
 EXTERNAL Changecitizens(value)
 EXTERNAL Changegold(value)
 EXTERNAL ChangeVillagerMorale(value, Name)
+VAR gold = 500
 
 -> Start
 
@@ -16,8 +17,7 @@ You and Oscar eventually track down the thief’s hideout, and discover that he 
 == Choices ==
  * [Let it pass] -> Let_pass
  * [Laws & Discipline] -> Discipline
- * [Donation] -> Donation
- #Need 25 Food
+ * [Donation (requires 500 gold)] -> Donation
 
 == Let_pass ==
 You decide to walk away, and Oscar silently follows you
@@ -34,7 +34,8 @@ Despite the thief’s begging, you compel him to spill what he has stolen
 ->END   
 
 == Donation ==
-You decide to donate some gold to the family and also hire a doctor for them. But at the same time, you order the thief to never steal again
+{gold >= 500: ->Donation}
+You decide to donate some gold to the family and also hire a doctor for them. But at the same time, you tell the thief to never steal again
 #=500 Gold, +10% Reputation, and +5 Population
 ~ Changegold(-500)
 ~ ChangeVillagerMorale(10, "Oscar")

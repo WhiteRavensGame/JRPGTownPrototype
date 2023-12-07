@@ -4,6 +4,8 @@ EXTERNAL Changefood(value)
 EXTERNAL Changesilk(value)
 EXTERNAL Changematerials(value)
 EXTERNAL Changetroops(value)
+VAR material = 50
+VAR troops = 50
 
 ->START
 
@@ -28,6 +30,7 @@ Lorraine:
 * [Lose] ->Lose
 
 == Trap ==
+{material >= 10: ->Trap}
 “Good thing I’m an expert trap maker kid, we got the beast!”
 ~ Changematerials(-10)
 ~ Changefood(5)
@@ -36,6 +39,7 @@ Lorraine:
 ->END
 
 == Guard ==
+{troops >= 2: ->Guard}
 “Kid the chumps you sent last night were attacked and one was bitten by the beast before succumbing to its poison.”
 ~ Changetroops(-1)
 ~ Changesilk(-5)

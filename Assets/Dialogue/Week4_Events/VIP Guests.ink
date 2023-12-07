@@ -5,6 +5,8 @@ EXTERNAL Changemorale(value)
 EXTERNAL Changecitizens(value)
 EXTERNAL Changematerials(value)
 EXTERNAL ChangeVillagerMorale(value, Name)
+VAR morale = 65
+VAR troops = 50
 
 ->START
 
@@ -27,22 +29,10 @@ Will: “Hey Mayor, a band of noble merchants from the capital are passing by an
 
 == Provide ==
 Later that day Lorraine comes to you and complains about you wasting money and resources on these guests.
-
-* [If Inn is < Level 3.] ->Lower
-* [If Inn is >= Level 3.] ->Higher
-
-== Lower ==
 ~ Changegold(-500)
 ~ Changefood(-10)
 ~ Changesilk(-5)
 ~ Changemorale(-2)
-~ ChangeVillagerMorale(10, "Will")
-~ ChangeVillagerMorale(-5, "Lorraine")
-->END
-
-== Higher ==
-~ Changegold(-250)
-~ Changefood(-5)
 ~ ChangeVillagerMorale(10, "Will")
 ~ ChangeVillagerMorale(-5, "Lorraine")
 ->END
@@ -70,6 +60,7 @@ You mobilize a rescue team to fight the merchants and try to save your citizens,
 ->END
 
 == Kidnap ==
+{morale >= 65 && troops >= 8: ->Kidnap}
 # if Morale >= 65% and Troops >= 8
 With the help of the villagers, you successfully lock the merchants up at night and put them into good use.
 ~ Changegold(500)

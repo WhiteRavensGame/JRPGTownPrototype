@@ -2,6 +2,7 @@ EXTERNAL Changegold(value)
 EXTERNAL Changetroops(value)
 EXTERNAL Changefood(value)
 EXTERNAL Changematerials(value)
+VAR food = 50
 
 -> Start
 
@@ -29,6 +30,7 @@ You lose 25 Materials.
 ->END
 
 == Lead_Away == 
+{food >= 10: ->Lead_Away}
 You lead the goblins away from the mines using food.
 You lose 10 Food but you are now safe from goblins.
 ~ Changefood(-10)

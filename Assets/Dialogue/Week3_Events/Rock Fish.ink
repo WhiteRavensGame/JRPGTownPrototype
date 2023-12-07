@@ -32,7 +32,7 @@ These fishes do last much longer than any other food, but their constant shiftin
 ->END
 
 == Roe ==
-These fishes do turn into fine rocks for crafting, but their constant shifting between rock and meat renders them unsuitable for crafting. The buildings and tools constructed with them just all turn to the battlefield of LIMBS.
+These fishes do turn into fine rocks for crafting, but their constant shifting between rock and meat renders them unsuitable for crafting. The buildings and tools constructed with them just all turn to a battlefield of flesh (LIMBS).
 ~ Changematerials(-10)
 ~ ChangeVillagerMorale(5, "Roe")
 ~ ChangeVillagerMorale(-10, "Lorraine")

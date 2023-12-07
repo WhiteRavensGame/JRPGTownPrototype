@@ -1,7 +1,8 @@
 EXTERNAL Changematerials(value)
 EXTERNAL Changegold(value)
 EXTERNAL Changecitizens(value)
-EXTERNAL ChangeMiningProduction(value)
+EXTERNAL ChangeBuildingProduction(value, Name)
+VAR material = 50
 
 -> Start
 
@@ -30,10 +31,11 @@ You give raccoons the food supplies they need, and later that evening, upon hear
 ->END   
 
 == Build_village ==
+{material >= 25: ->Build_village}
 The raccoons become a part of your village. They regularly scavenge materials from different places and contribute to the material production of the village.
 #-25 materials, -250 Gold,  +8 population, +5 materials per day
 ~ Changematerials(-25)
 ~ Changegold(-250)
 ~ Changecitizens(8)
-~ ChangeMiningProduction(5)
+~ ChangeBuildingProduction(5, "Mine")
 ->END 

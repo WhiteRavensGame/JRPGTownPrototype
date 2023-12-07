@@ -2,6 +2,7 @@ EXTERNAL ChangeTavernProduction(value)
 EXTERNAL Changegold(value)
 EXTERNAL Changefood(value)
 EXTERNAL Changematerials(value)
+VAR gold = 50
 
 ->START
 
@@ -18,6 +19,7 @@ Will:
  * [Fight Ferret] ->Fight
 
 == Tame ==
+{gold >= 1000: ->Tame}
 “Wow, Mayor… I usually don’t have this much gold on hand so it never came up to me in the first place. With this guy here it adds another reason for travelers to stop by!”
 ~ Changefood(-5)
 ~ Changegold(250)
