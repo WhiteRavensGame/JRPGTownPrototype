@@ -1,10 +1,8 @@
-using UnityEngine;
 using Ink.Runtime;
-using TMPro;
-using UnityEngine.InputSystem;
 using System.Collections.Generic;
-using Mono.Cecil;
-using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DecisionSceneScript : MonoBehaviour
 {
@@ -131,18 +129,12 @@ public class DecisionSceneScript : MonoBehaviour
     {
         if (_currentStory.currentChoices.Count > 0)
         {
+            _leftClick.Disable();
+            _leftClick.performed -= OnClick;
             _currentStory.ChooseChoiceIndex(index);
             storyEnding.gameObject.SetActive(true);
             gameObject.SetActive(false);
         }
-    }
-
-
-    private void OnDisable()
-    {
-        _leftClick.Disable();
-        _leftClick.performed -= OnClick;
-
     }
 }
 
