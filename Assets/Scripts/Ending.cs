@@ -35,6 +35,12 @@ public class Ending : MonoBehaviour
     private void Awake()
     {
         _currentStory = new Story(stories[index].text);
+        _currentStory.variablesState["troops"] = ServiceLocator.Get<GameManager>().WVariables.Troops;
+        _currentStory.variablesState["morale"] = ServiceLocator.Get<GameManager>().WVariables.Moral;
+        _currentStory.variablesState["gold"] = ServiceLocator.Get<GameManager>().WVariables.Gold;
+        _currentStory.variablesState["food"] = ServiceLocator.Get<GameManager>().WVariables.Food;
+        _currentStory.variablesState["material"] = ServiceLocator.Get<GameManager>().WVariables.Material;
+        _currentStory.variablesState["silk"] = ServiceLocator.Get<GameManager>().WVariables.Silk;
         LoadTextAnim();
     }
 
@@ -55,6 +61,7 @@ public class Ending : MonoBehaviour
         popUps[index++].SetActive(false);
         popUps[index].SetActive(true);
         _currentStory = new Story(stories[index].text);
+        _currentStory.variablesState["Morale"] = ServiceLocator.Get<GameManager>().WVariables.Moral;
         loadingText = false;
         LoadTextAnim();
     }
