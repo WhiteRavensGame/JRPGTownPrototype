@@ -12,6 +12,8 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private Type _tutorialType;
     [SerializeField] private GameObject _firstScreen;
     [SerializeField] private Button _finalScreen;
+
+    private bool _hasBeenPlayed = false;
     private PlayerManager _playerManager;
 
     private void Awake()
@@ -32,10 +34,11 @@ public class Tutorial : MonoBehaviour
 
     public void ActivateTutorial()
     {
-        if (TutorialSelect.TutorialMode)
+        if (TutorialSelect.TutorialMode && !_hasBeenPlayed)
         {
             _playerManager.InTutorial = true;
             _firstScreen.gameObject.SetActive(true);
+            _hasBeenPlayed = true;
         }
     }
 
