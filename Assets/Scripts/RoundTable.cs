@@ -1,10 +1,8 @@
-using UnityEngine;
 using Ink.Runtime;
-using TMPro;
-using UnityEngine.InputSystem;
 using System.Collections.Generic;
-using Mono.Cecil;
-using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class RoundTable : MonoBehaviour
 {
@@ -40,7 +38,6 @@ public class RoundTable : MonoBehaviour
         LoadTextAnim();
     }
 
-
     private void OnEnable()
     {
         _leftClick = _action.action;
@@ -73,7 +70,6 @@ public class RoundTable : MonoBehaviour
         {
             LoadTextAnim();
         }
-        
     }
 
     public void LoadTextAnim()
@@ -134,8 +130,5 @@ public class RoundTable : MonoBehaviour
     {
         _leftClick.Disable();
         _leftClick.performed -= OnClick;
-        
     }
-
-    
 }
