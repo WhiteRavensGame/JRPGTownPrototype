@@ -27,10 +27,4 @@ public class StartSave : MonoBehaviour
         Debug.Log("Quitting game...");
         Application.Quit();
     }
-
-    public void OptionsButton()
-    {
-        SceneManager.LoadScene("Options");
-    }
-
 }
