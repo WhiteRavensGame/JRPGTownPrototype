@@ -31,6 +31,7 @@ public class VillagerAI : MonoBehaviour
     public Vector2 WalkingRangeMin;
 
     private StateMachine<VillagerAI> _stateMachine;
+    [SerializeField] private SpriteUpdater _spriteUpdate;
 
     private void Awake()
     {
@@ -46,6 +47,8 @@ public class VillagerAI : MonoBehaviour
         {
             TargetBuildings.Add(building.transform);
         }
+
+        _spriteUpdate.Initialize();
     }
 
     private void Start()

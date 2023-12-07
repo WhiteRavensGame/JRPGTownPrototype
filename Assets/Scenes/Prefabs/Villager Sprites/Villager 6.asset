@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261973791368de14884613a365e7b2d2, type: 3}
   m_Name: Villager 6
   m_EditorClassIdentifier: 
-  _leftIdle: {fileID: 0}
-  _rightIdle: {fileID: 0}
-  _leftWalk: {fileID: 0}
-  _rightWalk: {fileID: 0}
+  LeftIdle: {fileID: 1992657201, guid: 0ca3ba50f998d0b429896c7fe293d4da, type: 3}
+  RightIdle: {fileID: 1414104179, guid: 0ca3ba50f998d0b429896c7fe293d4da, type: 3}
+  LeftWalk: {fileID: -1465936591, guid: 1df5a1645d789054bb947c6476c1fb34, type: 3}
+  RightWalk: {fileID: 1453984852, guid: 1df5a1645d789054bb947c6476c1fb34, type: 3}
