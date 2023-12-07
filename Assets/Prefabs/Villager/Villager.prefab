@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   villagername: testing
-  incomeMultiplier: 1.2
+  incomeMultiplier: 1
   resourceProfit: 2
   areaOfEfficiency: 0
   efficiency: 0

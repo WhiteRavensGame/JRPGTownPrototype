@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject _upgradeScreen;
     [SerializeField] private GameObject _characterScreen;
+    [SerializeField] private GameObject _assignCitizenPanel;
     [SerializeField] private GameObject _upgradeButton;
     [SerializeField] private GameObject _pauseScreen;
 
@@ -63,6 +64,21 @@ public class UIManager : MonoBehaviour
                 _pauseScreen.SetActive(false);
             }
         }
+    }
+    public void ActivateCitizenAssignmentScreen()
+    {
+        if (ServiceLocator.Get<PlayerManager>().gameState == GameStates.MainScreen)
+        {
+            Debug.Log("opening citizen assignment screen");
+            ServiceLocator.Get<PlayerManager>().gameState = GameStates.PanelInfo;
+            _assignCitizenPanel.SetActive(true);
+        }
+    }
+    public void DecativeCitizenAssignmentScreen()
+    {
+        Debug.Log("closing citizen assignment screen");
+        ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
+        _assignCitizenPanel.SetActive(false);
     }
 
     public void ActivateUpgradeScreen()
