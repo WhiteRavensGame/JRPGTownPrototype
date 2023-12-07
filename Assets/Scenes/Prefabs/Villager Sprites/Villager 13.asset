@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261973791368de14884613a365e7b2d2, type: 3}
+  m_Name: Villager 13
+  m_EditorClassIdentifier: 
+  _leftIdle: {fileID: 1648174428, guid: 0ca3ba50f998d0b429896c7fe293d4da, type: 3}
+  _rightIdle: {fileID: -1903409206, guid: 0ca3ba50f998d0b429896c7fe293d4da, type: 3}
+  _leftWalk: {fileID: 0}
+  _rightWalk: {fileID: 0}
