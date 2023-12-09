@@ -36,9 +36,8 @@ public class EndOfWeekPanel : MonoBehaviour
     {
         ServiceLocator.Get<PlayerManager>().AllocatingVillagers = false;
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
         _mainCanvas.SetActive(true);
-        ServiceLocator.Get<EventManager>().CheckEvent();
         ServiceLocator.Get<VillageManager>().InstantiateVillagers();
     }
 

@@ -7,22 +7,16 @@ using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
-    [SerializeField] private float dailyTime;
     [SerializeField] private TextMeshProUGUI textWeek;
+    [SerializeField] private TextMeshProUGUI textDays;
     [SerializeField] private List<BuildingLevel> buildings;
-
-    [SerializeField] private GameObject _resourceManagementObj;
-    [SerializeField] private GameObject _mainCanvas;
 
     private EarningsManager _earningsManager;
     private ResourceManager _resourceManager;
     private PlayerManager _playerManager;
 
-    private float timePlaying;
-    private TimeSpan elapsTime;
-
-    private int daysPassed = 0;
-    private int weeksPassed = 0;
+    private int _day = 0;
+    private int _week = 0;
     private bool initialize = false;
 
     public void Initialize()
@@ -32,31 +26,12 @@ public class TimeManager : MonoBehaviour
         _playerManager = ServiceLocator.Get<PlayerManager>();
         ServiceLocator.Get<EventManager>().endOfDay.AddListener(ResetDay);
 
-        elapsTime = TimeSpan.FromMinutes(dailyTime);
-
         Load();
 
-        textWeek.text = "Week " + weeksPassed;
+        textWeek.text = "Week " + _week;
+        textDays.text = "Day " + _day;
 
         initialize = true;
-    }
-
-    private void Update()
-    {
-        if (!initialize || _playerManager.gameState == GameStates.EndOfWeek ||
-            _playerManager.gameState == GameStates.Talking)
-        {
-            return;
-        }
-
-        if (timePlaying <= 0.0f)
-        {
-            ResetDay();
-        }
-
-        timePlaying -= Time.deltaTime / 60;
-        elapsTime = TimeSpan.FromMinutes(timePlaying);
-
     }
 
     public void ResetDay()
@@ -66,45 +41,42 @@ public class TimeManager : MonoBehaviour
             return;
         }
 
-        ++daysPassed;
+        ++_day;
 
-        if (daysPassed >= 5)
+        if (_day >= 5)
         {
             EndOfWeek();
             ServiceLocator.Get<SaveManager>().SaveData();
         }
 
-        timePlaying = dailyTime;
         _earningsManager.CalculateEarnings();
         _resourceManager.UpdateResourceText();
-        elapsTime = TimeSpan.FromMinutes(timePlaying);
+        textDays.text = "Day " + _day;
+        ServiceLocator.Get<EventManager>().CheckEvent();
     }
 
     private void EndOfWeek()
     {
-        if (weeksPassed > 0)
+        if (_week > 0)
         {
             float villagers = 6 * _resourceManager.GetResourceAmt(Resources.Moral) / 100 - 3;
 
             ServiceLocator.Get<VillageManager>().EndDayAllocationStart((int)villagers);
         }
 
-        if (weeksPassed > 5)
+        if (_week > 5)
         {
             SceneManager.LoadScene("RoundTable");
         }
 
-        daysPassed = 0;
-        ++weeksPassed;
-        _mainCanvas.SetActive(false);
-        _resourceManagementObj.SetActive(true);
-        _playerManager.gameState = GameStates.EndOfWeek;
-        textWeek.text = "Week " + weeksPassed;
+        _day = 0;
+        ++_week;
+        textWeek.text = "Week " + _week;
     }
 
     public bool IsWeekOne()
     {
-        if (weeksPassed == 1)
+        if (_week == 1)
         {
             return true;
         }
@@ -114,7 +86,7 @@ public class TimeManager : MonoBehaviour
 
     public int GetWeek()
     {
-        return weeksPassed;
+        return _week;
     }
 
     public void Load()
@@ -122,17 +94,13 @@ public class TimeManager : MonoBehaviour
         var newData = ServiceLocator.Get<SaveSystem>().Load<SaveTime>("TMsave.doNotOpen");
         if (ServiceLocator.Get<GameManager>().LoadGame && !EqualityComparer<SaveTime>.Default.Equals(newData, default))
         {
-            elapsTime = TimeSpan.FromMinutes(dailyTime);
-            timePlaying = newData.timePlaying;
-            daysPassed = newData.daysPassed;
-            weeksPassed = newData.weeksPassed;
-            _mainCanvas.SetActive(false);
-            _resourceManagementObj.SetActive(true);
+            _day = newData.daysPassed;
+            _week = newData.weeksPassed;
         }
         else
         {
-            timePlaying = dailyTime;
-            EndOfWeek();
+            _day = 1;
+            _week = 1;
         }
     }
 
@@ -140,16 +108,14 @@ public class TimeManager : MonoBehaviour
     public void Save()
     {
         SaveTime saveTime = new SaveTime();
-        saveTime.timePlaying = timePlaying;
-        saveTime.daysPassed = daysPassed;
-        saveTime.weeksPassed = weeksPassed;
+        saveTime.daysPassed = _day;
+        saveTime.weeksPassed = _week;
         ServiceLocator.Get<SaveSystem>().Save<SaveTime>(saveTime, "TMsave.doNotOpen");
     }
 
     [System.Serializable]
     private class SaveTime
     {
-        public float timePlaying;
         public int daysPassed;
         public int weeksPassed;
     }
