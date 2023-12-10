@@ -20,12 +20,14 @@ Peter the Thief: His name is Peter the Thief, it just seems like good practice t
 
 == Lergon ==
 It was not Lergon and he is very offended you thought it was him.
+...Yeah, it was Peter the thief.
 ~ Changemorale(-5)
 #-5% morale
 ->END
 
 == Martin ==
 It was not Mr. Martin and he is offended you thought it was him.
+...Yeah, it was Peter the thief.
 ~ Changemorale(-5)
 #-5% morale
 ->END
