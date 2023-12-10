@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingNextLevel: {fileID: 11400000, guid: 9d292428c07a38240a572d6f85d4df73, type: 2}
   resourcesToProduce: 1
-  buildingSprite: {fileID: 21300000, guid: 9d1e6ad5494fa304ba254db125fc8e61, type: 3}
+  buildingSprite: {fileID: 21300000, guid: 55be7dd76aa301b4c981d81a2295140d, type: 3}
   maxVillagers: 3
   maxIncome: 5
   minIncome: 0
