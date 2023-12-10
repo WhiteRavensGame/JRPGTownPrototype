@@ -60,6 +60,7 @@ public class TimeManager : MonoBehaviour
         ++_week;
         if (_week >= 5)
         {
+            ServiceLocator.Get<GameManager>().SaveVariables();
             SceneManager.LoadScene("RoundTable");
         }
 
