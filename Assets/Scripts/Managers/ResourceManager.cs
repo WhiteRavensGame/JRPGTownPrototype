@@ -13,7 +13,7 @@ public class ResourceManager : MonoBehaviour
     private int _silk = 20;
 
     private float _morale = 50;
-    private int _troops = 10;
+    private int _troops = 5;
 
     public int Fish { get { return _fish; } }
     public int Iron { get { return _iron; } }
