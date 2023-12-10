@@ -57,20 +57,16 @@ public class TimeManager : MonoBehaviour
 
     private void EndOfWeek()
     {
-        if (_week > 0)
-        {
-            float villagers = 6 * _resourceManager.GetResourceAmt(Resources.Moral) / 100 - 3;
-
-            ServiceLocator.Get<VillageManager>().EndDayAllocationStart((int)villagers);
-        }
-
-        if (_week > 5)
+        ++_week;
+        if (_week >= 5)
         {
             SceneManager.LoadScene("RoundTable");
         }
 
+        float villagers = 6 * _resourceManager.GetResourceAmt(Resources.Moral) / 100 - 3;
+        ServiceLocator.Get<VillageManager>().EndDayAllocationStart((int)villagers);
+
         _day = 1;
-        ++_week;
         textWeek.text = "Week " + _week;
     }
 
