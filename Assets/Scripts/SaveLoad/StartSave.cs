@@ -26,7 +26,7 @@ public class StartSave : MonoBehaviour
 
     public void ContinueButton()
     {
-        SceneManager.LoadScene("Tutorial Activate");
+        SceneManager.LoadScene("Introduction");
     }
 
     public void QuitGame()
