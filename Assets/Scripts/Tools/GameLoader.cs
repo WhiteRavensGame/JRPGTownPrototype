@@ -78,6 +78,7 @@ public class GameLoader : AsyncLoader
         ServiceLocator.Register<PlayerManager>(gm.GetComponent<PlayerManager>());
         ServiceLocator.Register<EventManager>(gm.GetComponent<EventManager>());
         ServiceLocator.Register<ReputationManager>(gm.GetComponent<ReputationManager>());
+        ServiceLocator.Register<SoundManager>(gm.GetComponent<SoundManager>());
         
 
         yield return null;
