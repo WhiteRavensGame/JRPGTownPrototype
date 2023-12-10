@@ -2,7 +2,7 @@ EXTERNAL ChangeBuildingProduction(value, Name)
 EXTERNAL Changecitizens(value)
 EXTERNAL ChangeVillagerMorale(value, Name)
 EXTERNAL TurnBuildingOff(value, Name)
-EXTERNAL TempChangecitizens(value)
+EXTERNAL TempChangeResource(value, Name)
 EXTERNAL Changegold(value)
 EXTERNAL Changemorale(value)
 
@@ -34,8 +34,8 @@ Indeed, the gnomes are overjoyed, and reward you by leaving their best warriors 
 ->END
 
 == Lie ==
-You tell Oscar to just move the cat out of the attic for a few days, and    then let it come back. Oscar leaves, hiding a smile. The gnomes seem satisfied, and leave, but not before leaving their  men with you. However, when the cats come back a week later, your new gnome villagers leave in indignation.
-~ TempChangecitizens(5)
+You tell Oscar to just move the cat out of the attic for a few days, and    then let it come back. Oscar leaves, hiding a smile. The gnomes seem satisfied, and give you some fishes. However, when the cats come back a week later, the gnomes take offense, and steal it back.
+~ TempChangeResource(5, "Food")
 
 ->END
 
