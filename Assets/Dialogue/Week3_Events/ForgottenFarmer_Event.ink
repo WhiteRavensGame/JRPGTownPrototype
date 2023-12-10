@@ -1,8 +1,9 @@
 EXTERNAL Changefood(value)
 EXTERNAL ChangeVillagerMorale(value, Name)
-EXTERNAL Changetroops(value)
+EXTERNAL Changematerials(value)
 EXTERNAL Changegold(value)
 EXTERNAL Changemorale(value)
+VAR troops = 10
 
 -> Start
 
@@ -15,7 +16,7 @@ Lorraine: "Hey youngun, there’s a group of farmers at the gate. Those poor fel
 == Choices ==
  * [Help them] -> Help
  * [Don't help] -> No_Help
- * [Investigate the incident] -> Ask
+ * [Engaging the orcs] -> Ask
  #Need 25 Food
 
 == Help ==
@@ -31,24 +32,15 @@ At this critical time when the two kingdoms are at the brink of war, there reall
 ->END   
 
 == Ask ==
-You ask the farmers to describe the traits of the orcs and how they invaded their farms. With the descriptions from them, you are eventually able to track down the orcs.
-*[Fight the  orcs] -> Orcs
-*[Don' fight] -> No_fight
-->END 
+You ask the farmers to describe the traits of the orcs and how they invaded their farms. With the descriptions from them, you are eventually able to track down the orcs and decide to fight a HARD battle against them.
 
-== Orcs ==
-You got out to challenge the orcs in a hard battle against them.
 *[Win] -> Win
 *[Lose] -> Lose
-->END
 
-== No_fight == 
-You decide to not battle the orcs due to their overwhelming strength.
-~ ChangeVillagerMorale(-5, "Lorraine")
-->END
 
 == Win ==
-You win against the orcs, regaining the farmers food but also the orc's wealth.
+{troops >= 15: ->Win}
+You win against the orcs, regaining the farmers food and also the orc's wealth.
 #+25 Food, and +500 Weath
 ~ Changefood(25)
 ~ Changegold(500)
@@ -56,8 +48,9 @@ You win against the orcs, regaining the farmers food but also the orc's wealth.
 ->END
 
 == Lose ==
+{troops < 15: ->Lose}
 You lose troops during the battle against the orcs.
 #-5 troops
-~ Changetroops(-5)
+~ Changematerials(-5)
 ~ Changemorale(-2)
 ->END

@@ -1,5 +1,6 @@
 EXTERNAL Changefood(value)
 EXTERNAL Changemorale(value)
+VAR troops = 10
 
 ->START
 
@@ -36,11 +37,13 @@ Two Kobolds: Heya big man, we got some food for you if you’d like to partake. 
 * [Lose] ->Lose
 
 == Win ==
+{troops >= 10: ->Win}
 “Alright you FOOD HATER, we’ll leave!”
 ~ Changefood(10)
 ->END
 
 == Lose ==
+{troops < 10: ->Lose}
 “Serves you right you dumb FOOD HATER!”
 ~ Changefood(-10)
 ->END

@@ -2,6 +2,7 @@ EXTERNAL Changesilk(value)
 EXTERNAL Changemorale(value)
 EXTERNAL Changegold(value)
 EXTERNAL Changecitizens(value)
+VAR troops = 10
 
 -> Start
 
@@ -36,13 +37,14 @@ The reason he takes a sick man with him remains unclear.
 ->END   
 
 == Fight ==
-You turn down the offer due to your suspicion of him, and after he leaves, you secretly follow him. 
+You turn down the offer due to your suspicion of him, and after he leaves, you gather some men and secretly follow him. 
 Later he arrives at a house whose owner is ill, and upon hearing his attempt to seduce the owner with his medicine, you decide to confront him.
 *[Win] -> Win
 *[Lose] -> Lose
 ->END
 
 == Win ==
+{troops >= 10: ->Win}
 The defeated cloaked man drops some of his stuff and runs away. The drugs he left are useless, but the silk is useful.
 #+10 Silk and +2% Morale
 ~ Changesilk(10)
@@ -50,6 +52,7 @@ The defeated cloaked man drops some of his stuff and runs away. The drugs he lef
 ->END
 
 == Lose ==
+{troops < 10: ->Lose}
 Without anyone getting in his way, the cloaked man eventually convinces the sick person to go with him, and his motive remains unclear.
 #-1 Population and -2% Morale
 ~ Changecitizens(-1)
