@@ -34,7 +34,7 @@ Indeed, the gnomes are overjoyed, and reward you by leaving their best warriors 
 ->END
 
 == Lie ==
-You order the tree to be chopped down and collect the wood before selling it to a wealthy merchant for 500 Gold.
+You tell Oscar to just move the cat out of the attic for a few days, and    then let it come back. Oscar leaves, hiding a smile. The gnomes seem satisfied, and leave, but not before leaving their  men with you. However, when the cats come back a week later, your new gnome villagers leave in indignation.
 ~ TempChangecitizens(5)
 
 ->END
