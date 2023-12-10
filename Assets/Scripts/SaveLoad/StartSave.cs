@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class StartSave : MonoBehaviour
 {
+    public GameObject creditsPanel;
+
+    public void TogglePanelVisibility()
+    {
+        creditsPanel.SetActive(!creditsPanel.activeSelf);
+    }
+
     public void SaveButton()
     {
         var newData = ServiceLocator.Get<SaveSystem>().Load<ResourceManager.SaveResources>("RMsave.doNotOpen");
@@ -27,10 +35,4 @@ public class StartSave : MonoBehaviour
         Debug.Log("Quitting game...");
         Application.Quit();
     }
-
-    public void OptionsButton()
-    {
-        SceneManager.LoadScene("Options");
-    }
-
 }
