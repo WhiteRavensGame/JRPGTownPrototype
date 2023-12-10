@@ -32,7 +32,7 @@ public class BuildingController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (_playerManager.gameState == GameStates.MainScreen)
+        if (_playerManager.gameState == GameStates.MainScreen && !_playerManager.InTutorial)
         {
             _playerManager.gameState = GameStates.PanelInfo;
             building.ActivatePanel(true);
