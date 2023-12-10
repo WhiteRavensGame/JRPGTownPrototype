@@ -1,6 +1,4 @@
-EXTERNAL ChangeOscarMorale(value)
-EXTERNAL ChangeRoeMorale(value)
-EXTERNAL ChangeLorraineMorale(value)
+EXTERNAL ChangeVillagerMorale(value, Name)
 EXTERNAL Changematerials(value)
 EXTERNAL Changefood(value)
 
@@ -28,23 +26,23 @@ What do you do?
 ==Oscar==
 These fishes do last much longer than any other food, but their constant shifting between rock and meat renders them unsafe to consume. After all, nobody wants to have rocks in their stomach.
 ~ Changefood(-10)
-~ ChangeOscarMorale(5)
-~ ChangeLorraineMorale(-10)
+~ ChangeVillagerMorale(5, "Oscar")
+~ ChangeVillagerMorale(-10, "Lorraine")
 # +5% Oscar morale, -10% Lorraine morale, -10 food
 ->END
 
 == Roe ==
-These fishes do turn into fine rocks for crafting, but their constant shifting between rock and meat renders them unsuitable for crafting. The buildings and tools constructed with them just all turn to the battlefield of LIMBS.
+These fishes do turn into fine rocks for crafting, but their constant shifting between rock and meat renders them unsuitable for crafting. The buildings and tools constructed with them just all turn to a battlefield of flesh (LIMBS).
 ~ Changematerials(-10)
-~ ChangeRoeMorale(5)
-~ ChangeLorraineMorale(-5)
+~ ChangeVillagerMorale(5, "Roe")
+~ ChangeVillagerMorale(-10, "Lorraine")
 # +5% Roe morale, -5% Lorraine morale, -10% materials
 ->END
 
 == Lorraine ==
 You also agree that the village should stay away from these strange creatures. Besides, the constant change of states renders them neither consumable nor useful.
-~ ChangeRoeMorale(-2)
-~ ChangeOscarMorale(-2)
-~ ChangeLorraineMorale(10)
+~ ChangeVillagerMorale(-2, "Roe")
+~ ChangeVillagerMorale(-2, "Oscar")
+~ ChangeVillagerMorale(10, "Lorraine")
 # +10% Lorraine morale, -2% Oscar morale, -2% Roe morale
 ->END

@@ -1,3 +1,3 @@
-﻿fibaw dwohnodfwa abdnwiowbd walodhnboaw
+fibaw dwohnodfwa abdnwiowbd walodhnboaw
 wadnoiabuwnd pawdhjnoiaw wdolahn
 dboaib awdio

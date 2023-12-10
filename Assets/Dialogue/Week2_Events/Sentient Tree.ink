@@ -1,6 +1,5 @@
-EXTERNAL ChangeSmithyProduction(value)
+EXTERNAL ChangeBuildingProduction(value, Name)
 EXTERNAL Changegold(value)
-EXTERNAL ChangeFisheryProduction(value)
 
 ->START
 
@@ -19,7 +18,7 @@ Adelaine: “Hey Mayor! I was talking to the lumber jacks and guess what they fo
 
 == TALK_FRIENDLY ==
 The tree appreciates you being kind to it and in return makes the trees in the surrounding area grow faster, boosting the material gain.
-~ ChangeSmithyProduction(2)
+~ ChangeBuildingProduction(2, "Smithy")
 # +2 Material Production
 ->END
 
@@ -31,7 +30,7 @@ You order the tree to be chopped down and collect the wood before selling it to 
 
 == OFFERINGS ==
 You give offerings of food to the tree and in return it helps you grow trees nearby to collect.
-~ ChangeFisheryProduction(-25)
-~ ChangeSmithyProduction(2)
+~ ChangeBuildingProduction(-25, "Fishery")
+~ ChangeBuildingProduction(2, "Smithy")
 #-25 Food per week, +2 Material Production
 ->END

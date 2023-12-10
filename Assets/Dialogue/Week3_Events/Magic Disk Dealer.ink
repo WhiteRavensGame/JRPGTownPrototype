@@ -1,6 +1,5 @@
 EXTERNAL Changetroops(value)
-EXTERNAL ChangeMiningProduction(value)
-EXTERNAL ChangeFisheryProduction(value)
+EXTERNAL ChangeBuildingProduction(value, Name)
 
 ->START
 
@@ -26,12 +25,12 @@ In the red disk is a bloodied battlefield with numerous monstrous beasts roaming
 
 == WHITE_DISK ==
 In the white disk is a restaurant with one angry chef and a lot of annoying customers, yet the chef never stops cooking. You recommend the disk to the Fisherman who gains some cooking knowledge making food taste a little better. (Chef Strikes Back)
-~ ChangeFisheryProduction(1)
+~ ChangeBuildingProduction(1, "Fishery")
 # +1 Food production
 ->END
 
 == Gray_Disk ==
 In the gray disk is a gargantuan cave that endlessly sprawls out where everything seemed to be strangely square in shape but beautiful in design. You recommend the disk to the miner and he becomes even more enthused about his work. (Minecraft)
-~ ChangeMiningProduction(1)
+~ ChangeBuildingProduction(1, "Mine")
 # +1 Mining Production
 ->END

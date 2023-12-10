@@ -6,6 +6,8 @@ EXTERNAL Changegold(value)
 -> Start
 
 == Start ==
+Water Symbol (Heros)
+
 A band of heroes have come to stay in Steadville, they search for quests and for weapons.
 Blacksmith: "Mayor! A group of adventurers have come to stay in ⁸Steadville, they are searching for work and weapons."
  
