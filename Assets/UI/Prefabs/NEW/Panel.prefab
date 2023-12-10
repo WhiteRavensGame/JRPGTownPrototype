@@ -29,16 +29,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 118116963604287576}
-  - {fileID: 118116964014071912}
+  m_Children: []
   m_Father: {fileID: 118116963812019817}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 422}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -118}
+  m_SizeDelta: {x: -1000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &118116963559123139
 CanvasRenderer:
@@ -70,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Credits
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 70ab32008573eae44901310f4d8a16ef, type: 2}
-  m_sharedMaterial: {fileID: 8383426293598264283, guid: 70ab32008573eae44901310f4d8a16ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e2ea5a295ddf64d4a9e8917be2926f4d, type: 2}
+  m_sharedMaterial: {fileID: 3526875848714183569, guid: e2ea5a295ddf64d4a9e8917be2926f4d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -95,15 +93,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 90
+  m_fontSizeBase: 90
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -167,12 +165,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 118116963559123137}
-  m_RootOrder: 0
+  m_Father: {fileID: 118116963812019817}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: -186.00003}
+  m_AnchoredPosition: {x: 492, y: -55}
   m_SizeDelta: {x: 44.23, y: 10.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &118116963604287578
@@ -203,34 +201,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Art
-
-    Fabian Ignacio Moreno Iturralde
-
-    Jordan Hurley
-
-    Winson
-    Lim
-
-
-    Narrative
-
-    Jing Cheng Yu "Kevin"
-
-    Pierre B. Dussausse
-
-    Dawson
-    Inkster
-
-
-    Gameplay
-
-    Chase Burrows
-
-    Kevin Hang'
+  m_text: "<size=125%><u>Art</u></size>\nAnthony \"<color=#a239d0>troopsushi</color>\"
+    Botsford     \nFabian Ignacio Moreno Iturralde\nWinson Lim\n\n<size=125%><u>Narrative</u></size>\nPierre
+    B. Dussausse\nJing Cheng \"Kevin\" Yu\nDawson Inkster\nJordan Hurley\n\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 344623e7e9cf4db4bb09b3c0aa1aedda, type: 2}
-  m_sharedMaterial: {fileID: -6047954878839899089, guid: 344623e7e9cf4db4bb09b3c0aa1aedda, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+  m_sharedMaterial: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -261,7 +237,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -290,7 +266,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -603.2283, y: -134.51273, z: -601.31335, w: -691.25995}
+  m_margin: {x: -603.2283, y: -134.51273, z: 51.319824, w: -315.3081}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -327,6 +303,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 118116963559123137}
+  - {fileID: 118116963604287576}
+  - {fileID: 118116964014071912}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -403,13 +381,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 118116963559123137}
-  m_RootOrder: 1
+  m_Father: {fileID: 118116963812019817}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -350, y: -186.00003}
-  m_SizeDelta: {x: 44.23, y: 10.3}
+  m_AnchorMax: {x: 0.89, y: 0.5}
+  m_AnchoredPosition: {x: -767, y: 351}
+  m_SizeDelta: {x: -345.76993, y: 10.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &118116964014071914
 CanvasRenderer:
@@ -439,12 +417,35 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Team Leads\nAnthony \"troopsushi\" Botsford     \nMarc Van Niekerk \n\nUI/UX\nOleksandr
-    Artomov\nJulian Parks\nVince Giner\n\nMain Programmers\nAnselmo Noriega\nDiego
-    Batiz"
+  m_text: '<size=125%><u>Programmers</u></size>
+
+    Anselmo Noriega
+
+    Diego Batiz
+
+
+    <size=125%><u>UI
+    Design</u></size>
+
+    Jordan Hurley
+
+    Oleksandr Artomov
+
+    Julian Parks
+
+    Vince
+    Giner
+
+
+    <size=125%><u>Gameplay Design</u></size>
+
+    Chase Burrows
+
+    Kevin
+    Hang'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 344623e7e9cf4db4bb09b3c0aa1aedda, type: 2}
-  m_sharedMaterial: {fileID: -6047954878839899089, guid: 344623e7e9cf4db4bb09b3c0aa1aedda, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+  m_sharedMaterial: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -475,8 +476,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -504,7 +505,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -603.2283, y: -134.51273, z: -601.31335, w: -691.25995}
+  m_margin: {x: 152.52612, y: 290.69617, z: -601.31335, w: -691.25995}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
