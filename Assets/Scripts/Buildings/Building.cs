@@ -202,11 +202,11 @@ public class Building : MonoBehaviour
         return buildingLevelInfo;
     }
 
-    public void ChangeProductionAmt(int val)
+    public void ChangeProductionAmt(int val, bool hasFixedTime)
     {
         _hasFixedEarnings = true;
         _dailyEarnings = val;
-        _fixedProductionDailyCount = 5;
+        _fixedProductionDailyCount = hasFixedTime ? 5: 20;
     }
 
     public void Load()
