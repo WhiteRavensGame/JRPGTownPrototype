@@ -37,13 +37,13 @@ Two Kobolds: Heya big man, we got some food for you if you’d like to partake. 
 * [Lose] ->Lose
 
 == Win ==
-{troops >= 5: ->Win}
+{troops >= 10: ->Win}
 “Alright you FOOD HATER, we’ll leave!”
 ~ Changefood(10)
 ->END
 
 == Lose ==
-{troops < 5: ->Lose}
+{troops < 10: ->Lose}
 “Serves you right you dumb FOOD HATER!”
 ~ Changefood(-10)
 ->END
