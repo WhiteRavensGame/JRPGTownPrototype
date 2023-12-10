@@ -1953,7 +1953,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 118116963604287576, guid: b3d29bb7a95575e49b01faa87d0bebfb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -48
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 118116963604287577, guid: b3d29bb7a95575e49b01faa87d0bebfb, type: 3}
       propertyPath: m_Name
@@ -1961,10 +1961,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 118116963604287579, guid: b3d29bb7a95575e49b01faa87d0bebfb, type: 3}
       propertyPath: m_text
-      value: "<size=125%><u>Artists</u></size>\nAnthony \"<color=#a239d0>troopsushi</color>\"
-        Botsford     \nFabian Ignacio Moreno Iturralde\nWinson Lim\n\n<size=125%><u>Narrative
-        Design</u></size>\nPierre B. Dussausse\nJing Cheng \"Kevin\" Yu\nDawson Inkster\nJordan
-        Hurley\n\n"
+      value: "<size=125%><u>Artists</u></size>\n<b>Anthony \"<color=#a239d0>troopsushi</color>\"
+        Botsford</b>  \nFabian Ignacio Moreno Iturralde\nWinson Lim\n\n<size=125%><u>Narrative
+        Design</u></size>\n<b>Pierre B. Dussausse</b>\nJing Cheng \"Kevin\" Yu\nDawson
+        Inkster\nJordan Hurley\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 118116963812019817, guid: b3d29bb7a95575e49b01faa87d0bebfb, type: 3}
       propertyPath: m_Pivot.x
@@ -2061,6 +2061,35 @@ PrefabInstance:
     - target: {fileID: 118116964014071913, guid: b3d29bb7a95575e49b01faa87d0bebfb, type: 3}
       propertyPath: m_Name
       value: Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 118116964014071915, guid: b3d29bb7a95575e49b01faa87d0bebfb, type: 3}
+      propertyPath: m_text
+      value: '<size=125%><u>Programmers</u></size>
+
+        <b>Anselmo Noriega</b>
+
+        Diego
+        Batiz
+
+
+        <size=125%><u>UI Design</u></size>
+
+        <b>Jordan Hurley</b>
+
+        Oleksandr
+        Artomov
+
+        Julian Parks
+
+        Vince Giner
+
+
+        <size=125%><u>Gameplay
+        Design</u></size>
+
+        <b>Chase Burrows</b>
+
+        <b>Kevin Hang</b>'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d29bb7a95575e49b01faa87d0bebfb, type: 3}
