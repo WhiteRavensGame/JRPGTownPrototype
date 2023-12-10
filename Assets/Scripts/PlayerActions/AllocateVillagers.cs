@@ -94,7 +94,7 @@ public class AllocateVillagers : MonoBehaviour
         else if (building.GetBuildingType() == BuildingType.SilkStore)
         {
             int silkLevel = building.GetLevel();
-            float amount = (0.25f * (silkLevel * silkLevel)) - (0.25f * silkLevel) + 0.5f;
+            float amount = (0.5f * (silkLevel * silkLevel)) - (0.5f * silkLevel) + 1f;
             resourcesText.text = amount.ToString();
         }
     }
