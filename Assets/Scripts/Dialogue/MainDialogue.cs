@@ -29,13 +29,15 @@ public class MainDialogue : MonoBehaviour
     public void Enter(TextAsset jsonAsset)
     {
         _currentStory = new Story(jsonAsset.text);
-        CheckVariable();
+        CheckFunctions();
+        CheckVariables();
         LoadTextAnim();
     }
 
     private void Exit()
     {
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
+        loadingText = false;
         gameObject.SetActive(false);
     }
 
@@ -94,7 +96,7 @@ public class MainDialogue : MonoBehaviour
             CheckAnswers(true);
         }
 
-        if(currentText == "")
+        if (currentText == "")
         {
             Exit();
         }
@@ -128,7 +130,7 @@ public class MainDialogue : MonoBehaviour
         }
     }
 
-    private void CheckVariable()
+    private void CheckFunctions()
     {
         _currentStory.BindExternalFunction("ChangeAllResource", (int val) =>
         {
@@ -196,7 +198,7 @@ public class MainDialogue : MonoBehaviour
             ServiceLocator.Get<ReputationManager>().BuildingUpgrade(Name, val);
         });
 
-        _currentStory.BindExternalFunction("ChangeTavernProduction", (int val, string Name) =>
+        _currentStory.BindExternalFunction("TempChangeBuildingProduction", (int val, string Name) =>
         {
             ServiceLocator.Get<PrefabManager>().GetBuidlding(Name).ChangeProductionAmt(val);
         });
@@ -206,11 +208,73 @@ public class MainDialogue : MonoBehaviour
             ServiceLocator.Get<PrefabManager>().GetBuidlding(Name).RestingDaysLeft = val;
         });
 
-        _currentStory.BindExternalFunction("DiscountOnUpgrade", (int val, string Name) =>
+        _currentStory.BindExternalFunction("DiscountOnNextUpgrade", (int val, string Name) =>
         {
             ServiceLocator.Get<PrefabManager>().GetBuidlding(Name).DiscountOnUpgrade = val;
             ServiceLocator.Get<PrefabManager>().GetBuidlding(Name).UpdateResourcesText();
         });
+
+        _currentStory.BindExternalFunction("ChangeResourceAmount", (int val, string Name) =>
+        {
+            ServiceLocator.Get<ResourceManager>().LoanMoney(Name, val);
+        });
+    }
+
+    private void CheckVariables()
+    {
+        if (_currentStory.variablesState["AdelaineMorale"] != null)
+        {
+            _currentStory.variablesState["AdelaineMorale"] = ServiceLocator.Get<ReputationManager>().GetReputation("Adelaine");
+        }
+        if (_currentStory.variablesState["LorraineMorale"] != null)
+        {
+            _currentStory.variablesState["LorraineMorale"] = ServiceLocator.Get<ReputationManager>().GetReputation("Lorraine");
+        }
+        if (_currentStory.variablesState["OscarMorale"] != null)
+        {
+            _currentStory.variablesState["OscarMorale"] = ServiceLocator.Get<ReputationManager>().GetReputation("Oscar");
+        }
+        if (_currentStory.variablesState["WillMorale"] != null)
+        {
+            _currentStory.variablesState["WillMorale"] = ServiceLocator.Get<ReputationManager>().GetReputation("Will");
+        }
+        if (_currentStory.variablesState["RaeMorale"] != null)
+        {
+            _currentStory.variablesState["RaeMorale"] = ServiceLocator.Get<ReputationManager>().GetReputation("RaeMorale");
+        }
+
+        if (_currentStory.variablesState["troops"] != null)
+        {
+            _currentStory.variablesState["troops"] = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Troops);
+        }
+        if (_currentStory.variablesState["TroopsAssigned"] != null)
+        {
+            _currentStory.variablesState["TroopsAssigned"] = ServiceLocator.Get<PrefabManager>().GetBuidlding("Smithy").GetPeopleAmt();
+        }
+        if (_currentStory.variablesState["gold"] != null)
+        {
+            _currentStory.variablesState["gold"] = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Gold);
+        }
+        if (_currentStory.variablesState["material"] != null)
+        {
+            _currentStory.variablesState["material"] = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Iron);
+        }
+        if (_currentStory.variablesState["food"] != null)
+        {
+            _currentStory.variablesState["food"] = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Fish);
+        }
+        if (_currentStory.variablesState["silk"] != null)
+        {
+            _currentStory.variablesState["silk"] = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Silk);
+        }
+        if (_currentStory.variablesState["citizen"] != null)
+        {
+            _currentStory.variablesState["citizen"] = ServiceLocator.Get<VillageManager>().GetVillagersNum();
+        }
+        if (_currentStory.variablesState["morale"] != null)
+        {
+            _currentStory.variablesState["morale"] = ServiceLocator.Get<ResourceManager>().GetResourceAmt(Resources.Moral);
+        }
     }
 
     private void UnbindVariable()

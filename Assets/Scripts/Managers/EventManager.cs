@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class EventManager : MonoBehaviour
 {
-    [HideInInspector] public UnityEvent endOfDay;
     [SerializeField] public GameObject _button;
 
     private PlayerManager _playerManager;

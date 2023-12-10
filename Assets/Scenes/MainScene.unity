@@ -5148,11 +5148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec4d2b778b046e4f9d7d566ca141b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dailyTime: 1
-  textWeek: {fileID: 1248580428}
+  textWeek: {fileID: 647285513}
+  textDays: {fileID: 527135491}
   buildings: []
-  _resourceManagementObj: {fileID: 1738729431}
-  _mainCanvas: {fileID: 1042313601}
 --- !u!114 &1217004493 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 202859792547300494, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
@@ -9398,7 +9396,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1986015493}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1160299396}
+        m_TargetAssemblyTypeName: TimeManager, Assembly-CSharp
+        m_MethodName: EndDay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1986015493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9871,7 +9881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3394668663618932309, guid: 3827f68bbff997e498a80a6e97e529c8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5004255937027729286, guid: 3827f68bbff997e498a80a6e97e529c8, type: 3}
       propertyPath: m_fontSize
@@ -9899,7 +9909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6814436982921964568, guid: 3827f68bbff997e498a80a6e97e529c8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7920368938265174948, guid: 3827f68bbff997e498a80a6e97e529c8, type: 3}
       propertyPath: m_Pivot.x
@@ -10003,7 +10013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9080082621276441589, guid: 3827f68bbff997e498a80a6e97e529c8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3827f68bbff997e498a80a6e97e529c8, type: 3}

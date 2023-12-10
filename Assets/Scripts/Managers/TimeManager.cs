@@ -24,7 +24,6 @@ public class TimeManager : MonoBehaviour
         _earningsManager = ServiceLocator.Get<EarningsManager>();
         _resourceManager = ServiceLocator.Get<ResourceManager>();
         _playerManager = ServiceLocator.Get<PlayerManager>();
-        ServiceLocator.Get<EventManager>().endOfDay.AddListener(ResetDay);
 
         Load();
 
@@ -34,7 +33,7 @@ public class TimeManager : MonoBehaviour
         initialize = true;
     }
 
-    public void ResetDay()
+    public void EndDay()
     {
         if (_playerManager.gameState != GameStates.MainScreen)
         {
@@ -43,7 +42,7 @@ public class TimeManager : MonoBehaviour
 
         ++_day;
 
-        if (_day >= 5)
+        if (_day > 5)
         {
             EndOfWeek();
             ServiceLocator.Get<SaveManager>().SaveData();
@@ -53,6 +52,7 @@ public class TimeManager : MonoBehaviour
         _resourceManager.UpdateResourceText();
         textDays.text = "Day " + _day;
         ServiceLocator.Get<EventManager>().CheckEvent();
+        ServiceLocator.Get<ResourceManager>().CheckLoanStatus();
     }
 
     private void EndOfWeek()
@@ -69,7 +69,7 @@ public class TimeManager : MonoBehaviour
             SceneManager.LoadScene("RoundTable");
         }
 
-        _day = 0;
+        _day = 1;
         ++_week;
         textWeek.text = "Week " + _week;
     }

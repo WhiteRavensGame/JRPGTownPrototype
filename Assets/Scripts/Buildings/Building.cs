@@ -25,7 +25,8 @@ public class Building : MonoBehaviour
     [Space, Header("Extra Settings")]
     [SerializeField] private string buildingSaveName;
     private bool _hasFixedEarnings = false;
-    private int _dailyEarnings;
+    private int _dailyEarnings = 0;
+    private int _fixedProductionDailyCount = 0;
 
     public bool HasProduced { get; set; } = false;
 
@@ -75,6 +76,11 @@ public class Building : MonoBehaviour
         if (_hasFixedEarnings)
         {
             rAmt = _dailyEarnings;
+            --_fixedProductionDailyCount;
+            if (_fixedProductionDailyCount <= 0)
+            {
+                _hasFixedEarnings = false;
+            }
         }
         else
         {
@@ -200,6 +206,7 @@ public class Building : MonoBehaviour
     {
         _hasFixedEarnings = true;
         _dailyEarnings = val;
+        _fixedProductionDailyCount = 5;
     }
 
     public void Load()
