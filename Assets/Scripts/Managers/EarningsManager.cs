@@ -49,7 +49,7 @@ public class EarningsManager : MonoBehaviour
         {
             int silkLevel = _silkStore.GetLevel();
          
-            _rm.AddMorale((0.25f * (silkLevel * silkLevel)) - (0.25f * silkLevel) + 0.5f);
+            _rm.AddMorale((0.5f * (silkLevel * silkLevel)) - (0.5f * silkLevel) + 1f);
             if (_rm.GetResourceAmt(Resources.Moral) > 100)
             {
                 _rm.SetMorale(100);

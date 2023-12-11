@@ -17,6 +17,11 @@ public class GameLoader : AsyncLoader
 
     protected override void Awake()
     {
+        Initialize();
+    }
+
+    private void Initialize()
+    {
         Debug.Log("GameLoader Starting");
 
         // Saftey check
@@ -111,5 +116,35 @@ public class GameLoader : AsyncLoader
     {
         Debug.Log("GameLoader Starting Scene Load");
         yield return SceneManager.LoadSceneAsync(index);
+    }
+
+    public void UnregisterAll()
+    {
+        ServiceLocator.Unregister<SaveSystem>();
+        ServiceLocator.Unregister<VillageManager>();
+        ServiceLocator.Unregister<ResourceManager>();
+        ServiceLocator.Unregister<EarningsManager>();
+        ServiceLocator.Unregister<PlayerManager>();
+        ServiceLocator.Unregister<EventManager>();
+        ServiceLocator.Unregister<ReputationManager>();
+        ServiceLocator.Unregister<MainDialogue>();
+        ServiceLocator.Unregister<TimeManager>();
+        ServiceLocator.Unregister<PrefabManager>();
+        ServiceLocator.Unregister<SaveManager>();
+        ServiceLocator.Unregister<VillageInitialization>();
+        ServiceLocator.Unregister<EndOfWeekPanel>();
+        ServiceLocator.Unregister<GameManager>();
+
+        Destroy(_systemsParent.gameObject);
+        Destroy(ServiceLocator.Get<GodModifier>().gameObject);
+
+        ServiceLocator.Unregister<GodModifier>();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+        Initialize();
+        _instance = null;
     }
 }

@@ -13,7 +13,7 @@ public class ResourceManager : MonoBehaviour
     private int _silk = 20;
 
     private float _morale = 50;
-    private int _troops = 10;
+    private int _troops = 5;
 
     private int[] _borrowedMoney = new int[6];
     private int[] _daysLeftToReturnLoan = new int[6];
