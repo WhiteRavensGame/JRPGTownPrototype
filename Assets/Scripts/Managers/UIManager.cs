@@ -116,8 +116,10 @@ public class UIManager : MonoBehaviour
         playerManager.gameState = GameStates.MainScreen;
         _characterScreen.SetActive(false);
     }
-    public void OptionsButton()
+    public void ExitButton()
     {
-        SceneManager.LoadScene("SaveScene");
+        GameLoader loader = ServiceLocator.Get<GameLoader>();
+        loader.UnregisterAll();
+        loader.Restart();
     }
 }

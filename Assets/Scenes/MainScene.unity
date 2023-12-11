@@ -3440,7 +3440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6660900445677364878, guid: 64f53af973d7b2443955b0d03378e240, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8941188834466776818, guid: 64f53af973d7b2443955b0d03378e240, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3448,7 +3448,7 @@ PrefabInstance:
       objectReference: {fileID: 1739022048}
     - target: {fileID: 8941188834466776818, guid: 64f53af973d7b2443955b0d03378e240, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OptionsButton
+      value: ExitButton
       objectReference: {fileID: 0}
     - target: {fileID: 8941188834466776818, guid: 64f53af973d7b2443955b0d03378e240, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
