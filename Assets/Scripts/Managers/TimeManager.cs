@@ -84,9 +84,39 @@ public class TimeManager : MonoBehaviour
     {
         if (weeksPassed > 0)
         {
-            float villagers = 6 * _resourceManager.GetResourceAmt(Resources.Moral) / 100 - 3;
+            float morale = _resourceManager.GetResourceAmt(Resources.Moral);
+            int amount = 0;
 
-            ServiceLocator.Get<VillageManager>().EndDayAllocationStart((int)villagers);
+            if (morale < 11)
+            {
+                amount = -3;
+            }
+            else if (morale < 25)
+            {
+                amount = -1;
+            }
+            else if (morale < 41)
+            {
+                amount = 0;
+            }
+            else if (morale < 61)
+            {
+                amount = 1;
+            }
+            else if (morale < 76)
+            {
+                amount = 2;
+            }
+            else if (morale < 91)
+            {
+                amount = 3;
+            }
+            else if (morale <= 100)
+            {
+                amount = 5;
+            }
+
+            ServiceLocator.Get<VillageManager>().EndDayAllocationStart((int)amount);
         }
 
         if (weeksPassed > 5)
