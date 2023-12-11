@@ -58,7 +58,7 @@ public class TimeManager : MonoBehaviour
     private void EndOfWeek()
     {
         ++_week;
-        if (weeksPassed > 0)
+        if (_week > 0)
         {
             float morale = _resourceManager.GetResourceAmt(Resources.Moral);
             int amount = 0;
@@ -95,7 +95,7 @@ public class TimeManager : MonoBehaviour
             ServiceLocator.Get<VillageManager>().EndDayAllocationStart((int)amount);
         }
 
-        if (weeksPassed >= 5)
+        if (_week >= 5)
         {
             ServiceLocator.Get<GameManager>().SaveVariables();
             SceneManager.LoadScene("RoundTable");
