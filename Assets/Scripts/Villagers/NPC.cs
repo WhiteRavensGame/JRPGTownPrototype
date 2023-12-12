@@ -11,6 +11,9 @@ public class NPC : MonoBehaviour
     [SerializeField] private Building _attachedBuilding;
     [SerializeField] private Building _silkLadyExtraBuilding;
     [SerializeField] private Slider _slider;
+    [SerializeField] private Image _silderFillImage;
+    [SerializeField] private Color lowColor = Color.red;
+    [SerializeField] private Color hightColor = Color.green;
     public bool silkLady = false;
 
     public string Name;
@@ -25,6 +28,8 @@ public class NPC : MonoBehaviour
     {
         _reputation = ServiceLocator.Get<ReputationManager>();
         _reputation.AddNPC(this);
+        _slider.onValueChanged.AddListener(UpdateColor);
+        UpdateColor(_slider.value);
 
         if (_attachedBuilding != null)
         {
@@ -59,7 +64,12 @@ public class NPC : MonoBehaviour
         {
             _reputation.BuildingUpgrade(Name, 45f);
         }
-        _slider.value = _reputation.GetReputation(Name) / 100f;
+        _slider.value = _reputation.GetReputation(Name) / 100f;       
+        
+    }
+    private void UpdateColor(float value)
+    {
+        _silderFillImage.color = Color.Lerp(lowColor, hightColor, _reputation.GetReputation(Name) / 100f);
     }
 
     public void ChangeReputation(int amount)
