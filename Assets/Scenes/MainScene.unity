@@ -5421,6 +5421,7 @@ MonoBehaviour:
   textWeek: {fileID: 647285513}
   textDays: {fileID: 527135491}
   buildings: []
+  _buttomSprite: {fileID: 1986015493}
 --- !u!114 &1217004493 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 202859792547300494, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}

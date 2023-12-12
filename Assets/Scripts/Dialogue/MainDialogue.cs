@@ -36,6 +36,7 @@ public class MainDialogue : MonoBehaviour
     private void Exit()
     {
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
+        ServiceLocator.Get<TimeManager>().HasEvent(false);
         loadingText = false;
         gameObject.SetActive(false);
     }
