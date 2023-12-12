@@ -264,6 +264,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 932578033039867463, guid: 0eaf84a34df469e4284872cfb9af49b6, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 932578033039867463, guid: 0eaf84a34df469e4284872cfb9af49b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c8dadc8bed13df24a9ad7d3c706a8c2e, type: 3}
     - target: {fileID: 1498308905515680835, guid: 0eaf84a34df469e4284872cfb9af49b6, type: 3}
       propertyPath: m_Name
       value: RoundTable
