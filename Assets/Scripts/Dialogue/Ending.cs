@@ -60,6 +60,7 @@ public class Ending : MonoBehaviour
         }
         popUps[index++].SetActive(false);
         popUps[index].SetActive(true);
+        ServiceLocator.Get<GameManager>().SaveEnding((string)_currentStory.variablesState["endingName"]);
         _currentStory = new Story(stories[index].text);
         _currentStory.variablesState["Morale"] = ServiceLocator.Get<GameManager>().WVariables.Moral;
         loadingText = false;
