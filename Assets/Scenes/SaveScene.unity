@@ -2041,6 +2041,22 @@ PrefabInstance:
         Design</u></size>\n<b>Pierre B. Dussausse</b>\nJing Cheng \"Kevin\" Yu\nDawson
         Inkster\nJordan Hurley\n\n"
       objectReference: {fileID: 0}
+    - target: {fileID: 118116963812019816, guid: b3d29bb7a95575e49b01faa87d0bebfb, type: 3}
+      propertyPath: m_Color.a
+      value: 0.8392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 118116963812019816, guid: b3d29bb7a95575e49b01faa87d0bebfb, type: 3}
+      propertyPath: m_Color.b
+      value: 0.27450982
+      objectReference: {fileID: 0}
+    - target: {fileID: 118116963812019816, guid: b3d29bb7a95575e49b01faa87d0bebfb, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 118116963812019816, guid: b3d29bb7a95575e49b01faa87d0bebfb, type: 3}
+      propertyPath: m_Color.r
+      value: 0.43137258
+      objectReference: {fileID: 0}
     - target: {fileID: 118116963812019817, guid: b3d29bb7a95575e49b01faa87d0bebfb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2131,7 +2147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 118116963812020118, guid: b3d29bb7a95575e49b01faa87d0bebfb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 118116964014071913, guid: b3d29bb7a95575e49b01faa87d0bebfb, type: 3}
       propertyPath: m_Name
