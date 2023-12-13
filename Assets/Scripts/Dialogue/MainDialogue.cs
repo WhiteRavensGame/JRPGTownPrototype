@@ -37,6 +37,7 @@ public class MainDialogue : MonoBehaviour
         CheckFunctions();
         CheckVariables();
         LoadTextAnim();
+        HandleTags(_currentStory.currentTags);
     }
 
     private void Exit()

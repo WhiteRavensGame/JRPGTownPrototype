@@ -3,7 +3,7 @@ EXTERNAL Changematerials(value)
 EXTERNAL Changesilk(value)
 EXTERNAL Changetroops(value)
 
-Oscar:
+#speaker: Oscar #portrait: Oscar
 “Sir, due to all the fishing, some river seagulls have been harassing the fisherman and stealing some food, how do you want to deal with them?”
 
 * [Fight seagulls (Easy Battle)]
