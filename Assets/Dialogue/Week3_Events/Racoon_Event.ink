@@ -31,7 +31,7 @@ You give raccoons the food supplies they need, and later that evening, upon hear
 ->END   
 
 == Build_village ==
-{material >= 25: ->Build_village}
+{material < 25: ->Choices}
 The raccoons become a part of your village. They regularly scavenge materials from different places and contribute to the material production of the village.
 #-25 materials, -250 Gold,  +8 population, +5 materials per day
 ~ Changematerials(-25)

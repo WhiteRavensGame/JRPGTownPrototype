@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   villagers: []
-  _villagersSpawn: {x: 9, y: -2.15}
+  _villagersSpawn: {x: 9.75, y: -2.15}
 --- !u!114 &7366996219847129332
 MonoBehaviour:
   m_ObjectHideFlags: 0

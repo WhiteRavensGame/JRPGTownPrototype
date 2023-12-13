@@ -33,13 +33,10 @@ At this critical time when the two kingdoms are at the brink of war, there reall
 
 == Ask ==
 You ask the farmers to describe the traits of the orcs and how they invaded their farms. With the descriptions from them, you are eventually able to track down the orcs and decide to fight a HARD battle against them.
-
-*[Win] -> Win
-*[Lose] -> Lose
+{troops >= 15: ->Win | {troops < 15: ->Lose}}
 
 
 == Win ==
-{troops >= 15: ->Win}
 You win against the orcs, regaining the farmers food and also the orc's wealth.
 #+25 Food, and +500 Weath
 ~ Changefood(25)
@@ -48,7 +45,6 @@ You win against the orcs, regaining the farmers food and also the orc's wealth.
 ->END
 
 == Lose ==
-{troops < 15: ->Lose}
 You lose troops during the battle against the orcs.
 #-5 troops
 ~ Changematerials(-5)
