@@ -26,6 +26,7 @@ public class StartSave : MonoBehaviour
 
     public void ContinueButton()
     {
+        ServiceLocator.Get<SoundManager>().Play("Yes");
         SceneManager.LoadScene("Introduction");
     }
 
