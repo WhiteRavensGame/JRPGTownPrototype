@@ -7,6 +7,7 @@ EXTERNAL Changematerials(value)
 EXTERNAL ChangeVillagerMorale(value, Name)
 VAR morale = 65
 VAR troops = 50
+VAR troopsAssigned = 50
 
 ->START
 
@@ -22,7 +23,7 @@ Will: “Hey Mayor, a band of noble merchants from the capital are passing by an
 
  * [Provide luxury service for the merchants.] ->Provide
  * [Refuse the merchants’ demands.] ->Refuse
- * [Kidnap the merchants and demand for ransom from the capital.] ->Kidnap
+ * [Kidnap the merchants and demand for ransom from the capital.] ->Kidnap 
  # if Morale >= 65% and Troops >= 8
 
 ->DONE
@@ -39,9 +40,7 @@ Later that day Lorraine comes to you and complains about you wasting money and r
 
 == Refuse ==
 You refuse. It’s not like those nobilities will help your town from Leirrus’s invasion several weeks later anyway. The angry merchants leave and forcefully draft some citizens into their company, and you must fight a hard battle against them to rescue your citizens.
-{troops >= 15: ->Win | {troops < 15: ->Lose}}
-* [Win] ->Win
-* [Lose] ->Lose
+{troopsAssigned >= 15: ->Win | {troopsAssigned < 15: ->Lose}}
 
 == Win ==
 You mobilize a rescue team to fight the merchants and save your citizens, and stripe the merchants off.
@@ -60,7 +59,7 @@ You mobilize a rescue team to fight the merchants and try to save your citizens,
 ->END
 
 == Kidnap ==
-{morale >= 65 && troops >= 8: ->Kidnap}
+{morale < 65 && troops < 8: ->CHOICES}
 # if Morale >= 65% and Troops >= 8
 With the help of the villagers, you successfully lock the merchants up at night and put them into good use.
 ~ Changegold(500)

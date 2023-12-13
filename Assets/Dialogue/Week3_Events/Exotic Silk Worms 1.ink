@@ -1,5 +1,6 @@
 EXTERNAL Changegold(value)
 EXTERNAL ChangeSilkFarmProduction(value)
+VAR gold = 500
 
 ->START
 
@@ -13,17 +14,19 @@ Lorraine:
 
 == CHOICES ==
 
- * [Cultivate new worms (If player has 250 Gold).] ->Cultivate
- * [Crossbreed with local worms (If player has 500 Gold).] ->Crossbreed
+ * [Cultivate new worms.] ->Cultivate
+ * [Crossbreed with local worms.] ->Crossbreed
  * [Maintain pure strains.] ->Pure
 
 == Cultivate ==
+{gold < 250: ->CHOICES}
 “Sir, the smaller boats gave us more materials to work with but I do think our fishing abilities have been limited.”
 ~ Changegold(-250)
 ~ ChangeSilkFarmProduction(1)
 ->END
 
 == Crossbreed ==
+{gold < 500: ->CHOICES}
 “Sir, the boats that have sails seem to be working much better since we save more time traveing through the river.”
 ~ Changegold(-500)
 ~ ChangeSilkFarmProduction(2)

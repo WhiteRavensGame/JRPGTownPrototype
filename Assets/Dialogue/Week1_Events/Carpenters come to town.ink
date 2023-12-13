@@ -6,9 +6,8 @@ EXTERNAL DiscountOnNextUpgrade(value, Name)
 ->START
 
 == START ==
-Carpenter Comes to Town 
-
-InnKeeper: “Hey Mayor, a carpenter and his family have come to town. He doesn’t have any money but needs food and a place to stay. He says he can pay us back with free labor. 
+#speaker: Lorraine  #portrait: Lorraine
+“Hey Mayor, a carpenter and his family have come to town. He doesn’t have any money but needs food and a place to stay. He says he can pay us back with free labor. 
 Should we trust him?”
 
 ->CHOICES
@@ -20,7 +19,8 @@ Should we trust him?”
  * [Ask him to build something for a test.] ->TEST
 
 ==TRUST==
-Will - “That’s great Mayor! We have a new person to do work around here, could definitely help the town out.”
+Will - “That’s great, Mayor! We have some new people to do work around here, could definitely help the town out.”
+
 ~ Changefood(-10)
 ~ Changecitizens(3)
 # -10 Food, +3 citizens, and discount on next upgrade

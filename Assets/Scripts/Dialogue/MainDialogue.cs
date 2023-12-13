@@ -12,6 +12,8 @@ public class MainDialogue : MonoBehaviour
 
     [Space, Header("UI")]
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private TextMeshProUGUI displayNameText;
+    [SerializeField] private Animator portraitAnimator;
     [SerializeField] private List<GameObject> buttons;
 
     [Space, Header("Story")]
@@ -25,12 +27,17 @@ public class MainDialogue : MonoBehaviour
 
     private bool loadingText = false;
 
+    private const string SPEAKER_TAG = "speaker";
+    private const string PORTRAIT_TAG = "portrait";
+
+
     public void Enter(TextAsset jsonAsset)
     {
         _currentStory = new Story(jsonAsset.text);
         CheckFunctions();
         CheckVariables();
         LoadTextAnim();
+        HandleTags(_currentStory.currentTags);
     }
 
     private void Exit()
@@ -72,10 +79,38 @@ public class MainDialogue : MonoBehaviour
         if (_currentStory.canContinue || _currentStory.currentChoices.Count > 0)
         {
             LoadTextAnim();
+            HandleTags(_currentStory.currentTags);
         }
         else if (!_currentStory.canContinue && _currentStory.currentChoices.Count <= 0)
         {
             Exit();
+        }
+    }
+
+    private void HandleTags(List<string> currentTags)
+    {
+        foreach (string tag in currentTags)
+        {
+            string[] splitTag = tag.Split(':');
+            if (splitTag.Length != 2)
+            {
+                Debug.LogError("Tag could not be parsed: " + tag);
+            }
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+
+            switch (tagKey)
+            {
+                case SPEAKER_TAG:
+                    displayNameText.text = tagValue;
+                    break;
+                case PORTRAIT_TAG:
+                    portraitAnimator.Play(tagValue);
+                    break;
+                default:
+                    Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
+                    break;
+            }
         }
     }
 

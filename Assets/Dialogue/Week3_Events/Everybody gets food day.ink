@@ -33,17 +33,14 @@ Two Kobolds: Heya big man, we got some food for you if you’d like to partake. 
 # Starts at medium-difficulty fight with 2 kobolds
 “YOU WANNA FIGHT PAL?”
 
-* [Win] ->Win
-* [Lose] ->Lose
+{troops >= 10: ->Win | {troops < 10: ->Lose}}
 
 == Win ==
-{troops >= 10: ->Win}
 “Alright you FOOD HATER, we’ll leave!”
 ~ Changefood(10)
 ->END
 
 == Lose ==
-{troops < 10: ->Lose}
 “Serves you right you dumb FOOD HATER!”
 ~ Changefood(-10)
 ->END

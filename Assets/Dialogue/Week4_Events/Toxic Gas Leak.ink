@@ -21,7 +21,7 @@ Roe:
  * [Seal the mine shaft] ->Seal
 
 == Invest ==
-{gold >= 500: ->Invest}
+{gold < 500: ->CHOICES}
 “Boss y’know I like the helmets and the safety gear but it really gets in the way of my dirt munching. But thanks anyways!”
 ~ Changegold(-500)
 ~ Changematerials(-10)
@@ -29,7 +29,7 @@ Roe:
 ->END
 
 == Ventilate ==
-{gold >= 250: ->Ventilate}
+{gold < 250: ->CHOICES}
 “It smells much better in here now Boss even though I love the smell of the earth too. One guy liked the gas smell though and keeled over earlier but that’s ok.”
 ~ Changegold(-500)
 ~ Changecitizens(-1)
