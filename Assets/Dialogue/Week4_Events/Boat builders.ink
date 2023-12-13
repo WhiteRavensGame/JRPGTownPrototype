@@ -27,14 +27,14 @@ Oscar:
 ->END
 
 == Sails ==
-{silk >= 25: ->Sails}
+{silk < 25: ->CHOICES}
 “Sir, the boats that have sails seem to be working much better since we save more time traveing through the river.”
 ~ Changesilk(-25)
 ~ ChangeBuildingProduction(1, "Fishery")
 ->END
 
 == Large ==
-{material >= 25: ->Large}
+{material < 25: ->CHOICES}
 “Sir, the larger boats have taken up a lot of materials but we’ve been able to collect much more fish at a time because of it.”
 ~ Changematerials(-25)
 ~ ChangeBuildingProduction(1, "Fishery")

@@ -17,7 +17,7 @@ After he leaves happily, what do you do?
 
  * [Keep an eye on his comrade.] ->KEEP_AN_EYE
  * [Leave his comrade be.] ->LEAVE_HIM
- * [Let Oscar know (if at least 60% morale with the town’s folks).] ->LET_OSCAR_KNOW
+ * [Let Oscar know (if at least 60% morale).] ->LET_OSCAR_KNOW
 
 == KEEP_AN_EYE ==
 You end up finding him at Adelaine’s place and he seems likely to tell her about her father, so you step in and stop him, and Adelaine is really upset with your sudden interruption
@@ -32,7 +32,7 @@ He ends up telling Adelaine everything about her father. Oscar, upon knowing thi
 ->END
 
 == LET_OSCAR_KNOW ==
-{morale >= 60: ->LET_OSCAR_KNOW}
+{morale < 60: ->CHOICES}
 As you’re spying on him, you see him having conversations with different people in town, so you ask them what they were talking about, and they tell you that he was asking for Black Smith’s place. You then figure out his intention and tell Oscar about it, and the two of you stop him before he can reach Adelaine’s place.
 ~ ChangeVillagerMorale(5, "Oscar")
 # +5% Oscar morale

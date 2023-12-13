@@ -22,7 +22,7 @@ Will: “Hey Mayor, a band of noble merchants from the capital are passing by an
 
  * [Provide luxury service for the merchants.] ->Provide
  * [Refuse the merchants’ demands.] ->Refuse
- * [Kidnap the merchants and demand for ransom from the capital.] ->Kidnap
+ * [Kidnap the merchants and demand for ransom from the capital.] ->Kidnap 
  # if Morale >= 65% and Troops >= 8
 
 ->DONE
@@ -58,7 +58,7 @@ You mobilize a rescue team to fight the merchants and try to save your citizens,
 ->END
 
 == Kidnap ==
-{morale >= 65 && troops >= 8: ->Kidnap}
+{morale < 65 && troops < 8: ->CHOICES}
 # if Morale >= 65% and Troops >= 8
 With the help of the villagers, you successfully lock the merchants up at night and put them into good use.
 ~ Changegold(500)
