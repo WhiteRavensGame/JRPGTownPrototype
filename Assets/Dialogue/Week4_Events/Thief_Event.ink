@@ -18,6 +18,7 @@ You and Oscar eventually track down the thief’s hideout, and discover that he 
  * [Let it pass] -> Let_pass
  * [Laws & Discipline] -> Discipline
  * [Donation] -> Donation
+ # Need at least 500 gold
 
 == Let_pass ==
 You decide to walk away, and Oscar silently follows you

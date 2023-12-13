@@ -17,7 +17,8 @@ After he leaves happily, what do you do?
 
  * [Keep an eye on his comrade.] ->KEEP_AN_EYE
  * [Leave his comrade be.] ->LEAVE_HIM
- * [Let Oscar know (if at least 60% morale).] ->LET_OSCAR_KNOW
+ * [Let Oscar know.] ->LET_OSCAR_KNOW
+ # Need at least 60 morale
 
 == KEEP_AN_EYE ==
 You end up finding him at Adelaine’s place and he seems likely to tell her about her father, so you step in and stop him, and Adelaine is really upset with your sudden interruption

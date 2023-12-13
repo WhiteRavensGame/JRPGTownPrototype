@@ -17,7 +17,7 @@ Lorraine: "Hey youngun, there’s a group of farmers at the gate. Those poor fel
  * [Help them] -> Help
  * [Don't help] -> No_Help
  * [Engaging the orcs] -> Ask
- #Need 25 Food
+
 
 == Help ==
 Out of sympathy, you let them stay for a few nights for free, and they are full of gratitude
