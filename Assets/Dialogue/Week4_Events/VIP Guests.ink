@@ -12,8 +12,6 @@ VAR troopsAssigned = 50
 ->START
 
 == START ==
-VIP Guests
-
 Will: “Hey Mayor, a band of noble merchants from the capital are passing by and demand for the finest, most luxurious service we can provide. I’d say this is a good opportunity to connect with the noble class from the capital so they may consider supporting our village later. ”
 
 
@@ -39,7 +37,7 @@ Later that day Lorraine comes to you and complains about you wasting money and r
 ->END
 
 == Refuse ==
-You refuse. It’s not like those nobilities will help your town from Leirrus’s invasion several weeks later anyway. The angry merchants leave and forcefully draft some citizens into their company, and you must fight a hard battle against them to rescue your citizens.
+You refuse. It’s not like those nobilities will offer any help to your town anyway. The angry merchants leave and forcefully draft some citizens into their company, and you must fight a hard battle against them to rescue your citizens.
 {troopsAssigned >= 15: ->Win | {troopsAssigned < 15: ->Lose}}
 
 == Win ==

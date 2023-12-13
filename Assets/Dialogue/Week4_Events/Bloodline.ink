@@ -4,8 +4,6 @@ EXTERNAL ChangeBuildingProduction(value, Name)
 ->START
 
 == START ==
-Bloodline
-
 Roe: “Hey Mayor uh… I have something to tell you. Nothing bad! Just that I’m part Rock Imp… PLEASE DON’T HATE ME. I’m cousins with the kobolds that come to town to give food too.”
 What do you do?
 

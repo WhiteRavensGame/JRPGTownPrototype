@@ -7,10 +7,7 @@ VAR material = 25
 ->START
 
 == START ==
-Boat Builders
-
-Oscar:
-“Sir. There are three boat builders that came to me that are coincidentally brothers who all want to help remake the boats, what should we do?”
+Oscar: “Sir. There are three boat builders that came to me that are coincidentally brothers who all want to help remake the boats, what should we do?”
 
 ->CHOICES
 

@@ -5,8 +5,6 @@ EXTERNAL Changefood(value)
 ->START
 
 == START ==
-The Giant
-
 Monstrous thuds approach the town as a 100 foot tall giant marches in your direction.
 What do you do?
 
