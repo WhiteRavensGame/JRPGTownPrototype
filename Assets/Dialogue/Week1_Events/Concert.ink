@@ -7,10 +7,10 @@ EXTERNAL Changemorale(value)
 ->START
 
 == START ==
-The Concert
 
 A bard “Wymm Hasslefire” shows up to perform (uses most of your starter resources but significantly boosts morale).
-Lorraine: There’s an elf making some noise in the town square, he’s putting up flyers and screaming that there must be a show! The flyer says Wymm Hasslefire, the world-famous bard wants to put a concert on. 
+#speaker: Lorraine  #portrait: Lorraine
+There’s an elf making some noise in the town square, he’s putting up flyers and screaming that there must be a show! The flyer says Wymm Hasslefire, the world-famous bard wants to put a concert on. 
 What do you want to do?
 
 ->CHOICES
