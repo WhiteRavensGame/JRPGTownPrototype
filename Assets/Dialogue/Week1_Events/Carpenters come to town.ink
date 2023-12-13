@@ -20,7 +20,8 @@ Should we trust him?”
  * [Ask him to build something for a test.] ->TEST
 
 ==TRUST==
-Will - “That’s great Mayor! We have a new person to do work around here, could definitely help the town out.”
+Will - “That’s great, Mayor! We have some new people to do work around here, could definitely help the town out.”
+
 ~ Changefood(-10)
 ~ Changecitizens(3)
 # -10 Food, +3 citizens, and discount on next upgrade
