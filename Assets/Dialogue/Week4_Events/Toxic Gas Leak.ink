@@ -17,7 +17,9 @@ Roe:
 == CHOICES ==
 
  * [Invest in safety equipment (If player has 500 Gold).] ->Invest
+ # Need at least 500 gold
  * [Ventilate the mine shaft (If player has 250 Gold).] ->Ventilate
+ # Need at least 250 gold
  * [Seal the mine shaft] ->Seal
 
 == Invest ==

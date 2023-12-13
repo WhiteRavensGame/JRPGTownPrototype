@@ -15,7 +15,7 @@ Adelaine: "Boss! I went out back of my shop and found a bunch of racoons going t
 == Choices ==
  * [Drive them out] -> Drive_out
  * [Give them supplies] -> Give_supplies
- * [Build village - Need 25 materials] -> Build_village
+ * [Build village] -> Build_village
  #Need 25 Food
 
 == Drive_out ==

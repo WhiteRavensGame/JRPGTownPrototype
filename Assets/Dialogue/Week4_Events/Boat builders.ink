@@ -18,7 +18,9 @@ Oscar:
 
  * [Make smaller boats and save materials.] ->Small
  * [Add sails to the boats.] ->Sails
+ # Need at least 25 silk
  * [Make larger boats.] ->Large
+ # Need at least 25 materials
 
 == Small ==
 “Sir, the smaller boats gave us more materials to work with but I do think our fishing abilities have been limited.”
