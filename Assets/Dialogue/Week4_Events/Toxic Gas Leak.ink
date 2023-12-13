@@ -7,18 +7,15 @@ VAR gold = 500
 ->START
 
 == START ==
-Toxic Gas Leak
-
-Roe:
-“BOSSSSS!!!! We have a real BIG problem. There was a toxic gas leak we luckily moved away from when it was uncovered, but we need to make a decision fast on what to do!”
+Roe: “BOSSSSS!!!! We have a real BIG problem. There was a toxic gas leak we luckily moved away from when it was uncovered, but we need to make a decision fast on what to do!”
 
 ->CHOICES
 
 == CHOICES ==
 
- * [Invest in safety equipment (If player has 500 Gold).] ->Invest
+ * [Invest in safety equipment.] ->Invest
  # Need at least 500 gold
- * [Ventilate the mine shaft (If player has 250 Gold).] ->Ventilate
+ * [Ventilate the mine shaft.] ->Ventilate
  # Need at least 250 gold
  * [Seal the mine shaft] ->Seal
 

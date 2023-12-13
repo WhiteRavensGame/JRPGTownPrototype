@@ -7,7 +7,7 @@ VAR troopsAssigned = 50
 -> Start
 
 == Start ==
-Will: Boss: "Hey Mayor, we got a new guest for business."
+Will: "Hey Mayor, we got a new guest for business."
 "This cloaked man with purple skin from God knows where wants to offer us a large quantity of silk and medicine for a cheap price. He claimed that his medicine and silk came from a blessed source very far away, and their combination can bring any kind of sick man back to life within a day."
 "If you ask me, I’d say that he may look mysterious, but his deal is fishy. I’ve met plenty of fancy-dressed crooks when I was in the big city."
 

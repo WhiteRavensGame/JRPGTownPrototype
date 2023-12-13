@@ -5,8 +5,6 @@ EXTERNAL Changefood(value)
 ->START
 
 == START ==
-Kobold Mafia (If Free Food event has been triggered)
-
 Roe: “Heya Boss! I was going around town munching on my dirt pop when I saw a whole group of Kobolds looking around town. Since they’re fellow rock munchers too I had to go over and see what they were doing. And wouldn’t you know? They’re looking for more kobolds! I think the ones that came through town giving free food. What should we tell them boss?”
 
 ->CHOICES
