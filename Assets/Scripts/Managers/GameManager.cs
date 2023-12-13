@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        if(endingsCollected.Count < 0)
+        if(endingsCollected.Count <= 0)
         {
             return;
         }

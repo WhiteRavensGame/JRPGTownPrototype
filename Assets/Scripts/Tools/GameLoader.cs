@@ -39,7 +39,7 @@ public class GameLoader : AsyncLoader
         DontDestroyOnLoad(gameObject);
 
         // Scene Index Check
-        if(sceneIndexToLoad == 0)
+        if (sceneIndexToLoad == 0)
         {
             // We don't want to load the next scene, stay on this one.
             _sceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -84,7 +84,7 @@ public class GameLoader : AsyncLoader
         ServiceLocator.Register<EventManager>(gm.GetComponent<EventManager>());
         ServiceLocator.Register<ReputationManager>(gm.GetComponent<ReputationManager>());
         ServiceLocator.Register<SoundManager>(gm.GetComponent<SoundManager>());
-        
+
 
         yield return null;
     }
@@ -120,6 +120,11 @@ public class GameLoader : AsyncLoader
 
     public void UnregisterAll()
     {
+        if (!ServiceLocator.Get<GameManager>().LoadGame)
+        {
+            Destroy(ServiceLocator.Get<GodModifier>().gameObject);
+        }
+
         ServiceLocator.Unregister<SaveSystem>();
         ServiceLocator.Unregister<VillageManager>();
         ServiceLocator.Unregister<ResourceManager>();
@@ -133,10 +138,10 @@ public class GameLoader : AsyncLoader
         ServiceLocator.Unregister<SaveManager>();
         ServiceLocator.Unregister<VillageInitialization>();
         ServiceLocator.Unregister<EndOfWeekPanel>();
-        ServiceLocator.Unregister<GameManager>();
 
         Destroy(_systemsParent.gameObject);
-        Destroy(ServiceLocator.Get<GodModifier>().gameObject);
+
+        ServiceLocator.Unregister<GameManager>();
 
         ServiceLocator.Unregister<GodModifier>();
     }
