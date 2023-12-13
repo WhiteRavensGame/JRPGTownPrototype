@@ -15,7 +15,9 @@ Lorraine:
 == CHOICES ==
 
  * [Cultivate new worms.] ->Cultivate
+ # Need at least 250 gold
  * [Crossbreed with local worms.] ->Crossbreed
+ # Need at least 500 gold
  * [Maintain pure strains.] ->Pure
 
 == Cultivate ==

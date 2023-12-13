@@ -140,6 +140,7 @@ public class TimeManager : MonoBehaviour
         {
             _day = newData.daysPassed;
             _week = newData.weeksPassed;
+            Time.timeScale = 1.0f;
         }
         else
         {

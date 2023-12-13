@@ -17,7 +17,6 @@ Will: Boss: "Hey Mayor, we got a new guest for business."
  * [Accept his offer] -> Accept
  * [Reject his offer] -> Reject
  * [Fight the medicine man] -> Fight
- #Need 25 Food
 
 == Accept ==
 It turns out the medicine he offered are hard drugs that make the matters even worse after few people have taken them. 
