@@ -489,6 +489,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 433807241}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: ActivateTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &60994246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3281,6 +3293,14 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 470462100562577820, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: _firstScreen
+      value: 
+      objectReference: {fileID: 433807242}
+    - target: {fileID: 470462100562577820, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: _tutorialType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 470462100922453834, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
       propertyPath: m_Type
       value: 1
@@ -3423,6 +3443,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+--- !u!114 &433807241 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 470462100562577820, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+  m_PrefabInstance: {fileID: 433807240}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceeaaace76cfbf54a9b1b563c33528a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &433807242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3202293018973001711, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+  m_PrefabInstance: {fileID: 433807240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &482661958
 GameObject:
   m_ObjectHideFlags: 0
@@ -9080,7 +9116,7 @@ PrefabInstance:
       objectReference: {fileID: 1579069192}
     - target: {fileID: 470462100562577820, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
       propertyPath: _tutorialType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 470462100922453834, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
       propertyPath: m_Type
@@ -10506,7 +10542,7 @@ PrefabInstance:
       objectReference: {fileID: 206254045}
     - target: {fileID: 523407839112142377, guid: ec22128a27f42e841aace6145e411042, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 523407839112142377, guid: ec22128a27f42e841aace6145e411042, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
