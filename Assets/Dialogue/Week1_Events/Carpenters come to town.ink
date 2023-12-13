@@ -23,7 +23,7 @@ Should we trust him?”
 
 ~ Changefood(-10)
 ~ Changecitizens(3)
-~ DiscountOnNextUpgrade(1, "Blacksmith")
+~ DiscountOnNextUpgrade(1, "Smithy")
 
 ->END
 
