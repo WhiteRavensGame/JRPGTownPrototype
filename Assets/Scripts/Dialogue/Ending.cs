@@ -74,6 +74,11 @@ public class Ending : MonoBehaviour
             SceneManager.LoadScene("Ending");
             return;
         }
+        else if(loadingText)
+        {
+            currentText = _currentStory.currentText;
+            _currentStory.Continue();
+        }
 
         playerButton.SetActive(false);
         popUps[index++].SetActive(false);

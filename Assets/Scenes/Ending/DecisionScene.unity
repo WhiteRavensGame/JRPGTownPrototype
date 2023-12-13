@@ -1001,10 +1001,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Ending, Assembly-CSharp
-        m_MethodName: Decision
-        m_Mode: 1
+      - m_Target: {fileID: 8023330624228370828}
+        m_TargetAssemblyTypeName: MainDialogue, Assembly-CSharp
+        m_MethodName: ChooseOption
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1418,10 +1418,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Ending, Assembly-CSharp
-        m_MethodName: Decision
-        m_Mode: 1
+      - m_Target: {fileID: 8023330624228370828}
+        m_TargetAssemblyTypeName: MainDialogue, Assembly-CSharp
+        m_MethodName: ChooseOption
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1582,10 +1582,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Ending, Assembly-CSharp
-        m_MethodName: Decision
-        m_Mode: 1
+      - m_Target: {fileID: 8023330624228370828}
+        m_TargetAssemblyTypeName: MainDialogue, Assembly-CSharp
+        m_MethodName: ChooseOption
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1842,6 +1842,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _action: {fileID: 1424749351507724916, guid: 98c79a02c9c9762469c182e0197f5e8d, type: 3}
   dialogueText: {fileID: 0}
+  displayNameText: {fileID: 0}
+  portraitAnimator: {fileID: 0}
   buttons:
   - {fileID: 0}
   - {fileID: 0}

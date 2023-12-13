@@ -23,6 +23,7 @@ public class EventManager : MonoBehaviour
 
     public void CheckEvent()
     {
+        return;
         int week = ServiceLocator.Get<TimeManager>().GetWeek();
         if (Random.Range(0, 100) % 2 == 0)
         {
