@@ -19,11 +19,11 @@ Will:
 == CHOICES ==
 
 * [Hire Dancing Dave (If player has 100 Gold)] ->Hire
-* [Don’t hire Dancing Dave] ->Dont_hire
-* [Throw a dance party (If player has 25 Silk and 250 Gold)] ->Party
+* [Don’t hire Dancing Dave] -> Dont_hire
+* [Throw a dance party (If player has 25 Silk and 250 Gold)] -> Party
 
 == Hire ==
-{gold >= 100: ->Hire}
+{gold >= 100: -> Hire}
 “This Dancing Dave guy was much better than expected, he’ll bring a lot of customers in!”
 ~ Changegold(100)
 ~ Changemorale(2)
