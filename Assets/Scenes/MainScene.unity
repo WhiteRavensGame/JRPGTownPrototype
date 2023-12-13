@@ -2724,7 +2724,7 @@ PrefabInstance:
     - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b42dbc9554027bc44aabef3c98b413f0, type: 3}
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -5168,7 +5168,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Black Smith:
 
-        Prodcues troops to help defend your town!'
+        Produces troops to help defend your town!'
       objectReference: {fileID: 0}
     - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Enabled
@@ -9741,6 +9741,10 @@ PrefabInstance:
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307017538478, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Color.a
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 6921797307967923304, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_AnchoredPosition.x
