@@ -49,9 +49,9 @@ public class TimeManager : MonoBehaviour
         if (_day > 5)
         {
             EndOfWeek();
-            ServiceLocator.Get<SaveManager>().SaveData();
         }
 
+        ServiceLocator.Get<SaveManager>().SaveData();
         _earningsManager.CalculateEarnings();
         _resourceManager.UpdateResourceText();
         textDays.text = "Day " + _day;
