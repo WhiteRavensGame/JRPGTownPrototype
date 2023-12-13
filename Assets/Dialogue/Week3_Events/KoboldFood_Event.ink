@@ -1,6 +1,6 @@
 EXTERNAL Changefood(value)
 EXTERNAL Changemorale(value)
-VAR troops = 10
+VAR troopsAssigned = 50
 
 -> Start
 
@@ -34,7 +34,7 @@ You ask for enough food for the village and the kobolds happily supply. The town
 The kobolds get angry at you and start insulting you, begin fighting!
 #Starts at medium difficulty fight with 2 kobolds
 
-{troops >= 10: ->Win| {troops < 10: ->Lose}}
+{troopsAssigned >= 10: ->Win| {troopsAssigned < 10: ->Lose}}
 
 == Win ==
 "Alright you FOOD HATER, we'll leave!"

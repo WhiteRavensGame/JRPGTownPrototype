@@ -1,6 +1,6 @@
 EXTERNAL Changefood(value)
 EXTERNAL Changemorale(value)
-VAR troops = 10
+VAR troopsAssigned = 50
 
 ->START
 
@@ -33,7 +33,7 @@ Two Kobolds: Heya big man, we got some food for you if you’d like to partake. 
 # Starts at medium-difficulty fight with 2 kobolds
 “YOU WANNA FIGHT PAL?”
 
-{troops >= 10: ->Win | {troops < 10: ->Lose}}
+{troopsAssigned >= 10: ->Win | {troopsAssigned < 10: ->Lose}}
 
 == Win ==
 “Alright you FOOD HATER, we’ll leave!”

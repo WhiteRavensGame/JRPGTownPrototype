@@ -3,7 +3,7 @@ EXTERNAL ChangeVillagerMorale(value, Name)
 EXTERNAL Changematerials(value)
 EXTERNAL Changegold(value)
 EXTERNAL Changemorale(value)
-VAR troops = 10
+VAR troopsAssigned = 50
 
 -> Start
 
@@ -33,7 +33,7 @@ At this critical time when the two kingdoms are at the brink of war, there reall
 
 == Ask ==
 You ask the farmers to describe the traits of the orcs and how they invaded their farms. With the descriptions from them, you are eventually able to track down the orcs and decide to fight a HARD battle against them.
-{troops >= 15: ->Win | {troops < 15: ->Lose}}
+{troopsAssigned >= 15: ->Win | {troopsAssigned < 15: ->Lose}}
 
 
 == Win ==

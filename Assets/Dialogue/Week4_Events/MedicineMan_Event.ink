@@ -2,7 +2,7 @@ EXTERNAL Changesilk(value)
 EXTERNAL Changemorale(value)
 EXTERNAL Changegold(value)
 EXTERNAL Changecitizens(value)
-VAR troops = 10
+VAR troopsAssigned = 50
 
 -> Start
 
@@ -38,7 +38,7 @@ The reason he takes a sick man with him remains unclear.
 == Fight ==
 You turn down the offer due to your suspicion of him, and after he leaves, you gather some men and secretly follow him. 
 Later he arrives at a house whose owner is ill, and upon hearing his attempt to seduce the owner with his medicine, you decide to confront him.
-{troops >= 10: ->Win | {troops < 10: ->Lose}}
+{troopsAssigned >= 10: ->Win | {troopsAssigned < 10: ->Lose}}
 
 == Win ==
 The defeated cloaked man drops some of his stuff and runs away. The drugs he left are useless, but the silk is useful.
