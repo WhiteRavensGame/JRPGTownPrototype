@@ -3369,6 +3369,38 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Gods will give you special bonuses.     '
       objectReference: {fileID: 0}
+    - target: {fileID: 470462099899363663, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_fontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 470462099899363663, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 470462099899363663, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 470462099899363663, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 470462100922453834, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 470462100922453834, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
+    - target: {fileID: 3202293018973001711, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512403139094089240, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6223856521522401723, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3413,6 +3445,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7388229078146607288, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 7388229078146607288, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 7388229078146607295, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -101.9541
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229078146607295, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229078146607295, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -15.289886
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229079170717373, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229079170717373, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 8449084927568571424, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
       propertyPath: m_Name
       value: Tutorial

@@ -509,7 +509,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ddd6e8e43fc4dcc42bc1e7741f432fd0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 1.22
 --- !u!222 &60994247
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -557,6 +557,14 @@ PrefabInstance:
       propertyPath: m_text
       value: This shows your town's morale!
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -649,6 +657,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 126
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -720,8 +736,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 96448d3047dd45945bf64d21bd3e8751, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -911,10 +927,34 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -107.211
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -15.527496
+      objectReference: {fileID: 0}
     - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_text
       value: Place them in buildings to help the production!
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1007,6 +1047,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 314
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -1701,10 +1749,34 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -107.2109
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -14.5257
+      objectReference: {fileID: 0}
     - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_text
       value: Here are your citizens to assign!
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1797,6 +1869,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 311
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -1991,12 +2071,44 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -24.4113
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -28.5364
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.42080688
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.6811981
+      objectReference: {fileID: 0}
     - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_text
       value: 'You will be spending a majority of your time here!
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontSize
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2089,6 +2201,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 71
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b42dbc9554027bc44aabef3c98b413f0, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -2520,7 +2640,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.9
 --- !u!222 &424309186
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2637,6 +2757,22 @@ PrefabInstance:
       propertyPath: m_text
       value: This is your assign citizens hub!
       objectReference: {fileID: 0}
+    - target: {fileID: 470462099899363663, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 470462099899363663, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 470462100922453834, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 470462100922453834, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 470462100922453835, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -216
@@ -2725,6 +2861,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Now that you're up to speed, goodluck with running Steadville
       objectReference: {fileID: 0}
+    - target: {fileID: 7388229078146607288, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 7388229078146607288, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 7388229078695821073, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
       propertyPath: m_text
       value: You will assign citizens to certain buildings to produce gold or resources!
@@ -2737,6 +2881,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -59
       objectReference: {fileID: 0}
+    - target: {fileID: 7388229079170717373, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229079170717373, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 8069884303516594930, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
       propertyPath: _next
       value: 
@@ -2905,12 +3057,48 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -110.9638
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -30.9725
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -18.101196
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.6723
+      objectReference: {fileID: 0}
     - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_text
       value: 'Fishery:
 
         Produces fish which are used to run your Inn!'
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3003,6 +3191,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 53
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -3707,7 +3903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.8, y: 0}
+  m_AnchoredPosition: {x: -5.2, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647285513
@@ -3757,8 +3953,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4203,6 +4399,14 @@ PrefabInstance:
       propertyPath: m_text
       value: You can upgrade buildings by pressing the button above...
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4295,6 +4499,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 169
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -4424,12 +4636,44 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -31.6142
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.9747
+      objectReference: {fileID: 0}
     - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_text
       value: 'Black Smith:
 
         Prodcues troops to help defend your town!'
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4522,6 +4766,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -232
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -4740,8 +4992,20 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Mine:
 
-        Produces iron which is used to run your Black Smith!'
+        Produces iron which is used to run your Blacksmith!'
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4834,6 +5098,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 44
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -5275,10 +5547,46 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -105.0602
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -43.6145
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -16.032196
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.9340057
+      objectReference: {fileID: 0}
     - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_text
       value: And dealing with random events that occur throughout the day!
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontSize
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5371,6 +5679,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -372
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -5786,6 +6102,18 @@ PrefabInstance:
 
         produces silk to help run your Silk Store!'
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5878,6 +6206,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 47
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -6161,8 +6497,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 96448d3047dd45945bf64d21bd3e8751, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6216,7 +6552,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -247.7, y: -489.99994}
-  m_SizeDelta: {x: 250, y: 100}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1359681272
 MonoBehaviour:
@@ -6239,7 +6575,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 8378fea31081f80439e551b90251d7af, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6293,7 +6629,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 282.83, y: -489.99994}
-  m_SizeDelta: {x: 250, y: 100}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1378603033
 MonoBehaviour:
@@ -6316,7 +6652,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 8378fea31081f80439e551b90251d7af, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6430,6 +6766,18 @@ PrefabInstance:
 
         Produces a high amount of gold'
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6522,6 +6870,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -235
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -6764,6 +7120,18 @@ PrefabInstance:
       propertyPath: m_text
       value: More morale means more people at the end of the week!
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6856,6 +7224,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 129
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -7658,6 +8034,22 @@ PrefabInstance:
       propertyPath: m_text
       value: This is the town of Steadville!
       objectReference: {fileID: 0}
+    - target: {fileID: 470462099899363663, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_fontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 470462099899363663, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 470462099899363663, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 470462099899363663, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 470462100562577820, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
       propertyPath: _firstScreen
       value: 
@@ -7666,6 +8058,14 @@ PrefabInstance:
       propertyPath: _tutorialType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 470462100922453834, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 470462100922453834, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 470462100922453835, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -556
@@ -7754,6 +8154,38 @@ PrefabInstance:
       propertyPath: m_text
       value: That's all for now, enjoy your time in Steadsville!
       objectReference: {fileID: 0}
+    - target: {fileID: 7388229078146607288, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_fontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229078146607288, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 7388229078146607288, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229078146607288, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 7388229078146607295, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -25.9193
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229078146607295, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -20.2107
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229078146607295, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.92489624
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229078146607295, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.7483978
+      objectReference: {fileID: 0}
     - target: {fileID: 7388229078695821073, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
       propertyPath: m_text
       value: This is the main map of Steadsville!
@@ -7770,6 +8202,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -314
       objectReference: {fileID: 0}
+    - target: {fileID: 7388229079170717373, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388229079170717373, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 8069884305122829659, guid: 14c9ba796b2afec48ab313d165407cf5, type: 3}
       propertyPath: _next
       value: 
@@ -7964,9 +8404,29 @@ PrefabInstance:
       value: To deal with an event, this button on the left will appear!
       objectReference: {fileID: 0}
     - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_isRightToLeft
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8059,6 +8519,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -372
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -8392,6 +8860,18 @@ PrefabInstance:
 
         increases your town''s morale!'
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8484,6 +8964,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -238
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -8510,10 +8998,42 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -28.3594
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.7235107
+      objectReference: {fileID: 0}
     - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_text
       value: This is your total gold, use gold to upgrade your buildings!
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8606,6 +9126,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -396
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -8685,15 +9213,47 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -108.2804
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -45.8686
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327723, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.2814941
+      objectReference: {fileID: 0}
     - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_text
       value: If you want to check your relationship status with your fellow citizens,
         click the button above!
       objectReference: {fileID: 0}
     - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_isRightToLeft
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797306977327724, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3904072147320633527, guid: 11bf8dfca4922c6429e9b058bf8b56a8, type: 2}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8704,7 +9264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6921797307017538476, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -8786,6 +9346,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 167
       objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921797307967923305, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69e7dd9528d5c424b87f3eb4da819aa6, type: 3}
     - target: {fileID: 7600554228303200294, guid: 98de58cb09b5031498a91d02376b7b0e, type: 3}
       propertyPath: _next
       value: 
@@ -8908,13 +9476,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -65
       objectReference: {fileID: 0}
+    - target: {fileID: 3237599246074130807, guid: ec22128a27f42e841aace6145e411042, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3707933118349624548, guid: ec22128a27f42e841aace6145e411042, type: 3}
       propertyPath: m_Name
       value: Assign Citezen
       objectReference: {fileID: 0}
     - target: {fileID: 3707933118349624548, guid: ec22128a27f42e841aace6145e411042, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3748626655769292542, guid: ec22128a27f42e841aace6145e411042, type: 3}
       propertyPath: m_PixelPerfect
@@ -8924,9 +9496,17 @@ PrefabInstance:
       propertyPath: m_OverridePixelPerfect
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3837635288093571147, guid: ec22128a27f42e841aace6145e411042, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 4321768195553489469, guid: ec22128a27f42e841aace6145e411042, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852737802581106584, guid: ec22128a27f42e841aace6145e411042, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6054989786248190913, guid: ec22128a27f42e841aace6145e411042, type: 3}
       propertyPath: m_IsActive
@@ -8987,6 +9567,10 @@ PrefabInstance:
     - target: {fileID: 7291476086949865514, guid: ec22128a27f42e841aace6145e411042, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -225
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672596732871360805, guid: ec22128a27f42e841aace6145e411042, type: 3}
+      propertyPath: m_Type
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec22128a27f42e841aace6145e411042, type: 3}
