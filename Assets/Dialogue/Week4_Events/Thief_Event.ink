@@ -34,7 +34,6 @@ Despite the thief’s begging, you compel him to spill what he has stolen
 ->END   
 
 == Donation ==
-{gold >= 500: ->Donation}
 You decide to donate some gold to the family and also hire a doctor for them. But at the same time, you tell the thief to never steal again
 #=500 Gold, +10% Reputation, and +5 Population
 ~ Changegold(-500)
