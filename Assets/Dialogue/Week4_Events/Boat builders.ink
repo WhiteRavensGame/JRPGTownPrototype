@@ -17,8 +17,8 @@ Oscar:
 == CHOICES ==
 
  * [Make smaller boats and save materials.] ->Small
- * [Add sails to the boats (If player has 25 Silk).] ->Sails
- * [Make larger boats (If player has 25 Materials).] ->Large
+ * [Add sails to the boats.] ->Sails
+ * [Make larger boats.] ->Large
 
 == Small ==
 “Sir, the smaller boats gave us more materials to work with but I do think our fishing abilities have been limited.”
