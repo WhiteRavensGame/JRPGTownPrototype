@@ -15,18 +15,14 @@ Oscar: “Mayor. Big bass has shown up in the river. Been eating all the fish. C
 
 == CHOICES ==
 
- * [Fight Bass (Easy Battle).] ->FIGHT
+ * [Fight Bass.] ->FIGHT
  * [Fish for Bass.] ->FISH
  * [Do nothing.] ->DO_NOTHING
 
 == FIGHT ==
-* [Win.] ->Win
-* [Lose.] ->Lose
-
-->DONE
+{troops >= 5: ->Win | {troops < 5: ->Lose}}
 
 == Win ==
-{troops >= 5: ->Win}
 “Hm. That’s a lot of food. Good work.”
 ~ Changefood(10)
 ~ ChangeVillagerMorale(5, "Oscar")
@@ -34,7 +30,6 @@ Oscar: “Mayor. Big bass has shown up in the river. Been eating all the fish. C
 ->END
 
 == Lose ==
-{troops < 5: ->Lose}
 “That’s a setback.”
 ~ Changefood(-10)
 ~ Changetroops(-3)
