@@ -454,7 +454,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: c8dadc8bed13df24a9ad7d3c706a8c2e, type: 3}
     - target: {fileID: 4625904530652340420, guid: 447b8e98be242cf48a5fcf41cbd0d92c, type: 3}
       propertyPath: m_text
-      value: Test Name
+      value: Lorraine
       objectReference: {fileID: 0}
     - target: {fileID: 4625904530652340420, guid: 447b8e98be242cf48a5fcf41cbd0d92c, type: 3}
       propertyPath: m_fontAsset
