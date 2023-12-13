@@ -3,6 +3,7 @@ EXTERNAL Changetroops(value)
 EXTERNAL Changefood(value)
 EXTERNAL Changematerials(value)
 VAR food = 50
+VAR troops = 50
 
 -> Start
 
@@ -38,6 +39,7 @@ You lose 10 Food but you are now safe from goblins.
 ->END
 
 == Win ==
+{troops >= 5: ->Win}
 You win the battle against the goblins.
 You find 100 gold in the mines.
 ~ Changegold(100)
@@ -45,6 +47,7 @@ You find 100 gold in the mines.
 ->END
 
 == Lose ==
+{troops < 5: ->Lose}
 You lose 5 citizens and 25 Materials.
 ~ Changetroops(-5)
 ~ Changematerials(-25)

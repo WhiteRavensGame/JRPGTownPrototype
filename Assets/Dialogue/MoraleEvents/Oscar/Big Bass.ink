@@ -2,6 +2,7 @@ EXTERNAL Changematerials(value)
 EXTERNAL Changefood(value)
 EXTERNAL Changetroops(value)
 EXTERNAL ChangeVillagerMorale(value, Name)
+VAR troops = 10
 
 ->START
 
@@ -19,19 +20,21 @@ Oscar: “Mayor. Big bass has shown up in the river. Been eating all the fish. C
  * [Do nothing.] ->DO_NOTHING
 
 == FIGHT ==
-* [Win.] ->WIN
-* [Lose.] ->LOSE
+* [Win.] ->Win
+* [Lose.] ->Lose
 
 ->DONE
 
-== WIN ==
+== Win ==
+{troops >= 5: ->Win}
 “Hm. That’s a lot of food. Good work.”
 ~ Changefood(10)
 ~ ChangeVillagerMorale(5, "Oscar")
 # +5% Oscar Morale, +10 Food
 ->END
 
-== LOSE ==
+== Lose ==
+{troops < 5: ->Lose}
 “That’s a setback.”
 ~ Changefood(-10)
 ~ Changetroops(-3)

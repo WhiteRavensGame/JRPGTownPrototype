@@ -1,11 +1,12 @@
 EXTERNAL Changefood(value)
 EXTERNAL Changemorale(value)
+VAR troops = 10
 
 -> Start
 
 == Start ==
 In an odd manor two kobolds walk into town with sacks of food on a cart and ask for the mayor.
-Two Kobolds: "Heya big man, we got some food for yous if you’d like to partake. What’d ya say?"
+Two Kobolds: "Heya big man, we got some food for you if you’d like to partake. What’d ya say?"
 
 -> Choices
 
@@ -32,4 +33,18 @@ You ask for enough food for the village and the kobolds happily supply. The town
 == I_hate_food ==
 The kobolds get angry at you and start insulting you, begin fighting!
 #Starts at medium difficulty fight with 2 kobolds
+
+* [Win] -> Win
+* [Lose] -> Lose
+
+== Win ==
+{troops >= 10: ->Win}
+"Alright you FOOD HATER, we'll leave!"
+~ Changefood(10)
 ->END 
+
+== Lose ==
+{troops < 10: ->Lose}
+“Serves you right you dumb FOOD HATER!”
+~ Changefood(-10)
+->END

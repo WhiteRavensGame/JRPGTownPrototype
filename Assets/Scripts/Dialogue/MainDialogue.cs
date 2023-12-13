@@ -1,9 +1,8 @@
-using UnityEngine;
 using Ink.Runtime;
-using TMPro;
-using UnityEngine.InputSystem;
 using System.Collections.Generic;
-using Mono.Cecil;
+using TMPro;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MainDialogue : MonoBehaviour
 {
@@ -37,6 +36,7 @@ public class MainDialogue : MonoBehaviour
     private void Exit()
     {
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
+        ServiceLocator.Get<TimeManager>().HasEvent(false);
         loadingText = false;
         gameObject.SetActive(false);
     }
@@ -135,7 +135,6 @@ public class MainDialogue : MonoBehaviour
         _currentStory.BindExternalFunction("ChangeAllResource", (int val) =>
         {
             ServiceLocator.Get<ResourceManager>().AddResource(Resources.Gold, val);
-            ServiceLocator.Get<ResourceManager>().AddResource(Resources.Reputation, val);
             ServiceLocator.Get<ResourceManager>().AddResource(Resources.Fish, val);
             ServiceLocator.Get<ResourceManager>().AddResource(Resources.Iron, val);
             ServiceLocator.Get<ResourceManager>().AddResource(Resources.Moral, val);
@@ -193,17 +192,37 @@ public class MainDialogue : MonoBehaviour
             ServiceLocator.Get<ResourceManager>().UpdateResourceText();
         });
 
+        _currentStory.BindExternalFunction("TempChangeResource", (int val, string Name) =>
+        {
+            ServiceLocator.Get<ResourceManager>().LoanMoney(Name, val);
+        });
+
+        _currentStory.BindExternalFunction("TempChangeAllResource", (int val) =>
+        {
+            ServiceLocator.Get<ResourceManager>().LoanMoney("Gold", val);
+            ServiceLocator.Get<ResourceManager>().LoanMoney("Food", val);
+            ServiceLocator.Get<ResourceManager>().LoanMoney("Materials", val);
+            ServiceLocator.Get<ResourceManager>().LoanMoney("Silk", val);
+            ServiceLocator.Get<ResourceManager>().LoanMoney("Morale", val);
+            ServiceLocator.Get<ResourceManager>().LoanMoney("Troops", val);
+        });
+
+        _currentStory.BindExternalFunction("TempChangeBuildingProduction", (int val, string Name) =>
+        {
+            ServiceLocator.Get<PrefabManager>().GetBuidlding(Name).ChangeProductionAmt(val, true);
+        });
+
         _currentStory.BindExternalFunction("ChangeVillagerMorale", (int val, string Name) =>
         {
             ServiceLocator.Get<ReputationManager>().BuildingUpgrade(Name, val);
         });
 
-        _currentStory.BindExternalFunction("TempChangeBuildingProduction", (int val, string Name) =>
+        _currentStory.BindExternalFunction("ChangeBuildingProduction", (int val, string Name) =>
         {
-            ServiceLocator.Get<PrefabManager>().GetBuidlding(Name).ChangeProductionAmt(val);
+            ServiceLocator.Get<PrefabManager>().GetBuidlding(Name).ChangeProductionAmt(val, false);
         });
 
-        _currentStory.BindExternalFunction("TurnProductionOff", (int val, string Name) =>
+        _currentStory.BindExternalFunction("TurnBuildingOff", (int val, string Name) =>
         {
             ServiceLocator.Get<PrefabManager>().GetBuidlding(Name).RestingDaysLeft = val;
         });
@@ -212,11 +231,6 @@ public class MainDialogue : MonoBehaviour
         {
             ServiceLocator.Get<PrefabManager>().GetBuidlding(Name).DiscountOnUpgrade = val;
             ServiceLocator.Get<PrefabManager>().GetBuidlding(Name).UpdateResourcesText();
-        });
-
-        _currentStory.BindExternalFunction("ChangeResourceAmount", (int val, string Name) =>
-        {
-            ServiceLocator.Get<ResourceManager>().LoanMoney(Name, val);
         });
     }
 

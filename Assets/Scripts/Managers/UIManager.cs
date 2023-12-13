@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Button _eventButton;
 
+    [SerializeField] private TextMeshProUGUI _upgradeGoldUIText;
     [SerializeField] private TextMeshProUGUI _goldText;
     [SerializeField] private TextMeshProUGUI _fishText;
     [SerializeField] private TextMeshProUGUI _ironText;
@@ -34,6 +35,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateResourceText(int gold, int fish, int iron, int silk, float morale, int troops)
     {
+        _upgradeGoldUIText.text = gold.ToString();
         _goldText.text = gold.ToString();
         _ironText.text = iron.ToString();
         _silkText.text = silk.ToString();
@@ -116,8 +118,10 @@ public class UIManager : MonoBehaviour
         playerManager.gameState = GameStates.MainScreen;
         _characterScreen.SetActive(false);
     }
-    public void OptionsButton()
+    public void ExitButton()
     {
-        SceneManager.LoadScene("SaveScene");
+        GameLoader loader = ServiceLocator.Get<GameLoader>();
+        loader.UnregisterAll();
+        loader.Restart();
     }
 }

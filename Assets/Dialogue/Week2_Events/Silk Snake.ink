@@ -47,15 +47,17 @@ Lorraine:
 ->END
 
 == Win ==
+{troops >= 5: ->Win}
 “Good thing we were able to get rid of the beast kid, we collected more silk that it had yet to eat.”
 ~ Changesilk(10)
-~Changefood(5)
+~ Changefood(5)
 #+10 Silk, +5 Food
 ->END
 
 == Lose ==
+{troops < 5: ->Lose}
 “The beast got away and wrecked part of the worm farm in the process. Don’t be sad. These things happen.”
 ~ Changesilk(-5)
 ~ ChangeSilkProduction(-1)
 #-5 Silk, -1 Silk Production
-->END
+->END 

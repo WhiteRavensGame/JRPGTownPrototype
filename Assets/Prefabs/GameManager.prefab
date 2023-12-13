@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 410383517463811977}
   - component: {fileID: 7857225648335904365}
   - component: {fileID: 6611084304367850924}
+  - component: {fileID: -1665825972756351140}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -116,9 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ce5c48a639855419a1d0ba16743d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endOfDay:
-    m_PersistentCalls:
-      m_Calls: []
   _button: {fileID: 0}
   _weekOneTexts:
   - {fileID: 4900000, guid: 03cfd75bce827d747816a3f382ee51e3, type: 3}
@@ -167,3 +165,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e7d3ac601910e44b5435631f54e003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1665825972756351140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2686016013968739283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070293e59a7b58e4a9d2aa084be89134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds: []

@@ -65,7 +65,7 @@ public class BuildingUpgradeInfo : MonoBehaviour
                 {
                     _rNeedCurrent.text = _buildingLevel.GetResourcesToRun().ToString();
                     int silkLevel = _building.GetLevel();
-                    float amt = (0.25f * (silkLevel * silkLevel)) - (0.25f * silkLevel) + 0.5f;
+                    float amt = (0.5f * (silkLevel * silkLevel)) - (0.5f * silkLevel) + 1f;
                     _r2ProdCurrent.text = amt.ToString();
                     break;
                 }
@@ -95,7 +95,7 @@ public class BuildingUpgradeInfo : MonoBehaviour
                     {
                         _rNeedNext.text = _buildingLevel.GetNextLevel.GetResourcesToRun().ToString();
                         int silkLevel = _building.GetNextLevel();
-                        float amt = (0.25f * (silkLevel * silkLevel)) - (0.25f * silkLevel) + 0.5f;
+                        float amt = (0.5f * (silkLevel * silkLevel)) - (0.5f * silkLevel) + 1f;
                         _r2ProdNext.text = amt.ToString();
                         break;
                     }
