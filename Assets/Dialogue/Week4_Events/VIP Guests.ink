@@ -7,6 +7,7 @@ EXTERNAL Changematerials(value)
 EXTERNAL ChangeVillagerMorale(value, Name)
 VAR morale = 65
 VAR troops = 50
+VAR troopsAssigned = 50
 
 ->START
 
@@ -39,7 +40,7 @@ Later that day Lorraine comes to you and complains about you wasting money and r
 
 == Refuse ==
 You refuse. It’s not like those nobilities will help your town from Leirrus’s invasion several weeks later anyway. The angry merchants leave and forcefully draft some citizens into their company, and you must fight a hard battle against them to rescue your citizens.
-{troops >= 15: ->Win | {troops < 15: ->Lose}}
+{troopsAssigned >= 15: ->Win | {troopsAssigned < 15: ->Lose}}
 
 == Win ==
 You mobilize a rescue team to fight the merchants and save your citizens, and stripe the merchants off.
