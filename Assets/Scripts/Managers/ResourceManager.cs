@@ -33,6 +33,14 @@ public class ResourceManager : MonoBehaviour
         _ui.UpdateResourceText(_gold, _fish, _iron, _silk, _morale, _troops);
     }
 
+    private void Update()
+    {
+        if(_morale > 100)
+        {
+            _morale = 100;
+        }
+    }
+
     public void AddGold(int gold)
     {
         _gold += gold;
