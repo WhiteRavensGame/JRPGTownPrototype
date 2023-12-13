@@ -19,8 +19,7 @@ Oscar:
 * [Continue as usual] ->Usual
 
 == Impose ==
-
-“Sir, establishing the limits for fishing may be bad for a few days but should be good for us in the long run.”
+“Establishing the limits for fishing may be bad for a few days but should be good for us in the long run.”
 #No Fish for 3 days, +25 Fish after 3 days
 ~ Changefood(25)
 ->END
@@ -28,7 +27,7 @@ Oscar:
 == Follow
 
 * [Follow Oscar’s advice for sustainable practices]
-“Sir, after we began following the new practices we’ve been able to revitalize the river!”
+“After we began following the new practices we’ve been able to revitalize the river. Good work.”
 #+10 Fish, +1 Fishing Production
 ~ TempChangeBuildingProduction(1, "Fishery")
 ~ Changefood(10)
@@ -37,7 +36,7 @@ Oscar:
 == Usual ==
 
 * [Continue as usual]
-“Sir there aren’t many fish left in the river now, the fishery will be slower for now.”
+“There aren’t many fish left in the river now, the fishery will be slower for now.”
 ~ TempChangeBuildingProduction(-1, "Fishery")
 #-1 Fishing Production
 ->END
