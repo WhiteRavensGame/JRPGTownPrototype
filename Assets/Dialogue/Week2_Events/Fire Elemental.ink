@@ -21,13 +21,13 @@ VAR AdelaineMorale = 40
  * [Kill.] ->KILL
 
 == BEFRIEND ==
-{AdelaineMorale > 40: ->BEFRIEND}
+{AdelaineMorale < 40: ->CHOICES}
 #speaker: Adelaine #portrait: Adelaine
 “Mayor, this is amazing! Even though it burned part of my shop, it's worth it since it’ll help me expand.”
 ~ ChangeVillagerMorale(5, "Adelaine")
 ~ Changematerials(-5)
 ~ ChangeBuildingProduction(2, "Smithy")
-# +5% Adelaine Morale, -5 Materials, +2 Material Production
+
 ->END
 
 == CAPTURE ==
@@ -36,7 +36,7 @@ VAR AdelaineMorale = 40
 ~ ChangeVillagerMorale(2, "Adelaine")
 ~ Changematerials(-10)
 ~ ChangeBuildingProduction(1, "Smithy")
-# +2% Adelaine Morale, -10 Materials, +1 Material Production
+
 ->END
 
 == KILL ==
@@ -44,5 +44,5 @@ VAR AdelaineMorale = 40
 “Mayor, I don’t think it was smart to kill the fire elemental, it would’ve been helpful. And it was soooo cute!”
 ~ ChangeVillagerMorale(-5, "Adelaine")
 ~ Changematerials(-10)
-# -5% Adelaine Morale, -10 Materials
+
 ->END
