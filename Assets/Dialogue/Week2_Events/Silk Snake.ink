@@ -31,7 +31,7 @@ VAR troops = 50
 * [Lose] ->Lose
 
 == Trap ==
-{material >= 10: ->Trap}
+{material <= 10: ->CHOICES}
 #speaker: Lorraine #portrait: Lorraine
 “Good thing I’m an expert trap maker kid, we got the beast!”
 ~ Changematerials(-10)
@@ -41,7 +41,7 @@ VAR troops = 50
 ->END
 
 == Guard ==
-{troops >= 2: ->Guard}
+{troops <= 2: ->CHOICES}
 #speaker: Lorraine #portrait: Lorraine
 “Kid the chumps you sent last night were attacked and one was bitten by the beast before succumbing to its poison.”
 ~ Changetroops(-1)
