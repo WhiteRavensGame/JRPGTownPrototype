@@ -34,17 +34,14 @@ You ask for enough food for the village and the kobolds happily supply. The town
 The kobolds get angry at you and start insulting you, begin fighting!
 #Starts at medium difficulty fight with 2 kobolds
 
-* [Win] -> Win
-* [Lose] -> Lose
+{troops >= 10: ->Win| {troops < 10: ->Lose}}
 
 == Win ==
-{troops >= 10: ->Win}
 "Alright you FOOD HATER, we'll leave!"
 ~ Changefood(10)
 ->END 
 
 == Lose ==
-{troops < 10: ->Lose}
 “Serves you right you dumb FOOD HATER!”
 ~ Changefood(-10)
 ->END
