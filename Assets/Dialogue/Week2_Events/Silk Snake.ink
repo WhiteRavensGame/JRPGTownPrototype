@@ -30,22 +30,20 @@ VAR troops = 50
 {troops >= 5: ->Win | {troops < 5: ->Lose}}
 
 == Trap ==
-{material < 10: ->CHOICES}
 #speaker: Lorraine #portrait: Lorraine
 “Good thing I’m an expert trap maker kid, we got the beast!”
 ~ Changematerials(-10)
 ~ Changefood(5)
 ~ Changesilk(10)
-# +500 Gold
+// +500 Gold
 ->END
 
 == Guard ==
-{troops < 2: ->CHOICES}
 #speaker: Lorraine #portrait: Lorraine
 “Kid the chumps you sent last night were attacked and one was bitten by the beast before succumbing to its poison.”
 ~ Changetroops(-1)
 ~ Changesilk(-5)
-#-1 troop, -5 Silk
+//-1 troop, -5 Silk
 ->END
 
 == Win ==
@@ -53,7 +51,7 @@ VAR troops = 50
 “Good thing we were able to get rid of the beast kid, we collected more silk that it had yet to eat.”
 ~ Changesilk(10)
 ~ Changefood(5)
-#+10 Silk, +5 Food
+//+10 Silk, +5 Food
 ->END
 
 == Lose ==

@@ -39,5 +39,5 @@ VAR gold = 50
 == Fight ==
 #speaker: Will #portrait: Will
 “The creature just ran away when we tried to fight it, I don’t think we’ll find its stash.”
-#Nothing
+//Nothing
 ->END

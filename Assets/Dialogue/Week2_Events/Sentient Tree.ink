@@ -22,14 +22,14 @@ VAR food = 10
 #speaker: Narrator #portrait: Default
 The tree appreciates you being kind to it and in return makes the trees in the surrounding area grow faster, boosting the material gain.
 ~ ChangeBuildingProduction(2, "Smithy")
-# +2 Material Production
+//+2 Material Production
 ->END
 
 == CHOP ==
 #speaker: Narrator #portrait: Default
 You order the tree to be chopped down and collect the wood before selling it to a wealthy merchant.
 ~ Changegold(500)
-# +500 Gold
+// +500 Gold
 ->END
 
 == OFFERINGS ==
@@ -37,5 +37,5 @@ You order the tree to be chopped down and collect the wood before selling it to 
 You give offerings of food to the tree and in return it helps you grow trees nearby to collect.
 ~ ChangeFood(-25)
 ~ ChangeBuildingProduction(2, "Smithy")
-#-25 Food per week, +2 Material Production
+//-25 Food per week, +2 Material Production
 ->END

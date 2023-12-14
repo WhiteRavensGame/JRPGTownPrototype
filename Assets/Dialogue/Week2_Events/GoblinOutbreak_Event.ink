@@ -28,21 +28,21 @@ You have an EASY encounter with goblins and send 5 soldiers.
 #speaker: Narrator #portrait: Default
 The goblins continue hurting the mines.
 ~ Changematerials(-25)
-#-25 Materials
+//-25 Materials
 ->END
 
 == Lead_Away == 
 #speaker: Narrator #portrait: Default
 You lead the goblins away from the mines using food. But you are now safe from goblins.
 ~ Changefood(-10)
-#-10 Food
+//-10 Food
 ->END
 
 == Win ==
 #speaker: Narrator #portrait: Default
 You win the battle against the goblins.
 ~ Changegold(100)
-#+100 Gold
+//+100 Gold
 ->END
 
 == Lose ==
@@ -50,5 +50,5 @@ You win the battle against the goblins.
 You lose 5 citizens.
 ~ Changetroops(-5)
 ~ Changematerials(-25)
-#-5 troops & -25 materials
+//-5 troops & -25 materials
 ->END

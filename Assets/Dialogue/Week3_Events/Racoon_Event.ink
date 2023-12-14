@@ -17,34 +17,33 @@ VAR material = 50
 == Choices ==
  * [Drive them out.] -> Drive_out
  * [Give them supplies.] -> Give_supplies
- * [Build village.] -> Build_village
+ * {material > 24} [Build village.] -> Build_village
  #Need 25 Food
  
  
 == Choices1 ==
  * [Give them supplies] -> Give_supplies
- * [Build village] -> Build_village
+ * [Drive them out.] -> Drive_out
 
 
 == Drive_out ==
 #speaker: Narrator #portrait: Default
 You gather the town's folks to drive every single one of them out of town. But later that night they conduct one final raid at the Blacksmith’s place and steal some materials
-#-10 Materials
+//-10 Materials
 ~ Changematerials(-10)
 ->END
 
 == Give_supplies ==
 #speaker: Narrator #portrait: Default
 You give raccoons the food supplies they need, and later that evening, upon hearing a few light knocks of the door and opening it, you found a gem and a few little footprints next to it.
-#+250 Wealth
+//+250 Wealth
 ~ Changegold(250)
 ->END   
 
 == Build_village ==
-{material < 25: ->Choices}
 #speaker: Narrator #portrait: Default
 The raccoons become a part of your village. They regularly scavenge materials from different places and contribute to the material production of the village.
-#-25 materials, -250 Gold,  +8 population, +5 materials per day
+//-25 materials, -250 Gold,  +8 population, +5 materials per day
 ~ Changematerials(-25)
 ~ Changegold(-250)
 ~ Changecitizens(8)

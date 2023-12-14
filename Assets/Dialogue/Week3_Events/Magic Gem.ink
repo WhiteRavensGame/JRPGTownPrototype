@@ -1,6 +1,8 @@
 EXTERNAL ChangeVillagerMorale(value, Name)
 EXTERNAL Changegold(value)
 
+VAR gold = 10
+
 ->START
 
 == START ==
@@ -12,15 +14,15 @@ EXTERNAL Changegold(value)
 == CHOICES ==
 
  * [Loan 250 Wealth.] ->TWO_FIFTY
- * [Loan 500 Wealth.] ->FIVE_HUNDREDS
- * [Loan 1000 Wealth.] ->A_THOUSAND
+ * {gold > 499} [Loan 500 Wealth.] ->FIVE_HUNDREDS
+ * {gold > 999} [Loan 1000 Wealth.] ->A_THOUSAND
 
 == TWO_FIFTY ==
 #speaker: Lorraine #portrait: Lorraine
 “Thanks kid, this’ll help.” 
 ~ Changegold(-250)
 ~ ChangeVillagerMorale(2, "Lorraine")
-# +2% Lorraine Morale, -250 gold
+// +2% Lorraine Morale, -250 gold
 ->END
 
 == FIVE_HUNDREDS ==
@@ -28,7 +30,7 @@ EXTERNAL Changegold(value)
 “Thank you Mayor! This will help me out tremendously at the auction.”
 ~ Changegold(-500)
 ~ ChangeVillagerMorale(5, "Lorraine")
-# +5% Lorraine Morale, -500 gold
+// +5% Lorraine Morale, -500 gold
 ->END
 
 == A_THOUSAND ==
@@ -36,5 +38,5 @@ EXTERNAL Changegold(value)
 “Thank you Mayor! This will help me get the ma… special gem at he auction.”
 ~ Changegold(-1000)
 ~ ChangeVillagerMorale(10, "Lorraine")
-# +10% Lorraine Morale, -1000 gold
+// +10% Lorraine Morale, -1000 gold
 ->END

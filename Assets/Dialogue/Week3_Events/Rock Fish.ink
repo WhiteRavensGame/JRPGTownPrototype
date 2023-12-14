@@ -31,7 +31,7 @@ These fishes do last much longer than any other food, but their constant shiftin
 ~ Changefood(-10)
 ~ ChangeVillagerMorale(5, "Oscar")
 ~ ChangeVillagerMorale(-10, "Lorraine")
-# +5% Oscar morale, -10% Lorraine morale, -10 food
+// +5% Oscar morale, -10% Lorraine morale, -10 food
 ->END
 
 == Roe ==
@@ -40,7 +40,7 @@ These fishes do turn into fine rocks for crafting, but their constant shifting b
 ~ Changematerials(-10)
 ~ ChangeVillagerMorale(5, "Roe")
 ~ ChangeVillagerMorale(-10, "Lorraine")
-# +5% Roe morale, -5% Lorraine morale, -10% materials
+// +5% Roe morale, -5% Lorraine morale, -10% materials
 ->END
 
 == Lorraine ==
@@ -49,5 +49,5 @@ You also agree that the village should stay away from these strange creatures. B
 ~ ChangeVillagerMorale(-2, "Roe")
 ~ ChangeVillagerMorale(-2, "Oscar")
 ~ ChangeVillagerMorale(10, "Lorraine")
-# +10% Lorraine morale, -2% Oscar morale, -2% Roe morale
+// +10% Lorraine morale, -2% Oscar morale, -2% Roe morale
 ->END
