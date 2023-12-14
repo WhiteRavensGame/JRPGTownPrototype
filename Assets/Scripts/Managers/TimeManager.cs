@@ -34,6 +34,7 @@ public class TimeManager : MonoBehaviour
 
     public void EndDay()
     {
+        ServiceLocator.Get<SoundManager>().Play("EndDay");
         if (_hasEvent)
         {
             return;
