@@ -53,15 +53,18 @@ public class UIManager : MonoBehaviour
     {
         if (playerManager.gameState == GameStates.Paused || playerManager.gameState == GameStates.MainScreen)
         {
+
             Time.timeScale = Time.timeScale == 1 ? 0 : 1;
             _pauseScreen.SetActive(true);
 
             if (playerManager.gameState == GameStates.MainScreen)
             {
+                ServiceLocator.Get<SoundManager>().Play("PauseOpen");
                 playerManager.gameState = GameStates.Paused;
             }
             else
             {
+                ServiceLocator.Get<SoundManager>().Play("PauseClose");
                 playerManager.gameState = GameStates.MainScreen;
                 _pauseScreen.SetActive(false);
             }
@@ -71,6 +74,8 @@ public class UIManager : MonoBehaviour
     {
         if (ServiceLocator.Get<PlayerManager>().gameState == GameStates.MainScreen)
         {
+            ServiceLocator.Get<SoundManager>().Play("TopMainOpen");
+
             Debug.Log("opening citizen assignment screen");
             ServiceLocator.Get<PlayerManager>().gameState = GameStates.PanelInfo;
             _assignCitizenPanel.SetActive(true);
@@ -78,6 +83,8 @@ public class UIManager : MonoBehaviour
     }
     public void DecativeCitizenAssignmentScreen()
     {
+        ServiceLocator.Get<SoundManager>().Play("TopCloseOpen");
+
         Debug.Log("closing citizen assignment screen");
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
         _assignCitizenPanel.SetActive(false);
@@ -87,6 +94,8 @@ public class UIManager : MonoBehaviour
     {
         if (playerManager.gameState == GameStates.MainScreen)
         {
+            ServiceLocator.Get<SoundManager>().Play("TopMainOpen");
+
             Debug.Log("opening upgrade screen");
             playerManager.gameState = GameStates.PanelInfo;
             _upgradeScreen.SetActive(true);
@@ -96,6 +105,8 @@ public class UIManager : MonoBehaviour
 
     public void DeactivateUpgradeScreen()
     {
+        ServiceLocator.Get<SoundManager>().Play("TopCloseOpen");
+
         Debug.Log("closing upgrade screen");
         playerManager.gameState = GameStates.MainScreen;
         _upgradeScreen.SetActive(false);
@@ -106,6 +117,8 @@ public class UIManager : MonoBehaviour
     {
         if (playerManager.gameState == GameStates.MainScreen)
         {
+            ServiceLocator.Get<SoundManager>().Play("TopMainOpen");
+
             Debug.Log("opening character screen");
             playerManager.gameState = GameStates.PanelInfo;
             _characterScreen.SetActive(true);
@@ -114,12 +127,16 @@ public class UIManager : MonoBehaviour
 
     public void DeactivateCharacterScreen()
     {
+        ServiceLocator.Get<SoundManager>().Play("TopCloseOpen");
+
         Debug.Log("closing character screen");
         playerManager.gameState = GameStates.MainScreen;
         _characterScreen.SetActive(false);
     }
     public void ExitButton()
     {
+        ServiceLocator.Get<SoundManager>().Play("TopCloseOpen");
+
         GameLoader loader = ServiceLocator.Get<GameLoader>();
         loader.UnregisterAll();
         loader.Restart();

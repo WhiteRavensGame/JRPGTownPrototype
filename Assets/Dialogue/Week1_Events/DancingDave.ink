@@ -17,12 +17,15 @@ VAR silk = 10
 
 == CHOICES ==
 
-* [Hire Dancing Dave (If player has 100 Gold)] ->Hire
-* [Don’t hire Dancing Dave] -> Dont_hire
-* [Throw a dance party (If player has 25 Silk and 250 Gold)] -> Party
+* [Hire Dancing Dave.] ->Hire
+# Need at least 100 gold
+* [Don’t hire Dancing Dave.] -> Dont_hire
+* [Throw a dance party.] -> Party
+# Need at least 250 gold and 25 silk
 
 == Hire ==
-{gold >= 100: -> Hire}
+{gold < 100: -> CHOICES}
+#speaker: Lorraine  #portrait: Lorraine
 “This Dancing Dave guy was much better than expected, he’ll bring a lot of customers in!”
 ~ Changegold(100)
 ~ Changemorale(2)
@@ -30,6 +33,7 @@ VAR silk = 10
 ->END
 
 == Dont_hire ==
+#speaker: Lorraine  #portrait: Lorraine
 “Hey Mayor, after we said no he showed off his dance skills in the town square and said that we didn’t hire him. Some of the citizens weren’t happy.”
 ~ Changemorale (-5)
 ~ ChangeVillagerMorale(5, "Lorraine")
@@ -37,7 +41,8 @@ VAR silk = 10
 ->END
 
 == Party ==
-{gold >= 250 && silk >=25: ->Party}
+{gold < 250 && silk < 25: ->CHOICES}
+#speaker: Lorraine  #portrait: Lorraine
 “Mayor the party went amazingly! This Dancing Dave guy is really good. I guess it is in the name.”
 ~ Changemorale (5)
 ~ Changesilk(25)
