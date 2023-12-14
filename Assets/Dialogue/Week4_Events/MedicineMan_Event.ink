@@ -45,6 +45,7 @@ Later he arrives at a house whose owner is ill, and upon hearing his attempt to 
 {troops >= 10: ->Win | {troops < 10: ->Lose}}
 
 == Win ==
+#speaker: Narrator #portrait: Default
 The defeated cloaked man drops some of his stuff and runs away. The drugs he left are useless, but the silk is useful.
 
 ~ Changesilk(10)
