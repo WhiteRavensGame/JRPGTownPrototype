@@ -206,3 +206,27 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+  - Name: TopMainOpen
+    Clip: {fileID: 8300000, guid: 795c4ea2ea1ffc54982c652644a64520, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: TopCloseOpen
+    Clip: {fileID: 8300000, guid: ae46e87a1569d1b45bad01b7cc1de3d3, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: PauseOpen
+    Clip: {fileID: 8300000, guid: b190a8a5f59499f4f9204e64b9a04da9, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: PauseClose
+    Clip: {fileID: 8300000, guid: 805b9257f76a9ce47b16409048985f89, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
