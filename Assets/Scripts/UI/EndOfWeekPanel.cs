@@ -34,6 +34,8 @@ public class EndOfWeekPanel : MonoBehaviour
 
     public void EndWeek()
     {
+        ServiceLocator.Get<SoundManager>().Play("TopCloseOpen");
+
         ServiceLocator.Get<PlayerManager>().AllocatingVillagers = false;
         ServiceLocator.Get<PlayerManager>().gameState = GameStates.MainScreen;
         gameObject.SetActive(false);
