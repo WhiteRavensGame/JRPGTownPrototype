@@ -2,6 +2,8 @@ EXTERNAL ChangeBuildingProduction(value, Name)
 EXTERNAL ChangeFood(value)
 EXTERNAL Changegold(value)
 
+VAR food = 10
+
 ->START
 
 == START ==
@@ -14,7 +16,7 @@ EXTERNAL Changegold(value)
 
  * [Talk to it and be friendly.] ->TALK_FRIENDLY
  * [Chop it down for potential riches.] ->CHOP
- * [Give it offerings.] ->OFFERINGS
+ * {food > 24} [Give it offerings.] ->OFFERINGS
 
 == TALK_FRIENDLY ==
 #speaker: Narrator #portrait: Default

@@ -16,7 +16,7 @@ VAR troops = 50
 == Choices ==
  * [Send Soldiers.] -> Send_Soldiers
  * [Don't send soldiers.] -> Dont_Send
- * [Lead away from village.] -> Lead_Away
+ * {food > 9} [Lead away from village.] -> Lead_Away
  #Need 10 Food
 
 == Send_Soldiers ==
@@ -32,7 +32,6 @@ The goblins continue hurting the mines.
 ->END
 
 == Lead_Away == 
-{food < 10: ->Choices}
 #speaker: Narrator #portrait: Default
 You lead the goblins away from the mines using food. But you are now safe from goblins.
 ~ Changefood(-10)

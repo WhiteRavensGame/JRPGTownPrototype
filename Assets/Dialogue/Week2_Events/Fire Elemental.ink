@@ -15,13 +15,12 @@ You head into the Blacksmith’s shop and nearby the forge is a small, dancing f
 
 == CHOICES ==
 
- * [Befriend.] ->BEFRIEND
+ * {AdelaineMorale > 39} [Befriend.] ->BEFRIEND
  // (If Adelaine Morale >= 40)
  * [Capture.] ->CAPTURE
  * [Kill.] ->KILL
 
 == BEFRIEND ==
-{AdelaineMorale < 40: ->CHOICES}
 #speaker: Adelaine #portrait: Adelaine
 “Mayor, this is amazing! Even though it burned part of my shop, it's worth it since it’ll help me expand.”
 ~ ChangeVillagerMorale(5, "Adelaine")
