@@ -135,6 +135,8 @@ public class UIManager : MonoBehaviour
     }
     public void ExitButton()
     {
+        ServiceLocator.Get<SoundManager>().Play("TopCloseOpen");
+
         GameLoader loader = ServiceLocator.Get<GameLoader>();
         loader.UnregisterAll();
         loader.Restart();
