@@ -23,7 +23,7 @@ VAR troops = 50
 #speaker: Narrator #portrait: Default
 It turns out the medicine he offered are hard drugs that make the matters even worse after few people have taken them. 
 While the drugs are not killing anyone, the patients show some minor symptoms that are certainly not helping
-#+25 Silk, -5% Morale, -250 Gold
+
 ~ Changegold(-250)
 ~ Changesilk(25)
 ~ Changemorale(-5)
@@ -34,7 +34,7 @@ While the drugs are not killing anyone, the patients show some minor symptoms th
 You turn down the offer due to your suspicion of it, and the cloaked man leaves without saying a word. 
 However, at midnight, someone reports a village folk being missing, and the cloaked man was last seen talking with him. 
 The reason he takes a sick man with him remains unclear.
-#-1 Population
+
 ~ Changecitizens(-1)
 ->END   
 
@@ -45,8 +45,9 @@ Later he arrives at a house whose owner is ill, and upon hearing his attempt to 
 {troops >= 10: ->Win | {troops < 10: ->Lose}}
 
 == Win ==
+#speaker: Narrator #portrait: Default
 The defeated cloaked man drops some of his stuff and runs away. The drugs he left are useless, but the silk is useful.
-#+10 Silk and +2% Morale
+
 ~ Changesilk(10)
 ~ Changemorale(2)
 ->END

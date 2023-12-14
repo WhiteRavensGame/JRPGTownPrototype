@@ -7,7 +7,7 @@ VAR AdelaineMorale = 40
 
 == START ==
 #speaker: Narrator #portrait: Default
-"You head into the Blacksmith’s shop and nearby the forge is a small, dancing flame that drifts back and forth."
+You head into the Blacksmith’s shop and nearby the forge is a small, dancing flame that drifts back and forth.
 #speaker: Adelaine #portrait: Adelaine
 “Hey Mayor! Look, it’s a fire elemental! Got in this morning and saw this little guy dancing around by the forge. I think it thinks it’s its mom! Can we keep it? Please? I promise I won’t let it burn down the town when it gets older!”
 
@@ -16,7 +16,7 @@ VAR AdelaineMorale = 40
 == CHOICES ==
 
  * [Befriend.] ->BEFRIEND
- // (If Adelaine Morale > 40)
+ // (If Adelaine Morale >= 40)
  * [Capture.] ->CAPTURE
  * [Kill.] ->KILL
 

@@ -9,7 +9,7 @@ VAR material = 50
 == Start ==
 Adelaine: "Boss! I went out back of my shop and found a bunch of racoons going through the trash."
 "What should we do with them?"
-
+{material < 25: ->Choices1}
 -> Choices
 
 == Choices ==
@@ -17,6 +17,12 @@ Adelaine: "Boss! I went out back of my shop and found a bunch of racoons going t
  * [Give them supplies] -> Give_supplies
  * [Build village] -> Build_village
  #Need 25 Food
+ 
+ 
+== Choices1 ==
+ * [Give them supplies] -> Give_supplies
+ * [Build village] -> Build_village
+
 
 == Drive_out ==
 You gather the town's folks to drive every single one of them out of town. But later that night they conduct one final raid at the Blacksmith’s place and steal some materials

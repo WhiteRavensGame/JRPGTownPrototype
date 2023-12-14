@@ -20,7 +20,7 @@ VAR gold = 50
  * [Fight Ferret.] ->Fight
 
 == Tame ==
-{gold <= 1000: ->CHOICES}
+{gold < 1000: ->CHOICES}
 #speaker: Will #portrait: Will
 “Wow, Mayor… I usually don’t have this much gold on hand so it never came up to me in the first place. With this guy here it adds another reason for travelers to stop by!”
 ~ Changefood(-5)
