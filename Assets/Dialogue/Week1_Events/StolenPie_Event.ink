@@ -11,10 +11,12 @@ Who is it?
 -> Choices
 
 == Choices ==
-#speaker: Narrator  #portrait: Default
-Lergon Jeffors: He loves our pies and always jokes about how he can smell them from his window across the street.
-Mr. Martin Martins: Walks by our pie cooling window on his daily walk, he also stole a fork from us once. He claimed that he just forgot it in his pocket when he left so that case is still wide open. 
-Peter the Thief: His name is Peter the Thief, it just seems like good practice to consider the town thief in the case of something stolen. 
+#speaker: Lergon Jeffors  #portrait: Default
+"He loves our pies and always jokes about how he can smell them from his window across the street."
+#speaker: Mr. Martin Martins  #portrait: Default
+"Walks by our pie cooling window on his daily walk, he also stole a fork from us once. He claimed that he just forgot it in his pocket when he left so that case is still wide open."
+#speaker: Peter The Thief  #portrait: Default
+"His name is Peter the Thief, it just seems like good practice to consider the town thief in the case of something stolen."
 
 
  * [Lergon Jeffors.] -> Lergon

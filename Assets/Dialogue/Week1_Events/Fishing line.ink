@@ -1,6 +1,7 @@
 EXTERNAL Changefood(value)
 EXTERNAL Changesilk(value)
 EXTERNAL ChangeVillagerMorale(value, Name)
+VAR silk = 10
 
 ->START
 
@@ -12,9 +13,9 @@ EXTERNAL ChangeVillagerMorale(value, Name)
 
 == CHOICES ==
 
- * [Give 5 silk.] ->Five
- * [Give 10 silk.] ->Ten
- * [Give 25 silk.] ->Twenty_five
+ * {silk > 4} [Give 5 silk.] ->Five
+ * {silk > 9} [Give 10 silk.] ->Ten
+ * {silk > 24} [Give 25 silk.] ->Twenty_five
 
 == Five ==
 #speaker: Oscar  #portrait: Oscar

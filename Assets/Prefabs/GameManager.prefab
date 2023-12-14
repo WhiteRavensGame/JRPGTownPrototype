@@ -202,7 +202,7 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Name: New_Event
     Clip: {fileID: 8300000, guid: 616cf7f5cffb52e4caa0df9070ee4067, type: 3}
-    Volume: 1
+    Volume: 0.75
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
@@ -228,5 +228,11 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 805b9257f76a9ce47b16409048985f89, type: 3}
     Volume: 1
     Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: EndDay
+    Clip: {fileID: 8300000, guid: b68a723e6d753ba43906afc1b0e79fbd, type: 3}
+    Volume: 1
+    Pitch: 0.85
     Loop: 0
     Source: {fileID: 0}
