@@ -28,7 +28,7 @@ Who is it?
 It was not Lergon and he is very offended you thought it was him.
 ...Yeah it was Peter the thief.
 ~ Changemorale(-5)
-#-5% morale
+//-5% morale
 ->END
 
 == Martin ==
@@ -36,12 +36,12 @@ It was not Lergon and he is very offended you thought it was him.
 It was not Mr. Martin and he is offended you thought it was him.
 ...Yeah it was Peter the thief.
 ~ Changemorale(-5)
-#-5% morale
+//-5% morale
 ->END
 
 == Peter ==
 #speaker: Narrator  #portrait: Default
 It was Peter the Thief, who would've thought.
 ~ Changemorale(5)
-#+5% morale
+//+5% morale
 ->END

@@ -28,7 +28,7 @@ VAR silk = 10
 “This Dancing Dave guy was much better than expected, he’ll bring a lot of customers in!”
 ~ Changegold(-100)
 ~ Changemorale(2)
-#-100 Gold, +2% Morale
+//-100 Gold, +2% Morale
 ->END
 
 == Dont_hire ==
@@ -36,7 +36,7 @@ VAR silk = 10
 “Hey Mayor, after we said no he showed off his dance skills in the town square and said that we didn’t hire him. Some of the citizens weren’t happy.”
 ~ Changemorale (-5)
 ~ ChangeVillagerMorale(5, "Lorraine")
-#-5% Morale, +5 Lorraine Morale
+//-5% Morale, +5 Lorraine Morale
 ->END
 
 == Party ==
@@ -50,5 +50,5 @@ VAR silk = 10
 ~ ChangeVillagerMorale(2, "Will")
 ~ ChangeVillagerMorale(2, "Adelaine")
 ~ ChangeVillagerMorale(2, "Roe")
-#+5% Morale, -25 Silk, -250 Gold +2 Every character’s morale.
+//+5% Morale, -25 Silk, -250 Gold +2 Every character’s morale.
 ->END
