@@ -1,4 +1,5 @@
 EXTERNAL ChangeBuildingProduction(value, Name)
+EXTERNAL ChangeFood(value)
 EXTERNAL Changegold(value)
 
 ->START
@@ -32,7 +33,7 @@ EXTERNAL Changegold(value)
 == OFFERINGS ==
 #speaker: Narrator #portrait: Default
 "You give offerings of food to the tree and in return it helps you grow trees nearby to collect."
-~ ChangeBuildingProduction(-25, "Fishery")
+~ ChangeFood(-25)
 ~ ChangeBuildingProduction(2, "Smithy")
 #-25 Food per week, +2 Material Production
 ->END
