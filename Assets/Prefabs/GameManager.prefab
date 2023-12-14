@@ -119,7 +119,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 0}
   _weekOneTexts:
-  - {fileID: 4900000, guid: d4dfc92f447040c4096b9e8c2d78b95b, type: 3}
   - {fileID: 4900000, guid: 03cfd75bce827d747816a3f382ee51e3, type: 3}
   - {fileID: 4900000, guid: 1df7acdcdd61b3340b4470f1ad6e4302, type: 3}
   - {fileID: 4900000, guid: 588033abe529d5e4998f6004667721f4, type: 3}
@@ -142,7 +141,6 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 65f7a88ffd5a303469dae12c9cf4bebb, type: 3}
   - {fileID: 4900000, guid: 144c10613d20b7e4cb60fcbc9d59ccd5, type: 3}
   - {fileID: 4900000, guid: 8e381d0e74c7d964a91bf973453f1855, type: 3}
-  - {fileID: 4900000, guid: 7f8727c2f49b1bf4a8480f10358f1fef, type: 3}
   - {fileID: 4900000, guid: 7f75fe536d225be4aa96520cafefe0cf, type: 3}
   - {fileID: 4900000, guid: 94fbb7f8e67645a40bfd50fea8eb9e2c, type: 3}
   - {fileID: 4900000, guid: dc665e4be48fed94dbbdd9cc182466ab, type: 3}
