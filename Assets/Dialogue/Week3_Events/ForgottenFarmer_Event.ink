@@ -8,18 +8,21 @@ VAR troopsAssigned = 50
 -> Start
 
 == Start ==
-Lorraine: "Hey youngun, there’s a group of farmers at the gate. Those poor fellows had their homes destroyed by a pack of orcs and was wondering if we could let them stay for a few nights."
+#speaker: Lorraine #portrait: Lorraine
+"Hey youngun, there’s a group of farmers at the gate. Those poor fellows had their homes destroyed by a pack of orcs and was wondering if we could let them stay for a few nights."
+#speaker: Lorraine #portrait: Lorraine
 "Maybe you should go talk with them and decide whether to let them or not, and also to know what was going on with the orcs."
 
 -> Choices
 
 == Choices ==
- * [Help them] -> Help
- * [Don't help] -> No_Help
- * [Engaging the orcs] -> Ask
+ * [Help them.] -> Help
+ * [Don't help.] -> No_Help
+ * [Engaging the orcs.] -> Ask
 
 
 == Help ==
+#speaker: Narrator #portrait: Default
 Out of sympathy, you let them stay for a few nights for free, and they are full of gratitude
 ~ ChangeVillagerMorale(5, "Lorraine")
 ~ Changefood(-10)
@@ -27,16 +30,19 @@ Out of sympathy, you let them stay for a few nights for free, and they are full 
 ->END
 
 == No_Help ==
+#speaker: Narrator #portrait: Default
 At this critical time when the two kingdoms are at the brink of war, there really is no spare resources to share with outsiders. Thus, despite that they may not last long out there, they can’t stay in the village
 ~ ChangeVillagerMorale(-5, "Lorraine")
 ->END   
 
 == Ask ==
+#speaker: Narrator #portrait: Default
 You ask the farmers to describe the traits of the orcs and how they invaded their farms. With the descriptions from them, you are eventually able to track down the orcs and decide to fight a HARD battle against them.
 {troopsAssigned >= 15: ->Win | {troopsAssigned < 15: ->Lose}}
 
 
 == Win ==
+#speaker: Narrator #portrait: Default
 You win against the orcs, regaining the farmers food and also the orc's wealth.
 #+25 Food, and +500 Weath
 ~ Changefood(25)
@@ -45,6 +51,7 @@ You win against the orcs, regaining the farmers food and also the orc's wealth.
 ->END
 
 == Lose ==
+#speaker: Narrator #portrait: Default
 You lose troops during the battle against the orcs.
 #-5 troops
 ~ Changematerials(-5)

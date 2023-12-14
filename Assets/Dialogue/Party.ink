@@ -53,7 +53,7 @@ When comes the time of the representation, Oscar seems exceedingly uncomfortable
 
 == Adelaine_higher_thirty ==
 {AdelaineMorale >= 30: ->Adelaine_higher_thirty}
-Adelaine agrees to sing at the party and though her voice isn’t amazing, the fervor with which she sings enraptures will, and the rest of the villager. Everyone has a great time.
+Adelaine agrees to sing at the party and though her voice isn’t amazing, the fervor with which she sings enraptures Will, and the rest of the villager. Everyone has a great time.
 ~ ChangeVillagerMorale(5, "Will")
 ~ Changemorale(5)
 ~ ChangeBuildingProduction(2, "Tavern")

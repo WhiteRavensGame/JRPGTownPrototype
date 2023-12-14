@@ -27,11 +27,10 @@ VAR troops = 50
 == Fight ==
 #speaker: Lorraine #portrait: Lorraine
 “Good thing we were able to get rid of the beast kid, we collected more silk that it had yet to eat.”
-* [Win] ->Win
-* [Lose] ->Lose
+{troops >= 5: ->Win | {troops < 5: ->Lose}}
 
 == Trap ==
-{material <= 10: ->CHOICES}
+{material < 10: ->CHOICES}
 #speaker: Lorraine #portrait: Lorraine
 “Good thing I’m an expert trap maker kid, we got the beast!”
 ~ Changematerials(-10)
@@ -41,7 +40,7 @@ VAR troops = 50
 ->END
 
 == Guard ==
-{troops <= 2: ->CHOICES}
+{troops < 2: ->CHOICES}
 #speaker: Lorraine #portrait: Lorraine
 “Kid the chumps you sent last night were attacked and one was bitten by the beast before succumbing to its poison.”
 ~ Changetroops(-1)
@@ -50,7 +49,6 @@ VAR troops = 50
 ->END
 
 == Win ==
-{troops >= 5: ->Win}
 #speaker: Lorraine #portrait: Lorraine
 “Good thing we were able to get rid of the beast kid, we collected more silk that it had yet to eat.”
 ~ Changesilk(10)
@@ -59,7 +57,6 @@ VAR troops = 50
 ->END
 
 == Lose ==
-{troops < 5: ->Lose}
 #speaker: Lorraine #portrait: Lorraine
 “The beast got away and wrecked part of the worm farm in the process. Don’t be sad. These things happen.”
 ~ Changesilk(-5)

@@ -122,6 +122,8 @@ public class RoundTable : MonoBehaviour
 
     public void Continue()
     {
+        ServiceLocator.Get<SoundManager>().Play("Yes");
+
         gameObject.SetActive(false);
         decisionScene.gameObject.SetActive(true);
     }

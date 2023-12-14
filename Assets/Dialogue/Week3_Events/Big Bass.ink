@@ -7,7 +7,8 @@ VAR troopsAssigned = 50
 ->START
 
 == START ==
-Oscar: “Mayor. Big bass has shown up in the river. Been eating all the fish. Could even call it a boss. Need to do something about it.”
+#speaker: Oscar #portrait: Oscar
+“Mayor. Big bass has shown up in the river. Been eating all the fish. Could even call it a boss. Need to do something about it.”
 
 ->CHOICES
 
@@ -21,6 +22,7 @@ Oscar: “Mayor. Big bass has shown up in the river. Been eating all the fish. C
 {troopsAssigned >= 5: ->Win | {troopsAssigned < 5: ->Lose}}
 
 == Win ==
+#speaker: Oscar #portrait: Oscar
 “Hm. That’s a lot of food. Good work.”
 ~ Changefood(10)
 ~ ChangeVillagerMorale(5, "Oscar")
@@ -28,6 +30,7 @@ Oscar: “Mayor. Big bass has shown up in the river. Been eating all the fish. C
 ->END
 
 == Lose ==
+#speaker: Oscar #portrait: Oscar
 “That’s a setback.”
 ~ Changefood(-10)
 ~ Changetroops(-3)
@@ -36,6 +39,7 @@ Oscar: “Mayor. Big bass has shown up in the river. Been eating all the fish. C
 ->END
 
 == FISH ==
+#speaker: Oscar #portrait: Oscar
 “We got it. Ate up all our damn bait but we got it."
 ~ Changefood(5)
 ~ ChangeVillagerMorale(2, "Oscar")
@@ -43,6 +47,7 @@ Oscar: “Mayor. Big bass has shown up in the river. Been eating all the fish. C
 ->END
 
 == DO_NOTHING ==
+#speaker: Oscar #portrait: Oscar
 “Bloody fish ate up all the fish for a whole week. Even destroyed a portion of the docks, have to fix it. Finally gone though.”
 ~ Changefood(-10)
 ~ Changematerials(-5)
