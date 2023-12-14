@@ -55,7 +55,7 @@ public class GameLoader : AsyncLoader
 
         // Setup System GameObject
         GameObject systemsGO = new GameObject("[Systems]");
-        _systemsParent = systemsGO.transform;
+        _systemsParent = systemsGO.transform;;
         DontDestroyOnLoad(systemsGO);
 
         // Queue up loading routines
@@ -117,34 +117,12 @@ public class GameLoader : AsyncLoader
         Debug.Log("GameLoader Starting Scene Load");
         yield return SceneManager.LoadSceneAsync(index);
     }
-
-    public void UnregisterAll()
+    
+    public void Exit()
     {
-        ServiceLocator.Unregister<SaveSystem>();
-        ServiceLocator.Unregister<VillageManager>();
-        ServiceLocator.Unregister<ResourceManager>();
-        ServiceLocator.Unregister<EarningsManager>();
-        ServiceLocator.Unregister<PlayerManager>();
-        ServiceLocator.Unregister<EventManager>();
-        ServiceLocator.Unregister<ReputationManager>();
-        ServiceLocator.Unregister<MainDialogue>();
-        ServiceLocator.Unregister<TimeManager>();
-        ServiceLocator.Unregister<PrefabManager>();
-        ServiceLocator.Unregister<SaveManager>();
-        ServiceLocator.Unregister<VillageInitialization>();
-        ServiceLocator.Unregister<EndOfWeekPanel>();
-        ServiceLocator.Unregister<GameManager>();
-
+        ServiceLocator.UnregisterAll();
         Destroy(_systemsParent.gameObject);
-        Destroy(ServiceLocator.Get<GodModifier>().gameObject);
-
-        ServiceLocator.Unregister<GodModifier>();
-    }
-
-    public void Restart()
-    {
+        Destroy(gameObject);
         SceneManager.LoadScene(0);
-        Initialize();
-        _instance = null;
     }
 }
