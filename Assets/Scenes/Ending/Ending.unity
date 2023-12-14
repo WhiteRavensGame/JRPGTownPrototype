@@ -820,7 +820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49e91e5150c3214884daf3fce7c55fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuScene: SaveScene
+  menuScene: Credits
 --- !u!4 &1667623625
 Transform:
   m_ObjectHideFlags: 0

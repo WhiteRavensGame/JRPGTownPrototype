@@ -152,6 +152,8 @@ public class MainDialogue : MonoBehaviour
 
     public void ChooseOption(int index)
     {
+        ServiceLocator.Get<SoundManager>().Play("ChooseOption");
+
         CheckAnswers(false);
         _currentStory.ChooseChoiceIndex(index);
 
