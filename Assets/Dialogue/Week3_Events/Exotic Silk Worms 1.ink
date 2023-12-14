@@ -5,9 +5,7 @@ VAR gold = 500
 ->START
 
 == START ==
-Exotic Silk Worms
-
-Lorraine:
+#speaker: Lorraine #portrait: Lorraine
 “Kid, I just got a shipment of exotic silk worms from a far away friend and I’m stuck on deciding on how I should incorporate them into my farm.”
 
 ->CHOICES
@@ -22,6 +20,7 @@ Lorraine:
 
 == Cultivate ==
 {gold < 250: ->CHOICES}
+#speaker: Lorraine #portrait: Lorraine
 “Sir, the smaller boats gave us more materials to work with but I do think our fishing abilities have been limited.”
 ~ Changegold(-250)
 ~ ChangeSilkFarmProduction(1)
@@ -29,12 +28,14 @@ Lorraine:
 
 == Crossbreed ==
 {gold < 500: ->CHOICES}
+#speaker: Lorraine #portrait: Lorraine
 “Sir, the boats that have sails seem to be working much better since we save more time traveing through the river.”
 ~ Changegold(-500)
 ~ ChangeSilkFarmProduction(2)
 ->END
 
 == Pure ==
+#speaker: Lorraine #portrait: Lorraine
 “Sir, the larger boats have taken up a lot of materials but we’ve been able to collect much more fish at a time because of it.”
 # Nothing happens
 ->END
