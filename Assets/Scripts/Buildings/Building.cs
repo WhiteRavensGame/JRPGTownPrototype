@@ -66,7 +66,7 @@ public class Building : MonoBehaviour
 
     public KeyValuePair<Resources, int> GetBuildingsEarnings()
     {
-        if(RestingDaysLeft > 0)
+        if (RestingDaysLeft > 0)
         {
             --RestingDaysLeft;
             return new KeyValuePair<Resources, int>(buildingLevelInfo.getResources, 0);
@@ -161,7 +161,10 @@ public class Building : MonoBehaviour
         }
         else
         {
-            _currentPeople.RemoveAt(0);
+            if (_currentPeople.Count > 0)
+            {
+                _currentPeople.RemoveAt(0);
+            }
         }
     }
 
@@ -206,7 +209,7 @@ public class Building : MonoBehaviour
     {
         _hasFixedEarnings = true;
         _dailyEarnings = val;
-        _fixedProductionDailyCount = hasFixedTime ? 5: 20;
+        _fixedProductionDailyCount = hasFixedTime ? 5 : 20;
     }
 
     public void Load()
