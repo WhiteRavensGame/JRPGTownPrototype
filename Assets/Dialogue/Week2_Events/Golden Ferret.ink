@@ -14,13 +14,12 @@ VAR gold = 50
 
 == CHOICES ==
 
- * [Help tame Ferret.] ->Tame
+ * {gold > 999} [Help tame Ferret.] ->Tame
  //(1000 Gold required)
  * [Find its lair.] ->Find
  * [Fight Ferret.] ->Fight
 
 == Tame ==
-{gold < 1000: ->CHOICES}
 #speaker: Will #portrait: Will
 “Wow, Mayor… I usually don’t have this much gold on hand so it never came up to me in the first place. With this guy here it adds another reason for travelers to stop by!”
 ~ Changefood(-5)

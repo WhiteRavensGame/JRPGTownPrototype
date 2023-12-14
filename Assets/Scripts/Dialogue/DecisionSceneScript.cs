@@ -129,6 +129,8 @@ public class DecisionSceneScript : MonoBehaviour
     {
         if (_currentStory.currentChoices.Count > 0)
         {
+            ServiceLocator.Get<SoundManager>().Play("Choose");
+
             _leftClick.Disable();
             _leftClick.performed -= OnClick;
             _currentStory.ChooseChoiceIndex(index);

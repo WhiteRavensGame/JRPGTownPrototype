@@ -19,9 +19,9 @@ VAR troops = 50
 == CHOICES ==
 
  * [Fight the Snake.] ->Fight
- * [Trap the Snake.] ->Trap
+ * {material > 9} [Trap the Snake.] ->Trap
  //(10 Materials required)
- * [Send guards at night.] ->Guard
+ * {troops > 1} [Send guards at night.] ->Guard
  //(2 Troops required)
 
 == Fight ==

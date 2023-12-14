@@ -14,7 +14,7 @@ VAR food = 10
 == Choices ==
  * [Welcome Frog.] -> Welcome_Frog
  * [Kick the frog out.] -> Kick_Frog
- * [Recruit Frog.] -> Recruit_Frog 
+ * {food > 24} [Recruit Frog.] -> Recruit_Frog 
  #Need 25 Food
 
 == Welcome_Frog ==
@@ -33,7 +33,6 @@ You kick the frog out of your town and you make it angry. The frog steals fish f
 ->END
 
 == Recruit_Frog ==
-{food < 25: ->Choices}
 #speaker: Narrator #portrait: Default
 You recruit the frog giving it 25 food and recieving a new villager. The fisherman recieves a new teacher.
 ~ Changefood(-25)
