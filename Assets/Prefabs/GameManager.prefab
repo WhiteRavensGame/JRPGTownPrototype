@@ -200,8 +200,8 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
-  - Name: Yes
-    Clip: {fileID: 8300000, guid: dca3084cb66e8824bab682c584bec504, type: 3}
+  - Name: New_Event
+    Clip: {fileID: 8300000, guid: 616cf7f5cffb52e4caa0df9070ee4067, type: 3}
     Volume: 1
     Pitch: 1
     Loop: 0
