@@ -139,7 +139,6 @@ MonoBehaviour:
   _weekThreeTexts:
   - {fileID: 4900000, guid: c0c2d04972c1df84a8dc5cba12838e7c, type: 3}
   - {fileID: 4900000, guid: 65f7a88ffd5a303469dae12c9cf4bebb, type: 3}
-  - {fileID: 4900000, guid: 144c10613d20b7e4cb60fcbc9d59ccd5, type: 3}
   - {fileID: 4900000, guid: 8e381d0e74c7d964a91bf973453f1855, type: 3}
   - {fileID: 4900000, guid: 7f75fe536d225be4aa96520cafefe0cf, type: 3}
   - {fileID: 4900000, guid: 94fbb7f8e67645a40bfd50fea8eb9e2c, type: 3}
