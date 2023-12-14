@@ -10,7 +10,7 @@ public class TheEnd : MonoBehaviour
 
     public void LoadMenu()
     {
-        File.Delete("Saves/RMsave.doNotOpen");
+        File.Delete("RMsave.doNotOpen");
         SceneManager.LoadScene(menuScene);
     }
 }
