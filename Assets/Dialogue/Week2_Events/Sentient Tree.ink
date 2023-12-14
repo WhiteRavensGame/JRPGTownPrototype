@@ -1,5 +1,5 @@
 EXTERNAL ChangeBuildingProduction(value, Name)
-EXTERNAL ChangeFood(value)
+EXTERNAL Changefood(value)
 EXTERNAL Changegold(value)
 
 VAR food = 10
@@ -35,7 +35,7 @@ You order the tree to be chopped down and collect the wood before selling it to 
 == OFFERINGS ==
 #speaker: Narrator #portrait: Default
 You give offerings of food to the tree and in return it helps you grow trees nearby to collect.
-~ ChangeFood(-25)
+~ Changefood(-25)
 ~ ChangeBuildingProduction(2, "Smithy")
 //-25 Food per week, +2 Material Production
 ->DONE
