@@ -1,4 +1,3 @@
-EXTERNAL ChangeSilkProduction(value)
 EXTERNAL Changegold(value)
 EXTERNAL Changefood(value)
 EXTERNAL Changesilk(value)
@@ -57,7 +56,6 @@ VAR troops = 50
 == Lose ==
 #speaker: Lorraine #portrait: Lorraine
 “The beast got away and wrecked part of the worm farm in the process. Don’t be sad. These things happen.”
-~ Changesilk(-5)
-~ ChangeSilkProduction(-1)
+~ Changesilk(-10)
 #-5 Silk, -1 Silk Production
 ->END 
