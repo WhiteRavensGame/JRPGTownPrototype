@@ -25,7 +25,7 @@ VAR gold = 10
 ~ ChangeBuildingProduction(1, "Smithy")
 ~ Changegold(-250)
 ~ ChangeVillagerMorale(5, "Adelaine")
-#+1 Blacksmith Production, -250 Gold, +5 Adelaine Morale
+//+1 Blacksmith Production, -250 Gold, +5 Adelaine Morale
 ->END
 
 == Seek ==
@@ -34,11 +34,11 @@ VAR gold = 10
 ~ ChangeBuildingProduction(1, "Smithy")
 ~ Changegold(-500)
 ~ ChangeVillagerMorale(-5, "Adelaine")
-#+1 Blacksmith Production, -500 Gold, -5 Adelaine Morale
+//+1 Blacksmith Production, -500 Gold, -5 Adelaine Morale
 ->END
 
 == Known ==
 #speaker: Adelaine  #portrait: Adelaine
 “Mayor, the alloys are still working as normal so don’t worry. No new alloys but the old ones were my old man’s so I’m still happy to use them.”
-#Nothing
+//Nothing
 ->END
