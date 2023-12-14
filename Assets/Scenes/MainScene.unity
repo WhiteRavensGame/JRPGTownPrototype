@@ -1041,6 +1041,10 @@ PrefabInstance:
       propertyPath: _buildingUpgrade
       value: 
       objectReference: {fileID: 1774100849}
+    - target: {fileID: 305422813578570865, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+      propertyPath: buildingSaveName
+      value: Mine
+      objectReference: {fileID: 0}
     - target: {fileID: 324834977357102837, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1081,6 +1085,10 @@ PrefabInstance:
       propertyPath: _buildingUpgrade
       value: 
       objectReference: {fileID: 1774100853}
+    - target: {fileID: 689960598412797636, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+      propertyPath: buildingSaveName
+      value: Inn
+      objectReference: {fileID: 0}
     - target: {fileID: 689960598412797637, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
       propertyPath: m_SortingOrder
       value: -1
@@ -1345,6 +1353,10 @@ PrefabInstance:
       propertyPath: _buildingUpgrade
       value: 
       objectReference: {fileID: 1774100848}
+    - target: {fileID: 2648660780776746437, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+      propertyPath: buildingSaveName
+      value: Worm
+      objectReference: {fileID: 0}
     - target: {fileID: 2648660780776746439, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1549,6 +1561,10 @@ PrefabInstance:
       propertyPath: _buildingUpgrade
       value: 
       objectReference: {fileID: 1774100852}
+    - target: {fileID: 4212481761657774905, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+      propertyPath: buildingSaveName
+      value: Smith
+      objectReference: {fileID: 0}
     - target: {fileID: 4280070438538618583, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
@@ -1661,6 +1677,10 @@ PrefabInstance:
       propertyPath: _buildingUpgrade
       value: 
       objectReference: {fileID: 1774100851}
+    - target: {fileID: 4829521067068518785, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+      propertyPath: buildingSaveName
+      value: Silk
+      objectReference: {fileID: 0}
     - target: {fileID: 4829521067068518847, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.74
@@ -2025,6 +2045,10 @@ PrefabInstance:
       propertyPath: _buildingUpgrade
       value: 
       objectReference: {fileID: 1774100850}
+    - target: {fileID: 8941871664826976483, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
+      propertyPath: buildingSaveName
+      value: Fish
+      objectReference: {fileID: 0}
     - target: {fileID: 8992713501092468399, guid: c9df5711bb5cc9749bf42abf5118d23f, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
