@@ -22,7 +22,7 @@ VAR silk = 10
 "Thanks, Mayor. That’ll do."
 ~ Changefood(5)
 ~ Changesilk(-5)
-->END
+->DONE
 
 == Ten ==
 #speaker: Oscar  #portrait: Oscar
@@ -30,7 +30,7 @@ VAR silk = 10
 ~ Changefood(10)
 ~ Changesilk(-10)
 ~ ChangeVillagerMorale(2, "Oscar")
-->END
+->DONE
 
 == Twenty_five ==
 #speaker: Oscar  #portrait: Oscar
@@ -38,4 +38,4 @@ VAR silk = 10
 ~ Changefood(25)
 ~ Changesilk(-25)
 ~ ChangeVillagerMorale(5, "Oscar")
-->END
+->DONE
