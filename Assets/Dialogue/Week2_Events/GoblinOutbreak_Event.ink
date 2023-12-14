@@ -33,7 +33,7 @@ VAR troops = 50
 ->END
 
 == Lead_Away == 
-{food >= 10: ->Lead_Away}
+{food <= 10: ->Choices}
 #speaker: Narrator #portrait: Default
 "You lead the goblins away from the mines using food. But you are now safe from goblins."
 ~ Changefood(-10)
