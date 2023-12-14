@@ -7,6 +7,7 @@ EXTERNAL Changematerials(value)
 EXTERNAL ChangeVillagerMorale(value, Name)
 VAR morale = 65
 VAR troops = 50
+VAR gold = 10
 
 ->START
 
@@ -14,14 +15,13 @@ VAR troops = 50
 #speaker: Will #portrait: Will
 Will: “Hey Mayor, a band of noble merchants from the capital are passing by and demand for the finest, most luxurious service we can provide. I’d say this is a good opportunity to connect with the noble class from the capital so they may consider supporting our village later. ”
 
-
 ->CHOICES
 
 == CHOICES ==
 
- * [Provide luxury service for the merchants.] ->Provide
+ * {gold > 499} [Provide luxury service for the merchants.] ->Provide
  * [Refuse the merchants’ demands.] ->Refuse
- * [Kidnap the merchants and demand for ransom from the capital.] ->Kidnap 
+ * {morale > 64 and troops > 7} [Kidnap the merchants and demand for ransom from the capital.] ->Kidnap 
  # if Morale >= 65% and Troops >= 8
 
 ->DONE
@@ -61,7 +61,6 @@ You mobilize a rescue team to fight the merchants and try to save your citizens,
 ->END
 
 == Kidnap ==
-{morale < 65 && troops < 8: ->CHOICES}
 # if Morale >= 65% and Troops >= 8
 #speaker: Narrator #portrait: Default
 With the help of the villagers, you successfully lock the merchants up at night and put them into good use.

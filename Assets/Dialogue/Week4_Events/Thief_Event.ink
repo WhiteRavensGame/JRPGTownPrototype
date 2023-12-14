@@ -19,7 +19,7 @@ You and Oscar eventually track down the thief’s hideout, and discover that he 
 == Choices ==
  * [Let it pass] -> Let_pass
  * [Laws & Discipline] -> Discipline
- * [Donation] -> Donation
+ * {gold > 499} [Donation] -> Donation
  # Need at least 500 gold
 
 == Let_pass ==
@@ -42,7 +42,6 @@ Despite the thief’s begging, you compel him to spill what he has stolen
 #speaker: Narrator #portrait: Default
 You decide to donate some gold to the family and also hire a doctor for them. But at the same time, you tell the thief to never steal again
 
-{gold < 500: ->Choices}
 ~ Changegold(-500)
 ~ ChangeVillagerMorale(10, "Oscar")
 ~ Changecitizens(5)

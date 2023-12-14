@@ -14,14 +14,13 @@ VAR gold = 500
 
 == CHOICES ==
 
- * [Invest in safety equipment.] ->Invest
+ * {gold > 499} [Invest in safety equipment.] ->Invest
  # Need at least 500 gold
- * [Ventilate the mine shaft.] ->Ventilate
+ * {gold > 249} [Ventilate the mine shaft.] ->Ventilate
  # Need at least 250 gold
  * [Seal the mine shaft] ->Seal
 
 == Invest ==
-{gold < 500: ->CHOICES}
 #speaker: Roe #portrait: Roe
 “Boss y’know I like the helmets and the safety gear but it really gets in the way of my dirt munching. But thanks anyways!”
 ~ Changegold(-500)
@@ -30,7 +29,6 @@ VAR gold = 500
 ->END
 
 == Ventilate ==
-{gold < 250: ->CHOICES}
 #speaker: Roe #portrait: Roe
 “It smells much better in here now Boss even though I love the smell of the earth too. One guy liked the gas smell though and keeled over earlier but that’s ok.”
 ~ Changegold(-500)
