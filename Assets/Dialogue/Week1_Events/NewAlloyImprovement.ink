@@ -13,28 +13,26 @@ VAR gold = 10
 
 == CHOICES ==
 
-* [Fund Adelaine’s research.] ->Fund
+* {gold > 249} [Fund Adelaine’s research.] ->Fund
 # Need at least 250 gold
-* [Seek external expertise.]  ->Seek
+* {gold > 499} [Seek external expertise.]  ->Seek
 # Need at least 500 gold
 * [Stick to known alloys.] ->Known
 
 == Fund ==
-{gold < 250: ->CHOICES}
 #speaker: Adelaine  #portrait: Adelaine
 “Thank you so much, Mayor! You have no idea how great this will be for the town!”
 ~ ChangeBuildingProduction(1, "Smithy")
-~ Changegold (-250)
+~ Changegold(-250)
 ~ ChangeVillagerMorale(5, "Adelaine")
 #+1 Blacksmith Production, -250 Gold, +5 Adelaine Morale
 ->END
 
 == Seek ==
-{gold < 500: ->CHOICES}
 #speaker: Adelaine  #portrait: Adelaine
 “Mayor, I told you my idea was good! Now we’re just going to do the same thing but waste more money in the process.”
 ~ ChangeBuildingProduction(1, "Smithy")
-~ Changegold (-500)
+~ Changegold(-500)
 ~ ChangeVillagerMorale(-5, "Adelaine")
 #+1 Blacksmith Production, -500 Gold, -5 Adelaine Morale
 ->END

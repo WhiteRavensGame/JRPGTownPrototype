@@ -3,6 +3,9 @@ EXTERNAL Changefood(value)
 EXTERNAL Changetroops(value)
 EXTERNAL Changegold(value)
 
+VAR food = 10
+VAR material = 10
+
 -> Start
 
 == Start ==
@@ -16,8 +19,8 @@ A band of heroes have come to stay in Steadville, they search for quests and for
 -> Choices
 
 == Choices ==
- * [Keep them in town.] -> Keep
- * [Direct them to the blacksmith.] -> Direct
+ * {food > 4} [Keep them in town.] -> Keep
+ * {material > 4} [Direct them to the blacksmith.] -> Direct
  * [Tell them to leave.] -> Turn_down
 
 == Keep ==

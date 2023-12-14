@@ -4,6 +4,11 @@ EXTERNAL Changematerials(value)
 EXTERNAL Changefood(value)
 EXTERNAL Changemorale(value)
 
+
+VAR food = 10
+VAR material = 10
+VAR silk = 10
+
 ->START
 
 == START ==
@@ -17,9 +22,9 @@ What do you want to do?
 
 == CHOICES ==
 
- * [Build a stage for Wymm.] ->Help
+ * {material > 4} [Build a stage for Wymm.] ->Help
  * [Tell Wymm to Leave.] ->Leave
- * [Let him perform in the Inn.] ->Inn
+ * {silk > 4 and food > 4} [Let him perform in the Inn.] ->Inn
 
 == Help ==
 #speaker: Narrator  #portrait: Default
