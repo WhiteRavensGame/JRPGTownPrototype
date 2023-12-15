@@ -42,13 +42,13 @@ public class DecisionSceneScript : MonoBehaviour
                 _currentStory.variablesState["Lorraine"] = true;
                 break;
             case "Will Van Merrin":
-                _currentStory.variablesState["Roe"] = true;
+                _currentStory.variablesState["Will"] = true;
                 break;
             case "Adelaine Sharp":
                 _currentStory.variablesState["Adelaine"] = true;
                 break;
             case "Roe Kimp":
-                _currentStory.variablesState["Will"] = true;
+                _currentStory.variablesState["Roe"] = true;
                 break;
             default: break;
         }

@@ -137,7 +137,6 @@ public class UIManager : MonoBehaviour
     {
         ServiceLocator.Get<SoundManager>().Play("TopCloseOpen");
 
-        GameLoader loader = ServiceLocator.Get<GameLoader>();
-        loader.Exit(); 
+        ServiceLocator.Get<GameLoader>().Exit();
     }
 }

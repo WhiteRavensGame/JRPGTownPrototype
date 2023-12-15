@@ -26,7 +26,10 @@ public class GodModifier : MonoBehaviour
         ServiceLocator.Register<GodModifier>(this);
         if(ServiceLocator.Get<GameManager>().LoadGame)
         {
+            DontDestroyOnLoad(this);
             ServiceLocator.Get<EarningsManager>().InitializeGod(this);
+            _rm = ServiceLocator.Get<ResourceManager>();
+            Load();
             SceneManager.LoadScene("MainScene");
         }
     }
@@ -87,10 +90,26 @@ public class GodModifier : MonoBehaviour
         ServiceLocator.Get<SaveSystem>().Save<GodSave>(saveGod, "Godsave.doNotOpen");
     }
 
+    private void Load()
+    {
+        var newData = ServiceLocator.Get<SaveSystem>().Load<GodSave>("Godsave.doNotOpen");
+        if (ServiceLocator.Get<GameManager>().LoadGame && !EqualityComparer<GodSave>.Default.Equals(newData, default))
+        {
+            Modification = newData.Modification;
+            ResourceGod = newData.ResourceGod;
+            Time.timeScale = 1.0f;
+        }
+    }
+
     [System.Serializable]
     private struct GodSave
     {
         public GodModification Modification;
         public bool ResourceGod;
+    }
+
+    public void DeleteGod()
+    {
+        Destroy(this.gameObject);
     }
 }

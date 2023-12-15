@@ -52,6 +52,11 @@ public class TimeManager : MonoBehaviour
             EndOfWeek();
         }
 
+        if(_week >= 5)
+        {
+            return;
+        }    
+
         ServiceLocator.Get<SaveManager>().SaveData();
         _earningsManager.CalculateEarnings();
         _resourceManager.UpdateResourceText();

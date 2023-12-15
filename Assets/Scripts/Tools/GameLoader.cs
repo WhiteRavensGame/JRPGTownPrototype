@@ -120,6 +120,7 @@ public class GameLoader : AsyncLoader
     
     public void Exit()
     {
+        ServiceLocator.Get<GodModifier>().DeleteGod();
         ServiceLocator.UnregisterAll();
         Destroy(_systemsParent.gameObject);
         Destroy(gameObject);
