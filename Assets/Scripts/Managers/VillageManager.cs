@@ -47,6 +47,10 @@ public class VillageManager : MonoBehaviour
     public void AddVillagers(int amount)
     {
         _vTotal += amount;
+        if(_vTotal < 0)
+        {
+            _vTotal = 0;
+        }
         UpdateVillagerText();
     }
 

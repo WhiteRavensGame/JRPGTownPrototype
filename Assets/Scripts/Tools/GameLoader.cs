@@ -17,6 +17,11 @@ public class GameLoader : AsyncLoader
 
     protected override void Awake()
     {
+        Initialize();
+    }
+
+    private void Initialize()
+    {
         Debug.Log("GameLoader Starting");
 
         // Saftey check
@@ -50,7 +55,7 @@ public class GameLoader : AsyncLoader
 
         // Setup System GameObject
         GameObject systemsGO = new GameObject("[Systems]");
-        _systemsParent = systemsGO.transform;
+        _systemsParent = systemsGO.transform;;
         DontDestroyOnLoad(systemsGO);
 
         // Queue up loading routines
@@ -78,6 +83,7 @@ public class GameLoader : AsyncLoader
         ServiceLocator.Register<PlayerManager>(gm.GetComponent<PlayerManager>());
         ServiceLocator.Register<EventManager>(gm.GetComponent<EventManager>());
         ServiceLocator.Register<ReputationManager>(gm.GetComponent<ReputationManager>());
+        ServiceLocator.Register<SoundManager>(gm.GetComponent<SoundManager>());
         
 
         yield return null;
@@ -110,5 +116,14 @@ public class GameLoader : AsyncLoader
     {
         Debug.Log("GameLoader Starting Scene Load");
         yield return SceneManager.LoadSceneAsync(index);
+    }
+    
+    public void Exit()
+    {
+        ServiceLocator.Get<GodModifier>().DeleteGod();
+        ServiceLocator.UnregisterAll();
+        Destroy(_systemsParent.gameObject);
+        Destroy(gameObject);
+        SceneManager.LoadScene(0);
     }
 }

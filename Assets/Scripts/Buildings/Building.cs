@@ -25,7 +25,8 @@ public class Building : MonoBehaviour
     [Space, Header("Extra Settings")]
     [SerializeField] private string buildingSaveName;
     private bool _hasFixedEarnings = false;
-    private int _dailyEarnings;
+    private int _dailyEarnings = 0;
+    private int _fixedProductionDailyCount = 0;
 
     public bool HasProduced { get; set; } = false;
 
@@ -65,7 +66,7 @@ public class Building : MonoBehaviour
 
     public KeyValuePair<Resources, int> GetBuildingsEarnings()
     {
-        if(RestingDaysLeft > 0)
+        if (RestingDaysLeft > 0)
         {
             --RestingDaysLeft;
             return new KeyValuePair<Resources, int>(buildingLevelInfo.getResources, 0);
@@ -75,6 +76,11 @@ public class Building : MonoBehaviour
         if (_hasFixedEarnings)
         {
             rAmt = _dailyEarnings;
+            --_fixedProductionDailyCount;
+            if (_fixedProductionDailyCount <= 0)
+            {
+                _hasFixedEarnings = false;
+            }
         }
         else
         {
@@ -155,7 +161,10 @@ public class Building : MonoBehaviour
         }
         else
         {
-            _currentPeople.RemoveAt(0);
+            if (_currentPeople.Count > 0)
+            {
+                _currentPeople.RemoveAt(0);
+            }
         }
     }
 
@@ -196,10 +205,11 @@ public class Building : MonoBehaviour
         return buildingLevelInfo;
     }
 
-    public void ChangeProductionAmt(int val)
+    public void ChangeProductionAmt(int val, bool hasFixedTime)
     {
         _hasFixedEarnings = true;
         _dailyEarnings = val;
+        _fixedProductionDailyCount = hasFixedTime ? 5 : 20;
     }
 
     public void Load()

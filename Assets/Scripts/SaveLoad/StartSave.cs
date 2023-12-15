@@ -3,11 +3,26 @@ using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 
 public class StartSave : MonoBehaviour
 {
     public GameObject creditsPanel;
+    public Image LoadButton;
+
+    private void Awake()
+    {
+        var newData = ServiceLocator.Get<SaveSystem>().Load<ResourceManager.SaveResources>("RMsave.doNotOpen");
+        if (EqualityComparer<ResourceManager.SaveResources>.Default.Equals(newData, default))
+        {
+            LoadButton.color = Color.gray;
+        }
+        else
+        {
+            LoadButton.color = Color.white;
+        }
+    }
 
     public void TogglePanelVisibility()
     {
@@ -26,7 +41,8 @@ public class StartSave : MonoBehaviour
 
     public void ContinueButton()
     {
-        SceneManager.LoadScene("Tutorial Activate");
+        ServiceLocator.Get<SoundManager>().Play("Yes");
+        SceneManager.LoadScene("Introduction");
     }
 
     public void QuitGame()

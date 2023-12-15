@@ -13,7 +13,10 @@ public class ResourceManager : MonoBehaviour
     private int _silk = 20;
 
     private float _morale = 50;
-    private int _troops = 10;
+    private int _troops = 5;
+
+    private int[] _borrowedMoney = new int[6];
+    private int[] _daysLeftToReturnLoan = new int[6];
 
     public int Fish { get { return _fish; } }
     public int Iron { get { return _iron; } }
@@ -46,21 +49,39 @@ public class ResourceManager : MonoBehaviour
         {
             case Resources.Fish:
                 _fish += amount;
+                if (_fish < 0)
+                    _fish = 0;
                 break;
             case Resources.Iron:
                 _iron += amount;
+                if (_iron < 0)
+                    _iron = 0;
                 break;
             case Resources.Silk:
                 _silk += amount;
+                if (_silk < 0)
+                    _silk = 0;
                 break;
             case Resources.Gold:
                 _gold += amount;
+                if (_gold < 0)
+                    _gold = 0;
                 break;
             case Resources.Moral:
                 _morale += amount;
+                if (_morale < 0)
+                {
+                    _morale = 0;
+                }
+                else if (_morale > 100)
+                {
+                    _morale = 100;
+                }
                 break;
             case Resources.Troops:
                 _troops += amount;
+                if (_troops < 0)
+                    _troops = 0;
                 break;
             default:
                 break;
@@ -105,11 +126,19 @@ public class ResourceManager : MonoBehaviour
     public void SetMorale(float morale)
     {
         _morale = morale;
+        if (_morale > 100)
+        {
+            _morale = 100;
+        }
     }
 
     public void AddMorale(float amount)
     {
         _morale += amount;
+        if (_morale > 100)
+        {
+            _morale = 100;
+        }
     }
 
     public int UseResources(Resources resource, int amount)
@@ -156,6 +185,60 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
+    public void LoanMoney(string resource, int val)
+    {
+        switch (resource)
+        {
+            case "Gold":
+                _borrowedMoney[(int)Resources.Gold] = val;
+                _daysLeftToReturnLoan[(int)Resources.Gold] = 5;
+                _gold += val;
+                return;
+            case "Food":
+                _borrowedMoney[(int)Resources.Fish] = val;
+                _daysLeftToReturnLoan[(int)Resources.Fish] = 5;
+                _fish += val;
+                return;
+            case "Materials":
+                _borrowedMoney[(int)Resources.Iron] = val;
+                _daysLeftToReturnLoan[(int)Resources.Iron] = 5;
+                _iron += val;
+                return;
+            case "Silk":
+                _borrowedMoney[(int)Resources.Silk] = val;
+                _daysLeftToReturnLoan[(int)Resources.Silk] = 5;
+                _silk += val;
+                return;
+            case "Morale":
+                _borrowedMoney[(int)Resources.Moral] = val;
+                _daysLeftToReturnLoan[(int)Resources.Moral] = 5;
+                _morale += val;
+                return;
+            case "Troops":
+                _borrowedMoney[(int)Resources.Troops] = val;
+                _daysLeftToReturnLoan[(int)Resources.Troops] = 5;
+                _troops += val;
+                return;
+            default: return;
+        }
+    }
+
+    public void CheckLoanStatus()
+    {
+        for (int i = 0; i < _borrowedMoney.Length; ++i)
+        {
+            if (_daysLeftToReturnLoan[i] <= 0)
+            {
+                AddResource((Resources)i, -_borrowedMoney[i]);
+                _borrowedMoney[i] = 0;
+            }
+            else
+            {
+                --_daysLeftToReturnLoan[i];
+            }
+        }
+    }
+
     public void UpdateResourceText()
     {
         _ui.UpdateResourceText(_gold, _fish, _iron, _silk, _morale, _troops);
@@ -196,7 +279,7 @@ public class ResourceManager : MonoBehaviour
         public int fish = 20;
         public int iron = 20;
         public int silk = 20;
-         
+
         public float morale = 50;
         public int troops = 10;
     }

@@ -14,7 +14,10 @@ public class ReputationManager : MonoBehaviour
 
     public void BuildingUpgrade(string id, float amt)
     {
-        _reputationList[id] += amt;
+        if (_reputationList.ContainsKey(id))
+        {
+            _reputationList[id] += amt;
+        }
     }
 
     public float GetReputation(string id)

@@ -1,12 +1,14 @@
 EXTERNAL Changefood(value)
 EXTERNAL Changemorale(value)
+VAR troops = 50
 
 ->START
 
 == START ==
-Everybody gets Food Day!
-
-Two Kobolds: Heya big man, we got some food for you if you’d like to partake. What’d ya say?
+#speaker: Narrator #portrait: Default
+Two kobolds wander into town throwing slices of bread at people.
+#speaker: Kobold #portrait: Default
+"Heya big man, we got some food for you if you’d like to partake. What’d ya say?"
 
 ->CHOICES
 
@@ -17,30 +19,34 @@ Two Kobolds: Heya big man, we got some food for you if you’d like to partake. 
  * [I hate food.] ->Hate
 
 == Me ==
+#speaker: Kobold #portrait: Default
 “Well isn’t that soooooo nice of you.”
 ~ Changefood(5)
 ~ Changemorale(-2)
 ->END
 
 == Village ==
-“That’s great! We want to give to everyone also!”
+#speaker: Kobold #portrait: Default
+“That’s great! We want to give some to everyone also!”
 ~ Changefood(25)
 ~ Changemorale(5)
 ->END
 
 == Hate ==
-# Starts at medium-difficulty fight with 2 kobolds
+#speaker: Kobold #portrait: Default
 “YOU WANNA FIGHT PAL?”
+// Starts at medium-difficulty fight with 2 kobolds
 
-* [Win] ->Win
-* [Lose] ->Lose
+{troops >= 15: ->Win | {troops < 15: ->Lose}}
 
 == Win ==
+#speaker: Kobold #portrait: Default
 “Alright you FOOD HATER, we’ll leave!”
 ~ Changefood(10)
 ->END
 
 == Lose ==
+#speaker: Kobold #portrait: Default
 “Serves you right you dumb FOOD HATER!”
 ~ Changefood(-10)
 ->END

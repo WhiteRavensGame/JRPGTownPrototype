@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3725687e1ddb3ab4489e34eed2498fe0, type: 3}
+  m_Name: SilkLevel1
+  m_EditorClassIdentifier: 
+  buildingNextLevel: {fileID: 11400000, guid: ef50c3a5ed301ea4a91f90d751f73028, type: 2}
+  resourcesToProduce: 3
+  buildingSprite: {fileID: 21300000, guid: 6876b2c31ec737347be90f5477038980, type: 3}
+  maxVillagers: 2
+  maxIncome: 30
+  minIncome: 0
+  upgradeCost: 500
+  resourcesToRun: 2
+  resourceCount: 4
+  moralOutputPercentage: 2

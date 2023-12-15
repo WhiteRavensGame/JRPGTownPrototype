@@ -20,6 +20,7 @@ public class BuildingController : MonoBehaviour
 
     public void OnClosePanel()
     {
+        ServiceLocator.Get<SoundManager>().Play("TopMainOpen");
         building.ActivatePanel(false);
         _playerManager.gameState = GameStates.MainScreen;
     }
@@ -32,8 +33,9 @@ public class BuildingController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (_playerManager.gameState == GameStates.MainScreen)
+        if (_playerManager.gameState == GameStates.MainScreen && !_playerManager.InTutorial)
         {
+            ServiceLocator.Get<SoundManager>().Play("TopCloseOpen");
             _playerManager.gameState = GameStates.PanelInfo;
             building.ActivatePanel(true);
         }

@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class EventManager : MonoBehaviour
 {
-    [HideInInspector] public UnityEvent endOfDay;
     [SerializeField] public GameObject _button;
 
+    private PlayerManager _playerManager;
     private MainDialogue dialogue;
     [SerializeField] private List<TextAsset> _weekOneTexts = new();
     [SerializeField] private List<TextAsset> _weekTwoTexts = new();
@@ -18,13 +18,18 @@ public class EventManager : MonoBehaviour
     public void Initialize()
     {
         dialogue = ServiceLocator.Get<MainDialogue>();
-
+        _playerManager = ServiceLocator.Get<PlayerManager>();
     }
 
     public void CheckEvent()
     {
         int week = ServiceLocator.Get<TimeManager>().GetWeek();
-        WeeklyEvent(week);
+        if (Random.Range(0, 100) % 2 == 0)
+        {
+            ServiceLocator.Get<SoundManager>().Play("New_Event");
+            ServiceLocator.Get<TimeManager>().HasEvent(true);
+            WeeklyEvent(week);
+        }
     }
 
     public void WeeklyEvent(int weekNum)
@@ -60,6 +65,13 @@ public class EventManager : MonoBehaviour
 
     public void ButtonPressed()
     {
+        if (_playerManager.gameState != GameStates.MainScreen)
+        {
+            return;
+        }
+
+        _playerManager.gameState = GameStates.Talking;
+
         _button.SetActive(false);
         int week = ServiceLocator.Get<TimeManager>().GetWeek();
 
@@ -71,24 +83,26 @@ public class EventManager : MonoBehaviour
             case 1:
                 randNum = Random.Range(0, _weekOneTexts.Count);
                 dialogue.Enter(_weekOneTexts[randNum]);
+                _weekOneTexts.RemoveAt(randNum);
                 break;
             case 2:
                 randNum = Random.Range(0, _weekTwoTexts.Count);
                 dialogue.Enter(_weekTwoTexts[randNum]);
+                _weekTwoTexts.RemoveAt(randNum);
                 break;
             case 3:
                 randNum = Random.Range(0, _weekThreeTexts.Count);
                 dialogue.Enter(_weekThreeTexts[randNum]);
+                _weekThreeTexts.RemoveAt(randNum);
                 break;
             case 4:
                 randNum = Random.Range(0, _weekFourTexts.Count);
                 dialogue.Enter(_weekFourTexts[randNum]);
+                _weekFourTexts.RemoveAt(randNum);
                 break;
             default:
                 break;
         }
-
-        ServiceLocator.Get<PlayerManager>().gameState = GameStates.Talking;
     }
 
     public void SetUpButton(Button button)

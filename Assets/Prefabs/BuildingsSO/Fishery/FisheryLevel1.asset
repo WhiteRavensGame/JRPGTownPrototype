@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ff152943396634eb1ccf5f92ce13eb, type: 3}
+  m_Name: FisheryLevel1
+  m_EditorClassIdentifier: 
+  buildingNextLevel: {fileID: 11400000, guid: f8139544cedc76b4c94729bcd2f9d7a4, type: 2}
+  resourcesToProduce: 0
+  buildingSprite: {fileID: 21300000, guid: 99d94b8ef45e54b47be01e0dc56b7849, type: 3}
+  maxVillagers: 1
+  maxIncome: 3
+  minIncome: 0
+  upgradeCost: 200

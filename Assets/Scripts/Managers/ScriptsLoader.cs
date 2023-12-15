@@ -33,4 +33,14 @@ public class ScriptsLoader : MonoBehaviour
 
         ServiceLocator.Get<EventManager>().Initialize();
     }
+
+    private void OnDestroy()
+    {
+        ServiceLocator.Unregister<MainDialogue>();
+        ServiceLocator.Unregister<TimeManager>();
+        ServiceLocator.Unregister<PrefabManager>();
+        ServiceLocator.Unregister<SaveManager>();
+        ServiceLocator.Unregister<VillageInitialization>();
+        ServiceLocator.Unregister<EndOfWeekPanel>();
+    }
 }
