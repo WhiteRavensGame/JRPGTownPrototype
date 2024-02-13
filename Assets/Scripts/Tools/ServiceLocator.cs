@@ -42,6 +42,11 @@ static public class ServiceLocator
         }
     }
 
+    static public void UnregisterAll()
+    {
+        m_systems.Clear();
+    }
+
     static public bool Contains<T>()
     {
         return (m_systems.ContainsKey(typeof(T)));

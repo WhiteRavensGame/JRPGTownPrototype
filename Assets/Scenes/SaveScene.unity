@@ -1076,6 +1076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creditsPanel: {fileID: 836153087}
+  LoadButton: {fileID: 483075541}
 --- !u!114 &489971706
 MonoBehaviour:
   m_ObjectHideFlags: 0

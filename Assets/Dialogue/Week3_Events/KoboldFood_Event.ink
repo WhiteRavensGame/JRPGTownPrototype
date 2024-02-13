@@ -18,14 +18,14 @@ Two Kobolds: "Heya big man, we got some food for you if you’d like to partake.
 
 == Myself ==
 You ask for enough food for yourself and the kobolds happily supply. You notice envious gazes as you get food.
-#+5 Food and -2% Morale
+//+5 Food and -2% Morale
 ~ Changefood(5)
 ~ Changemorale(-2)
 ->END
 
 == Village ==
 You ask for enough food for the village and the kobolds happily supply. The town is happy for your decision.
-#+25 food and +5% Morale
+//+25 food and +5% Morale
 ~ Changefood(25)
 ~ Changemorale(5)
 ->END   

@@ -44,7 +44,7 @@ You ask the farmers to describe the traits of the orcs and how they invaded thei
 == Win ==
 #speaker: Narrator #portrait: Default
 You win against the orcs, regaining the farmers food and also the orc's wealth.
-#+25 Food, and +500 Weath
+//+25 Food, and +500 Weath
 ~ Changefood(25)
 ~ Changegold(500)
 ~ Changemorale(2)
@@ -53,7 +53,7 @@ You win against the orcs, regaining the farmers food and also the orc's wealth.
 == Lose ==
 #speaker: Narrator #portrait: Default
 You lose troops during the battle against the orcs.
-#-5 troops
+//-5 troops
 ~ Changematerials(-5)
 ~ Changemorale(-2)
 ->END

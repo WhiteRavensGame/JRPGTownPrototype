@@ -3,6 +3,9 @@ EXTERNAL Changesilk(value)
 EXTERNAL Changemorale(value)
 EXTERNAL Changetroops(value)
 
+VAR material = 10
+VAR silk = 10
+
 ->START
 
 == START ==
@@ -13,9 +16,9 @@ I found this legion of demons stealing my fish a while ago, but they said theyâ€
 
 == CHOICES ==
 
- * [Ask them to build a house.] ->Build
+ * {material > 9} [Ask them to build a house.] ->Build
  * [Get them to clean townsquare.] ->Clean
- * [Teach them about being a hero.] ->Teach
+ * {silk > 9} [Teach them about being a hero.] ->Teach
  
 == Build ==
 #speaker: Narrator #portrait: Default

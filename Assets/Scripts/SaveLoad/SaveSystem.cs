@@ -8,17 +8,17 @@ public class SaveSystem: MonoBehaviour
     {
         BinaryFormatter formatter = new BinaryFormatter();
 
-        FileStream fileStream = new FileStream("Saves/" + savePath, FileMode.Create);
+        FileStream fileStream = new FileStream(savePath, FileMode.Create);
         formatter.Serialize(fileStream, data);
         fileStream.Close();
     }
 
     public T Load<T>(string savePath)
     {
-        if (File.Exists("Saves/" + savePath))
+        if (File.Exists(savePath))
         {
             BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream("Saves/" + savePath, FileMode.Open);
+            FileStream stream = new FileStream(savePath, FileMode.Open);
 
             try
             {

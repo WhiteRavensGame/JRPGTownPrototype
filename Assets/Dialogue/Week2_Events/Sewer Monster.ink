@@ -19,7 +19,7 @@ EXTERNAL ChangeVillagerMorale(value, Name)
 == Drawn ==
 #speaker: Will #portrait: Will
 “Mayor, we tried pouring a bunch of water down there but it didn’t seem to do anything. I think we just have to board it up for now.”
-#-10 Materials, -5% Town Morale
+//-10 Materials, -5% Town Morale
 ~ Changematerials(-10)
 ~ Changemorale(-5)
 ->END

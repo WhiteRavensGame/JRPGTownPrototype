@@ -11,9 +11,6 @@ public class Ending : MonoBehaviour
     [SerializeField] private InputActionReference _action;
     private InputAction _leftClick;
 
-    [Space, Header("UI")]
-    public GameObject playerButton;
-
     public List<GameObject> popUps;
     public GameObject button;
     public int index = 0;
@@ -35,12 +32,12 @@ public class Ending : MonoBehaviour
     private void Awake()
     {
         _currentStory = new Story(stories[index].text);
-        //_currentStory.variablesState["troops"] = ServiceLocator.Get<GameManager>().WVariables.Troops;
-        //_currentStory.variablesState["morale"] = ServiceLocator.Get<GameManager>().WVariables.Moral;
-        //_currentStory.variablesState["gold"] = ServiceLocator.Get<GameManager>().WVariables.Gold;
-        //_currentStory.variablesState["food"] = ServiceLocator.Get<GameManager>().WVariables.Food;
-        //_currentStory.variablesState["material"] = ServiceLocator.Get<GameManager>().WVariables.Material;
-        //_currentStory.variablesState["silk"] = ServiceLocator.Get<GameManager>().WVariables.Silk;
+        _currentStory.variablesState["troops"] = ServiceLocator.Get<GameManager>().WVariables.Troops;
+        _currentStory.variablesState["morale"] = ServiceLocator.Get<GameManager>().WVariables.Moral;
+        _currentStory.variablesState["gold"] = ServiceLocator.Get<GameManager>().WVariables.Gold;
+        _currentStory.variablesState["food"] = ServiceLocator.Get<GameManager>().WVariables.Food;
+        _currentStory.variablesState["material"] = ServiceLocator.Get<GameManager>().WVariables.Material;
+        _currentStory.variablesState["silk"] = ServiceLocator.Get<GameManager>().WVariables.Silk;
         LoadTextAnim();
     }
 
@@ -61,11 +58,11 @@ public class Ending : MonoBehaviour
         button.SetActive(true);
         popUps[index++].SetActive(false);
         popUps[index].SetActive(true);
-        //ServiceLocator.Get<GameManager>().SaveEnding((string)_currentStory.variablesState["endingName"]);
+        ServiceLocator.Get<GameManager>().SaveEnding((string)_currentStory.variablesState["endingName"]);
         _currentStory = new Story(stories[index].text);
-        //_currentStory.variablesState["Morale"] = ServiceLocator.Get<GameManager>().WVariables.Moral;
+        _currentStory.variablesState["Morale"] = ServiceLocator.Get<GameManager>().WVariables.Moral;
         loadingText = false;
-        LoadTextAnim();
+        GoToNextStory();
     }
 
     public void NextCharacter()
@@ -75,19 +72,9 @@ public class Ending : MonoBehaviour
             SceneManager.LoadScene("Ending");
             return;
         }
-        else if(loadingText)
-        {
-            currentText = _currentStory.currentText;
-            _currentStory.Continue();
-        }
-
-        playerButton.SetActive(false);
         popUps[index++].SetActive(false);
         popUps[index].SetActive(true);
-        button.gameObject.SetActive(true);
-        currentText = "-";
-        loadingText = false;
-        LoadTextAnim();
+        GoToNextStory();
     }
 
     public void LoadTextAnim()
@@ -100,19 +87,33 @@ public class Ending : MonoBehaviour
         if (!loadingText && _currentStory.canContinue)
         {
             currentText = _currentStory.Continue();
-            if (currentText != "y\n")
+            if (currentText == "y\n")
             {
-                panelsTexts[index].text = "";
-                loadingText = true;
-                currentWord = 0;
-                textAnimTimer = wordSpeed;
+                return;
             }
+            panelsTexts[index].text = "";
+            loadingText = true;
+            currentWord = 0;
+            textAnimTimer = wordSpeed;
         }
         else if (currentText != "y\n")
         {
             loadingText = false;
             panelsTexts[index].text = currentText;
         }
+    }
+
+    public void GoToNextStory()
+    {
+        currentText = _currentStory.Continue();
+        if (currentText == "y\n")
+        {
+            currentText = _currentStory.Continue();
+        }
+        panelsTexts[index].text = "";
+        loadingText = true;
+        currentWord = 0;
+        textAnimTimer = wordSpeed;
     }
 
     private void Update()

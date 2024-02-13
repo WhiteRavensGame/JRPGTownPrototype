@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    public void Save()
     {
         if(endingsCollected.Count < 0)
         {

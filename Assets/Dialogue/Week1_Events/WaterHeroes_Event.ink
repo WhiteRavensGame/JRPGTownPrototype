@@ -42,5 +42,5 @@ They give Adelaine all their business, they sharpen their swords and fix their a
 == Turn_down ==
 #speaker: Narrator  #portrait: Default
 They're respectful of your choice and leave immediately.
-# you don't gain or lose anything
+//you don't gain or lose anything
 ->END

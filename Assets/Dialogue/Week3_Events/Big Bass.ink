@@ -26,7 +26,7 @@ VAR troopsAssigned = 50
 “Hm. That’s a lot of food. Good work.”
 ~ Changefood(10)
 ~ ChangeVillagerMorale(5, "Oscar")
-# +5% Oscar Morale, +10 Food
+// +5% Oscar Morale, +10 Food
 ->END
 
 == Lose ==
@@ -35,7 +35,7 @@ VAR troopsAssigned = 50
 ~ Changefood(-10)
 ~ Changetroops(-3)
 ~ ChangeVillagerMorale(-5, "Oscar")
-# -5% Oscar Morale, -3 Troops, -10 Food
+//-5% Oscar Morale, -3 Troops, -10 Food
 ->END
 
 == FISH ==
@@ -43,7 +43,7 @@ VAR troopsAssigned = 50
 “We got it. Ate up all our damn bait but we got it."
 ~ Changefood(5)
 ~ ChangeVillagerMorale(2, "Oscar")
-# +2% Oscar Morale, +5 food
+// +2% Oscar Morale, +5 food
 ->END
 
 == DO_NOTHING ==
@@ -52,5 +52,5 @@ VAR troopsAssigned = 50
 ~ Changefood(-10)
 ~ Changematerials(-5)
 ~ ChangeVillagerMorale(-5, "Oscar")
-# -10 Food. -5 Materials, and -5% Oscar Morale
+// -10 Food. -5 Materials, and -5% Oscar Morale
 ->END

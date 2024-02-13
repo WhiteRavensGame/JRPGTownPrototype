@@ -33,14 +33,6 @@ public class ResourceManager : MonoBehaviour
         _ui.UpdateResourceText(_gold, _fish, _iron, _silk, _morale, _troops);
     }
 
-    private void Update()
-    {
-        if(_morale > 100)
-        {
-            _morale = 100;
-        }
-    }
-
     public void AddGold(int gold)
     {
         _gold += gold;
@@ -57,21 +49,39 @@ public class ResourceManager : MonoBehaviour
         {
             case Resources.Fish:
                 _fish += amount;
+                if (_fish < 0)
+                    _fish = 0;
                 break;
             case Resources.Iron:
                 _iron += amount;
+                if (_iron < 0)
+                    _iron = 0;
                 break;
             case Resources.Silk:
                 _silk += amount;
+                if (_silk < 0)
+                    _silk = 0;
                 break;
             case Resources.Gold:
                 _gold += amount;
+                if (_gold < 0)
+                    _gold = 0;
                 break;
             case Resources.Moral:
                 _morale += amount;
+                if (_morale < 0)
+                {
+                    _morale = 0;
+                }
+                else if (_morale > 100)
+                {
+                    _morale = 100;
+                }
                 break;
             case Resources.Troops:
                 _troops += amount;
+                if (_troops < 0)
+                    _troops = 0;
                 break;
             default:
                 break;
@@ -116,11 +126,19 @@ public class ResourceManager : MonoBehaviour
     public void SetMorale(float morale)
     {
         _morale = morale;
+        if (_morale > 100)
+        {
+            _morale = 100;
+        }
     }
 
     public void AddMorale(float amount)
     {
         _morale += amount;
+        if (_morale > 100)
+        {
+            _morale = 100;
+        }
     }
 
     public int UseResources(Resources resource, int amount)

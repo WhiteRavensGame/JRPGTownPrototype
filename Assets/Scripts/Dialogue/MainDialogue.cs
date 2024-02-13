@@ -94,7 +94,8 @@ public class MainDialogue : MonoBehaviour
             string[] splitTag = tag.Split(':');
             if (splitTag.Length != 2)
             {
-                Debug.LogError("Tag could not be parsed: " + tag);
+                Debug.Log("Tag could not be parsed: " + tag);
+                return;
             }
             string tagKey = splitTag[0].Trim();
             string tagValue = splitTag[1].Trim();
@@ -108,7 +109,7 @@ public class MainDialogue : MonoBehaviour
                     portraitAnimator.Play(tagValue);
                     break;
                 default:
-                    Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
+                    Debug.Log("Tag came in but is not currently being handled: " + tag);
                     break;
             }
         }
@@ -152,7 +153,7 @@ public class MainDialogue : MonoBehaviour
 
     public void ChooseOption(int index)
     {
-        ServiceLocator.Get<SoundManager>().Play("ChooseOption");
+        ServiceLocator.Get<SoundManager>().Play("Choose");
 
         CheckAnswers(false);
         _currentStory.ChooseChoiceIndex(index);
@@ -330,6 +331,7 @@ public class MainDialogue : MonoBehaviour
 
     private void UnbindVariable()
     {
+        _currentStory.UnbindExternalFunction("ChangeAllResource");
         _currentStory.UnbindExternalFunction("Changegold");
         _currentStory.UnbindExternalFunction("Changecitizens");
         _currentStory.UnbindExternalFunction("Changefood");
@@ -337,6 +339,11 @@ public class MainDialogue : MonoBehaviour
         _currentStory.UnbindExternalFunction("Changesilk");
         _currentStory.UnbindExternalFunction("Changemorale");
         _currentStory.UnbindExternalFunction("Changetroops");
+        _currentStory.UnbindExternalFunction("TempChangeResource");
+        _currentStory.UnbindExternalFunction("TempChangeAllResource");
+        _currentStory.UnbindExternalFunction("TempChangeBuildingProduction");
+        _currentStory.UnbindExternalFunction("TurnBuildingOff");
+        _currentStory.UnbindExternalFunction("DiscountOnNextUpgrade");
     }
 
     private void OnDisable()

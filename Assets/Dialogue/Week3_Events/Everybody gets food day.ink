@@ -35,7 +35,7 @@ Two kobolds wander into town throwing slices of bread at people.
 == Hate ==
 #speaker: Kobold #portrait: Default
 “YOU WANNA FIGHT PAL?”
-# Starts at medium-difficulty fight with 2 kobolds
+// Starts at medium-difficulty fight with 2 kobolds
 
 {troops >= 15: ->Win | {troops < 15: ->Lose}}
 

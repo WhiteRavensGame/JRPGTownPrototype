@@ -15,9 +15,9 @@ VAR material = 25
 == CHOICES ==
 
  * [Make smaller boats and save materials.] ->Small
- * [Add sails to the boats.] ->Sails
+ * {silk > 24} [Add sails to the boats.] ->Sails
  # Need at least 25 silk
- * [Make larger boats.] ->Large
+ * {material > 24} [Make larger boats.] ->Large
  # Need at least 25 materials
 
 == Small ==
@@ -28,7 +28,6 @@ VAR material = 25
 ->END
 
 == Sails ==
-{silk < 25: ->CHOICES}
 #speaker: Oscar #portrait: Oscar
 “Sir, the boats that have sails seem to be working much better since we save more time traveing through the river.”
 ~ Changesilk(-25)
@@ -36,7 +35,6 @@ VAR material = 25
 ->END
 
 == Large ==
-{material < 25: ->CHOICES}
 #speaker: Oscar #portrait: Oscar
 “Sir, the larger boats have taken up a lot of materials but we’ve been able to collect much more fish at a time because of it.”
 ~ Changematerials(-25)

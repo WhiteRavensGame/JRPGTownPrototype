@@ -119,7 +119,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 0}
   _weekOneTexts:
-  - {fileID: 4900000, guid: d4dfc92f447040c4096b9e8c2d78b95b, type: 3}
   - {fileID: 4900000, guid: 03cfd75bce827d747816a3f382ee51e3, type: 3}
   - {fileID: 4900000, guid: 1df7acdcdd61b3340b4470f1ad6e4302, type: 3}
   - {fileID: 4900000, guid: 588033abe529d5e4998f6004667721f4, type: 3}
@@ -138,7 +137,14 @@ MonoBehaviour:
   - {fileID: 4900000, guid: a8502f68cce24764d8cd87ec0efee662, type: 3}
   - {fileID: 4900000, guid: a313f8ed5a7b103478dd0580661f36fc, type: 3}
   _weekThreeTexts:
+  - {fileID: 4900000, guid: c0c2d04972c1df84a8dc5cba12838e7c, type: 3}
+  - {fileID: 4900000, guid: 65f7a88ffd5a303469dae12c9cf4bebb, type: 3}
+  - {fileID: 4900000, guid: 8e381d0e74c7d964a91bf973453f1855, type: 3}
+  - {fileID: 4900000, guid: 7f75fe536d225be4aa96520cafefe0cf, type: 3}
+  - {fileID: 4900000, guid: 94fbb7f8e67645a40bfd50fea8eb9e2c, type: 3}
+  - {fileID: 4900000, guid: dc665e4be48fed94dbbdd9cc182466ab, type: 3}
   - {fileID: 4900000, guid: 08f8aebbb5a82e84582c01d947df4fb0, type: 3}
+  - {fileID: 4900000, guid: c2e92dbeeb6cb5d448c3ddb67e981f2b, type: 3}
   _weekFourTexts:
   - {fileID: 4900000, guid: a416be54260d5334395ecd01a228156d, type: 3}
   - {fileID: 4900000, guid: 01fdffd097ebbe445ba2037a4b4b6300, type: 3}
@@ -225,5 +231,11 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: b68a723e6d753ba43906afc1b0e79fbd, type: 3}
     Volume: 1
     Pitch: 0.85
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Choose
+    Clip: {fileID: 8300000, guid: 805b9257f76a9ce47b16409048985f89, type: 3}
+    Volume: 1
+    Pitch: 1
     Loop: 0
     Source: {fileID: 0}
